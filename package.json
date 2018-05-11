@@ -1,0 +1,20 @@
+{
+  "name": "opencord-documentation",
+  "version": "1.0.0",
+  "description": "Documentation for the OpenCORD Project",
+  "main": "index.js",
+  "dependencies": {
+    "gitbook-plugin-smart-nav-collapse": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "gitbook serve --log=debug --debug",
+    "build": "gitbook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gerrit.opencord.org/docs"
+  },
+  "author": "OpenCORD",
+  "license": "Apache-2.0"
+}
