@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bd0b197c_6d712e2c",
+        "filename": "SUMMARY.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-14T22:23:32Z",
+      "side": 1,
+      "message": "Compat with `toggle-chapters`, but reverted to using `smart-nav-collapse` which has ugly refreshes, so removed in next patchset",
+      "parentUuid": "57d28b1f_388d15fb",
+      "range": {
+        "startLine": 6,
+        "startChar": 6,
+        "endLine": 7,
+        "endChar": 45
+      },
+      "revId": "f3f94b3a461f4e12492cba9af8f141f531d1b682",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "afc8865f_ff8c912d",
         "filename": "partials/cord-bootstrap.md",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-05-14T22:02:58Z",
       "side": 1,
       "message": "why do we need the cord-bootstrap.sh script?",
+      "range": {
+        "startLine": 1,
+        "startChar": 27,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "f3f94b3a461f4e12492cba9af8f141f531d1b682",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fc415424_0d2c955a",
+        "filename": "partials/cord-bootstrap.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-14T22:23:32Z",
+      "side": 1,
+      "message": "Not needed, got copied by accident with the partials/ dir.",
+      "parentUuid": "afc8865f_ff8c912d",
       "range": {
         "startLine": 1,
         "startChar": 27,
