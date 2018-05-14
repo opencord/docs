@@ -2,14 +2,20 @@
 
 ## Prerequisites
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis veritatis eligendi vitae dolorem animi non unde odio, hic quasi totam recusandae repellat minima provident aliquam eveniet a tempora saepe. Iusto.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis veritatis
+eligendi vitae dolorem animi non unde odio, hic quasi totam recusandae repellat
+minima provident aliquam eveniet a tempora saepe. Iusto.
 
-- A Kubernetes cluster (you can follow one of this guide to install a [single node cluster](../prereqs/minikube.md) or a [multi node cluster](../prereqs/kubespray.md))
+- A Kubernetes cluster (you can follow one of this guide to install a [single
+  node cluster](../prereqs/minikube.md) or a [multi node
+  cluster](../prereqs/kubespray.md))
 - Helm, follow [this guide](../prereqs/helm.md)
 
 ## CORD Components
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit et quam tenetur maiores dolores ipsum hic ex doloremque, consectetur porro sequi vitae tempora in consequuntur provident nostrum nobis. Error, non?
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit et quam tenetur
+maiores dolores ipsum hic ex doloremque, consectetur porro sequi vitae tempora
+in consequuntur provident nostrum nobis. Error, non?
 
 Then you need to install this charts:
 
@@ -19,7 +25,7 @@ Then you need to install this charts:
 
 ## Install the RCORD-Lite helm chart
 
-```
+```shell
 helm install -n rcord-lite xos_profiles/rcord-lite
 ```
 
@@ -48,8 +54,10 @@ xos-gui:
 simpleexampleservice:
   imagePullPolicy: 'Always'
 ```
+
 and use it during the installation with:
 
-```bash
+```shell
 helm install -n rcord-lite xos_profiles/rcord-lite -f my-rcord-lite-values.yaml
 ```
+

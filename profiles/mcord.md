@@ -2,15 +2,20 @@
 
 ## Prerequisites
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis veritatis eligendi vitae dolorem animi non unde odio, hic quasi totam recusandae repellat minima provident aliquam eveniet a tempora saepe. Iusto.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis veritatis
+eligendi vitae dolorem animi non unde odio, hic quasi totam recusandae repellat
+minima provident aliquam eveniet a tempora saepe. Iusto.
 
-- A Kubernetes cluster (you will need a [multi node cluster](../prereqs/kubespray.md))
+- A Kubernetes cluster (you will need a [multi node
+  cluster](../prereqs/kubespray.md))
 - Helm, follow [this guide](../prereqs/helm.md)
 - Openstack-Helm, follow [this guide](../prereqs/openstack-helm.md)
 
 ## CORD Components
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit et quam tenetur maiores dolores ipsum hic ex doloremque, consectetur porro sequi vitae tempora in consequuntur provident nostrum nobis. Error, non?
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit et quam tenetur
+maiores dolores ipsum hic ex doloremque, consectetur porro sequi vitae tempora
+in consequuntur provident nostrum nobis. Error, non?
 
 Then you need to install this charts:
 
