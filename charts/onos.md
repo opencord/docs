@@ -1,6 +1,8 @@
 # ONOS Helm chart
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse illum explicabo, expedita, repudiandae numquam, ab fuga molestias minus maxime, deleniti perspiciatis id repellendus ipsa nemo velit quaerat omnis sequi saepe.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse illum explicabo,
+expedita, repudiandae numquam, ab fuga molestias minus maxime, deleniti
+perspiciatis id repellendus ipsa nemo velit quaerat omnis sequi saepe.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -15,7 +17,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## ONOS-VOLHTA
 
-> NOTE that this require [VOLTHA](voltha.md) to be installed
+> NOTE: This requires [VOLTHA](voltha.md) to be installed
 
 `helm install ...`
 

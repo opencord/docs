@@ -10,6 +10,6 @@ Briefly describe what helm is
 
 ### Add the CORD repository to helm
 
-```
+```shell
 helm repo add ...
 ```
