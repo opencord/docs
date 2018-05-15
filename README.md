@@ -1,4 +1,4 @@
-# OpenCord Introduction
+# Introduction to CORD
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ducimus impedit
 quidem sapiente necessitatibus quo hic ut! Fugit ut sed sapiente maiores
