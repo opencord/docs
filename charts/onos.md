@@ -1,26 +1,55 @@
 # ONOS Helm chart
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse illum explicabo,
-expedita, repudiandae numquam, ab fuga molestias minus maxime, deleniti
-perspiciatis id repellendus ipsa nemo velit quaerat omnis sequi saepe.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This chart can be used to deploy an ONOS container.
+Traditionally it is used to deploy three different ONOSes in the system,
+depending by what is required.
 
 ## ONOS-Fabric
 
-`helm install ...`
+`helm install -n onos-fabric -f configs/onos-fabric.yaml onos`
+
+Ports exposed:
+
+- ovsdb: 31640
+- OpenFlow: 31653
+- SSH: 31101
+- UI: 31181
 
 ## ONOS-VOLHTA
 
 > NOTE: This requires [VOLTHA](voltha.md) to be installed
 
-`helm install ...`
+`helm install -n onos-voltha -f configs/onos-voltha.yaml onos`
+
+Ports exposed:
+
+- SSH: 30115
+- UI: 30120
 
 ## ONOS-VTN
 
-`helm install ...`
+`helm install -n onos-cord -f configs/onos-cord.yaml onos`
+
+## Overridable values
+
+This is a sample `values.yaml` that can be used to override values
+through the `-f` option:
+
+```yaml
+imagePullPolicy: Always
+onosImage: 'onosproject/onos:1.13.1'
+
+services:
+  openflowServiceType: NodePort
+  ovsdbServiceType: NodePort
+  sshServiceType: NodePort
+  uiServiceType: NodePort
+  ovsdb:
+    nodePort: 31640
+  openflow:
+    nodePort: 31653
+  ssh:
+    nodePort: 31101
+  ui:
+    nodePort: 31181
+```

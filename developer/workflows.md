@@ -36,6 +36,19 @@ helm dep update xos-profiles/rcord-lite
 helm install xos-profiles/rcord-lite -n rcord-lite
 ```
 
+### Deply a single instance of kafka
+
+Some profiles require a `kafka` message bus to properly working.
+If you need to deploy it for development purposes, a single instance
+deployment will be enough.
+
+You can install it by using:
+
+```shell
+helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
+install --name cord-kafka incubator/kafka -f examples/kafka-single.yaml
+```
+
 ## Making changes and deploy them
 
 You can follow this guide to [get the CORD source code](getting_the_code.md).
@@ -91,7 +104,7 @@ If you have a remote POD you want to test your changes on, you need to push your
 docker images on a registry that can be accessed from the POD itself.
 
 The way we suggest to do this is via a private docker-registry,
-you can find more informations about what a 
+you can find more informations about what a
 docker-registry is [here](../prereqs/docker-registry.md).
 
 {% include "/partials/push-images-to-registry.md" %}

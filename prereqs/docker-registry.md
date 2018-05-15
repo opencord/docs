@@ -1,9 +1,9 @@
 # Docker Registry
 
-This guide will help you in deploying an insecure `docker-registry`. 
+This guide will help you in deploying an insecure `docker-registry`.
 The tipical usecases for such registry are development, POCs or lab trials.
 
-**Please be aware that this is NOT intended for production use**
+> **Please be aware that this is NOT intended for production use**
 
 ## What is a docker registry?
 

@@ -19,6 +19,7 @@
         * [XOS-CORE](charts/xos-core.md)
         * [ONOS](charts/onos.md)
         * [VOLTHA](charts/voltha.md)
+        * [kafka](charts/kafka.md)
     * [Fabric setup](prereqs/fabric-setup.md)
 * Operating CORD
     * [Diagnostics](operating_cord/diag.md)

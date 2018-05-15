@@ -22,6 +22,7 @@ Then you need to install this charts:
 - [xos-core](../charts/xos-core.md)
 - [onos-fabric](../charts/onos.md#onos-fabric)
 - [onos-voltha](../charts/onos.md#onos-voltha)
+- kafka
 
 ## Install the RCORD-Lite helm chart
 
