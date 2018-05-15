@@ -6,19 +6,19 @@
 
 ## How to install helm
 
-The full instructions and basic commands to get started
-with helm can be found here: <https://docs.helm.sh/using_helm/#quickstart>
+The full instructions and basic commands to get started with helm can be found
+here: <https://docs.helm.sh/using_helm/#quickstart>
 
-For simplicity here are are few commands that you can use to install `helm`
-on your sistem:
+For simplicity here are are few commands that you can use to install `helm` on
+your system:
 
-#### macOS
+### macOS
 
 ```shell
 brew install kubernetes-helm
 ```
 
-#### Linux
+### Linux
 
 ```shell
 wget https://storage.googleapis.com/kubernetes-helm/helm-v2.9.1-linux-amd64.tar.gz
@@ -26,14 +26,14 @@ tar -zxvf helm-v2.9.1-linux-amd64.tar.gz
 mv linux-amd64/helm /usr/local/bin/helm
 ```
 
-#### Initialize helm and setup Tiller
+### Initialize helm and setup Tiller
 
 ```shell
 helm init
 ```
 
-Once `helm` is installed you should be able
-to run the command `helm list` without errors
+Once `helm` is installed you should be able to run the command `helm list`
+without errors
 
 ## What is an helm chart?
 

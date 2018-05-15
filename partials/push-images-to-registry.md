@@ -20,6 +20,7 @@ You'll need to re-tag the image as
 ```
 
 > NOTE: you can do that using the `docker tag` command:
+>
 > ```shell
 > docker tag xosproject/vsg-synchronizer:candidate 192.168.10.12:30500/xosproject/vsg-synchronizer:candidate
 > ```
