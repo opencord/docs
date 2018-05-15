@@ -30,7 +30,7 @@ examples and deployments:
 
 {% include "/partials/repo-download.md" %}
 
-> NOTE: `-b` specifies the branch name. Development work goes on in `master,
+> NOTE: `-b` specifies the branch name. Development work goes on in `master`,
 > and there are also specific stable branches such as `cord-4.0` that can be
 > used.
 
@@ -39,7 +39,8 @@ output similar to:
 
 ```sh
 $ ls
-build component incubator onos-apps orchestration test
+automation-tools        component               helm-charts             onos-apps               subscriber.yaml
+build                   docs                    incubator               orchestration           test
 ```
 
 ## Download patchsets
