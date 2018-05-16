@@ -9,6 +9,7 @@
   },
   "plugins": [
     "anchorjs",
-    "smart-nav-collapse"
+    "smart-nav-collapse",
+    "page-toc"
   ]
 }

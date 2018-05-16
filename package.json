@@ -4,6 +4,7 @@
   "description": "Documentation for the OpenCORD Project",
   "main": "index.js",
   "dependencies": {
+    "gitbook-plugin-page-toc": "^1.1.0",
     "gitbook-plugin-smart-nav-collapse": "^0.1.0"
   },
   "devDependencies": {},
