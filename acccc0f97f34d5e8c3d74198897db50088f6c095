@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8633aea5_59da9f43",
+        "filename": "mdlstyle.rb",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-16T00:43:32Z",
+      "side": 1,
+      "message": "I\u0027d be up for raising the limit to 100 or 120 characters, but not eliminating it.\n\nThere are two reasons for the line length limit:\n\n1. It makes diffs easier to read, which makes reviews in gerrit or seeing history in git easier.\n\n2. It makes the documentation easier to read when reading in a terminal window.",
+      "range": {
+        "startLine": 28,
+        "startChar": 54,
+        "endLine": 28,
+        "endChar": 73
+      },
+      "revId": "acccc0f97f34d5e8c3d74198897db50088f6c095",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d0986e28_3cdd0d71",
+        "filename": "mdlstyle.rb",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-16T00:43:32Z",
+      "side": 1,
+      "message": "Trailing spaces is usually an error and/or sloppy.\n\nEvery text editor should have a syntax highlighting rule that marks it as an error, and a shortcut to strip EOL whitespace a whole file at a time.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 0
+      },
+      "revId": "acccc0f97f34d5e8c3d74198897db50088f6c095",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e4799014_2a78d324",
+        "filename": "mdlstyle.rb",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-16T00:43:32Z",
+      "side": 1,
+      "message": "I think this is probably fine. It\u0027s harder to read though, and as MDL\u0027s docs say, it might not be parsed correctly by some parsers.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 20
+      },
+      "revId": "acccc0f97f34d5e8c3d74198897db50088f6c095",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2615c23d_6480aa75",
+        "filename": "mdlstyle.rb",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-16T00:43:32Z",
+      "side": 1,
+      "message": "This seems fine.",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 20
+      },
+      "revId": "acccc0f97f34d5e8c3d74198897db50088f6c095",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f97ad40f_d737a85a",
+        "filename": "mdlstyle.rb",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-16T00:43:32Z",
+      "side": 1,
+      "message": "Isn\u0027t this usually a bug?  From a HTML standpoint, skipping header levels is usually abusing a semantic tool for visual purposes, which goes against accessibility guidelines: https://www.w3.org/WAI/tutorials/page-structure/headings/#heading-ranks",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 20
+      },
+      "revId": "acccc0f97f34d5e8c3d74198897db50088f6c095",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
