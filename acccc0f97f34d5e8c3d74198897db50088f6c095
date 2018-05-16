@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "0ea7eb2d_eb943276",
+        "filename": "mdlstyle.rb",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-16T01:31:24Z",
+      "side": 1,
+      "message": "I agree.\n\nThere\u0027s also MD014 and MD040 rules for code blocks which are probably more difficult than this pre/post block whitespace requirement.\n\nIncidentally, for MD040, we should probably link to to here which is the list of languages that the library gitbook uses to highlight supports: https://github.com/isagalaev/highlight.js/tree/master/src/languages",
+      "parentUuid": "b83b853d_bec2fa80",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 20
+      },
+      "revId": "acccc0f97f34d5e8c3d74198897db50088f6c095",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2615c23d_6480aa75",
         "filename": "mdlstyle.rb",
         "patchSetId": 2
