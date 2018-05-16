@@ -17,8 +17,8 @@ git clone https://gerrit.opencord.org/helm-charts
 ```
 
 > If you have downloaded the CORD code following the
-[Getting the Source Code](../developer/getting_the_code.md) guide,
-you'll find it in `~/cord/helm-charts`.
+> [Getting the Source Code](../developer/getting_the_code.md) guide,
+> you'll find it in `~/cord/helm-charts`.
 
 ### Add the CORD repository to helm (NOT YET AVAILABLE)
 
