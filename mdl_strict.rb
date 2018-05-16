@@ -12,11 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# markdownlint(mdl) style rules
+# markdownlint(mdl) strict rules file
+# To use: `make LINT_STYLE=mdl_strict.rb lint`
+#
 # Rule descriptions:
 #  https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md
-# Help on writing this rules:
-#. https://github.com/markdownlint/markdownlint/blob/master/docs/creating_styles.md
+# Instructions on modifying the rules file:
+#  https://github.com/markdownlint/markdownlint/blob/master/docs/creating_styles.md
 
 # use all rules
 all
@@ -25,22 +27,11 @@ all
 rule 'MD007', :indent => 4
 
 # Don't enforce line length limitations within code blocks and tables
-rule 'MD013', :code_blocks => false, :tables => false, line_length: false
-
-# Numbered lists should have the correct order
-rule 'MD029', :style => "ordered"
+rule 'MD013', :code_blocks => false, :tables => false
 
 # Allow  ! and ? as trailing punctuation in headers
 rule 'MD026', :punctuation => '.,;:'
 
-# Exclude rule: Trailing spaces
-exclude_rule 'MD009'
+# Numbered lists should have the correct order
+rule 'MD029', :style => "ordered"
 
-# Exclude rule: Fenced code blocks should be surrounded by blank lines
-exclude_rule 'MD031'
-
-# Exclude rule: Multiple spaces after blockquote symbol
-exclude_rule 'MD027'
-
-# Exclude rule: Header levels should only increment by one level at a time
-exclude_rule 'MD001'

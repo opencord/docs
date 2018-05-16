@@ -12,6 +12,8 @@ SHELL = bash -o pipefail
 
 GENERATED_DOCS =
 
+LINT_STYLE ?= mdl_relaxed.rb
+
 serve: setup
 	gitbook serve --port 4040
 
@@ -31,9 +33,9 @@ lint:
 	@echo "markdownlint(mdl) version: `mdl --version`"
 	@echo "style config:"
 	@echo "---"
-	@cat mdlstyle.rb
+	@cat $(LINT_STYLE)
 	@echo "---"
-	mdl -s mdlstyle.rb `find -L . ! -path "./partials/*" ! -path "./_book/*" ! -path "./node_modules/*" ! -path "./cord-tester/modules/*" -name "*.md"`
+	mdl -s $(LINT_STYLE) `find -L . ! -path "./partials/*" ! -path "./_book/*" ! -path "./node_modules/*" ! -path "./cord-tester/modules/*" -name "*.md"`
 
 # link directories that contain other documentation
 cord-tester:
