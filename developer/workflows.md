@@ -1,7 +1,7 @@
 # Developer Workflows
 
-This document is intended to describe the workflow to
-develop the control plane of CORD.
+This document is intended to describe the workflow to develop the control plane
+of CORD.
 
 ## Setting up a local development environment
 
@@ -13,10 +13,9 @@ and this guide assume that it will be the environment going forward.
 You can follow this guide to get started with Minikube:
 <https://kubernetes.io/docs/getting-started-guides/minikube/#installation>
 
-> Note: If you are going to do development on Minikube you may want to
->increase it’s memory from the default 512MB,
->you can do that using this command to start Minikube:
->`minikube start --cpus 2 --memory 4096`
+> Note: If you are going to do development on Minikube you may want to increase
+> it’s memory from the default 512MB, you can do that using this command to
+> start Minikube: `minikube start --cpus 2 --memory 4096`
 
 Once Minikube is up and running on your laptop you can proceed with
 the following steps to bring XOS up.
@@ -56,8 +55,8 @@ You can follow this guide to [get the CORD source code](getting_the_code.md).
 We assume that now you have the entire CORD tree under `~/cord`
 
 > Note: to develop a single synchronizer you may not need the full CORD source,
-but this assume  that you have a good knowledge of the system and
-you know what you’re doing.
+> but this assume  that you have a good knowledge of the system and you know
+> what you’re doing.
 
 As first you’ll need to point Docker to the one provided by Minikube
 (_note that you don’t need to have docker installed,
@@ -77,9 +76,9 @@ python scripts/imagebuilder.py -f ../helm-charts/examples/filter-images.yaml
 At this point the images containing your changes will be available
 in the Docker environment used by Minikube.
 
-> Note: in some cases you can rebuild a single docker image to make
-the process faster, but this assume that you have a good knowledge of the system
-and you know what you’re doing.
+> Note: in some cases you can rebuild a single docker image to make the process
+> faster, but this assume that you have a good knowledge of the system and you
+> know what you’re doing.
 
 All that is left is to teardown and redeploy the containers.
 
@@ -88,15 +87,15 @@ helm del --purge xos-core
 helm del --purge rcord-lite
 helm install xos-core -n xos-core -f examples/candidate-tag-values.yaml -f examples/if-not-present-values.yaml
 helm dep update xos-profiles/rcord-lite
-helm install xos-profiles/rcord-lite -n rcord-lite -f examples/candidate-tag-values.yaml -f examples/if-not-present-values.yaml
+helm install xos-profiles/rcord-lite -n rcord-lite -f examples/image-tag-candidate.yaml -f examples/imagePullPolicy-IfNotPresent.yaml
 ```
 
 In some cases is possible to use the helm upgrade command,
 but if you made changes to the models we suggest to redeploy everything
 
-> Note: if your changes are only in the synchronizer steps,
-after rebuilding the containers, you can just delete the corresponding POD
-and kubernetes will restart it with the new image
+> Note: if your changes are only in the synchronizer steps, after rebuilding
+> the containers, you can just delete the corresponding POD and kubernetes will
+> restart it with the new image
 
 ## Pushing changes to a remote registry
 
