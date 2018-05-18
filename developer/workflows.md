@@ -85,7 +85,7 @@ All that is left is to teardown and redeploy the containers.
 ```shell
 helm del --purge xos-core
 helm del --purge rcord-lite
-helm install xos-core -n xos-core -f examples/candidate-tag-values.yaml -f examples/if-not-present-values.yaml
+helm install xos-core -n xos-core -f examples/image-tag-candidate.yaml -f examples/imagePullPolicy-IfNotPresent.yaml
 helm dep update xos-profiles/rcord-lite
 helm install xos-profiles/rcord-lite -n rcord-lite -f examples/image-tag-candidate.yaml -f examples/imagePullPolicy-IfNotPresent.yaml
 ```
