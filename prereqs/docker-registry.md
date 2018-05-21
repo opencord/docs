@@ -1,37 +1,35 @@
 # Docker Registry
 
-This guide will help you in deploying an insecure `docker-registry`.
+The guide describes how to install an insecure *docker-registry* in Kubernetes.
 The tipical usecases for such registry are development, POCs or lab trials.
 
-> **Please be aware that this is NOT intended for production use**
+> **This is not meant for production use**
 
 ## What is a docker registry?
 
 If you have ever used docker, for sure you have used a docker registry.
-The most used `docker-registry` is the default public one: `hub.docker.com`
+The most used *docker-registry* is the default, public one: <https://hub.docker.com>.
 
-In certain cases, such as development or when the public registry is not
-reachable, you may want to setup a private version on it, to push and pull
-your images in a more controlled way.
+In some cases, such as development or when the public registry is not
+reachable, you may want to setup a private registry, to push and pull images in a more controlled way.
 
-For more information about docker registries, please take a look
-at the [official documentation](https://docs.docker.com/registry/).
+More information about docker registries at <https://docs.docker.com/registry/>.
 
-## Deploy an insecure docker registry on top of Kubernets
+## Deploy an insecure docker registry on top of Kubernetes
 
-We suggest to use the official helm-chart to deploy a docker-registry,
-and this command will deploy it and expose it on port `30500`:
+Helm provides a default helm-chart to deploy the registry,
+The follogin command deploys it and exposes it on node port *30500*:
 
 ```shell
 helm install stable/docker-registry --set service.nodePort=30500,service.type=NodePort -n docker-registry
 ```
 
-> In any moment you can check the images available on your registry with this
-> command:
+The registry can be queried at any time:
+
 > ```shell
 > curl -X GET https://KUBERNETES_IP:30500/v2/_catalog
 > ```
 
-## Push the images to the docker registry
+## Push images to the docker registry
 
 {% include "/partials/push-images-to-registry.md" %}

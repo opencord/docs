@@ -1,52 +1,50 @@
 # Helm Installation guide
 
+The paragraph assumes that *Kubernetes* has already been installed and *kubectl* can access the pod.
+
+CORD uses helm to deploy containers on Kubernetes. As such helm should be installed before trying to deploy any CORD container.
+
+Helm documentation can be found at <https://docs.helm.sh/>
+
 ## What is helm?
 
 {% include "/partials/helm/description.md" %}
 
-## How to install helm
+## Install helm (and tiller)
 
-The full instructions and basic commands to get started with helm can be found
-here: <https://docs.helm.sh/using_helm/#quickstart>
+Helm is made of two components:
 
-For simplicity here are are few commands that you can use to install `helm` on
-your system:
+* the helm client, most times also called simply helm: the client component, basically the CLI utility
+* tiller: the server side component, interpreting the client commands and executing tasks on the Kubernetes pod
 
-### macOS
+Helm can be installed on any device able to reach the Kubernetes POD (i.e. the developer laptop, another server in the network). Tiller should be installed on the Kubernetes pod itself, through the kubectl CLI.
 
-```shell
-brew install kubernetes-helm
-```
+### Install helm client
 
-### Linux
+Follow the instructions at <https://docs.helm.sh/using_helm/#installing-helm>
 
-```shell
-wget https://storage.googleapis.com/kubernetes-helm/helm-v2.9.1-linux-amd64.tar.gz
-tar -zxvf helm-v2.9.1-linux-amd64.tar.gz
-mv linux-amd64/helm /usr/local/bin/helm
-```
+### Install tiller
 
-### Initialize helm and setup Tiller
+To install tiller type the following commands from any device already able to access the Kubernetes pod.
 
 ```shell
 helm init
+kubectl create serviceaccount --namespace kube-system tiller
+kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'      
+helm init --service-account tiller --upgrade
 ```
 
-Once `helm` is installed you should be able to run the command `helm list`
-without errors
+Once *helm* and *tiller* are installed you should be able to run the command *helm ls* without errors.
 
-## What is an helm chart?
+## What helm charts are?
 
-Charts are the packaging format used by helm.
-A chart is a collection of files that describe
-a related set of Kubernetes resources.
+Helm charts are the packaging format used by helm. A chart is a collection of files that describe a related set of Kubernetes resources.
 
-For example in CORD we are using charts to define every single components,
-such as:
+CORD uses charts to define each component. For example:
 
-- [xos-core](../charts/xos-core.md)
-- [onos](../charts/onos.md)
-- [voltha](../charts/voltha.md)
+* [xos-core](../charts/xos-core.md)
+* [onos](../charts/onos.md)
+* [voltha](../charts/voltha.md)
 
-You can find the full chart documentation here:
-<https://docs.helm.sh/developing_charts/#charts>
+More info on Helm charts at <https://docs.helm.sh/developing_charts/#charts>
