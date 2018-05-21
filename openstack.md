@@ -1,4 +1,4 @@
-# OpenStack Helm Installation
+# OpenStack Integration
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi corporis
 officia dolorum fugit eligendi obcaecati earum, quam reprehenderit optio
