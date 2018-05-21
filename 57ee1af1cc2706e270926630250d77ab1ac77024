@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84526ef7_5bb39160",
+        "filename": "prereqs/helm.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-21T20:23:24Z",
+      "side": 1,
+      "message": "`kubectl` if you\u0027re specifying the cli tool.",
+      "range": {
+        "startLine": 2,
+        "startChar": 127,
+        "endLine": 2,
+        "endChar": 134
+      },
+      "revId": "57ee1af1cc2706e270926630250d77ab1ac77024",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e72e83ef_60fcb561",
+        "filename": "prereqs/kubernetes.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-21T20:23:24Z",
+      "side": 1,
+      "message": "Needs literal blockquote",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 16
+      },
+      "revId": "57ee1af1cc2706e270926630250d77ab1ac77024",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39aa8275_6a23f3b0",
+        "filename": "terminology.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-21T20:23:24Z",
+      "side": 1,
+      "message": "Might want to disambiguate from the k8s pod definition.",
+      "range": {
+        "startLine": 5,
+        "startChar": 2,
+        "endLine": 5,
+        "endChar": 5
+      },
+      "revId": "57ee1af1cc2706e270926630250d77ab1ac77024",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
