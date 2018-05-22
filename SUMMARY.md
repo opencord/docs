@@ -33,6 +33,7 @@
 * [Development Guide](developer/developer.md)
     * [Getting the Source Code](developer/getting_the_code.md)
     * [Developer Workflows](developer/workflows.md)
+        * [Building Docker Images](developer/imagebuilder.md)
     * [VTN and Service Composition](xos/xos_vtn.md)
     * [GUI Development](xos-gui/developer/README.md)
         * [Quickstart](xos-gui/developer/quickstart.md)
