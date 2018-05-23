@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "231052a4_be77fc7a",
+        "filename": "developer/imagebuilder.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-23T18:29:41Z",
+      "side": 1,
+      "message": "Changed to reference the helm-charts/examples/*images.yaml files.\n\nRemoved a few other scenarios references as well",
+      "parentUuid": "cef72b58_029e1cda",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 5
+      },
+      "revId": "ecc1d49b0fdac4fe235f5b59100c2716d495914a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c46b648_5dee672c",
         "filename": "developer/imagebuilder.md",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "26717d33_196cf6ed",
+        "filename": "developer/imagebuilder.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-23T18:29:41Z",
+      "side": 1,
+      "message": "Fixed, and removed xos_services language.",
+      "parentUuid": "5c46b648_5dee672c",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 26
+      },
+      "revId": "ecc1d49b0fdac4fe235f5b59100c2716d495914a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b056bd61_60a5d28d",
         "filename": "developer/imagebuilder.md",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2018-05-23T18:15:55Z",
       "side": 1,
       "message": "This file has been moved",
+      "range": {
+        "startLine": 57,
+        "startChar": 12,
+        "endLine": 57,
+        "endChar": 35
+      },
+      "revId": "ecc1d49b0fdac4fe235f5b59100c2716d495914a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b917e503_d4d7e7e3",
+        "filename": "developer/imagebuilder.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-23T18:29:41Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "b056bd61_60a5d28d",
       "range": {
         "startLine": 57,
         "startChar": 12,
