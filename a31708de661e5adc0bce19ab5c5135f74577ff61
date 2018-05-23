@@ -22,6 +22,30 @@
       "revId": "a31708de661e5adc0bce19ab5c5135f74577ff61",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "34684c35_b58405f6",
+        "filename": "charts/onos.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-23T02:42:13Z",
+      "side": 0,
+      "message": "I think this is something that should be (maybe?) explained outside the specific context of ONOS helm",
+      "parentUuid": "647efe5f_95830a50",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 3
+      },
+      "revId": "a31708de661e5adc0bce19ab5c5135f74577ff61",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
