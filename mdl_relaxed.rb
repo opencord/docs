@@ -46,3 +46,5 @@ rule 'MD029', :style => "ordered"
 # Exclude rule: Fenced code blocks should be surrounded by blank lines
 exclude_rule 'MD031'
 
+# Exclude rule: Emphasis used instead of a header
+exclude_rule 'MD036'
