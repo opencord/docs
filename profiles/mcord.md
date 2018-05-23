@@ -7,7 +7,7 @@ eligendi vitae dolorem animi non unde odio, hic quasi totam recusandae repellat
 minima provident aliquam eveniet a tempora saepe. Iusto.
 
 - A Kubernetes cluster (you will need a [multi node
-  cluster](../prereqs/kubespray.md))
+  cluster](../prereqs/k8s-multi-node.md))
 - Helm, follow [this guide](../prereqs/helm.md)
 - Openstack-Helm, follow [this guide](../prereqs/openstack-helm.md)
 
