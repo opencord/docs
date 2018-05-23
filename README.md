@@ -28,8 +28,8 @@ If you know what we are talking about you can just go and install a Kubernetes
 cluster (> 1.9) in any way you want, otherwise you can follow one of this guide
 to install it:
 
-- [Install minikube on a single node](./prereqs/minikube.md)
-- [Install kubespray on a multiple nodes](./prereqs/kubespray.md)
+- [Install Kubernetes on a single node](./prereqs/k8s-single-node.md)
+- [Install Kubernetes on a multiple nodes](./prereqs/k8s-multi-node.md)
 
 ### Helm
 
