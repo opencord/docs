@@ -37,14 +37,8 @@ helm init --service-account tiller --upgrade
 
 Once *helm* and *tiller* are installed you should be able to run the command *helm ls* without errors.
 
-## What helm charts are?
+## Done?
 
-Helm charts are the packaging format used by helm. A chart is a collection of files that describe a related set of Kubernetes resources.
+You're ready to deploy CORD components through helm charts! [Install CORD](../profiles/intro.md).
 
-CORD uses charts to define each component. For example:
-
-* [xos-core](../charts/xos-core.md)
-* [onos](../charts/onos.md)
-* [voltha](../charts/voltha.md)
-
-More info on Helm charts at <https://docs.helm.sh/developing_charts/#charts>
+The CORD helm charts reference guide can be found [here](../charts/helm.md).
