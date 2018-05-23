@@ -1,7 +1,48 @@
-# Deploying VOLTHA
+# Deploy VOLTHA
+
+## First time installation
+
+Add the kubernetes helm charts incubator repository
+```shell
+cd voltha
+helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
+```
+
+Build dependencies
+```shell
+helm dep build
+```
+
+There's an etcd-operator **known bug** we're trying to solve that prevents users to deploy Voltha straight since the first time. We found a workaround. 
+
+Few steps:
+
+Install Voltha (without etcd operator)
+```shell
+helm install -n voltha --set etcd-operator.customResources.createEtcdClusterCRD=false voltha
+```
+
+Uninstall Voltha
+```shell
+helm delete --purge voltha
+```
+
+Deploy Voltha
+```shell
+helm install -n voltha
+```
+
+## Standard installation process
 
 ```shell
-helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
-helm dep build
 helm install -n voltha voltha
 ```
+
+## Nodeports exposed
+
+* Voltha CLI
+    * Inner port: 5022
+    * Nodeport: 30110
+* Voltha REST APIs
+    * Inner port: 8882
+    * Nodeport: 30125
