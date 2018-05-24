@@ -22,6 +22,30 @@
       "revId": "e4b4544f48ec3cd5c9e0f46a4d9ce2a19ae301b0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ee5678b_c67c044e",
+        "filename": "prereqs/k8s-single-node.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-24T17:32:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da17bb23_e8b238a1",
+      "range": {
+        "startLine": 13,
+        "startChar": 6,
+        "endLine": 13,
+        "endChar": 83
+      },
+      "revId": "e4b4544f48ec3cd5c9e0f46a4d9ce2a19ae301b0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
