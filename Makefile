@@ -20,7 +20,7 @@ serve: setup
 build: setup
 	gitbook build
 
-setup: cord-tester xos xos-gui xos-tosca swagger $(GENERATED_DOCS)
+setup: automation-tools cord-tester xos xos-gui xos-tosca swagger $(GENERATED_DOCS)
 	gitbook init
 	gitbook install
 
@@ -38,6 +38,9 @@ lint:
 	mdl -s $(LINT_STYLE) `find -L . ! -path "./partials/*" ! -path "./_book/*" ! -path "./node_modules/*" ! -path "./cord-tester/modules/*" -name "*.md"`
 
 # link directories that contain other documentation
+automation-tools:
+	ln -s ../automation-tools automation-tools
+
 cord-tester:
 	ln -s ../test/cord-tester/docs cord-tester
 
@@ -57,5 +60,5 @@ clean:
 	rm -rf $(GENERATED_DOCS)
 	rm -rf _book
 	rm -rf node_modules
-	rm -rf cord-tester test xos xos-gui xos-tosca
+	rm -rf automation-tools cord-tester test xos xos-gui xos-tosca
 
