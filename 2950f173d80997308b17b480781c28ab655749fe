@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bb95c21b_96af6ab1",
+        "filename": "partials/push-images-to-registry.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-05-24T21:43:18Z",
+      "side": 1,
+      "message": "what about adding instruction for this script? automation-tools/developer/tag-and-push.sh",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 65
+      },
+      "revId": "2950f173d80997308b17b480781c28ab655749fe",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
