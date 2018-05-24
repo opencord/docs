@@ -27,7 +27,7 @@ Then you need to install this charts:
 ## Install the RCORD-Lite helm chart
 
 ```shell
-helm install -n rcord-lite xos_profiles/rcord-lite
+helm install -n rcord-lite xos-profiles/rcord-lite
 ```
 
 ### How to customize the RCORD-Lite helm chart
@@ -59,6 +59,6 @@ simpleexampleservice:
 and use it during the installation with:
 
 ```shell
-helm install -n rcord-lite xos_profiles/rcord-lite -f my-rcord-lite-values.yaml
+helm install -n rcord-lite xos-profiles/rcord-lite -f my-rcord-lite-values.yaml
 ```
 
