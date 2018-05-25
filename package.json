@@ -4,12 +4,11 @@
   "description": "Documentation for the OpenCORD Project",
   "main": "index.js",
   "dependencies": {
-    "gitbook-plugin-page-toc": "^1.1.0",
-    "gitbook-plugin-smart-nav-collapse": "^0.1.0"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "gitbook serve --log=debug --debug",
+    "prestart": "gitbook install",
+    "start": "gitbook serve --log=debug --debug --port 4040",
     "build": "gitbook build"
   },
   "repository": {

@@ -22,6 +22,7 @@
         * [ONOS](charts/onos.md)
         * [VOLTHA](charts/voltha.md)
         * [Kafka](charts/kafka.md)
+        * [Hippie OSS](charts/hippie-oss.md)
 * [Operating CORD](operating_cord/operating_cord.md)
     * General info
         * [Diagnostics](operating_cord/diag.md)
@@ -31,7 +32,7 @@
         * [XOS Internals](operating_cord/xos_internals.md)
             * [XOS Containers](xos/xos_internals.md)
             * [XOS Configuration](xos/modules/xosconfig.md)
-    * [RCORD](profiles/rcord/setup.md)
+    * [RCORD](profiles/rcord/configuration.md)
 * [Defining Models in CORD](xos/README.md)
     * [XOS Support for Models](xos/dev/xproto.md)
     * [Core Models](xos/core_models.md)
@@ -57,4 +58,3 @@
     * [Test Setup](cord-tester/qa_testsetup.md)
     * [Test Environment](cord-tester/qa_testenv.md)
     * [System Tests](cord-tester/validate_pods.md)
-

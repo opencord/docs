@@ -29,7 +29,7 @@ helm delete --purge voltha
 
 Deploy Voltha
 ```shell
-helm install -n voltha
+helm install -n voltha voltha
 ```
 
 ## Standard installation process
