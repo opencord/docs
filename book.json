@@ -10,6 +10,33 @@
   "plugins": [
     "anchorjs",
     "smart-nav-collapse",
-    "page-toc"
-  ]
+    "page-toc",
+    "versions-select"
+  ],
+  "pluginsConfig": {
+    "versions": {
+      "options": [
+        {
+          "value": "/",
+          "text": "Master (Devel)"
+        },
+        {
+          "value": "/cord-5.0",
+          "text": "5.0 (Stable)"
+        },
+        {
+          "value": "/cord-4.1",
+          "text": "4.1 (Stable)"
+        },
+        {
+          "value": "/cord-4.0",
+          "text": "4.0 (Stable)"
+        },
+        {
+          "value": "https://wiki.opencord.org/display/CORD/Building+and+Installing+CORD",
+          "text": "3.0 and previous (wiki)"
+        }
+      ]
+    }
+  }
 }
