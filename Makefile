@@ -15,7 +15,7 @@ GENERATED_DOCS =
 LINT_STYLE ?= mdl_relaxed.rb
 
 serve: setup
-	gitbook serve --port 4040
+	npm start
 
 build: setup
 	gitbook build

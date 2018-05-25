@@ -21,6 +21,7 @@
         * [ONOS](charts/onos.md)
         * [VOLTHA](charts/voltha.md)
         * [Kafka](charts/kafka.md)
+        * [Hippie OSS](charts/hippie-oss.md)
 * [Operating CORD](operating_cord/operating_cord.md)
     * [Diagnostics](operating_cord/diag.md)
 * [Defining Models in CORD](xos/README.md)
