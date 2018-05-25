@@ -6,10 +6,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis veritatis
 eligendi vitae dolorem animi non unde odio, hic quasi totam recusandae repellat
 minima provident aliquam eveniet a tempora saepe. Iusto.
 
-- A Kubernetes cluster (you will need a [multi node
-  cluster](../prereqs/k8s-multi-node.md))
-- Helm, follow [this guide](../prereqs/helm.md)
-- Openstack-Helm, follow [this guide](../prereqs/openstack-helm.md)
+- A Kubernetes cluster (you will need a [multi nodecluster](../../prereqs/k8s-multi-node.md))
+- Helm, follow [this guide](../../prereqs/helm.md)
+- Openstack-Helm, follow [this guide](../../prereqs/openstack-helm.md)
 
 ## CORD Components
 
@@ -19,6 +18,6 @@ in consequuntur provident nostrum nobis. Error, non?
 
 Then you need to install this charts:
 
-- [xos-core](../charts/xos-core.md)
-- [onos-fabric](../charts/onos.md#onos-fabric)
-- [onos-vtn](../charts/onos.md#onos-vtn)
+- [xos-core](../../charts/xos-core.md)
+- [onos-fabric](../../charts/onos.md#onos-fabric)
+- [onos-vtn](../../charts/onos.md#onos-vtn)

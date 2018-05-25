@@ -26,12 +26,3 @@ requirements.
 :  A switch in a POD that interconnects other switches and servers inside the
    POD.
 
-**vSG**
-:  The virtual Subscriber Gateway (vSG) is the CORD counterpart for existing
-   CPEs. It implements a bundle of subscriber-selected functions, such as
-   Restricted Access, Parental Control, Bandwidth Metering, Access Diagnostics and
-   Firewall. These functions run on commodity hardware located in the Central
-   Office rather than on the customer’s premises. There is still a device in the
-   home (which we still refer to as the CPE), but it has been reduced to a
-   bare-metal switch.
-
