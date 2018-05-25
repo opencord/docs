@@ -18,8 +18,8 @@ You'll need to satisfy a very minimum set of [software requirements](./prereqs/s
 
 You're finally ready to install the CORD components. Choose the component you'd like to install.
 
-- [RCORD-lite](./profiles/rcord-lite.md)
-- [MCORD](./profiles/mcord.md)
+- [RCORD-lite](./profiles/rcord/install.md)
+- [MCORD](./profiles/mcord/install.md)
 
 ## More
 

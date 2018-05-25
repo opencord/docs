@@ -14,9 +14,9 @@ architecture](https://wiki.opencord.org/display/CORD/Documentation).
 The [http://guide.opencord.org](http://guide.opencord.org) website is built
 using the [GitBook Toolchain](https://toolchain.gitbook.com/), with the
 documentation root in
-[build/docs](https://github.com/opencord/cord/blob/{{ book.branch }}/docs) in a
-checked out source tree.  It is build with `make`, and requires that gitbook,
-python, and a few other tools are installed.
+[docs](https://github.com/opencord/docs/blob/{{ book.branch }}) in a
+checked out source tree.  It is build with `make`, and requires that `gitbook`,
+`python`, and a few other tools are installed.
 
 Source for individual guides is available in the [CORD code
 repository](https://gerrit.opencord.org); look in the `docs` directory of each
