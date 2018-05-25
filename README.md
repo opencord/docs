@@ -1,76 +1,34 @@
-# Introduction to CORD
+# Install CORD
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ducimus impedit
-quidem sapiente necessitatibus quo hic ut! Fugit ut sed sapiente maiores
-officia natus, deleniti, repellendus et nam quibusdam iusto!
+The following section describes how to deploy CORD. To install, follow either the side menu or the links below in the page.
 
-## Bill Of Materials
+## Hardware requirements
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque optio, ea error
-tenetur mollitia, repellendus consectetur iste hic molestias autem odio minima
-doloremque at sunt recusandae fugiat quidem quo architecto.
-
-See the full requirements [here](./prereqs/hardware.md)
+Start putting together the [hardware](./prereqs/hardware.md) you need to deploy CORD.
 
 ## Networking Connectivity
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti adipisci
-vero labore nostrum nulla dolore aut dolorem quis consequatur fuga ratione
-laudantium, ipsam, iusto incidunt similique eius illo cumque voluptatibus.
-
-[networking setup](./prereqs/networking.md)
+[Connect](./prereqs/networking.md) together the hardware components. Discover what the [connectivity requirements](./prereqs/networking.md) are.
 
 ## Software Requirements
 
-### Kubernetes Installation
+You'll need to satisfy a very minimum set of [software requirements](./prereqs/software.md) before proceeding with the installation. The section provides useful pointers and scripts to help you installing Kubernetes and more.
 
-If you know what we are talking about you can just go and install a Kubernetes
-cluster (> 1.9) in any way you want, otherwise you can follow one of this guide
-to install it:
+## Deploy CORD
 
-- [Install Kubernetes on a single node](./prereqs/k8s-single-node.md)
-- [Install Kubernetes on a multiple nodes](./prereqs/k8s-multi-node.md)
-
-### Helm
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore magnam
-asperiores modi, amet suscipit hic itaque iste fugit nam voluptate, architecto
-fugiat quisquam ratione, consequuntur eum iure voluptas quo molestias.
-
-If you need help installing helm you can follow this guide: [Helm
-Installation](./prereqs/helm.md)
-
-## Deploy CORD profiles
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolorem totam
-facilis vel suscipit adipisci aspernatur recusandae cumque hic ipsa nemo nulla,
-dicta illum, earum? Dicta consequuntur eos corporis, placeat.
+You're finally ready to install the CORD components. Choose the component you'd like to install.
 
 - [RCORD-lite](./profiles/rcord-lite.md)
 - [MCORD](./profiles/mcord.md)
 
-## Appendix
+## More
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nihil
-culpa, ratione doloribus, minima numquam ex commodi fuga sunt vero tempore
-pariatur officia nobis magni cupiditate. Consequuntur quam modi culpa!
+Here is a list of optional secitons you may want to follow.
 
-### Offline Installation
+### Offline Installation / local docker registry support
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium iure cum
-totam nihil impedit nemo voluptatum, commodi sequi animi quidem earum sed
-harum, velit aliquid, iusto tenetur consequuntur, praesentium asperiores.
+Can't have your POD connected to Internet? Want to deploy your own containers to the POD? The [docker registry](./prereqs/docker-registry.md) will help.
 
-If you need help in setting up and insecure docker registry (good for non
-production environments) you can follow [this
-guide](./prereqs/docker-registry.md)
+### OpenStack-helm integration
 
-### OpenStack-Helm Setup
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium iure cum
-totam nihil impedit nemo voluptatum, commodi sequi animi quidem earum sed
-harum, velit aliquid, iusto tenetur consequuntur, praesentium asperiores.
-
-If you need help in setting up and insecure docker registry (good for non
-production environments) you can follow [this
-guide](./prereqs/docker-registry.md)
+Need OpenStack support to deploy VMs on your POD? Follow [this seciton](./prereqs/openstack-helm.md).
