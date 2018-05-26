@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1adaf4e2_6cc82571",
+        "filename": "Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-05-26T00:24:57Z",
+      "side": 1,
+      "message": "How does this change/benefit developing docs?   No problem with it, I just want to understand it.",
+      "range": {
+        "startLine": 17,
+        "startChar": 12,
+        "endLine": 18,
+        "endChar": 10
+      },
+      "revId": "00e859552a466a8493ab903b47d081fe428126c0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
