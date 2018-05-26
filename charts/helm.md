@@ -20,10 +20,26 @@ git clone https://gerrit.opencord.org/helm-charts
 > Code](../developer/getting_the_code.md) guide, you'll find it in
 > `~/cord/helm-charts`.
 
-### Add the CORD repository to helm (NOT YET AVAILABLE)
+### Add the CORD repository to helm
+
+If you don't want to download the repository, you can just add the OPENCord charts to your helm repo:
 
 ```shell
-helm repo add ...
+helm repo add cord https://charts.opencord.org/master
+helm repo update
+```
+
+If you decide to follow this route the `cord/` prefix needs to be added to specify the repo to use,
+for example
+
+```shell
+helm install -n xos-core xos-core
+```
+
+will become
+
+```shell
+helm install -n xos-core cord/xos-core
 ```
 
 ## CORD example values
