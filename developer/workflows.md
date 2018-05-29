@@ -69,8 +69,8 @@ eval $(minikube docker-env)
 Then you’ll need to build the XOS containers from source:
 
 ```shell
-cd ~/cord/automation-tools
-./developer/imagebuilder.py -f ../helm-charts/examples/filter-images.yaml
+cd ~/cord/automation-tools/developer
+python imagebuilder.py -f ../../helm-charts/examples/filter-images.yaml -x
 ```
 
 At this point the images containing your changes will be available

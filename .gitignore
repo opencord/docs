@@ -8,3 +8,4 @@ node_modules
 _book
 xos/_book
 venv-xosdocs
+.DS_Store
