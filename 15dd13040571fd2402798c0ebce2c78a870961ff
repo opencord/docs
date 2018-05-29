@@ -22,6 +22,29 @@
       "revId": "15dd13040571fd2402798c0ebce2c78a870961ff",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3169955c_1badd47b",
+        "filename": "prereqs/openstack.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2018-05-29T20:56:19Z",
+      "side": 1,
+      "message": "What hostname do I use with ssh-copy-id?",
+      "range": {
+        "startLine": 41,
+        "startChar": 45,
+        "endLine": 41,
+        "endChar": 56
+      },
+      "revId": "15dd13040571fd2402798c0ebce2c78a870961ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
