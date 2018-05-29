@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a936de3_4f472198",
+        "filename": "prereqs/openstack.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2018-05-29T20:50:47Z",
+      "side": 1,
+      "message": "$PODS ?",
+      "range": {
+        "startLine": 16,
+        "startChar": 11,
+        "endLine": 16,
+        "endChar": 15
+      },
+      "revId": "15dd13040571fd2402798c0ebce2c78a870961ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
