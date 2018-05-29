@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "52f30d14_92806795",
+        "filename": "operating_cord/services.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-29T17:56:23Z",
+      "side": 1,
+      "message": "contains",
+      "range": {
+        "startLine": 3,
+        "startChar": 21,
+        "endLine": 3,
+        "endChar": 23
+      },
+      "revId": "1d605b404d39aca50cfc578962ad1e966eba969f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d6de21b4_9639f3ca",
+        "filename": "operating_cord/services.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-29T17:56:23Z",
+      "side": 1,
+      "message": "about",
+      "range": {
+        "startLine": 3,
+        "startChar": 46,
+        "endLine": 3,
+        "endChar": 48
+      },
+      "revId": "1d605b404d39aca50cfc578962ad1e966eba969f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2fb13944_4f1f2284",
+        "filename": "operating_cord/services.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-29T17:56:23Z",
+      "side": 1,
+      "message": "work (no s)",
+      "range": {
+        "startLine": 3,
+        "startChar": 74,
+        "endLine": 3,
+        "endChar": 78
+      },
+      "revId": "1d605b404d39aca50cfc578962ad1e966eba969f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9814b43d_e17627a9",
+        "filename": "operating_cord/services.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-29T17:56:23Z",
+      "side": 1,
+      "message": "what the models and the service dependencies are",
+      "range": {
+        "startLine": 4,
+        "startChar": 21,
+        "endLine": 4,
+        "endChar": 40
+      },
+      "revId": "1d605b404d39aca50cfc578962ad1e966eba969f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "35373638_4007b088",
+        "filename": "operating_cord/services.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-29T17:56:23Z",
+      "side": 1,
+      "message": "it describes",
+      "range": {
+        "startLine": 4,
+        "startChar": 3,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "1d605b404d39aca50cfc578962ad1e966eba969f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04b7bf14_410952cf",
+        "filename": "operating_cord/services.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-29T17:56:23Z",
+      "side": 1,
+      "message": ". It is useful..",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 7
+      },
+      "revId": "1d605b404d39aca50cfc578962ad1e966eba969f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
