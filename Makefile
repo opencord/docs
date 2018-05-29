@@ -20,7 +20,7 @@ serve: setup
 build: setup
 	gitbook build
 
-setup: automation-tools cord-tester xos xos-gui xos-tosca swagger $(GENERATED_DOCS)
+setup: automation-tools cord-tester fabric vrouter xos xos-gui xos-tosca swagger $(GENERATED_DOCS)
 	gitbook init
 	gitbook install
 
@@ -44,6 +44,12 @@ automation-tools:
 cord-tester:
 	ln -s ../test/cord-tester/docs cord-tester
 
+fabric:
+	ln -s ../orchestration/xos_services/fabric/docs fabric
+
+vrouter:
+	ln -s ../orchestration/xos_services/vrouter/docs vrouter
+
 xos:
 	ln -s ../orchestration/xos/docs xos
 
@@ -60,5 +66,5 @@ clean:
 	rm -rf $(GENERATED_DOCS)
 	rm -rf _book
 	rm -rf node_modules
-	rm -rf automation-tools cord-tester test xos xos-gui xos-tosca
+	rm -rf automation-tools cord-tester fabric vrouter test xos xos-gui xos-tosca
 
