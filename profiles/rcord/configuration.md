@@ -213,7 +213,7 @@ Copy this in a `kafka-config.json` file:
 
 Send this config to `onos-voltha` using this command:
 ```shell
-curl --user karaf:karaf -X POST -H "Content-Type: application/json" --data-binary @kafka-config.json http://$node:$port/onos/v1/network/configuration/
+curl --user karaf:karaf -X POST -H "Content-Type: application/json" --data @kafka-config.json http://$node:$port/onos/v1/network/configuration/
 ```
 
 To find out what ports `onos-voltha` is using, please refer to the [chart](../../charts/onos.md#onos-voltha).
