@@ -13,7 +13,7 @@
     * [Fabric setup](prereqs/fabric-setup.md)
     * [Install CORD](profiles/intro.md)
         * [RCORD Lite](profiles/rcord/install.md)
-            * [OLT Setup](profiles/rcord/olt-setup.md)
+            * [OLT Setup](openolt/README.md)
         * [MCORD](profiles/mcord/install.md)
             * [EnodeB Setup](profiles/mcord/enodeb-setup.md)
     * [OpenStack Integration](prereqs/openstack.md)
@@ -61,3 +61,4 @@
     * [Test Setup](cord-tester/qa_testsetup.md)
     * [Test Environment](cord-tester/qa_testenv.md)
     * [System Tests](cord-tester/validate_pods.md)
+
