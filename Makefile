@@ -20,7 +20,7 @@ serve: setup
 build: setup
 	gitbook build
 
-setup: automation-tools cord-tester fabric hippie-oss olt-service openolt rcord vrouter xos xos-gui xos-tosca swagger $(GENERATED_DOCS)
+setup: automation-tools cord-tester fabric hippie-oss kubernetes-service olt-service openolt rcord vrouter xos xos-gui xos-tosca swagger $(GENERATED_DOCS)
 	gitbook init
 	gitbook install
 
@@ -53,6 +53,9 @@ hippie-oss:
 olt-service:
 	ln -s ../orchestration/xos_services/olt-service/docs olt-service
 
+kubernetes-service:
+	ln -s ../orchestration/xos_services/kubernetes-service/docs kubernetes-service
+
 openolt:
 	ln -s ../incubator/openolt openolt
 
@@ -78,5 +81,4 @@ clean:
 	rm -rf $(GENERATED_DOCS)
 	rm -rf _book
 	rm -rf node_modules
-	rm -rf automation-tools cord-tester fabric hippie-oss olt-service openolt rcord vrouter test xos xos-gui xos-tosca
-
+	rm -rf automation-tools cord-tester fabric hippie-oss kubernetes-service olt-service openolt rcord vrouter test xos xos-gui xos-tosca
