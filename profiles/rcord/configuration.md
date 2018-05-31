@@ -119,6 +119,24 @@ topology_template:
             relationship: tosca.relationships.BelongsToOne
 ```
 
+Once the POD has been configured, you can create a subscriber using this TOSCA:
+```yaml
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/rcordsubscriber.yaml
+description: Create a test subscriber
+topology_template:
+  node_templates:
+    #Activate the subscriber
+    my_house:
+      type: tosca.nodes.RCORDSubscriber
+      properties:
+        name: My House
+        onu_device: BRCM1234
+        mac_address: 90:E2:BA:82:FA:81
+        ip_address: 192.168.0.1
+```
+
 _For instructions on how to push TOSCA, please refer to this [guide](../../xos-tosca/README.md)_
 
 ### Zero touch Subscriber provisioning
