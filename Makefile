@@ -47,6 +47,9 @@ cord-tester:
 fabric:
 	ln -s ../orchestration/xos_services/fabric/docs fabric
 
+kubernetes-service:
+	ln -s ../orchestration/xos_services/kubernetes-service/docs kubernetes-service
+
 openolt:
 	ln -s ../incubator/openolt openolt
 
@@ -69,5 +72,5 @@ clean:
 	rm -rf $(GENERATED_DOCS)
 	rm -rf _book
 	rm -rf node_modules
-	rm -rf automation-tools cord-tester fabric openolt vrouter test xos xos-gui xos-tosca
+	rm -rf automation-tools cord-tester fabric openolt vrouter test xos xos-gui xos-tosca kubernetes-service
 
