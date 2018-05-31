@@ -121,9 +121,14 @@ topology_template:
 
 _For instructions on how to push TOSCA, please refer to this [guide](../../xos-tosca/README.md)_
 
+Once the POD has been configured, you can create a subscriber,
+please refer to the [RCORD Service](../../rcord/README.md) guide for
+more informations.
+
 ### Zero touch Subscriber provisioning
 
-This feature, also referred to as "bottom-up provisioning" enables autodiscovery of subscriber and their validation through an external OSS.
+This feature, also referred to as "bottom-up provisioning" enables autodiscovery
+of subscriber and their validation through an external OSS.
 
 Here is the expected workflow:
 
