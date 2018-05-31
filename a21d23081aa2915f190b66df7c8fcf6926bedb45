@@ -1,0 +1,389 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "47cd1b2d_275aea3d",
+        "filename": "SUMMARY.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "I would remove helm from the name...maybe openstack support (M-CORD)?",
+      "range": {
+        "startLine": 13,
+        "startChar": 11,
+        "endLine": 13,
+        "endChar": 37
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1baddc00_1d05068b",
+        "filename": "prereqs/openstack-helm.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "remove extra spaces",
+      "range": {
+        "startLine": 37,
+        "startChar": 32,
+        "endLine": 37,
+        "endChar": 35
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "111b79c9_f2155602",
+        "filename": "prereqs/openstack-helm.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "you mean k8s master node? not clear to me",
+      "range": {
+        "startLine": 38,
+        "startChar": 14,
+        "endLine": 38,
+        "endChar": 26
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "13139e6d_6c09574f",
+        "filename": "prereqs/openstack-helm.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "would be nice to know what at least the basic values (it seems like this) represent",
+      "range": {
+        "startLine": 91,
+        "startChar": 12,
+        "endLine": 91,
+        "endChar": 17
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "26eee2f5_2d93d29c",
+        "filename": "prereqs/openstack-helm.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "instructions on?",
+      "range": {
+        "startLine": 114,
+        "startChar": 50,
+        "endLine": 114,
+        "endChar": 66
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bcfd30b1_8b0c1328",
+        "filename": "prereqs/openstack-helm.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "informations?",
+      "range": {
+        "startLine": 122,
+        "startChar": 23,
+        "endLine": 122,
+        "endChar": 26
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7e7bf27_68e3b1c2",
+        "filename": "prereqs/openstack.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "remove extra space",
+      "range": {
+        "startLine": 12,
+        "startChar": 56,
+        "endLine": 12,
+        "endChar": 57
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b74ffdf6_a0dba973",
+        "filename": "prereqs/openstack.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "Why don\u0027t we suggest to create a bridge (+ eventually a bond) instead? Also, should we say that the entire procedure is for Ubuntu/Debian?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 23
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fd645ff_8b73fd79",
+        "filename": "prereqs/openstack.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "To be consistent with the other docs, I\u0027d use:\n\nGenerate the key pair\n```shell\nssh-keygen -t rsa\n```\n\n....",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 54
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bc759ad0_240b9db8",
+        "filename": "prereqs/openstack.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be needed. Also, we\u0027ve a section for ONOS already written. There\u0027s a specific anchor for onos-cord. Should we simply point to that to don\u0027t have duplicates?",
+      "range": {
+        "startLine": 46,
+        "startChar": 33,
+        "endLine": 46,
+        "endChar": 35
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "31e6fef5_5114dd7d",
+        "filename": "prereqs/openstack.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "should we remove this?",
+      "range": {
+        "startLine": 52,
+        "startChar": 7,
+        "endLine": 52,
+        "endChar": 9
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ca6f4c8_9b40cadb",
+        "filename": "prereqs/openstack.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "informations?",
+      "range": {
+        "startLine": 70,
+        "startChar": 25,
+        "endLine": 70,
+        "endChar": 26
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7e4412a_6db3867b",
+        "filename": "prereqs/openstack.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "or a bond?",
+      "range": {
+        "startLine": 98,
+        "startChar": 91,
+        "endLine": 98,
+        "endChar": 98
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "11faee3a_8ad9d350",
+        "filename": "prereqs/openstack.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "I\u0027d put a pointer to the next useful section..I guess the mcord installation https://guide.opencord.org/profiles/mcord/install.html (which btw still needs to be edited)",
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "48e81135_dea025f8",
+        "filename": "prereqs/software.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "runs?",
+      "range": {
+        "startLine": 8,
+        "startChar": 35,
+        "endLine": 8,
+        "endChar": 38
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83bcf54e_9830278b",
+        "filename": "prereqs/software.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "as said in the summary, I would not put helm in the name here",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 4
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9b8ab2d5_2720d6b5",
+        "filename": "prereqs/software.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-05-31T14:54:58Z",
+      "side": 1,
+      "message": "the? Not sure...",
+      "range": {
+        "startLine": 16,
+        "startChar": 88,
+        "endLine": 16,
+        "endChar": 93
+      },
+      "revId": "a21d23081aa2915f190b66df7c8fcf6926bedb45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
