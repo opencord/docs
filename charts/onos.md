@@ -36,7 +36,7 @@ helm install -n onos-voltha -f configs/onos-voltha.yaml onos
 ## onos-vtn
 
 ```shell
-helm install -n onos-cord -f configs/onos-cord.yaml onos
+helm install -n onos-cord onos
 ```
 
 The configuration doesn't expose any nodeport.
