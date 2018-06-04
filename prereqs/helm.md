@@ -19,9 +19,11 @@ Helm is made of two components:
 
 Helm can be installed on any device able to reach the Kubernetes POD (i.e. the developer laptop, another server in the network). Tiller should be installed on the Kubernetes pod itself, through the kubectl CLI.
 
+> **Note**: if you've installed Minikube you'll likely need to install *socat* as well before proceeding, otherwise errors will be thrown. For example, on Ubuntu do *sudo apt-get install socat*.
+
 ### Install helm client
 
-Follow the instructions at <https://docs.helm.sh/using_helm/#installing-helm>
+Follow the instructions at <https://github.com/kubernetes/helm/blob/master/docs/install.md#installing-the-helm-client>
 
 ### Install tiller
 
