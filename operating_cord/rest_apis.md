@@ -16,3 +16,7 @@ into the POD manifest, and includes both core and service-specific models.
 * [vEE](https://guide.opencord.org/{{ book.branch }}/api/xos/#/vee)
 * [vEG](https://guide.opencord.org/{{ book.branch }}/api/xos/#/veg)
 * [vnaas](https://guide.opencord.org/{{ book.branch }}/api/xos/#/vnaas)
+
+You can access the Swagger docs for the REST APIs on a running POD by going to
+the `/apidocs/` URL on the the Chameleon REST endpoint (exposed at port 30006
+by default): <http://pod-ip-or-dns-address:30006/apidocs/>.
