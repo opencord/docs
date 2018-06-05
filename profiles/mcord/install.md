@@ -1,5 +1,22 @@
 # M-CORD
 
+## Quick Start
+
+A convenience script is provided that will install M-CORD on a single
+node, suitable for evaluation or testing.  Requirements:
+
+- An Ubuntu 16.04 node with at least 64GB of RAM and 32 virtual CPUs
+- User invoking the script has passwordless `sudo` capability
+- Hostname is resolvable in DNS, e.g., `dig +short $( hostname )` returns an IP address
+
+```bash
+git clone https://gerrit.opencord.org/automation-tools
+automation-tools/mcord/mcord-in-a-box.sh
+```
+
+This script takes about an hour to complete.  If you run it, you can skip
+directly to [Validating the Installation](#validating-the-installation) below.
+
 ## Prerequisites
 
 M-CORD requires OpenStack to run VNFs.  The OpenStack installation
