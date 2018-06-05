@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fead7984_6e95daaf",
+        "filename": "profiles/mcord/install.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2018-06-05T23:41:16Z",
+      "side": 1,
+      "message": "before this command, i also suggest to add the sudo passwordless function. otherwise,  the user needs to monitor the installation process and type in the password from time to time",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 12
+      },
+      "revId": "14131de849207925cc0d5d027336c54a6bd1e5c2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
