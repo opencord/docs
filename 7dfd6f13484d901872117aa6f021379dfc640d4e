@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e6ae41d_37a1a57e",
+        "filename": "charts/base-openstack.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-05T22:05:42Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 7
+      },
+      "revId": "7dfd6f13484d901872117aa6f021379dfc640d4e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6da36d5_dadcdc6c",
+        "filename": "charts/helm.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-05T22:05:42Z",
+      "side": 1,
+      "message": "I see both `**NOTE**` and `**Note**` in this patchset - should we settle one format?",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 8
+      },
+      "revId": "7dfd6f13484d901872117aa6f021379dfc640d4e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3abd7228_09f33557",
+        "filename": "prereqs/hardware.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-05T22:05:42Z",
+      "side": 1,
+      "message": "Maybe \"A CORD pod is built\" ?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 13
+      },
+      "revId": "7dfd6f13484d901872117aa6f021379dfc640d4e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "909bd564_7eace4e4",
+        "filename": "prereqs/helm.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-05T22:05:42Z",
+      "side": 1,
+      "message": "\"is installed by Helm\"",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 36
+      },
+      "revId": "7dfd6f13484d901872117aa6f021379dfc640d4e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf862160_8f9e8827",
+        "filename": "prereqs/k8s-multi-node.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-05T22:05:42Z",
+      "side": 1,
+      "message": "space",
+      "range": {
+        "startLine": 37,
+        "startChar": 7,
+        "endLine": 37,
+        "endChar": 20
+      },
+      "revId": "7dfd6f13484d901872117aa6f021379dfc640d4e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6db4762c_2775d2b9",
+        "filename": "prereqs/k8s-single-node.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-05T22:05:42Z",
+      "side": 1,
+      "message": "unmatched parens. \n\nThe link possibly should be to a more conventional installation than the VM-free one.",
+      "range": {
+        "startLine": 19,
+        "startChar": 53,
+        "endLine": 20,
+        "endChar": 59
+      },
+      "revId": "7dfd6f13484d901872117aa6f021379dfc640d4e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
