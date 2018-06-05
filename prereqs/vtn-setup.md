@@ -1,4 +1,4 @@
-# VTN Prerequisites
+# VTN Setup
 
 The ONOS VTN app provides virtual networking between VMs on an OpenStack cluster.  Prior to installing the [base-openstack](../charts/base-openstack.md) chart that installs and configures VTN, make sure that the following requirements are satisfied.
 

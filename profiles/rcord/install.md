@@ -1,4 +1,10 @@
-# R-CORD Lite
+# R-CORD Profile
+
+The latest version of R-CORD differs from versions included in earlier
+releases in that it does not include the vSG service. In the code this
+configuration is called RCORD-Lite, but since it is the only version
+of Residential CORD currently supported, we usually simply call it
+"R-CORD."
 
 ## Prerequisites
 
@@ -15,7 +21,7 @@ RCORD-Lite has dependencies on this charts, so they need to be installed first:
 - [onos-fabric](../../charts/onos.md#onos-fabric)
 - [onos-voltha](../../charts/onos.md#onos-voltha)
 
-## Install the RCORD-Lite helm chart
+## Install the RCORD-Lite Helm Chart
 
 ```shell
 helm install -n rcord-lite xos-profiles/rcord-lite
@@ -24,7 +30,7 @@ helm install -n rcord-lite xos-profiles/rcord-lite
 Now that the your RCORD-Lite deployment is complete, please read this 
 to understand how to configure it: [Configure RCORD-Lite](configuration.md)
 
-## How to customize the RCORD-Lite helm chart
+## How to Customize the RCORD-Lite Helm Chart
 
 Define a `my-rcord-lite-values.yaml` that looks like:
 
