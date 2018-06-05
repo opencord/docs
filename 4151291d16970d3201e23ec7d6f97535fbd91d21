@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9cd566df_215ffe4f",
+        "filename": "operating_cord/elk_stack.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-05T23:47:20Z",
+      "side": 1,
+      "message": "We\u0027re not deploying elk-stack, that\u0027s why we removed this part of the guide",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 52
+      },
+      "revId": "4151291d16970d3201e23ec7d6f97535fbd91d21",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
