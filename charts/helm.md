@@ -20,6 +20,8 @@ git clone https://gerrit.opencord.org/helm-charts
 > Code](../developer/getting_the_code.md) guide, you'll find it in
 > `~/cord/helm-charts`.
 
+**IMPORTANT: All the helm commands needs to be executed from within this directory**
+
 ### Add the CORD repository to helm
 
 If you don't want to download the repository, you can just add the OPENCord charts to your helm repo:
