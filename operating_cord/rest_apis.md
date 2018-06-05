@@ -1,10 +1,8 @@
-# CORD REST APIs
+# RESTful APIs
 
-## XOS
-
-A RESTful interface is available for configuring and controlling XOS. It is
-auto-generated from the set of [models](/xos/README.md) configured into the POD
-manifest, and includes both core and service-specific models.
+A RESTful interface is available for configuring and controlling CORD. It is
+auto-generated from the set of [models](/xos/README.md) configured
+into the POD manifest, and includes both core and service-specific models.
 
 * [Core](https://guide.opencord.org/{{ book.branch }}/api/xos/#/core)
 * [Address Manager](https://guide.opencord.org/{{ book.branch }}/api/xos/#/addressmanager)
