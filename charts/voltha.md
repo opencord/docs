@@ -1,6 +1,6 @@
 # Deploy VOLTHA
 
-## First time installation
+## First Time Installation
 
 Add the kubernetes helm charts incubator repository
 ```shell
@@ -13,7 +13,9 @@ Build dependencies
 helm dep build
 ```
 
-There's an etcd-operator **known bug** we're trying to solve that prevents users to deploy Voltha straight since the first time. We found a workaround. 
+There's an etcd-operator **known bug** we're trying to solve that
+prevents users to deploy Voltha straight since the first time. We
+found a workaround. 
 
 Few steps:
 
@@ -32,13 +34,13 @@ Deploy Voltha
 helm install -n voltha voltha
 ```
 
-## Standard installation process
+## Standard Installation Process
 
 ```shell
 helm install -n voltha voltha
 ```
 
-## Nodeports exposed
+## Nodeports Exposed
 
 * Voltha CLI
     * Inner port: 5022

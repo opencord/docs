@@ -1,6 +1,6 @@
-# Deploying the M-CORD profile chart
+# Deploy M-CORD Profile
 
-To deploy the M-CORD profile chart:
+To deploy the M-CORD profile, run the following:
 
 ```shell
 helm dep update xos-profiles/mcord
