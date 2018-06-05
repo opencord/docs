@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "b96669f0_5427ae80",
+        "filename": "operating_cord/elk_stack.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-05T23:53:14Z",
+      "side": 1,
+      "message": "6.0 (and probably 5.0 before it) does not have a working ElasticStack install.",
+      "range": {
+        "startLine": 3,
+        "startChar": 10,
+        "endLine": 3,
+        "endChar": 58
+      },
+      "revId": "4151291d16970d3201e23ec7d6f97535fbd91d21",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9cd566df_215ffe4f",
         "filename": "operating_cord/elk_stack.md",
         "patchSetId": 1
@@ -22,6 +45,29 @@
       "revId": "4151291d16970d3201e23ec7d6f97535fbd91d21",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4aedd010_29b41629",
+        "filename": "operating_cord/services.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-05T23:53:14Z",
+      "side": 1,
+      "message": "plural",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 7
+      },
+      "revId": "4151291d16970d3201e23ec7d6f97535fbd91d21",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
