@@ -1,6 +1,7 @@
 # Deploying XOS-CORE
 
 ```shell
+helm dep update xos-core
 helm install -n xos-core xos-core
 ```
 
