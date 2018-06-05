@@ -51,6 +51,8 @@
     * [Getting the Source Code](developer/getting_the_code.md)
     * [Developer Workflows](developer/workflows.md)
         * [Building Docker Images](developer/imagebuilder.md)
+    * Tutorials
+        * [Synchronizer Hello World](developer/tutorials/basic-synchronizer/intro.md)
     * [Kubernetes Service](kubernetes-service/kubernetes-service.md)
     * [OpenStack Service](openstack/openstack-service.md)
     * [VTN and Service Composition](xos/xos_vtn.md)
