@@ -183,6 +183,7 @@ topology_template:
       properties:
         name: hippie-oss
         kind: oss
+        # blacklist: BRCM1234, BRCM4321 # this is an optional list of ONUs that you don't want to validate
 
     # Create a ServiceDependency between the two
     service_dependency#oss_volt:
