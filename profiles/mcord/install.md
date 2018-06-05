@@ -2,7 +2,8 @@
 
 ## Prerequisites
 
-M-CORD requires OpenStack to run VNFs.  The OpenStack installation must be customized with the *onos_ml2* Neutron plugin.
+M-CORD requires OpenStack to run VNFs.  The OpenStack installation
+must be customized with the *onos_ml2* Neutron plugin.
 
 - To install Kubernetes, Helm, and a customized Openstack-Helm on a single node or a multi-node cluster, follow [this guide](../../prereqs/openstack-helm.md)
 - To configure the nodes so that VTN can provide virtual networking for OpenStack, follow [this guide](../../prereqs/vtn-setup.md)

@@ -22,7 +22,7 @@ helm install -n onos-fabric -f configs/onos-fabric.yaml onos
 
 ## onos-voltha
 
-> NOTE: This requires [VOLTHA](voltha.md) to be installed
+> **Note:** This requires [VOLTHA](voltha.md) to be installed
 
 ```shell
 helm install -n onos-voltha -f configs/onos-voltha.yaml onos

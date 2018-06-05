@@ -1,4 +1,4 @@
-# Deploying Hippie OSS
+# Deploy Hippie OSS
 
 ```shell
 helm install -n hippie-oss xos-services/hippie-oss

@@ -1,4 +1,4 @@
-# Deploying the Base Openstack Chart
+# Deploy Base OpenStack
 
 XOS can be configured to manage an existing OpenStack installation
 (e.g., deployed using [openstack-helm](../prereqs/openstack-helm.md)) by
@@ -12,7 +12,7 @@ This chart causes XOS to load the VTN app into ONOS and configure it.
 Prior to installing the chart, make sure that VTN's requirements are
 satisfied by following [this guide](../prereqs/vtn-setup.md)
 
-## Single-node configuration
+## Single-Node Configuration
 
 Here is an example of deploying the `xos-profiles/base-openstack` chart
 on a single-node OpenStack server set up by the
@@ -25,7 +25,7 @@ helm install -n base-openstack xos-profiles/base-openstack \
     --set vtn-service.sshUser=`whoami`
 ```
 
-## Multi-node configuration
+## Multi-Node Configuration
 
 If you are deploying on a multi-node OpenStack cluster, create a YAML
 file containing information for each node, and pass it as an argument

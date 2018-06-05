@@ -1,1 +1,2 @@
-# How to install a physical eNodeB
+# eNodeB Setup
+

@@ -1,4 +1,4 @@
-# Deploying XOS-CORE
+# Deploy XOS-CORE
 
 ```shell
 helm dep update xos-core

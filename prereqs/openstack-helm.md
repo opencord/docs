@@ -1,24 +1,27 @@
-# OpenStack Support (M-CORD)
+# OpenStack (optional)
 
 The [openstack-helm](https://github.com/openstack/openstack-helm)
 project can be used to install a set of Kubernetes nodes as OpenStack
 compute nodes, with the OpenStack control services (nova, neutron,
-keystone, glance, etc.) running as containers on Kubernetes.
-Instructions for installing `openstack-helm` on a single node or a multi-node
-cluster can be found at [https://docs.openstack.org/openstack-helm/latest/index.html](https://docs.openstack.org/openstack-helm/latest/index.html).
+keystone, glance, etc.) running as containers on Kubernetes. This is
+necessary, for example, to run the M-CORD profile.
 
-This page describes steps for installing `openstack-helm`, including how to
+Instructions for installing `openstack-helm` on a single node or a
+multi-node cluster can be found at
+[https://docs.openstack.org/openstack-helm/latest/index.html](https://docs.openstack.org/openstack-helm/latest/index.html).
+
+The following describes steps for installing `openstack-helm`, including how to
 customize the documented install procedure with specializations for CORD.
-CORD uses the VTN ONOS app to control Open vSwitch on the compute nodes
-and configure virtual networks between VMs on the OpenStack cluster.
-Neutron must be configured to pass control to ONOS rather than using
-`openvswitch-agent` to manage OvS.
+Specifically, CORD uses the VTN ONOS app to control Open vSwitch on
+the compute nodes and configure virtual networks between VMs on the
+OpenStack cluster. Neutron must be configured to pass control to ONOS
+rather than using `openvswitch-agent` to manage OvS.
 
 After the install process is complete, you won't yet have a
 fully-working OpenStack system; you will need to install the
 [base-openstack](../charts/base-openstack.md) chart first.
 
-## Single node quick start
+## Single-Node Quick Start
 
 For convenience, a script to install Kubernetes, Helm, and `openstack-helm`
 on a _single Ubuntu 16.04 node_ is provided in the `automation-tools`
@@ -33,9 +36,9 @@ automation-tools/openstack-helm/openstack-helm-dev-setup.sh
 If you run this script you can skip the instructions on the rest of
 this page.
 
-## Customizing the openstack-helm install for CORD
+## Customizing the openstack-helm Install for CORD
 
-In order to enable the VTN app to control Open vSwitch on the compute
+To enable the VTN app to control Open vSwitch on the compute
 nodes, it is necessary to customize the `openstack-helm` installation.
 The customization occurs through specifiying `values.yaml` files to use
 when installing the Helm charts.
@@ -116,7 +119,7 @@ EOF
 export OSH_EXTRA_HELM_ARGS_NEUTRON="-f /tmp/neutron-cord.yaml"
 ```
 
-## Install process for openstack-helm
+## Install Process for openstack-helm
 
 Please see the `openstack-helm` documentation for instructions on how to
 install openstack-helm on a single node (for development and testing) or

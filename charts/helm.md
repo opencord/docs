@@ -1,14 +1,14 @@
-# Helm
+# Helm Reference Guide
 
-For informations on how to install `helm` please refer to [Installing helm](../prereqs/helm.md)
+For information on how to install `helm` please refer to [Installing helm](../prereqs/helm.md)
 
 ## What is Helm?
 
 {% include "/partials/helm/description.md" %}
 
-## How to get CORD Helm charts
+## CORD Helm Charts
 
-### Donwload the helm-charts repository
+### Download the helm-charts Repository
 
 You can get the CORD helm-chars by cloning the `helm-charts` repository:
 
@@ -16,13 +16,13 @@ You can get the CORD helm-chars by cloning the `helm-charts` repository:
 git clone https://gerrit.opencord.org/helm-charts
 ```
 
-> If you have downloaded the CORD code following the [Getting the Source
+> **Note:** If you have downloaded the CORD code following the [Getting the Source
 > Code](../developer/getting_the_code.md) guide, you'll find it in
 > `~/cord/helm-charts`.
 
 **IMPORTANT: All the helm commands needs to be executed from within this directory**
 
-### Add the CORD repository to helm
+### Add the CORD Repository to Helm
 
 If you don't want to download the repository, you can just add the OPENCord charts to your helm repo:
 
@@ -31,8 +31,8 @@ helm repo add cord https://charts.opencord.org/master
 helm repo update
 ```
 
-If you decide to follow this route the `cord/` prefix needs to be added to specify the repo to use,
-for example
+If you decide to follow this route, the `cord/` prefix needs to be
+added to specify the repo to use. For example:
 
 ```shell
 helm install -n xos-core xos-core
@@ -44,7 +44,7 @@ will become
 helm install -n xos-core cord/xos-core
 ```
 
-## CORD example values
+## CORD Example Values
 
 As you may have noticed, there is an `example` folder
 in the `helm-chart` repository.

@@ -1,6 +1,7 @@
-## Tag and push images to the docker registry
+## Tag and Push Images to the Docker Registry
 
-In order for the images to be consumed on the Kubernetes pod, they'll need to be tagged first (prefixing them with the ), and pushed to the local registry
+For the images to be consumed on the Kubernetes cluster, they need to
+be first tagged, and pushed to the local registry:
 
 Supposing your docker-registry address is:
 ```shell
@@ -27,10 +28,12 @@ Now, you can push the image to the registry. For example, with *docker push*:
 docker push 192.168.0.1:30500/xosproject/vsg-synchronizer:candidate
 ```
 
-The image should now be in the local docker registry on your pod.
+The image should now be in the local docker registry on your cluster.
 
-## Use the tag-and-push script
+## Use the tag-and-push Script
 
-Sometimes you may need to download, tag and push lots of images. This may become a long and error prone operation if done manually. For this reason, we provide an optional tool that automates the tag and push procedures.
-
-The script can be found [here](https://github.com/opencord/automation-tools/tree/master/developer).
+Sometimes you may need to download, tag and push lots of images.
+This can become a long and error prone operation if done manually.
+For this reason, we provide an optional tool that automates the tag
+and push procedures. The script can be found
+[here](https://github.com/opencord/automation-tools/tree/master/developer).

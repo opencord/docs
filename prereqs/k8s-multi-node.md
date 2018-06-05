@@ -1,23 +1,20 @@
-# Multi-node Kubernetes
+# Multi-Node Kubernetes
 
-Usually multi-node Kubernetes installation are suggested for production and larger trials.
+A multi-node Kubernetes installation is recommended for
+production deployments and and larger trials.
 
-## Kubernetes multi-node well-known releases
+Kubespray is a popular tool for deploying Kubernetes on multiple nodes:
 
 * **Kubespray**
     * Documentation: <https://github.com/kubernetes-incubator/kubespray>
     * Minimum requirements:
         * At least three machines (more info on hardware requirements on the Kubernetes website)
 
-## Kubespray demo / lab-trial installation scripts
-
-For simplicity, CORD provides some easy-to-use automated scripts to quickly setup Kubespray on an arbitrary number of target machines in few commands.
-
+For simplicity, CORD provides some easy-to-use automation scripts to
+quickly setup Kubespray on an arbitrary number of target machines.
 This is meant only for *lab trials* and *demo use*.
 
-At the end of the procedure, Kubespray should be installed.
-
-### Requirements
+## Requirements
 
 * **Operator machine** (1x, either physical or virtual machine)
     * Has Git installed
@@ -30,28 +27,28 @@ At the end of the procedure, Kubespray should be installed.
     * Have the same user *cord* configured, that you can use to remotely access them from the operator machine
     * The user *cord* is sudoer on each machine, and it doesn't need a password to get sudoer privileges
 
-### Get the Kubespray installation scripts
+## Download the Kubespray Installation Scripts
 
 On the operator machine
 ```shell
 git clone https://gerrit.opencord.org/automation-tools
 ```
 
-Inside, you will find a folder called *kubespray-installer*
-From now on the guide will assume you're running commands in this folder.
+Inside this directory, you will find a folder called *kubespray-installer*;
+the following assumes you are running commands in this directory
 
-### More on the Kubespray installation scripts
-
-The main script (*setup.sh*) provides an helper with instructions. To see it, run *./setup.sh --help*.
+The main script (*setup.sh*) provides a help message with
+instructions. To see it, run *./setup.sh --help*.
 
 The two main functions are:
 
 * Install Kubespray on an arbitrary number of target machines
-* Export the k8s configuration file path as environment variable to let the user access a specific deployment
+* Export the k8s configuration file path as environment variable to
+   let the user access a specific deployment
 
-### Install Kubespray
+## Install Kubespray
 
-In the following example we assume that
+The following example assumes that
 
 * Remote machines have the following IP addresses:
     * 10.90.0.101
@@ -60,7 +57,7 @@ In the following example we assume that
 
 * The deployment/POD has been given the arbitrary name *onf*
 
-The installation procedure goes through the following steps (right in this order):
+The installation procedure goes through the following steps (in this order):
 
 * Cleans up any old Kubespray installation folder (may be there from previous installations)
 * Clones the official Kubespray installation repository
@@ -74,35 +71,44 @@ To run the installation script, type
 ./setup.sh -i onf 10.90.0.101 10.90.0.102 10.90.0.103
 ```
 
-At the beginning of the installation you'll be asked to insert your password multiple times.
+At the beginning of the installation you will be asked to insert your
+password multiple times.
 
-At the end of the procedure, Kubespray should be installed and running on the remote machines.
+At the end of the procedure, Kubespray should be installed and running
+on the remote machines.
 
-The configuration file to access the POD will be saved in the subfolder *configs/onf.conf*.
+The configuration file to access the POD will be saved in the
+sub-directory *configs/onf.conf*.
 
-Want to deploy another POD without affecting your existing deployment?
-
-Runt the following:
+If you want to deploy another POD without affecting your existing
+deployment run the following:
 ```shell
 ./setup.sh -i my_other_deployment 192.168.0.1 192.168.0.2 192.168.0.3
 ```
 
-Your *onf.conf* configuration will be always there, and your new *my_other_deployment.conf* file as well!
+Your *onf.conf* configuration will be always there, and your
+new *my_other_deployment.conf* file as well!
 
-### Access the Kubespray deployment
+## Access the Kubespray Deployment
 
-Kubectl and helm (look [here](kubernetes.md) for more details) need to be pointed to a specific cluster, before being used. This is done through standard KUBECONFIG files.
+Kubectl and helm (see [here](kubernetes.md) for more details) need to
+be pointed to a specific cluster before being used. This is done
+through standard KUBECONFIG files.
 
-The script also helps you to automatically export the path pointing to an existing KUBECONFIG file, previously generated during the installation.
+The script also helps you to automatically export the path pointing to
+an existing KUBECONFIG file, previously generated during the installation.
 
-To do that -for example against the onf pod just deployed, simply type
+To do so, for example against the onf pod just deployed, simply type
 
 ```shell
 source setup.sh -s onf
 ```
 
-At this point, you can start to use *kubectl* and *helm*.
+At this point, you can start to use *kubectl*  and *helm*.
 
 ## Done?
 
-Are you done? You're ready to install kubectl and helm. Instructions [here](kubernetes.md#get-your-kubeconfig-file).
+Once you are done, you are ready to install Kubctl and Helm, so return to 
+[here](kubernetes.md#get-your-kubeconfig-file) in the installation
+guide.
+

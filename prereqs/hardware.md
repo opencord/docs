@@ -1,8 +1,8 @@
-# Hardware requirements
+# Hardware Requirements
 
-To build CORD you'll need different hardware components, depending on the specific requirements of your deployment.
+A CORD POD is built using the following hardware components.
 
-## Generic hardware guidelines
+## Generic Hardware Guidelines
 
 * **Compute machines**: CORD can be in principle deployed both on any x86 machine, either physical or virtual. For development, demos or lab trials you may want to use only one machine (even your laptop could be fine, as long as it can provide enough hardware resources). For more realistic deployments it's anyway suggested to use at least three machines; better if all equals to one each other. The characteristics of these machines depends by lots of factors. At high level, at the very minimum, each machine should have a 4 cores CPU, 32GB of RAM and 100G of disk capacity. More sophisticated use-cases, for example M-CORD require more resources. Look at paragraphs below for more informations.
 
@@ -16,9 +16,10 @@ To build CORD you'll need different hardware components, depending on the specif
 
 * **Other**: Besides all above, you will need a development/management machine and a L2 management swich to connect things together. Usually a laptop is enough for the former, and a legacy L2 switch is enough for the latter.
 
-## Suggested hardware
+## Suggested Hardware
 
-Following is a list of hardware that people from the ONF community have tested over time in lab trials.
+Following is a list of hardware that people from the ONF community
+have tested over time in lab trials.
 
 * **Compute machines**
     * OCP Inspired&trade; QuantaGrid D51B-1U server. Each
@@ -58,13 +59,14 @@ Following is a list of hardware that people from the ONF community have tested o
     * **eNodeBs**:
         * Cavium Octeon Fusion CNF7100 (for more info <kin-yip.liu@cavium.com>)
 
-## BOM examples
+## BOM Examples
 
-Following are some BOM examples you may hopefully take inspiration form.
+The following are some BOM examples you might wish to adopt.
 
-### Basic lab tests
+### Basic Lab Tests
 
-The goal is to try CORD, maybe modify/develop some software, and deploy locally in a lab.
+Sufficient to modify/develop basic software components, and
+deploy locally in a lab.
 
 * 1x x86 server (maybe with a 10G interface if need to support VNFs)
 * 1x fabric switch (10G)
@@ -74,9 +76,10 @@ The goal is to try CORD, maybe modify/develop some software, and deploy locally 
 * 1x or more developers' workstations (i.e. laptop) to develop and deploy
 * 1x L2 legacy management switch
 
-### More complex lab tests
+### Complex Lab Tests
 
-Want to make sure you have a good representation of a realistic deployment. Want to run in a lab more complex deployments and tests.
+For a more realistic deployment, you can build a POD with the
+following elements:
 
 * 3x x86 server (maybe 10G/40G/100G interfaces if need to support VNFs)
 * 4x fabric switches (10G/40G/100G)
