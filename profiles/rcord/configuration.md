@@ -1,9 +1,9 @@
-# RCORD POD Configuration
+# R-CORD Configuration 
 
 Once all the components needed for RCORD-Lite are up and running on your POD,
-you'll need to configure XOS with the proper configuration.
-Being this configuration environment specific, you'll need to create your own,
-here is a reference for it:
+you'll need to configure XOS with the proper configuration. 
+Since this configuration is environment specific, you'll need to create your own,
+but the following can serve as a reference for it:
 
 ```yaml
 tosca_definitions_version: tosca_simple_yaml_1_0
@@ -125,9 +125,9 @@ Once the POD has been configured, you can create a subscriber,
 please refer to the [RCORD Service](../../rcord/README.md) guide for
 more informations.
 
-### Zero touch Subscriber provisioning
+### Zero-Touch Subscriber Provisioning
 
-This feature, also referred to as "bottom-up provisioning" enables autodiscovery
+This feature, also referred to as "bottom-up provisioning" enables auto-discovery
 of subscriber and their validation through an external OSS.
 
 Here is the expected workflow:
@@ -153,7 +153,7 @@ between CORD and you OSS Database.
 For reference we are providing a sample implemetation, available here:
 [hippie-oss](https://github.com/opencord/hippie-oss)
 
-_NOTE: this implementation will validate any subscriber that come online_
+> **Note:** This implementation currently validates any subscriber that comes online.
 
 To deploy the `hippie-oss` service you can look [here](../../charts/hippie-oss.md).
 
