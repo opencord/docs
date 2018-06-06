@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2f1e7630_e9cc78fe",
+        "filename": "developer/platform.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-06T23:38:54Z",
+      "side": 1,
+      "message": "infrastructure",
+      "range": {
+        "startLine": 4,
+        "startChar": 64,
+        "endLine": 4,
+        "endChar": 78
+      },
+      "revId": "aa82e2bebae361603fe148ab322e4b39f0e16d63",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "931da999_55c04eed",
+        "filename": "developer/workflows.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-06T23:38:54Z",
+      "side": 1,
+      "message": "`rcord-lite` might be more clear as that\u0027s what\u0027s in the example?",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 45
+      },
+      "revId": "aa82e2bebae361603fe148ab322e4b39f0e16d63",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
