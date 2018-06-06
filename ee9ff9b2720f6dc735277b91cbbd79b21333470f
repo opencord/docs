@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a6e079ad_afd55e48",
+        "filename": "prereqs/k8s-single-node.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-06T20:05:46Z",
+      "side": 1,
+      "message": "it need to have docker installed only if you\u0027re installing without VM support or in every case?",
+      "range": {
+        "startLine": 16,
+        "startChar": 4,
+        "endLine": 16,
+        "endChar": 67
+      },
+      "revId": "ee9ff9b2720f6dc735277b91cbbd79b21333470f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "550b9832_8e637814",
+        "filename": "prereqs/kubernetes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-06T20:05:46Z",
+      "side": 1,
+      "message": "are links missing?",
+      "range": {
+        "startLine": 13,
+        "startChar": 24,
+        "endLine": 13,
+        "endChar": 45
+      },
+      "revId": "ee9ff9b2720f6dc735277b91cbbd79b21333470f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
