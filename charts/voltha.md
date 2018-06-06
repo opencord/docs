@@ -48,3 +48,12 @@ helm install -n voltha voltha
 * Voltha REST APIs
     * Inner port: 8882
     * Nodeport: 30125
+
+## How to access the VOLTHA CLI
+
+Assuming you have not changed the default ports in the chart,
+you can use this command to access the VOLTHA CLI:
+
+```shell
+ssh voltha@<pod-ip> -p 30110
+```
