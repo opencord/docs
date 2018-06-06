@@ -1,32 +1,30 @@
 # Developer Workflows
 
-This document is intended to describe the workflow to develop the control plane
-of CORD.
+This section describes a typical workflow for developing the CORD
+control plane. This workflow does not include any data plane
+elements (e.g., the underlying switching fabric or access devices).
 
-## Setting up a local development environment
+## Setting Up a Local Development Environment
 
-The first thing you’ll need to work on the control plane of CORD, known as XOS,
-is to setup a local Kubernetes environment.
-The suggested way to achieve that is to use Minikube on your laptop,
-and this guide assume that it will be the environment going forward.
-
-You can follow this guide to get started with Minikube:
+It is straightforward to set up a local Kubernetes environment on your laptop.
+The recommended way to do this is to use Minikube. This guide assumes
+you have done that. See the
+[Single-Node](../prereqs/k8s-single-node.md) case in the
+Installation Guide for more information, or you can go directly
+to the documentation for Minikube:
 <https://kubernetes.io/docs/getting-started-guides/minikube/#installation>
 
-> Note: If you are going to do development on Minikube you may want to increase
-> it’s memory from the default 512MB, you can do that using this command to
+> **Note:** If you are going to do development on Minikube you may want to increase
+> its memory from the default 512MB. You can do this using this command to
 > start Minikube: `minikube start --cpus 2 --memory 4096`
 
-Once Minikube is up and running on your laptop you can proceed with
-the following steps to bring XOS up.
+In addition to Minikube running on your laptop, you will also need to
+install Helm: <https://docs.helm.sh/using_helm/#installing-helm>.
 
-Once Minikube is installed you’ll need to install Helm:
-<https://docs.helm.sh/using_helm/#installing-helm>
-
-At this point you should be able to deploy the core components of XOS
-and the services required by R-CORD from images published on dockerhub.
-
-> NOTE: You can replace the `xos-profile` with the one you need to work on.
+Once both Helm and Minikube are installed, you can deploy the
+core components of XOS, along with the services that make
+up, for example, the R-CORD profile. This uses images published
+on DockerHub:
 
 ```shell
 cd ~/cord/build/helm-charts
@@ -35,30 +33,31 @@ helm dep update xos-profiles/rcord-lite
 helm install xos-profiles/rcord-lite -n rcord-lite
 ```
 
-### Deply a single instance of kafka
+> **Note:** You can replace the `rcord-lite` profile with the one you want to work on. 
 
-Some profiles require a `kafka` message bus to properly working.
+### Deploy a Single Instance of Kafka
+
+Some profiles require a `kafka` message bus to work properly.
 If you need to deploy it for development purposes, a single instance
-deployment will be enough.
-
-You can install it by using:
+deployment will be enough. You can do so as follows:
 
 ```shell
 helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
 install --name cord-kafka incubator/kafka -f examples/kafka-single.yaml
 ```
 
-## Making changes and deploy them
+## Making and Deploying Changes
 
-You can follow this guide to [get the CORD source code](getting_the_code.md).
+Assuming you have
+[downloaded the CORD source code](getting_the_code.md) and the entire
+source tree for CORD is under `~/cord`, you can edit and re-deploy the
+code as follows.
 
-We assume that now you have the entire CORD tree under `~/cord`
-
-> Note: to develop a single synchronizer you may not need the full CORD source,
+> **Note:** To develop a single synchronizer you may not need the full CORD source,
 > but this assume  that you have a good knowledge of the system and you know
 > what you’re doing.
 
-As first you’ll need to point Docker to the one provided by Minikube
+First you will need to point Docker to the one provided by Minikube
 (_note that you don’t need to have docker installed,
 as it comes with the Minikube installation_).
 
@@ -66,21 +65,21 @@ as it comes with the Minikube installation_).
 eval $(minikube docker-env)
 ```
 
-Then you’ll need to build the XOS containers from source:
+You will then need to build the containers from source:
 
 ```shell
 cd ~/cord/automation-tools/developer
 python imagebuilder.py -f ../../helm-charts/examples/filter-images.yaml -x
 ```
 
-At this point the images containing your changes will be available
+At this point, the images containing your changes will be available
 in the Docker environment used by Minikube.
 
-> Note: in some cases you can rebuild a single docker image to make the process
+> **Note:** In some cases you can rebuild a single docker image to make the process
 > faster, but this assume that you have a good knowledge of the system and you
 > know what you’re doing.
 
-All that is left is to teardown and redeploy the containers.
+All that is left is to teardown and re-deploy the containers.
 
 ```shell
 helm del --purge xos-core
@@ -90,20 +89,22 @@ helm dep update xos-profiles/rcord-lite
 helm install xos-profiles/rcord-lite -n rcord-lite -f examples/image-tag-candidate.yaml -f examples/imagePullPolicy-IfNotPresent.yaml
 ```
 
-In some cases is possible to use the helm upgrade command,
-but if you made changes to the models we suggest to redeploy everything
+In some cases it is possible to use the `helm` upgrade command,
+but if you made changes to the XOS models we suggest you redeploy
+everything.
 
-> Note: if your changes are only in the synchronizer steps, after rebuilding
+> **Note:** if your changes are only in the synchronizer steps, after rebuilding
 > the containers, you can just delete the corresponding POD and kubernetes will
-> restart it with the new image
+> restart it with the new image.
 
-## Pushing changes to a remote registry
+## Pushing Changes to a Remote Registry
 
-If you have a remote POD you want to test your changes on, you need to push your
-docker images on a registry that can be accessed from the POD itself.
+If you have a remote POD that you want to test your changes on, you
+need to push your docker images to a registry that can be accessed
+from the POD.
 
-The way we suggest to do this is via a private docker-registry,
-you can find more informations about what a
+The way we recommend doing this is via a private docker-registry.
+You can find more informations about what a
 docker-registry is [here](../prereqs/docker-registry.md).
 
 {% include "/partials/push-images-to-registry.md" %}
