@@ -51,6 +51,7 @@
     * [Developer Workflows](developer/workflows.md)
         * [Building Docker Images](developer/imagebuilder.md)
     * [Kubernetes Service](kubernetes-service/kubernetes-service.md)
+    * [OpenStack Service](openstack/openstack-service.md)
     * [VTN and Service Composition](xos/xos_vtn.md)
     * [GUI Development](xos-gui/developer/README.md)
         * [Quickstart](xos-gui/developer/quickstart.md)
