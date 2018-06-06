@@ -119,6 +119,18 @@ EOF
 export OSH_EXTRA_HELM_ARGS_NEUTRON="-f /tmp/neutron-cord.yaml"
 ```
 
+It is also necessary to make a small change to `openstack-helm`'s
+[openvswitch](https://github.com/openstack/openstack-helm/tree/master/openvswitch) chart: the `/usr/sbin/ovsdb-server` must be executed with
+the `--remote=ptcp:6641` option to listen for the connection from VTN.
+After the `openstack-helm` repository is checked out during the
+[install process](#install-process-for-openstack-helm),
+run the following command:
+
+```bash
+cd openstack-helm/openvswitch/templates/bin
+sed -i 's/--remote=db:Open_vSwitch,Open_vSwitch,manager_options/--remote=db:Open_vSwitch,Open_vSwitch,manager_options --remote=ptcp:6641/' _openvswitch-db-server.sh.tpl
+```
+
 ## Install Process for openstack-helm
 
 Please see the `openstack-helm` documentation for instructions on how to
