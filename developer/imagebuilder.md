@@ -2,18 +2,18 @@
 
 The current CORD implementation consists of many interrelated Docker images.
 Making sure that the images used in a deployment are consistent with the source
-tree on disk is a challenge and required a tool, `imagebuilder`, to be
+tree on disk is a challenge and required a tool, called `imagebuilder`, to be
 developed to perform image rebuilds in a consistent and efficient manner.
 
 Imagebuilder is currently used to build the XOS, ONOS, and the `mavenrepo`
 (source of ONOS Apps used in CORD) images, and pull down other required images.
 
-While imagebuilder will pull down required images from DockerHub and build/tag
+While `imagebuilder` will pull down required images from DockerHub and build/tag
 images, it does not push those images or delete obsolete ones.  These tasks are
-left to other software (Ansible, Jenkins) which should take in imagebuilder's
-YAML output and take the appropriate actions.
+left to other software (Ansible, Jenkins) which should take in
+YAML output from `imagebuilder` and take the appropriate actions.
 
-## Obtaining and rebuilding images
+## Obtaining and Rebuilding Images
 
 For the normal build process, you won't need to manually download images as the
 `docker-images` make target that runs imagebuilder will automatically be run as
@@ -22,11 +22,11 @@ a part of the build process.
 If you do need to rebuild images, there is a `make clean-images` target that
 will force imagebuilder to be run again and images to be moved into place.
 
-## Adding a new Docker image to CORD
+## Adding a new Docker Image to CORD
 
 There are several cases where an Image would need to be added to CORD.
 
-### Adding an image developed outside of CORD
+### Adding an Image Developed Outside of CORD
 
 There are cases where a 3rd party image developed outside of CORD may be
 needed. This is the case with ONOS, Redis, and a few other pieces of software
@@ -41,7 +41,7 @@ file with a `docker_image_whitelist` list - see
 
 These images will be retagged with a `candidate` tag after being pulled.
 
-### Adding a synchronizer image
+### Adding a Synchronizer Image
 
 Adding a synchronizer image is usually as simple as adding it to the
 `buildable_images` list in the `automation-tools/developer/docker_images.yml`
@@ -52,7 +52,7 @@ have to add your service's directory to the `.repo/manifest.xml` file and then
 list it in `build/docker_images.yml`, so it can build the synchronizer image
 locally.
 
-### Adding other CORD images
+### Adding Other CORD images
 
 If you want imagebuilder to build an image from a Dockerfile somewhere in the
 CORD source tree, you need to add it to the `buildable_images` list in the
@@ -65,7 +65,7 @@ Note that you don't need to add external parent images to the
 
 ## Debugging imagebuilder
 
-If you get a different error or  think that imagebuilder isn't working
+If you get a different error or  think that `imagebuilder` isn't working
 correctly, please rerun it with the `-vv` ("very verbose") option, read through
 the output carefully, and then post about the issue on the mailing list or
 Slack.
@@ -82,9 +82,9 @@ NotFound: 404 Client Error: Not Found ("{"message":"manifest for xosproject/xos-
 
 Run `imagebuilder.py -h` for a list of other supported arguments.
 
-## How Imagebuilder works
+## How Imagebuilder Works
 
-The imagebuilder program performs the following steps when run:
+The `imagebuilder` program performs the following steps when run:
 
 1. Reads the [repo manifest file](https://github.com/opencord/manifest/blob/master/default.xml)
    (checked out as `.repo/manifest`) to get a list of the CORD git repositories.
@@ -130,7 +130,7 @@ Imagebuilder use this git hash tag as well as labels on the image of the git
 repos of parent images to determine whether an image is correctly built from
 the checked out source tree.
 
-## Image labels
+## Image Labels
 
 Imagebuilder uses a Docker label scheme to determine whether an image needs to
 be rebuilt, which is added to the image when it is built.  Docker images used
@@ -209,7 +209,7 @@ LABEL org.label-schema.schema-version=$org_label_schema_schema_version \
 
 Labels on a built image can be seen by running `docker inspect <image name or id>`
 
-## Automating image builds
+## Automating Image Builds
 
 There is a [Jenkinsfile.imagebuilder](https://github.com/opencord/cord/blob/{{
 book.branch }}/Jenkinsfile.imagebuilder) that can be run in a Jenkins
