@@ -23,7 +23,7 @@ The following is a diagram of a typical management network.
 ## Dataplane Network
 
 The dataplane network carries the users' traffic, connecting subscribers to the
-Intetnet (which is the whole purpose of CORD). The following is a diagram of a
+Internet (which is the whole purpose of CORD). The following is a diagram of a
 reference dataplane network for CORD.
 
 ![CORD management network](../images/data_net.png)
