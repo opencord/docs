@@ -10,7 +10,7 @@ automated scripts that might be helpful.
 
 ## Install Kubernetes
 
-The following sections offer pointers and scripts to install your favorite
+The following sections, [Single Node Cluster](k8s-single-node.md) and [Multi Node Cluster](k8s-multi-node.md), offer pointers and scripts to install your favorite
 version of Kubernetes. Start there, then come back here and follow the
 steps in the following three subsections.
 
