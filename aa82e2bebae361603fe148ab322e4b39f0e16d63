@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "024bd7c1_9dbe64c7",
+        "filename": "developer/workflows.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-07T00:06:37Z",
+      "side": 1,
+      "message": "This workflow is specifically for the control plane, it will never include any data plane related thing",
+      "range": {
+        "startLine": 4,
+        "startChar": 23,
+        "endLine": 6,
+        "endChar": 9
+      },
+      "revId": "aa82e2bebae361603fe148ab322e4b39f0e16d63",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "931da999_55c04eed",
         "filename": "developer/workflows.md",
         "patchSetId": 2
@@ -36,6 +59,30 @@
       "writtenOn": "2018-06-06T23:38:54Z",
       "side": 1,
       "message": "`rcord-lite` might be more clear as that\u0027s what\u0027s in the example?",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 45
+      },
+      "revId": "aa82e2bebae361603fe148ab322e4b39f0e16d63",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "057dfd47_13ae9294",
+        "filename": "developer/workflows.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-07T00:06:37Z",
+      "side": 1,
+      "message": "what about \".. the `xos-profile`, in this case `rcord-lite`, with the...\"",
+      "parentUuid": "931da999_55c04eed",
       "range": {
         "startLine": 36,
         "startChar": 28,
