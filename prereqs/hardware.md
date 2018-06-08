@@ -55,6 +55,8 @@ have tested over time in lab trials.
         * OCP Accepted&trade; EdgeCore AS5712-54X
         * OCP Accepted&trade; EdgeCore AS5812-54X
         * QuantaMesh T3048-LY8
+    * **25G** models (with 100G uplinks)
+        * QuantaMesh BMS T7032-IX1/IX1B (with 25G breakout cable)
     * **40G** models
         * OCP Accepted&trade; EdgeCore AS6712-32X
     * **100G** models
@@ -106,8 +108,8 @@ deploy locally in a lab.
 For a more realistic deployment, you can build a POD with the
 following elements:
 
-* 3x x86 server (maybe 10G/40G/100G interfaces if need to support VNFs)
-* 4x fabric switches (10G/40G/100G)
+* 3x x86 server (maybe 10G/25G/40G/100G interfaces if need to support VNFs)
+* 4x fabric switches (10G/25G/40G/100G)
 * 7 DAC cables + 3 to connect servers (if need to support VNFs)
 * Ethernet copper cables as needed
 * Access equipment as needed
