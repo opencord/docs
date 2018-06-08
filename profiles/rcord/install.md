@@ -24,7 +24,7 @@ RCORD-Lite has dependencies on this charts, so they need to be installed first:
 ## Install the RCORD-Lite Helm Chart
 
 ```shell
-helm dep update xos-profile/rcord-lite
+helm dep update xos-profiles/rcord-lite
 helm install -n rcord-lite xos-profiles/rcord-lite
 ```
 
