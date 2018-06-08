@@ -33,13 +33,16 @@ helm install -n onos-voltha -f configs/onos-voltha.yaml onos
 * SSH: 30115
 * REST/UI: 30120
 
-## onos-vtn
+## onos-cord (onos-vtn)
 
 ```shell
-helm install -n onos-cord onos
+helm install -n onos-cord -f configs/onos-cord.yaml onos
 ```
 
-The configuration doesn't expose any nodeport.
+**Nodeports exposed**
+
+* SSH: 32101
+* REST/UI: 32181
 
 ## Generic ONOS
 
