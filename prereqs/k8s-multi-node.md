@@ -16,12 +16,12 @@ This is meant only for *lab trials* and *demo use*.
 
 ## Requirements
 
-* **Operator machine** (1x, either physical or virtual machine)
+* **Operator/Developer Machine** (1x, either physical or virtual machine)
     * Has Git installed
     * Has Python3 installed (<https://www.python.org/downloads/>)
-    * Has Stable version of Ansible installed (<http://docs.ansible.com/ansible/latest/intro_installation.html>)
+    * Has a stable version of Ansible installed (<http://docs.ansible.com/ansible/latest/intro_installation.html>)
     * Is able to reach the target servers (ssh into them)
-* **Target machines** (at least 3x, either physical or virtual machines)
+* **Target/Cluster Machines** (at least 3x, either physical or virtual machines)
     * Run Ubuntu 16.04 server
     * Able to communicate together (ping one each other)
     * Have the same user *cord* configured, that you can use to remotely access them from the operator machine

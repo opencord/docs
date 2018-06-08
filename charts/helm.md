@@ -17,10 +17,10 @@ bring up XOS by itself (`xos-core`) or XOS with its GUI (`xos-core`
 and `xos-gui`). This can be useful if you want to work on just the
 CORD data models, without any backend components.
 
-The `xos-services` and `xos-profile` directories contain helm
+The `xos-services` and `xos-profiles` directories contain helm
 charts for individual services and profiles (a mesh of services),
 respectively. While it is possible to use Helm to bring up an
-individual service, typically collections of related services are
+individual service, collections of related services are typically
 installed as a unit; we call this unit a *profile.* Looking in the
 `xos-profiles` directory, `rcord-lite` is an example profile. It
 corresponds to R-CORD, and inspecting its `requirements.yaml`
@@ -94,9 +94,8 @@ helm install -n xos-core cord/xos-core
 
 ## CORD Example Values
 
-As you may have noticed, there is an `example` folder
-in the `helm-chart` repository.
-The files contained in that repository are examples of possible overrides
+There is an `example` directory in the `helm-chart` repository.
+The files contained in that directory are examples of possible overrides
 to obtain a custom deployment.
 
 For example, it is possible to deploy a single instance of `kafka`,

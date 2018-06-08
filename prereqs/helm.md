@@ -42,5 +42,5 @@ command *helm ls* without errors.
 ## Done?
 
 Once you are done, you are ready to deploy CORD components using their
-helm charts! See [Bringup Up CORD](../profiles/intro.md). For more detailed
+helm charts! See [Bringing Up CORD](../profiles/intro.md). For more detailed
 information, see the [helm chart reference guide](../charts/helm.md).
