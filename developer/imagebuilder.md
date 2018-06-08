@@ -1,30 +1,29 @@
 # Building Docker Images with imagebuilder
 
-The current CORD implementation consists of many interrelated Docker images.
-Making sure that the images used in a deployment are consistent with the source
-tree on disk is a challenge and required a tool, called `imagebuilder`, to be
-developed to perform image rebuilds in a consistent and efficient manner.
+CORD consists of many interrelated Docker images.
+Making sure that the images used in a deployment are consistent with
+the source tree is a challenge we address with a tool called `imagebuilder`.
+`imagebuilder` is currently used to build the XOS, ONOS, and the `mavenrepo`
+(source of ONOS Apps used in CORD) images.
 
-Imagebuilder is currently used to build the XOS, ONOS, and the `mavenrepo`
-(source of ONOS Apps used in CORD) images, and pull down other required images.
-
-While `imagebuilder` will pull down required images from DockerHub and build/tag
-images, it does not push those images or delete obsolete ones.  These tasks are
-left to other software (Ansible, Jenkins) which should take in
-YAML output from `imagebuilder` and take the appropriate actions.
+While `imagebuilder` pulls down required images from DockerHub and
+builds/tags images, it does not push those images or delete obsolete
+ones. These tasks are left to other software (Ansible, Jenkins), which
+should take in YAML output from `imagebuilder` and then perform the
+appropriate actions.
 
 ## Obtaining and Rebuilding Images
 
-For the normal build process, you won't need to manually download images as the
-`docker-images` make target that runs imagebuilder will automatically be run as
-a part of the build process.
+For the normal build process, you won't need to manually download
+images as the `docker-images` make target that runs `imagebuilder`
+will automatically be run as a part of the build process.
 
 If you do need to rebuild images, there is a `make clean-images` target that
-will force imagebuilder to be run again and images to be moved into place.
+forces `imagebuilder` to be run again and images to be moved into place.
 
 ## Adding a new Docker Image to CORD
 
-There are several cases where an Image would need to be added to CORD.
+There are several cases where an Image might need to be added to CORD.
 
 ### Adding an Image Developed Outside of CORD
 
@@ -39,7 +38,7 @@ subset of this list is needed for a specific helm chart, you can create a YAML
 file with a `docker_image_whitelist` list - see
 `cord/helm-charts/examples/*-images.yaml` for examples.
 
-These images will be retagged with a `candidate` tag after being pulled.
+These images are retagged with a `candidate` tag after being pulled.
 
 ### Adding a Synchronizer Image
 
@@ -52,9 +51,9 @@ have to add your service's directory to the `.repo/manifest.xml` file and then
 list it in `build/docker_images.yml`, so it can build the synchronizer image
 locally.
 
-### Adding Other CORD images
+### Adding Other CORD Images
 
-If you want imagebuilder to build an image from a Dockerfile somewhere in the
+If you want `imagebuilder` to build an image from a Dockerfile somewhere in the
 CORD source tree, you need to add it to the `buildable_images` list in the
 `docker_images.yml` file (see that file for the specific format), then making
 sure the image name is listed in the `docker_image_whitelist` list.
@@ -82,7 +81,7 @@ NotFound: 404 Client Error: Not Found ("{"message":"manifest for xosproject/xos-
 
 Run `imagebuilder.py -h` for a list of other supported arguments.
 
-## How Imagebuilder Works
+## How imagebuilder Works
 
 The `imagebuilder` program performs the following steps when run:
 
@@ -117,8 +116,8 @@ The `imagebuilder` program performs the following steps when run:
 
 ## Image Tagging
 
-CORD container images frequently have multiple tags. The two most common ones
-are:
+CORD container images frequently have multiple tags. The two most
+common tags are:
 
 * The string `candidate`, which says that the container is ready to be deployed
   on a CORD POD
@@ -126,17 +125,18 @@ are:
   container is built from an untouched (according to git) source tree.  Images
   built from a modified source tree will not be tagged in this way.
 
-Imagebuilder use this git hash tag as well as labels on the image of the git
+`imagebuilder` use this git hash tag as well as labels on the image of the git
 repos of parent images to determine whether an image is correctly built from
 the checked out source tree.
 
 ## Image Labels
 
-Imagebuilder uses a Docker label scheme to determine whether an image needs to
-be rebuilt, which is added to the image when it is built.  Docker images used
-in CORD must apply labels in their Dockerfiles which are specified by
-[label-schema.org](http://label-schema.org) - see there for examples, and below
-for a few notes that clear up the ambiguity within that spec.
+`imagebuilder` uses a Docker label scheme to determine whether an
+image needs to be rebuilt, which is added to the image when it is
+built. Docker images used in CORD must apply labels in their
+Dockerfiles which are specified by
+[label-schema.org](http://label-schema.org); look there for examples,
+and below for a few notes that clear up the ambiguity within that spec.
 
 Required labels for every CORD image:
 
