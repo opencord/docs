@@ -125,6 +125,119 @@ Once the POD has been configured, you can create a subscriber,
 please refer to the [RCORD Service](../../rcord/README.md) guide for
 more informations.
 
+### Create a subscriber in RCORD
+
+To create a subscriber in CORD you need to retrieve some informations:
+
+- ONU Serial Number
+- UNI Port ID
+- Mac Address
+- IP Address
+
+We'll focus on the first two as the others are pretty self-explaining.
+
+**Find the ONU Serial Number**
+
+Once your POD is set up and the OLT has been pushed and activated in VOLTHA,
+XOS will discover the ONUs available in the system.
+
+You can find them trough:
+
+- the XOS UI, on the left side click on `vOLT > ONUDevices`
+- the rest APIs `http://<pod-id>:<chameleon-port|30006>/xosapi/v1/volt/onudevices`
+- the VOLTHA [cli](../../charts/voltha.md#how-to-access-the-voltha-cli)
+
+If you are connected to the VOLTHA CLI you can use the command:
+
+```shell
+(voltha) devices
+Devices:
++------------------+--------------+------+------------------+-------------+-------------+----------------+----------------+------------------+----------+-------------------------+----------------------+------------------------------+
+|               id |         type | root |        parent_id | admin_state | oper_status | connect_status | parent_port_no |    host_and_port | vendor_id| proxy_address.device_id | proxy_address.onu_id | proxy_address.onu_session_id |
++------------------+--------------+------+------------------+-------------+-------------+----------------+----------------+------------------+----------+-------------------------+----------------------+------------------------------+
+| 0001941bd45e71d8 |      openolt | True | 000100000a5a0072 |     ENABLED |      ACTIVE |      REACHABLE |                | 10.90.0.114:9191 |          |                         |                      |                              |
+| 00015698e67dc060 | broadcom_onu | True | 0001941bd45e71d8 |     ENABLED |      ACTIVE |      REACHABLE |      536870912 |                  |      BRCM|        0001941bd45e71d8 |                    1 |                            1 |
++------------------+--------------+------+------------------+-------------+-------------+----------------+----------------+------------------+----------+-------------------------+----------------------+------------------------------+
+```
+to list all the existing devices, and locate the correct ONU, then:
+
+```shell
+(voltha) device 00015698e67dc060
+(device 00015698e67dc060) show
+Device 00015698e67dc060
++------------------------------+------------------+
+|                        field |            value |
++------------------------------+------------------+
+|                           id | 00015698e67dc060 |
+|                         type |     broadcom_onu |
+|                         root |             True |
+|                    parent_id | 0001941bd45e71d8 |
+|                       vendor |         Broadcom |
+|                        model |              n/a |
+|             hardware_version |     to be filled |
+|             firmware_version |     to be filled |
+|                 images.image |        1 item(s) |
+|                serial_number |     BRCM22222222 |
++------------------------------+------------------+
+|                      adapter |     broadcom_onu |
+|                  admin_state |                3 |
+|                  oper_status |                4 |
+|               connect_status |                2 |
+|      proxy_address.device_id | 0001941bd45e71d8 |
+|         proxy_address.onu_id |                1 |
+| proxy_address.onu_session_id |                1 |
+|               parent_port_no |        536870912 |
+|                    vendor_id |             BRCM |
+|                        ports |        2 item(s) |
++------------------------------+------------------+
+|                  flows.items |        5 item(s) |
++------------------------------+------------------+
+```
+to find the correct serial number.
+
+**Find the UNI Port Id**
+
+From the VOLTHA CLI, in the device command prompt execute:
+
+```shell
+(device 00015698e67dc060) ports
+Device ports:
++---------+----------+--------------+-------------+-------------+------------------+-----------------------------------------------------+
+| port_no |    label |         type | admin_state | oper_status |        device_id |                                               peers |
++---------+----------+--------------+-------------+-------------+------------------+-----------------------------------------------------+
+|     100 | PON port |      PON_ONU |     ENABLED |      ACTIVE | 00015698e67dc060 | [{'port_no': 16, 'device_id': u'0001941bd45e71d8'}] |
+|      16 |   uni-16 | ETHERNET_UNI |     ENABLED |      ACTIVE | 00015698e67dc060 |                                                     |
++---------+----------+--------------+-------------+-------------+------------------+-----------------------------------------------------+
+```
+and locate the `ETHERNET_UNI` port.
+The `port_no` for that port is the value you are looking for.
+
+**Push a subscriber into CORD**
+
+Once you have the informations you need about your subscriber,
+you can create it by customizing this TOSCA:
+
+```yaml
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/rcordsubscriber.yaml
+description: Create a test subscriber
+topology_template:
+  node_templates:
+    # A subscriber
+    my_house:
+      type: tosca.nodes.RCORDSubscriber
+      properties:
+        name: My House
+        c_tag: 111
+        onu_device: BRCM1234 # Serial Number of the ONU Device to which this subscriber is connected
+        uni_port_id: 16 # UNI PORT ID in VOLTHA
+        mac_address: 00:AA:00:00:00:01 # subscriber mac address
+        ip_address: 10.8.2.1 # subscriber IP
+```
+
+_For instructions on how to push TOSCA, please refer to this [guide](../../xos-tosca/README.md)_
+
 ### Zero-Touch Subscriber Provisioning
 
 This feature, also referred to as "bottom-up provisioning" enables auto-discovery
