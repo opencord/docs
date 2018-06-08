@@ -20,5 +20,6 @@ checked out source tree.  It is build with `make`, and requires that `gitbook`,
 
 Source for individual guides is available in the [CORD code
 repository](https://gerrit.opencord.org); look in the `docs` directory of each
-project, with the documentation rooted in `build/docs`. Updates and
-improvements to this documentation can be submitted through Gerrit.
+project, with the documentation rooted in the top-level `/docs`
+directory. Updates and improvements to this documentation can be
+submitted through Gerrit.
