@@ -1,8 +1,8 @@
 # Docker Registry (optional)
 
-The guide describes how to install an **insecure** *docker registry* in Kubernetes, using the standard Kubernetes helm charts.
+The section describes how to install an **insecure** *docker registry* in Kubernetes, using the standard Kubernetes helm charts.
 
-Local docker registries can be used to push container images directly to the cluster,
+A local docker registry can be used to push container images directly to the cluster,
 which could be useful for example in the following cases:
 
 * The CORD POD has no Internet access, so container images cannot be downloaded directly from DockerHub to the POD.
@@ -11,7 +11,7 @@ which could be useful for example in the following cases:
 
 More informations about docker registries can be found at <https://docs.docker.com/registry/>.
 
-> NOTE: *Insecure* registries can be used for development, POCs or lab trials. **You should not use this in production.** There are planty of documents online that guide you through secure registries setup.
+> **Note:** *Insecure* registries can be used for development, POCs or lab trials. **You should not use this in production.** There are planty of documents online that guide you through secure registry setup.
 
 ## Deploy a Registry Using Helm
 
@@ -45,6 +45,6 @@ files in the config directory.
 Simply modify the values as needed, uninstall the containers previously deployed,
 and deploy them again.
 
-> **NOTE**: it's better to extend the existing helm charts, rather than directly modifying them. This way you can keep the original configuration as it is, and just override some values when needed. You can do this by writing your additional configuration yaml file, and parsing it as needed, adding -f my-additional-config.yml to your helm commands.
+> **Note**: It is better to extend the existing helm charts, rather than directly modifying them. This way you can keep the original configuration as it is, and just override some values when needed. You can do this by writing your additional configuration yaml file, and parsing it as needed, adding `-f my-additional-config.yml` to your helm commands.
 
 The full CORD helm charts reference documentation is available [here](../charts/helm.md).
