@@ -40,6 +40,7 @@
     * [Configuring Services](operating_cord/services.md)
         * [Fabric](fabric/README.md)
         * [ONOS](onos-service/README.md)
+        * [RCORD](rcord/README.md)
         * [vOLT](olt-service/README.md)
         * [vRouter](vrouter/README.md)
 * [Modeling Guide](xos/README.md)
@@ -71,4 +72,3 @@
     * [Test Setup](cord-tester/qa_testsetup.md)
     * [Test Environment](cord-tester/qa_testenv.md)
     * [System Tests](cord-tester/validate_pods.md)
-
