@@ -313,26 +313,3 @@ topology_template:
 ```
 
 _For instructions on how to push TOSCA, please refer to this [guide](../../xos-tosca/README.md)_
-
-**Configure onos-voltha to connect to the Kafka bus**
-
-Copy this in a `kafka-config.json` file:
-
-```json
-{
-  "apps" : {
-    "org.opencord.olt" : {
-      "kafka" : {
-        "bootstrapServers" : "cord-kafka-kafka.default.svc.cluster.local:9092"
-      }
-    }
-  }
-}
-```
-
-Send this config to `onos-voltha` using this command:
-```shell
-curl --user karaf:karaf -X POST -H "Content-Type: application/json" --data @kafka-config.json http://$node:$port/onos/v1/network/configuration/
-```
-
-To find out what ports `onos-voltha` is using, please refer to the [chart](../../charts/onos.md#onos-voltha).
