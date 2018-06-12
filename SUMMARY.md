@@ -39,6 +39,7 @@
         * [M-CORD](profiles/mcord/configuration.md)
     * [Configuring Services](operating_cord/services.md)
         * [Fabric](fabric/README.md)
+        * [vOLT](olt-service/README.md)
         * [vRouter](vrouter/README.md)
 * [Modeling Guide](xos/README.md)
     * [XOS Modeling Framework](xos/dev/xproto.md)
