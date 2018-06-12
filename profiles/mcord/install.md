@@ -5,9 +5,8 @@
 A convenience script is provided that will install M-CORD on a single
 node, suitable for evaluation or testing.  Requirements:
 
-- An Ubuntu 16.04 node with at least 64GB of RAM and 32 virtual CPUs
+- An _Ubuntu 16.04.4 LTS_ server with at least 64GB of RAM and 32 virtual CPUs
 - User invoking the script has passwordless `sudo` capability
-- Hostname is resolvable in DNS, e.g., `dig +short $( hostname )` returns an IP address
 
 ```bash
 git clone https://gerrit.opencord.org/automation-tools

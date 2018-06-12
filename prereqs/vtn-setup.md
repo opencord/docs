@@ -22,7 +22,7 @@ Copy the private key so that the [base-openstack](../charts/base-openstack.md) c
 cp ~/.ssh/id_rsa xos-profiles/base-openstack/files/node_key
 ```
 
-The VTN app requires a fabric interface on the compute nodes.  VTN will not successfully initialize if this interface is not present. By default the name of this interface is expected to be named `fabric`. If there is not an actual fabric interface on the compute node, create a dummy interface as follows:
+Second, the VTN app requires a fabric interface on the compute nodes.  VTN will not successfully initialize if this interface is not present. By default the name of this interface is expected to be named `fabric`. If there is not an actual fabric interface on the compute node, create a dummy interface as follows:
 
 ```shell
 sudo modprobe dummy
@@ -30,14 +30,22 @@ sudo ip link set name fabric dev dummy0
 sudo ifconfig fabric up
 ```
 
-Finally, on each compute node, Open vSwitch must be configured to listen for
-remote connections so that it can be controlled by VTN.  Example:
+Finally, in order to be added to the VTN configuration, each compute node must
+be resolvable in DNS.  If a server's hostname is not resolvable, it can be
+added to the local `kube-dns` server (substitute _HOSTNAME_ with the output of
+the `hostname` command, and _HOST-IP-ADDRESS_ with the node's primary IP
+address):
 
 ```shell
-PODS=$( kubectl get pod --namespace openstack|grep openvswitch-db|awk '{print $1}' )
-for POD in $PODS
-do
-  kubectl --namespace openstack exec "$POD" \
-      -- ovs-appctl -t ovsdb-server ovsdb-server/add-remote ptcp:6641
-done
+cat <<EOF > /tmp/HOSTNAME-dns.yaml
+kind: Service
+apiVersion: v1
+metadata:
+  name: HOSTNAME
+  namespace: default
+spec:
+  type: ExternalName
+  externalName: HOST-IP-ADDRESS
+EOF
+kubectl create -f /tmp/HOSTNAME-dns.yaml
 ```
