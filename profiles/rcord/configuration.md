@@ -105,7 +105,6 @@ topology_template:
     olt_device:
       type: tosca.nodes.OLTDevice
       properties:
-        dp_id: of:0000deadbeeffeed
         name: volt-1
         device_type: openolt
         host: 10.90.0.114
@@ -113,6 +112,7 @@ topology_template:
         switch_datapath_id: of:0000000000000001
         switch_port: "1"
         outer_tpid: "0x8100"
+        uplink: "128"
       requirements:
         - volt_service:
             node: service#volt
