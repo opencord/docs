@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c4e3955_fd64daa9",
+        "filename": "prereqs/k8s-multi-node.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-12T22:25:44Z",
+      "side": 1,
+      "message": "spelling and could this be just \"installation script\" ?",
+      "range": {
+        "startLine": 82,
+        "startChar": 35,
+        "endLine": 82,
+        "endChar": 76
+      },
+      "revId": "24149a520f064275f158aa3712beac44532e0525",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
