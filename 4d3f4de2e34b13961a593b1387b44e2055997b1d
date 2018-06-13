@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d8498d6_bd317fc1",
+        "filename": "prereqs/k8s-multi-node.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-13T16:33:37Z",
+      "side": 1,
+      "message": "Wrapped in` instead of * as this is a command?",
+      "range": {
+        "startLine": 55,
+        "startChar": 165,
+        "endLine": 55,
+        "endChar": 207
+      },
+      "revId": "4d3f4de2e34b13961a593b1387b44e2055997b1d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
