@@ -6,15 +6,35 @@ A convenience script is provided that will install M-CORD on a single
 node, suitable for evaluation or testing.  Requirements:
 
 - An _Ubuntu 16.04.4 LTS_ server with at least 64GB of RAM and 32 virtual CPUs
+- Latest versions of released software installed on the server: `sudo apt update; sudo apt -y upgrade`
 - User invoking the script has passwordless `sudo` capability
+- Open access to the Internet (not behind a proxy)
+- Google DNS servers (e.g., 8.8.8.8) are accessible
+
+### Target server on CloudLab (optional)
+
+If you do not have a target server available that meets the above
+requirements, you can borrow one on [CloudLab](https://www.cloudlab.us). Sign
+up for an account using your organization's email address and choose "Join
+Existing Project"; for "Project Name" enter `cord-testdrive`.
+
+> NOTE: CloudLab is supporting CORD as a courtesy. It is expected that you will not use CloudLab resources for purposes other than evaluating CORD. If, after a week or two, you wish to continue using CloudLab to experiment with or develop CORD, then you must apply for your own separate CloudLab project.
+
+Once your account is approved, start an experiment using the
+`OnePC-Ubuntu16.04-HWE` profile on the Wisconsin cluster. This will provide
+you with a temporary target server meeting the above requirements.
+
+Refer to the [CloudLab documentation](http://docs.cloudlab.us/) for more information.
+
+### Convenience Script
+
+This script takes about an hour to complete.  If you run it, you can skip
+directly to [Validating the Installation](#validating-the-installation) below.
 
 ```bash
 git clone https://gerrit.opencord.org/automation-tools
 automation-tools/mcord/mcord-in-a-box.sh
 ```
-
-This script takes about an hour to complete.  If you run it, you can skip
-directly to [Validating the Installation](#validating-the-installation) below.
 
 ## Prerequisites
 
