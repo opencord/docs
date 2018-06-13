@@ -148,6 +148,6 @@ scripts to:
 * Install software like Kubernetes and Helm
 * Build the Helm charts and install them in a local Helm repository
 * Install requried packages
-* Configure DNS on the nodes
+* Configure DNS on the nodes (_NOTE: The `openstack-helm` install overwrites `/etc/resolv.conf` on the compute hosts and points the upstream nameservers to Google DNS.  If a local upstream is required, [see this note](https://docs.openstack.org/openstack-helm/latest/install/developer/kubernetes-and-common-setup.html#clone-the-openstack-helm-repos)_.)
 * Generate `values.yaml` files based on the environment and install Helm charts using these files
 * Run post-install tests on the OpenStack services
