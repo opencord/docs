@@ -59,6 +59,8 @@
         * [Kubernetes](kubernetes-service/kubernetes-service.md)
         * [OpenStack](openstack/openstack-service.md)
         * [VTN and Service Composition](xos/xos_vtn.md)
+    * [Example Services](examples/examples.md)
+        * [SimpleExampleService](simpleexampleservice/simple-example-service.md)
     * [GUI Development](xos-gui/developer/README.md)
         * [Quickstart](xos-gui/developer/quickstart.md)
         * [Service Graph](xos-gui/developer/service_graph.md)
