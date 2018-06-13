@@ -22,6 +22,30 @@
       "revId": "24149a520f064275f158aa3712beac44532e0525",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97f0b7cd_44a2661c",
+        "filename": "prereqs/k8s-multi-node.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-06-13T11:16:17Z",
+      "side": 1,
+      "message": "Thanks Zack! I\u0027ve seen the comment after merging :) but another patch is coming. I\u0027ll add you there as reviewer",
+      "parentUuid": "4c4e3955_fd64daa9",
+      "range": {
+        "startLine": 82,
+        "startChar": 35,
+        "endLine": 82,
+        "endChar": 76
+      },
+      "revId": "24149a520f064275f158aa3712beac44532e0525",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
