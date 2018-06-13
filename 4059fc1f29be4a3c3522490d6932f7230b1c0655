@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22bae18f_b651b888",
+        "filename": "prereqs/vtn-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-13T21:34:33Z",
+      "side": 1,
+      "message": "This won\u0027t persist beyond reboots.  I have a CORD-3070 patch mostly done that should persist, but it needs testing.",
+      "range": {
+        "startLine": 41,
+        "startChar": 3,
+        "endLine": 53,
+        "endChar": 0
+      },
+      "revId": "4059fc1f29be4a3c3522490d6932f7230b1c0655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
