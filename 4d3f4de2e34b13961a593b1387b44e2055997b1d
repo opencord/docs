@@ -22,6 +22,30 @@
       "revId": "4d3f4de2e34b13961a593b1387b44e2055997b1d",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98a97dce_8b9e01a8",
+        "filename": "prereqs/k8s-multi-node.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-06-14T13:06:54Z",
+      "side": 1,
+      "message": "I prefer to use * inline and `` for blocks of code. ;) wrong thing? I\u0027ll start to merge it..we\u0027re always in time to fix these small style things..",
+      "parentUuid": "9d8498d6_bd317fc1",
+      "range": {
+        "startLine": 55,
+        "startChar": 165,
+        "endLine": 55,
+        "endChar": 207
+      },
+      "revId": "4d3f4de2e34b13961a593b1387b44e2055997b1d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
