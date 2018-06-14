@@ -27,7 +27,7 @@ up, for example, the R-CORD profile. This uses images published
 on DockerHub:
 
 ```shell
-cd ~/cord/build/helm-charts
+cd ~/cord/helm-charts
 helm install xos-core -n xos-core
 helm dep update xos-profiles/rcord-lite
 helm install xos-profiles/rcord-lite -n rcord-lite
