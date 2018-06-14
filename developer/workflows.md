@@ -27,13 +27,11 @@ up, for example, the R-CORD profile. This uses images published
 on DockerHub:
 
 ```shell
-cd ~/cord/build/helm-charts
-helm install xos-core -n xos-core
-helm dep update xos-profiles/rcord-lite
-helm install xos-profiles/rcord-lite -n rcord-lite
+cd ~/cord/helm-charts
 ```
 
-> **Note:** You can replace the `rcord-lite` profile with the one you want to work on. 
+In this folder you can choose from the different charts which one to deploy.
+For example to deploy rcord-lite you can follow [this guide](../profiles/rcord/install.md)
 
 ### Deploy a Single Instance of Kafka
 
@@ -82,11 +80,9 @@ in the Docker environment used by Minikube.
 All that is left is to teardown and re-deploy the containers.
 
 ```shell
-helm del --purge xos-core
-helm del --purge rcord-lite
-helm install xos-core -n xos-core -f examples/image-tag-candidate.yaml -f examples/imagePullPolicy-IfNotPresent.yaml
-helm dep update xos-profiles/rcord-lite
-helm install xos-profiles/rcord-lite -n rcord-lite -f examples/image-tag-candidate.yaml -f examples/imagePullPolicy-IfNotPresent.yaml
+helm del --purge <chart-name>
+helm dep update <cart-name>
+helm install <chart-name> -n <chart-name> -f examples/image-tag-candidate.yaml -f examples/imagePullPolicy-IfNotPresent.yaml
 ```
 
 In some cases it is possible to use the `helm` upgrade command,
