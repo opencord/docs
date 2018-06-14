@@ -1,6 +1,7 @@
 # Summary
 
 * [Overview](overview.md)
+    * [Navigating the Guide](navigate.md)
 * [Installation Guide](README.md)
     * [Hardware Requirements](prereqs/hardware.md)
     * [Connectivity Requirements](prereqs/networking.md)
