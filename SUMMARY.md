@@ -11,7 +11,7 @@
         * [Helm](prereqs/helm.md)
         * [Docker Registry (optional)](prereqs/docker-registry.md)
         * [OpenStack (optional)](prereqs/openstack-helm.md)
-    * [Fabric Setup](prereqs/fabric-setup.md)
+    * [Fabric Setup](fabric-setup.md)
     * [Bringing Up CORD](profiles/intro.md)
         * [R-CORD](profiles/rcord/install.md)
             * [OLT Setup](openolt/README.md)
@@ -74,3 +74,4 @@
     * [Test Setup](cord-tester/qa_testsetup.md)
     * [Test Environment](cord-tester/qa_testenv.md)
     * [System Tests](cord-tester/validate_pods.md)
+
