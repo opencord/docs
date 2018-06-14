@@ -1,0 +1,99 @@
+# Navigating the Guide
+
+The guide is organized around the major stages in the lifecycle of CORD:
+
+* [Installation](README.md): Installing (and later upgrading) CORD.
+
+* [Operations](operating_cord/operating_cord.md): Operating an already
+installed CORD deployment.
+
+* [Development](developer/developer.md): Developing new functionality
+to be included in CORD.
+
+* [Modeling](xos/README.md): Modeling new functionality to be included
+in CORD.
+
+* [Testing](cord-tester/README.md): Testing new functionality to be
+included in CORD.
+
+## Navigating CORD
+
+These are all fairly obvious. What's less obvious is the relationship among
+the toolset (and corresponding specification files) used for each stage.
+Understanding these relationships is the key to navigating CORD.
+
+* **Installation (Helm):** Installing CORD means installing a collection
+of Docker containers in a Kubernetes cluster. We use Helm to carry out
+the installation, with the valid configurations defined by a set of
+`helm-charts`. These charts specify the version of each container to be
+deployed, and so they also play a role in upgrading a running system.
+
+* **Operations (TOSCA):** A running CORD POD supports multiple Northbound
+Interfaces (e.g,. a GUI and REST API), but we typically use `TOSCA` to specify
+a workflow for configuring and provisioning a running system. A freshly
+installed CORD POD has a set of control plane and platform level containers
+running (e.g., XOS, ONOS, OpenStack), but until provisioned using `TOSCA`,
+there are no services and no service graph.
+
+* **Development (Docker):** The services running in an operational system
+are typically deployed as Docker containers. Defining the `Dockerfiles` for
+these containers is an important aspect of development. It also invovles
+creating or editng the `helm-charts`, `TOSCA` workflows, and `xproto`
+models required by the other stages.
+
+* **Modeling (XOS):** On-boarding a service (Docker container) into CORD
+also requires a model that specifies the behavior of the service. This model
+is writen in the `xproto` modeling language, and the model is applied to
+CORD by the XOS tool-chain. Among other things, "applying the models to
+CORD" involves generating the TOSCA-engine that is used to process the
+configuration and provisioning workflows used to operate CORD, and the
+API tests used to do a sanity check of commits.
+
+* **Testing (Jenkins):** Full CORD PODS (as well as individual components
+of CORD) are installed on both physical and virtual environment, and run
+through a series of tests. Full PODS are tested nightly, and individual
+components are tested upon every commit Gerrit. These tests are specified
+using `JJB`.
+
+In summary, these tools and containers are inter-related as follows:
+
+* An initial install brings up a set of XOS-related containers (e.g., `xos-core`,
+`xos-gui`, `xos-tosca`) that have been configured with a base set of models.
+This `xos-tosca` container implements the TOSCA engine, which takes TOSCA
+workflows as input and configures/provisions CORD accordingly.
+
+* While the install and operate stages are distinct, for convenience,
+some helm-charts elect to launch a `tosca-loader` container
+(in Kubernetes parlance, it's a *job* and not a *service*) to load an initial
+TOSCA workflow into a newly deployed set of services. This is how a
+service graph is typically instantiated.
+
+* Not all services run as Docker containers. Some services
+run in VMs managed by OpenStack (this is currently the case for M-CORD)
+and some services are implemented as ONOS applications that have been
+packaged using Maven. In such cases, the VM image and the Maven package
+are still specified in the TOSCA workflow.
+
+* Every service (whether implemented in Docker, OpenStack, or ONOS)
+has counter-part *synchronizer* container running as part of the CORD
+control plane (e.g., `volt-synchronizer` for the vOLT service). Typically,
+the helm-chart for a service launches this synchronizer container, whereas
+the TOSCA worflow create, provisions, and initializes the backend container,
+VM, or ONOS app.
+
+* Bringing up additional services in a running POD involves executing
+helm-charts to install the new service's synchronizer container, which
+in turn loads the corresponding new models into XOS. This load then
+triggers and upgrade and restart of the TOSCA engine (and other NBIs),
+which is a pre-requisite for configuring and provisioning that new service.
+
+* Upgrading an existing service is similar to bringing up a new service,
+where we depend on Kubernetes to incrermentally roll out the containers
+that implement the service (and rollback if necessarily), and we depend
+on XOS to migrate from the old model to the new model (and support
+both old and new APIs during the transition period). Upgrading existing
+services has not been thoroughly tested.
+
+
+
+
