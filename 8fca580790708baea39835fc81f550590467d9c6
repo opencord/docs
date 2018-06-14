@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cdc47961_85c565e0",
+        "filename": "navigate.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-14T23:59:26Z",
+      "side": 1,
+      "message": "I would say somewhere that as part of the installation we are pushing the initial TOSCA required to setup the service-graph we decided to install.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 73
+      },
+      "revId": "8fca580790708baea39835fc81f550590467d9c6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1edc87d7_af0964fa",
+        "filename": "navigate.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-14T23:59:26Z",
+      "side": 1,
+      "message": "This looks more like an \"operational\" example, where you are deploying a pre-baked service. What about pointing to the \"write a synchronizer\" basic step I\u0027m writing?",
+      "range": {
+        "startLine": 41,
+        "startChar": 52,
+        "endLine": 41,
+        "endChar": 106
+      },
+      "revId": "8fca580790708baea39835fc81f550590467d9c6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51f1754c_bfa1b404",
+        "filename": "navigate.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-14T23:59:26Z",
+      "side": 1,
+      "message": "I think that modeling is something that only developers care about, what is the reason to keep this two sections separated?",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 48
+      },
+      "revId": "8fca580790708baea39835fc81f550590467d9c6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
