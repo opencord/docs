@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b76e611d_f9a45678",
+        "filename": "SUMMARY.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-15T17:31:36Z",
+      "side": 1,
+      "message": "This is a general guide on the GUI, not relevant only to extensions. Also extensions are not currently working in the kubernetes based deployment. We\u0027ll have to put in some work to get them back to life.",
+      "range": {
+        "startLine": 57,
+        "startChar": 7,
+        "endLine": 57,
+        "endChar": 29
+      },
+      "revId": "b1b341bfeab9d156e383f600081168cf6fdf003e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
