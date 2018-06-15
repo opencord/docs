@@ -3,7 +3,7 @@
 Although not required, you may want to install one or both of the following
 packages:
 
-* **Local Registry:** If your environment does not permit connecing your
+* **Local Registry:** If your environment does not permit connecting your
   POD to ther public Internet, you may want to take advantage of a local Docker
   registery. The following [registry setup](docker-registry.md) will help.
   (Having a local registry is also useful when doing local development, as outlined
