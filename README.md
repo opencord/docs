@@ -1,35 +1,15 @@
 # Installation Guide
 
-This guide describes how to install CORD.
-
-## Prerequisites
-
-Start by satisfying the following prerequisites:
-
-* [Hardware Requirements](./prereqs/hardware.md)
-* [Connectivity Requirements](./prereqs/networking.md)
-* [Software Requirements](./prereqs/software.md)
-
-## Deploy CORD
-
-The next step is select the configuration (profile) you want to
-install:
+This guide describes how to install CORD. It identifies a set of
+[prerequisites](prereqs/README.md), and then walks through
+the steps involved in bringing up one of two CORD profiles:
 
 * [R-CORD](./profiles/rcord/install.md)
 * [M-CORD](./profiles/mcord/install.md)
 
-## Additional Information
+If you are anxious to jump straight to a [Quick Start](quickstart.md)
+procedure that brings up the an emulated version of CORD running
+on your laptop (sorry, no subscriber data plane), then that's an option.
 
-The following are optional steps you may want to take
-
-### Offline Installation
-
-If your environment does not permit connecin your POD to ther public
-Internet, you may want to take advantage of a local Docker registery.
-The following [registry setup](./prereqs/docker-registry.md) will help.
-
-### OpenStack Installation
-
-If you need OpenStack included in your deployment, so you can bring up
-VMs on your POD, you will need to following the following
-[OpenStack deployment](./prereqs/openstack-helm.md) guide.
+Alternatively, if you want to get a broader layof-of-the-land, you
+might step back and start with an [Overview](overview.md).

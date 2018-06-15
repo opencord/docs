@@ -51,8 +51,3 @@ Kubernetes should reply to the request showing the pods already deployed.
 If you've just installed Kubernetes, likely you won't see any pod, yet.
 That's fine, as long as you don't see errors.
 
-## Install Helm
-
-CORD uses a tool called Helm to deploy containers on Kubernetes.
-As such, Helm needs to be installed before being able to deploy CORD containers.
-More info on Helm and how to install it can be found [here](helm.md).
