@@ -37,6 +37,7 @@ topology_template:
       type: tosca.nodes.SwitchPort
       properties:
         portId: 1
+        host_learning: false
       requirements:
         - switch:
             node: switch#my_fabric_switch
