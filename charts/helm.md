@@ -1,10 +1,9 @@
 # Helm Reference
 
-For information on how to install `helm` please refer to [Installing helm](../prereqs/helm.md)
-
-## What is Helm?
-
 {% include "/partials/helm/description.md" %}
+
+For information on how to install `helm` please refer to
+[Installing Helm](../prereqs/helm.md).
 
 ## CORD Helm Charts
 
