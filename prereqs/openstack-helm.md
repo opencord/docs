@@ -1,4 +1,4 @@
-# OpenStack (optional)
+# OpenStack
 
 The [openstack-helm](https://github.com/openstack/openstack-helm)
 project can be used to install a set of Kubernetes nodes as OpenStack

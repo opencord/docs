@@ -1,4 +1,4 @@
-# Docker Registry (optional)
+# Docker Registry
 
 The section describes how to install an **insecure** *docker registry* in Kubernetes, using the standard Kubernetes helm charts.
 
