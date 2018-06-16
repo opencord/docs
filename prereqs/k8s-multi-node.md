@@ -25,7 +25,7 @@ This is meant only for *lab trials* and *demo use*.
     * Run Ubuntu 16.04 server
     * Able to communicate together (ping one each other)
     * Have the same user *cord* configured, that you can use to remotely access them from the operator machine
-    * The user *cord* is sudoer on each machine, and it doesn't need a password to get sudoer privileges (see to authorize a password-less access from the development/management machine in the sections below)
+    * A user (i.e. *cord*) is sudoer on each machine, and it doesn't need a password to get sudoer privileges (see to authorize a password-less access from the development/management machine in the sections below)
 
 ## Download the Kubespray Installation Scripts
 
@@ -40,7 +40,7 @@ the following assumes you are running commands in this directory
 The main script (*setup.sh*) provides a help message with
 instructions. To see it, run *./setup.sh --help*.
 
-The two main functions are:
+The main functions are:
 
 * Install Kubespray on an arbitrary number of target machines
 * Export the k8s configuration file path as environment variable to
@@ -51,7 +51,8 @@ The two main functions are:
 Before starting the installation make sure that
 
 * The development/management machine has password-less access to the target machine(s), meaning the public key of the development/management machine has been copied in the authorization_keys files on the target machines. If you don't know how to do a script called *copy-ssh-keys.sh* is provided. To copy your public key to a target machine run *./copy-ssh-keys.sh TARGET_MACHINE_IP*. Repeat this procedure for each target machine.
-* All target machines don't mount any swap partition. It's easy as simply installing Ubuntu without a swap partition or -once the OS is already installed- commenting out the corresponding line in */etc/fstab* and reboot.
+* All target machines don't mount any swap partition. The setup script should do this automatically, but many times this doesn't work as it should. Doing this manually is easy as installing Ubuntu without a swap partition or -once the OS is already installed- commenting out the corresponding line in */etc/fstab* and reboot.
+* By default the installation script assumes that the user on all the target machines is *cord*. If this is not the case an environment variable should be exported: *export REMOTE_SSH_USER='my-remote-user'*.
 
 ## Install Kubespray
 
@@ -79,7 +80,7 @@ To run the installation script, type
 
 > **NOTE:** at the beginning of the installation you will be asked to insert your
 password multiple times.
-> **NOTE:** the official Kubespray instalation procedure -run by the script- will automatically change the hostname of the target machine(s) with nodeX (where X is an incremental number starting from 1).
+> **NOTE:** the official Kubespray installation script will automatically change the hostname of the target machine(s) with nodeX (where X is an incremental number starting from 1).
 
 At the end of the procedure, Kubespray should be installed and running
 on the remote machines.
