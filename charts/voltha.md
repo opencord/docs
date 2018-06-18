@@ -4,13 +4,12 @@
 
 Add the kubernetes helm charts incubator repository
 ```shell
-cd voltha
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 ```
 
 Build dependencies
 ```shell
-helm dep build
+helm dep build voltha
 ```
 
 There's an etcd-operator **known bug** we're trying to solve that
