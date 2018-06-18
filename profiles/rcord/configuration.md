@@ -314,3 +314,91 @@ topology_template:
 ```
 
 _For instructions on how to push TOSCA, please refer to this [guide](../../xos-tosca/README.md)_
+
+### Automatic creation of RCORD Subscriber without real OLT/ONU
+
+This feature combines few steps from "bottom-up provisioning" and "top-down provisioning" resulting in XOS automatically creating an RCORD-Subscriber.
+The Access device's (OLT/Ponport/ONU) are added to the model through "top-down provisioning" and the action of voltha publishing a newly discovered ONU to the kafka bus is simulated through a python script.
+
+**Pre-Requisites:**
+
+- all the components needed for RCORD-Lite are up and running on your POD (xos-core, rcord-lite, voltha, onos-voltha)
+- configure 'OLT/PONPORT/ONU' devices as defined in the "R-CORD Configuration" section above.
+- configure 'kafka' and 'hippie-oss' services as defined in the "Zero-Touch Subscriber Provisioning" section above.
+- verify the services are running and the configured access devices are listed in the corresponding service-instances (through REST calls or GUI).
+
+**Push "onu-event" to kafka bus**
+
+The following event needs to be pushed.
+
+```shell
+event = json.dumps({
+    'status': 'activated',
+    'serial_number': 'BRCM1234',
+    'uni_port_id': 16,
+    'of_dpid': 'of:109299321'
+})
+```
+
+Make sure that the 'serial_number' in the event above matches the 'serial_number' you configured when adding the ONU device. XOS uses the serial number to make sure the device is actually listed (volt/onudevices).
+
+The script for pushing the onu-event to kafka "onu_activate_event.py" is already available in the container running volt-synchronizer and you may execute it as:
+
+```shell
+
+cordserver@cordserver:~/kubespray$ vagrant status
+Current machine states:
+
+k8s-01                    running (virtualbox)
+
+The VM is running. To stop this VM, you can run `vagrant halt` to
+shut it down forcefully, or you can run `vagrant suspend` to simply
+suspend the virtual machine. In either case, to restart it again,
+simply run `vagrant up`.
+
+cordserver@cordserver:~/kubespray$ vagrant ssh k8s-01
+Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.4.0-87-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+55 packages can be updated.
+25 updates are security updates.
+
+Last login: Sun Jun 17 14:42:13 2018 from 10.0.2.2
+
+vagrant@k8s-01:~$ sudo docker ps | grep volt-syn
+c4ad2559021d        xosproject/volt-synchronizer@sha256:b9af8fbf1d43e5199e68039d6a952a8535544c51e265914fc2f0bec7a32cd4c1                                     "/usr/bin/python /..."   10 days ago         Up 10 days                              k8s_volt_rcord-lite-volt-dd98f78d6-rwwhz_default_48103970-6b3c-11e8-be33-080027ee1df7_0
+vagrant@k8s-01:~$ sudo docker exec -it c4ad2559021d /bin/bash
+root@rcord-lite-volt-dd98f78d6-rwwhz:/opt/xos/synchronizers/volt# pwd
+/opt/xos/synchronizers/volt
+root@rcord-lite-volt-dd98f78d6-rwwhz:/opt/xos/synchronizers/volt# python onu_activate_event.py
+
+```
+
+Or you can directly execute it through kubectl
+
+```shell
+cordserver@cordserver:~$ kubectl get pods | grep rcord-lite-volt
+rcord-lite-volt-dd98f78d6-rwwhz                                   1/1       Running            0          10d
+
+cordserver@cordserver:~$ kubectl exec rcord-lite-volt-dd98f78d6-rwwhz python /opt/xos/synchronizers/volt/onu_activate_event.py
+cordserver@cordserver:~$
+```
+
+If you need to update the contents of event file, you have to do an "apt update" and "apt install vim" within the container.
+
+
+**Verification**
+
+- verify the hippie-oss service instance is created for the event (verify the serial number of ONU). hippie-oss service is intended to verify ONU (serial number) with an external OSS-db. This verification is now configured to always validate the ONU.
+- verify a new rcord-subscriber service instance is created.
+- Once the rcord-subscriber service instance is created service graph will make sure a new service instances are created for volt and vsg-hw models.
+
+```shell
+curl -X GET http://172.17.8.101:30006/xosapi/v1/hippie-oss/hippieossserviceinstances -u "admin@opencord.org:letmein"
+curl -X GET http://172.17.8.101:30006/xosapi/v1/rcord/rcordsubscribers -u "admin@opencord.org:letmein"
+curl -X GET http://172.17.8.101:30006/xosapi/v1/volt/voltserviceinstances -u "admin@opencord.org:letmein"
+curl -X GET http://172.17.8.101:30006/xosapi/v1/vsg-hw/vsghwserviceinstances -u "admin@opencord.org:letmein"
+```
