@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dd8212a3_b22853f9",
+        "filename": "profiles/rcord/configuration.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-19T01:04:10Z",
+      "side": 1,
+      "message": "I would put this instructions under \"Development Guide\" (feel free to create an R-CORD section)",
+      "range": {
+        "startLine": 318,
+        "startChar": 0,
+        "endLine": 318,
+        "endChar": 63
+      },
+      "revId": "f1ede062c73dafb2ba608f0e7d553c41377774fc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "586c9cf5_c98c07ba",
+        "filename": "profiles/rcord/configuration.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-19T01:04:10Z",
+      "side": 1,
+      "message": "We need to describe how to create PONPORTs and ONUs (when a real device is present they will be discovered by VOLTHA), we can just point to the olt-service/samples folder",
+      "range": {
+        "startLine": 326,
+        "startChar": 13,
+        "endLine": 326,
+        "endChar": 28
+      },
+      "revId": "f1ede062c73dafb2ba608f0e7d553c41377774fc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2cda233e_9accdfc0",
+        "filename": "profiles/rcord/configuration.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-19T01:04:10Z",
+      "side": 1,
+      "message": "I would remove this",
+      "range": {
+        "startLine": 328,
+        "startChar": 79,
+        "endLine": 328,
+        "endChar": 117
+      },
+      "revId": "f1ede062c73dafb2ba608f0e7d553c41377774fc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e1e7f5c_f5a0e785",
+        "filename": "profiles/rcord/configuration.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-19T01:04:10Z",
+      "side": 1,
+      "message": "Please remove environment specific things, other users may have a different setup and this can be confusing",
+      "range": {
+        "startLine": 349,
+        "startChar": 0,
+        "endLine": 369,
+        "endChar": 50
+      },
+      "revId": "f1ede062c73dafb2ba608f0e7d553c41377774fc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "085fa2b4_49cf3a52",
+        "filename": "profiles/rcord/configuration.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-19T01:04:10Z",
+      "side": 1,
+      "message": "The kubectl interface is the only one we want to expose. In a multi-node environment this won\u0027t work",
+      "range": {
+        "startLine": 371,
+        "startChar": 0,
+        "endLine": 376,
+        "endChar": 94
+      },
+      "revId": "f1ede062c73dafb2ba608f0e7d553c41377774fc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
