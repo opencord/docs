@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6578c524_86d497e4",
+        "filename": "charts/xossh.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2018-06-19T17:02:54Z",
+      "side": 1,
+      "message": "should we update also \nhttps://guide.opencord.org/xos/dev/xossh.htm\non how to enter the xossh container ?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 3
+      },
+      "revId": "940aa47bb88e14bca5f398dde4b62a9b5ff0eb69",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
