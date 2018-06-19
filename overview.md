@@ -9,7 +9,22 @@ the [CORD wiki](https://wiki.opencord.org). This includes early white papers
 and design notes that have shaped [CORD's
 architecture](https://wiki.opencord.org/display/CORD/Documentation).
 
-## Making Changes to Documentation
+## Navigating the Guide
+
+The guide is organized around the major stages in the lifecycle of CORD:
+
+* [Installation](README.md): Installing (and later upgrading) CORD. 
+* [Operations](operating_cord/operating_cord.md): Operating an already 
+  installed CORD deployment. 
+* [Development](developer/developer.md): Developing new functionality 
+  to be included in CORD. 
+* [Testing](cord-tester/README.md): Testing functionality to be 
+ included in CORD. 
+
+These are all fairly obvious. What's less obvious is the relationship among 
+these stages, which is helpful in [Navigating CORD](navigate.md).
+
+## Making Changes to the Guide
 
 The [http://guide.opencord.org](http://guide.opencord.org) website is built
 using the [GitBook Toolchain](https://toolchain.gitbook.com/), with the

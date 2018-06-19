@@ -1,7 +1,7 @@
 # R-CORD Configuration 
 
-Once all the components needed for RCORD-Lite are up and running on your POD,
-you'll need to configure XOS with the proper configuration. 
+Once all the components needed for the R-CORD profile are up and
+running on your POD, you'll need to configure XOS with the proper configuration. 
 Since this configuration is environment specific, you'll need to create your own,
 but the following can serve as a reference for it:
 

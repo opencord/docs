@@ -1,20 +1,8 @@
-# Navigating the Guide
+# Navigating CORD 
 
-The guide is organized around the major stages in the lifecycle of CORD:
-
-* [Installation](README.md): Installing (and later upgrading) CORD.
-* [Operations](operating_cord/operating_cord.md): Operating an already
-  installed CORD deployment.
-* [Development](developer/developer.md): Developing new functionality
-  to be included in CORD.
-* [Testing](cord-tester/README.md): Testing functionality to be
- included in CORD.
-
-## Navigating CORD
-
-These are all fairly obvious. What's less obvious is the relationship among
-the toolset (and corresponding specification files) used for each stage.
-Understanding these relationships is helpful in navigating CORD.
+The relationship between installing, operating, and developing
+CORD—and the corresponding toolsets and specification files
+used by each stage—is helpful in navigating CORD.
 
 * **Installation (Helm):** Installing CORD means installing a collection
   of Docker containers in a Kubernetes cluster. We use Helm to carry out
@@ -24,7 +12,7 @@ Understanding these relationships is helpful in navigating CORD.
   More information about `helm-charts` can be found [here](charts/helm.md).
 
 * **Operations (TOSCA):** A running CORD POD supports multiple Northbound
-  Interfaces (e.g,. a GUI and REST API), but we typically use `TOSCA` to specify
+  Interfaces (e.g., a GUI and REST API), but we typically use `TOSCA` to specify
   a workflow for configuring and provisioning a running system. A freshly
   installed CORD POD has a set of control plane and platform level containers
   running (e.g., XOS, ONOS, OpenStack), but until provisioned using `TOSCA`,
@@ -40,13 +28,6 @@ Understanding these relationships is helpful in navigating CORD.
   workflows used to operate CORD. More information about `xproto` (and
   other details about on-boarding a service) can be found
   [here](xos/dev/xproto.md).
-
-* **Testing (Jenkins):** Full CORD PODS (as well as individual components
-  of CORD) are installed on both physical and virtual environment, and run
-  through a series of tests. Full PODS are tested nightly, and individual
-  components are tested upon every commit Gerrit. These tests are specified
-  using `Jenkinfiles` and `JJB`. An overview of how CORD is tested can be found
-  [here](cord-tester/README.md).
 
 These tools and containers are inter-related as follows:
 
@@ -68,7 +49,7 @@ These tools and containers are inter-related as follows:
   package are still specified in the TOSCA workflow.
 
 * Every service (whether implemented in Docker, OpenStack, or ONOS)
-  has counter-part *synchronizer* container running as part of the CORD
+  has a counter-part *synchronizer* container running as part of the CORD
   control plane (e.g., `volt-synchronizer` for the vOLT service). Typically,
   the helm-chart for a service launches this synchronizer container, whereas
   the TOSCA worflow creates, provisions, and initializes the backend container,

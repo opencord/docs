@@ -31,7 +31,7 @@ cd ~/cord/helm-charts
 ```
 
 In this folder you can choose from the different charts which one to deploy.
-For example to deploy rcord-lite you can follow [this guide](../profiles/rcord/install.md)
+For example to deploy R-CORD you can follow [this guide](../profiles/rcord/install.md)
 
 ### Deploy a Single Instance of Kafka
 

@@ -1,7 +1,7 @@
 # Summary
 
 * [Overview](overview.md)
-    * [Navigating the Guide](navigate.md)
+    * [Navigating CORD](navigate.md)
     * [Quick Start](quickstart.md)
 * [Installation Guide](README.md)
     * [Prerequisites](prereqs/README.md)
