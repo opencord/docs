@@ -131,7 +131,6 @@ more informations.
 To create a subscriber in CORD you need to retrieve some informations:
 
 - ONU Serial Number
-- UNI Port ID
 - Mac Address
 - IP Address
 
@@ -196,23 +195,6 @@ Device 00015698e67dc060
 ```
 to find the correct serial number.
 
-**Find the UNI Port Id**
-
-From the VOLTHA CLI, in the device command prompt execute:
-
-```shell
-(device 00015698e67dc060) ports
-Device ports:
-+---------+----------+--------------+-------------+-------------+------------------+-----------------------------------------------------+
-| port_no |    label |         type | admin_state | oper_status |        device_id |                                               peers |
-+---------+----------+--------------+-------------+-------------+------------------+-----------------------------------------------------+
-|     100 | PON port |      PON_ONU |     ENABLED |      ACTIVE | 00015698e67dc060 | [{'port_no': 16, 'device_id': u'0001941bd45e71d8'}] |
-|      16 |   uni-16 | ETHERNET_UNI |     ENABLED |      ACTIVE | 00015698e67dc060 |                                                     |
-+---------+----------+--------------+-------------+-------------+------------------+-----------------------------------------------------+
-```
-and locate the `ETHERNET_UNI` port.
-The `port_no` for that port is the value you are looking for.
-
 **Push a subscriber into CORD**
 
 Once you have the informations you need about your subscriber,
@@ -232,7 +214,6 @@ topology_template:
         name: My House
         c_tag: 111
         onu_device: BRCM1234 # Serial Number of the ONU Device to which this subscriber is connected
-        uni_port_id: 16 # UNI PORT ID in VOLTHA
         mac_address: 00:AA:00:00:00:01 # subscriber mac address
         ip_address: 10.8.2.1 # subscriber IP
 ```
