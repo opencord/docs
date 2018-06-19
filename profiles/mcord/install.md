@@ -32,6 +32,8 @@ This script takes about an hour to complete.  If you run it, you can skip
 directly to [Validating the Installation](#validating-the-installation) below.
 
 ```bash
+mkdir ~/cord
+cd ~/cord
 git clone https://gerrit.opencord.org/automation-tools
 automation-tools/mcord/mcord-in-a-box.sh
 ```
