@@ -27,7 +27,7 @@ setup: automation-tools cord-tester simpleexampleservice openstack fabric hippie
 test: linkcheck lint
 
 linkcheck: build
-	linkchecker --check-extern -a _book/
+	linkchecker -a _book/
 
 lint:
 	@echo "markdownlint(mdl) version: `mdl --version`"
