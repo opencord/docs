@@ -66,7 +66,15 @@ correctly.  On the OpenStack Helm master node run:
 ssh -p 8101 onos@onos-cord-ssh.default.svc.cluster.local cordvtn-nodes
 ```
 
+> NOTE: If the `cordvtn-nodes` command is not present, the most common cause
+> is an issue with resolving the server's hostname.
+> See [this section on adding a hostname to kube-dns](../../prereqs/vtn-setup.md#dns-setup)
+> for a fix; the command should be present shortly after the hostname is added.
+
 You should see all nodes in `COMPLETE` state.
+
+> NOTE: If the node is in `INIT` state rather than `COMPLETE`, try running
+> `cordvtn-node-init <node>` and see if that resolves the issue.
 
 Next, check that the VNF images are loaded into OpenStack (they are quite large
 so this may take a while to complete):
@@ -144,3 +152,14 @@ You should see output like the following:
 | 4a5960b5-b5e4-4777-8fe4-f257c244f198 | mysite_vspgwc-3 | ACTIVE | management=172.27.0.7; spgw_network=117.0.0.8; s11_network=112.0.0.4                               | image_spgwc_v0.1 | m1.large  |
 +--------------------------------------+-----------------+--------+----------------------------------------------------------------------------------------------------+------------------+-----------+
 ```
+
+Log in to the XOS GUI and verify that the service synchronizers have run.  The
+GUI is available at URL `http:<master-node>:30001` with username
+`admin@opencord.org` and password `letmein`.  Verify that the status of all
+ServiceInstance objects is `OK`.
+
+> NOTE: If you see a status message of `SSH Error: data could not be sent to
+> remote host`, the most common cause is the inability of the synchronizers to
+> resolve the server's hostname.  See [this section on adding a hostname to
+> kube-dns](../../prereqs/vtn-setup.md#dns-setup) for a fix; the issue should
+> resolve itself after the hostname is added.
