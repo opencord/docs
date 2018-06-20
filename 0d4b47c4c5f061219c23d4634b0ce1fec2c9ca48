@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8c5e22c5_80677891",
+        "filename": "quickstart.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-20T21:10:48Z",
+      "side": 1,
+      "message": "do we need the android code?",
+      "range": {
+        "startLine": 136,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 63
+      },
+      "revId": "0d4b47c4c5f061219c23d4634b0ce1fec2c9ca48",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7bb8297_04e35804",
+        "filename": "quickstart.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-20T21:10:48Z",
+      "side": 1,
+      "message": "Can\u0027t we just say: you need a kubernetes environment?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 186,
+        "endChar": 3
+      },
+      "revId": "0d4b47c4c5f061219c23d4634b0ce1fec2c9ca48",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
