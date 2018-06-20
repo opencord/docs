@@ -3,32 +3,37 @@
 ## First Time Installation
 
 Add the kubernetes helm charts incubator repository
+
 ```shell
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 ```
 
 Build dependencies
+
 ```shell
 helm dep build voltha
 ```
 
 There's an etcd-operator **known bug** we're trying to solve that
 prevents users to deploy Voltha straight since the first time. We
-found a workaround. 
+found a workaround.
 
 Few steps:
 
 Install Voltha (without etcd operator)
+
 ```shell
 helm install -n voltha --set etcd-operator.customResources.createEtcdClusterCRD=false voltha
 ```
 
 Uninstall Voltha
+
 ```shell
 helm delete --purge voltha
 ```
 
 Deploy Voltha
+
 ```shell
 helm install -n voltha voltha
 ```

@@ -1,7 +1,7 @@
-# R-CORD Configuration 
+# R-CORD Configuration
 
 Once all the components needed for the R-CORD profile are up and
-running on your POD, you'll need to configure XOS with the proper configuration. 
+running on your POD, you'll need to configure XOS with the proper configuration.
 Since this configuration is environment specific, you'll need to create your own,
 but the following can serve as a reference for it:
 
@@ -126,7 +126,7 @@ Once the POD has been configured, you can create a subscriber,
 please refer to the [RCORD Service](../../rcord/README.md) guide for
 more informations.
 
-### Create a subscriber in RCORD
+## Create a subscriber in RCORD
 
 To create a subscriber in CORD you need to retrieve some informations:
 
@@ -159,6 +159,7 @@ Devices:
 | 00015698e67dc060 | broadcom_onu | True | 0001941bd45e71d8 |     ENABLED |      ACTIVE |      REACHABLE |      536870912 |                  |      BRCM|        0001941bd45e71d8 |                    1 |                            1 |
 +------------------+--------------+------+------------------+-------------+-------------+----------------+----------------+------------------+----------+-------------------------+----------------------+------------------------------+
 ```
+
 to list all the existing devices, and locate the correct ONU, then:
 
 ```shell
@@ -193,6 +194,7 @@ Device 00015698e67dc060
 |                  flows.items |        5 item(s) |
 +------------------------------+------------------+
 ```
+
 to find the correct serial number.
 
 **Push a subscriber into CORD**
@@ -220,7 +222,7 @@ topology_template:
 
 _For instructions on how to push TOSCA, please refer to this [guide](../../xos-tosca/README.md)_
 
-### Zero-Touch Subscriber Provisioning
+## Zero-Touch Subscriber Provisioning
 
 This feature, also referred to as "bottom-up provisioning" enables auto-discovery
 of subscriber and their validation through an external OSS.

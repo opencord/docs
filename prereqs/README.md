@@ -7,6 +7,6 @@ match your local environment.
 
 There are three categories of requirements that must be met before installing CORD:
 
-* [Hardware Requirements](hardware.md) 
-* [Connectivity Requirements](networking.md) 
-* [Software Requirements](software.md) 
+* [Hardware Requirements](hardware.md)
+* [Connectivity Requirements](networking.md)
+* [Software Requirements](software.md)

@@ -15,7 +15,7 @@ There are two popular single-node versions of Kubernetes.
     * Documentation: <https://microk8s.io/>
     * One machine, Linux based, either physical machine or virtual. It could also be your own PC!
 
-## Done?
+## Next Step
 
 Once you are done, you are ready to install Kubctl and Helm, so return to
 [here](kubernetes.md#get-your-kubeconfig-file) in the installation guide.

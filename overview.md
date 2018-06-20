@@ -13,15 +13,15 @@ architecture](https://wiki.opencord.org/display/CORD/Documentation).
 
 The guide is organized around the major stages in the lifecycle of CORD:
 
-* [Installation](README.md): Installing (and later upgrading) CORD. 
-* [Operations](operating_cord/operating_cord.md): Operating an already 
-  installed CORD deployment. 
-* [Development](developer/developer.md): Developing new functionality 
-  to be included in CORD. 
-* [Testing](cord-tester/README.md): Testing functionality to be 
- included in CORD. 
+* [Installation](README.md): Installing (and later upgrading) CORD.
+* [Operations](operating_cord/operating_cord.md): Operating an already
+  installed CORD deployment.
+* [Development](developer/developer.md): Developing new functionality
+  to be included in CORD.
+* [Testing](cord-tester/README.md): Testing functionality to be
+ included in CORD.
 
-These are all fairly obvious. What's less obvious is the relationship among 
+These are all fairly obvious. What's less obvious is the relationship among
 these stages, which is helpful in [Navigating CORD](navigate.md).
 
 ## Making Changes to the Guide

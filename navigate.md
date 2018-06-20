@@ -1,4 +1,4 @@
-# Navigating CORD 
+# Navigating CORD
 
 The relationship between installing, operating, and developing
 CORD—and the corresponding toolsets and specification files

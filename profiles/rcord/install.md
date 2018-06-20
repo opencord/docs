@@ -28,7 +28,7 @@ helm dep update xos-profiles/rcord-lite
 helm install -n rcord-lite xos-profiles/rcord-lite
 ```
 
-Now that your R-CORD deployment is complete, please read this 
+Now that your R-CORD deployment is complete, please read this
 to understand how to configure it: [Configure R-CORD](configuration.md)
 
 ## Customizing an R-CORD Install

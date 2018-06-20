@@ -32,14 +32,14 @@ able to access the Kubernetes cluster.
 helm init
 kubectl create serviceaccount --namespace kube-system tiller
 kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
-kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'      
+kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
 helm init --service-account tiller --upgrade
 ```
 
 Once *helm* and *tiller* are installed you should be able to run the
 command *helm ls* without errors.
 
-## Done?
+## Next Step
 
 Once you are done, you are ready to deploy CORD components using their
 helm charts! See [Bringing Up CORD](../profiles/intro.md). For more detailed

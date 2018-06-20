@@ -30,6 +30,7 @@ This is meant only for *lab trials* and *demo use*.
 ## Download the Kubespray Installation Scripts
 
 On the operator machine
+
 ```shell
 git clone https://gerrit.opencord.org/automation-tools
 ```
@@ -74,6 +75,7 @@ The installation procedure goes through the following steps (in this order):
 * Downloads and exports the access configuration outside the Kubespray folder, so it won’t be removed at the next execution of the script (for example while trying to re-deploy the POD, or while deploying a different POD)
 
 To run the installation script, type
+
 ```shell
 ./setup.sh -i onf 10.90.0.101 10.90.0.102 10.90.0.103
 ```
@@ -90,6 +92,7 @@ sub-directory *configs/onf.conf*.
 
 If you want to deploy another POD without affecting your existing
 deployment run the following:
+
 ```shell
 ./setup.sh -i my_other_deployment 192.168.0.1 192.168.0.2 192.168.0.3
 ```
@@ -114,9 +117,9 @@ source setup.sh -s onf
 
 At this point, you can start to use *kubectl*  and *helm*.
 
-## Done?
+## Next Step
 
-Once you are done, you are ready to install Kubctl and Helm, so return to 
+Once you are done, you are ready to install Kubctl and Helm, so return to
 [here](kubernetes.md#get-your-kubeconfig-file) in the installation
 guide.
 
