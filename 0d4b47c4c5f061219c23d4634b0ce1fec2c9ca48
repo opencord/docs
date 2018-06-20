@@ -25,6 +25,52 @@
     },
     {
       "key": {
+        "uuid": "01b0cd12_283ff64d",
+        "filename": "quickstart.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-20T21:25:53Z",
+      "side": 1,
+      "message": "We actually don\u0027t need the whole CORD codebase to install an example, the only thing we need is the \"helm-chart\" repo, and even that is optional",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 137,
+        "endChar": 59
+      },
+      "revId": "0d4b47c4c5f061219c23d4634b0ce1fec2c9ca48",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c3b5e35_3d0402dd",
+        "filename": "quickstart.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-20T21:25:53Z",
+      "side": 1,
+      "message": "what if the user doesn\u0027t have curl installed?\nshouldn\u0027t we point to here? https://guide.opencord.org/prereqs/helm.html#install-helm-client",
+      "range": {
+        "startLine": 151,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 4
+      },
+      "revId": "0d4b47c4c5f061219c23d4634b0ce1fec2c9ca48",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7bb8297_04e35804",
         "filename": "quickstart.md",
         "patchSetId": 2
@@ -41,6 +87,52 @@
         "startChar": 0,
         "endLine": 186,
         "endChar": 3
+      },
+      "revId": "0d4b47c4c5f061219c23d4634b0ce1fec2c9ca48",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8c17563b_ce241413",
+        "filename": "quickstart.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-20T21:25:53Z",
+      "side": 1,
+      "message": "I think we should point the user to the documentation of the single charts, more than duplicate all the commands",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 65
+      },
+      "revId": "0d4b47c4c5f061219c23d4634b0ce1fec2c9ca48",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71f43d63_e0a8f7c0",
+        "filename": "quickstart.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-20T21:25:53Z",
+      "side": 1,
+      "message": "do we need all this bash machinery to perform a single curl request?",
+      "range": {
+        "startLine": 216,
+        "startChar": 0,
+        "endLine": 227,
+        "endChar": 39
       },
       "revId": "0d4b47c4c5f061219c23d4634b0ce1fec2c9ca48",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
