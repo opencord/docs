@@ -1,9 +1,10 @@
 # R-CORD Configuration
 
 Once all the components needed for the R-CORD profile are up and
-running on your POD, you'll need to configure XOS with the proper configuration.
-Since this configuration is environment specific, you'll need to create your own,
-but the following can serve as a reference for it:
+running on your POD, you will need to configure it. This is typically
+done using TOSCA. This configuration is environment specific, so
+you will need to create your own, but the following can serve as a
+reference:
 
 ```yaml
 tosca_definitions_version: tosca_simple_yaml_1_0
@@ -120,34 +121,34 @@ topology_template:
             relationship: tosca.relationships.BelongsToOne
 ```
 
-_For instructions on how to push TOSCA, please refer to this [guide](../../xos-tosca/README.md)_
+For instructions on how to push TOSCA into a CORD POD, please
+refer to this [guide](../../xos-tosca/README.md).
 
-Once the POD has been configured, you can create a subscriber,
-please refer to the [RCORD Service](../../rcord/README.md) guide for
-more informations.
+## Top-Down Subscriber Provisioning
 
-## Create a subscriber in RCORD
+Once the POD has been configured, you can create a subscriber. This
+section describes a "top-down" approach for doing that. (The following
+section describes an alternative, "bottom up" approach.)
 
-To create a subscriber in CORD you need to retrieve some informations:
+To create a subscriber, you need to retrieve some information:
 
 - ONU Serial Number
 - Mac Address
 - IP Address
 
-We'll focus on the first two as the others are pretty self-explaining.
-
-**Find the ONU Serial Number**
+### Find ONU Serial Number
 
 Once your POD is set up and the OLT has been pushed and activated in VOLTHA,
 XOS will discover the ONUs available in the system.
 
-You can find them trough:
+You can find them through:
 
-- the XOS UI, on the left side click on `vOLT > ONUDevices`
-- the rest APIs `http://<pod-id>:<chameleon-port|30006>/xosapi/v1/volt/onudevices`
-- the VOLTHA [cli](../../charts/voltha.md#how-to-access-the-voltha-cli)
+- XOS GUI: on the left side click on `vOLT > ONUDevices`
+- XOS Rest API: `http://<pod-id>:<chameleon-port|30006>/xosapi/v1/volt/onudevices`
+- VOLTHA CLI: [Command Line Interface](../../charts/voltha.md#how-to-access-the-voltha-cli)
 
-If you are connected to the VOLTHA CLI you can use the command:
+If you are connected to the VOLTHA CLI you can use the following
+command to list all the existing devices:
 
 ```shell
 (voltha) devices
@@ -160,7 +161,7 @@ Devices:
 +------------------+--------------+------+------------------+-------------+-------------+----------------+----------------+------------------+----------+-------------------------+----------------------+------------------------------+
 ```
 
-to list all the existing devices, and locate the correct ONU, then:
+Locate the correct ONU, then:
 
 ```shell
 (voltha) device 00015698e67dc060
@@ -197,10 +198,10 @@ Device 00015698e67dc060
 
 to find the correct serial number.
 
-**Push a subscriber into CORD**
+### Push a Subscriber into CORD
 
-Once you have the informations you need about your subscriber,
-you can create it by customizing this TOSCA:
+Once you have this information, you can create the subscriber by
+customizing the following TOSCA and passing it into the POD:
 
 ```yaml
 tosca_definitions_version: tosca_simple_yaml_1_0
@@ -220,42 +221,47 @@ topology_template:
         ip_address: 10.8.2.1 # subscriber IP
 ```
 
-_For instructions on how to push TOSCA, please refer to this [guide](../../xos-tosca/README.md)_
+For instructions on how to push TOSCA into a CORD POD, please
+refer to this [guide](../../xos-tosca/README.md).
 
 ## Zero-Touch Subscriber Provisioning
 
-This feature, also referred to as "bottom-up provisioning" enables auto-discovery
-of subscriber and their validation through an external OSS.
+This feature, also referred to as "bottom-up" provisioning,
+enables auto-discovery of subscribers and validates them
+using an external OSS.
 
-Here is the expected workflow:
+The expected workflow is as follows:
 
-- when an ONU is attached to the POD, VOLTHA will discover it and send an event to XOS
-- XOS receive the ONU activated events and through an OSS-Service query the upstream OSS to validate wether that ONU has a valid serial number
-- once the OSS has approved the ONU, XOS will create `ServiceInstance` chain for this particular subscriber and configure the POD to give him connectivity
+- When an ONU is attached to the POD, VOLTHA will discover it and send
+   an event to XOS
+- XOS receives the ONU activation event and through an OSS proxy
+   queries the upstream OSS to validate wether that ONU has a valid serial number
+- Once the OSS has approved the ONU, XOS will create `ServiceInstance`
+  chain for this particular subscriber and configure the POD to enable connectivity
 
-If you want to enable the "Zero touch provisioning" feature you'll need
-to deploy and configure some extra pieces in the system before attaching
+To enable the zero-touch provisioning feature, you will need to deploy
+and configure some extra pieces into the system before attaching
 subscribers:
 
-**Kafka**
+### Deploy Kafka
 
-To enable this feature XOS needs to receive events from `onos-voltha`
+To enable this feature XOS needs to receive events from `onos-voltha`,
 so a kafka bus needs to be deployed.
-To deploy it please follow [this instructions](../../charts/kafka.md)
+To deploy Kafka, please follow these [instructions](../../charts/kafka.md)
 
-**OSS Service**
+### Deploy OSS Proxy
 
-This is the piece of code that is responsible to enable the communication
-between CORD and you OSS Database.
-For reference we are providing a sample implemetation, available here:
+This is the piece of code that is responsible to connecting CORD to an
+external OSS Database. As a simple reference, we provide a sample
+implemetation, available here:
 [hippie-oss](https://github.com/opencord/hippie-oss)
 
 > **Note:** This implementation currently validates any subscriber that comes online.
 
 To deploy the `hippie-oss` service you can look [here](../../charts/hippie-oss.md).
 
-Once the chart has come online, you'll need to add it to your service graph,
-and you can use this TOSCA for that:
+Once the chart has come online, you will need to add the Hippie-OSS service
+to your service graph. You can use the following TOSCA to do that:
 
 ```yaml
 tosca_definitions_version: tosca_simple_yaml_1_0
@@ -296,4 +302,5 @@ topology_template:
             relationship: tosca.relationships.BelongsToOne
 ```
 
-_For instructions on how to push TOSCA, please refer to this [guide](../../xos-tosca/README.md)_
+For instructions on how to push TOSCA into a CORD POD, please
+refer to this [guide](../../xos-tosca/README.md).
