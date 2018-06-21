@@ -66,8 +66,8 @@ correctly.  On the OpenStack Helm master node run:
 ssh -p 8101 onos@onos-cord-ssh.default.svc.cluster.local cordvtn-nodes
 ```
 
-> NOTE: If the `cordvtn-nodes` command is not present, the most common cause
-> is an issue with resolving the server's hostname.
+> NOTE: If the `cordvtn-nodes` command is not present, or if it does not show any nodes,
+> the most common cause is an issue with resolving the server's hostname.
 > See [this section on adding a hostname to kube-dns](../../prereqs/vtn-setup.md#dns-setup)
 > for a fix; the command should be present shortly after the hostname is added.
 
