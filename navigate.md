@@ -1,8 +1,8 @@
 # Navigating CORD
 
-The relationship between installing, operating, and developing
-CORD—and the corresponding toolsets and specification files
-used by each stage—is helpful in navigating CORD.
+Understanding the relationship between installing, operating, and developing
+CORD—and the corresponding toolsets and specification files used by
+each stage—is helpful in navigating CORD.
 
 * **Installation (Helm):** Installing CORD means installing a collection
   of Docker containers in a Kubernetes cluster. We use Helm to carry out
@@ -42,11 +42,13 @@ These tools and containers are inter-related as follows:
   TOSCA workflow into a newly deployed set of services. This is how a
   service graph is typically instantiated.
 
-* Not all services run as Docker containers. Some services run in VMs
-  managed by OpenStack (this is currently the case for M-CORD) and
-  some services are implemented as ONOS applications that have been
-  packaged using Maven. In such cases, the VM image and the Maven
-  package are still specified in the TOSCA workflow.
+* While the CORD control plane is deployed as a set of Docker
+  containers, not all of the services themselves run in containers.
+  Some services run in VMs managed by OpenStack (this is currently
+  the case for M-CORD) and some services are implemented as ONOS
+  applications that have been packaged using Maven. In such cases,
+  the VM image and the Maven package are still specified in the TOSCA
+  workflow.
 
 * Every service (whether implemented in Docker, OpenStack, or ONOS)
   has a counter-part *synchronizer* container running as part of the CORD

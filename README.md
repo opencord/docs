@@ -8,8 +8,8 @@ the steps involved in bringing up one of two CORD profiles:
 * [M-CORD](./profiles/mcord/install.md)
 
 If you are anxious to jump straight to a [Quick Start](quickstart.md)
-procedure that brings up the an emulated version of CORD running
+procedure that brings up an emulated version of CORD running
 on your laptop (sorry, no subscriber data plane), then that's an option.
 
-Alternatively, if you want to get a broader layof-of-the-land, you
+Alternatively, if you want to get a broader lay-of-the-land, you
 might step back and start with an [Overview](overview.md).

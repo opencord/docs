@@ -34,7 +34,18 @@ Once the services in the `base-openstack` profile are running, it
 is then possible to bring up the `mcord` profile, which corresponds
 to ~10 other services. It is also possible to bring up an individual
 service by executing its helm chart; for example
-`xos-services/exampleservice`.
+`xos-services/simpleexampleservice`.
+
+> **Note:** Sometimes we install Individual services by first
+> "wrapping" them in a profile. For example,
+> `SimpleExampleService` is deployed from the
+> `xos-profiles/demo-simpleexampleservice` profile, rather
+> than directly from `xos-services/simpleexampleservice`.
+> The latter is included by reference from the former.
+> This is not a fundamental limitation, but we do it when we
+> want to run the `tosca-loader` that loads a TOSCA workflow
+> into CORD. This feature is currently available at only
+> the profile level.
 
 Similarly, the `base-kubernetes` profile brings up Kubernetes in
 support of container-based VNFs. This corresponds to the
@@ -42,7 +53,7 @@ support of container-based VNFs. This corresponds to the
 Kubernetes to deploy the CORD control plane. Once this profile is
 running, it is possible to bring up an example VNF in a container
 by executing its helm chart; for example
-`xos-services/simpleexampleservice`.
+`xos-profiles/demo-simpleexampleservice`.
 
 > **Note:** The `base-kubernetes` configuration does not yet
 > incorporate VTN. Doing so is work-in-progress.
