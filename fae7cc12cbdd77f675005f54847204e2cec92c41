@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e42309dd_16a9e095",
+        "filename": "profiles/rcord/configuration.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-21T22:30:32Z",
+      "side": 1,
+      "message": "the service graph will come up as part of the profile. The config we are pushing is really the POD Layout (eg: how the fabric looks like, vRouter config, OLT Devices, ...)",
+      "range": {
+        "startLine": 4,
+        "startChar": 51,
+        "endLine": 5,
+        "endChar": 69
+      },
+      "revId": "fae7cc12cbdd77f675005f54847204e2cec92c41",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
