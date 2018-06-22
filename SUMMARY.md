@@ -77,6 +77,7 @@
             * [Data Sources](xos-gui/architecture/data-sources.md)
         * [Tests](xos-gui/developer/tests.md)
     * [Unit Tests](xos/dev/unittest.md)
+    * [Versions and Releases](versioning.md)
 * [Testing Guide](cord-tester/README.md)
     * [Test Setup](cord-tester/qa_testsetup.md)
     * [Test Environment](cord-tester/qa_testenv.md)
