@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c78b7843_aae6d1a9",
+        "filename": "charts/voltha.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-06-22T17:38:35Z",
+      "side": 1,
+      "message": "Are we trying to be consistent with using \"git clone\" instead of repo?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 23
+      },
+      "revId": "22579bb2b3e3a75caf79300872b1a98f9b2da6cb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed09575_e3e2ef61",
+        "filename": "charts/voltha.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-06-22T17:38:35Z",
+      "side": 1,
+      "message": "Convention for \"notes\" is... \n\n\u003e **Note:** ...\n\u003e ...",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 6
+      },
+      "revId": "22579bb2b3e3a75caf79300872b1a98f9b2da6cb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
