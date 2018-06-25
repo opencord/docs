@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf9fbb39_d6d2192e",
+        "filename": "charts/voltha.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-06-25T13:31:53Z",
+      "side": 0,
+      "message": "AFAIK the bug is  still there, or at least now there\u0027s another bug that manifests saying: Error: unable to decode \"\": no kind \"EtcdCluster\" is registered for version \"etcd.database.coreos.com/v1beta2\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 92
+      },
+      "revId": "037e22cb68e0ec2adf1cfa0d9ef5a1966e17a562",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd8cd40_7d90e084",
+        "filename": "charts/voltha.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-06-25T13:31:53Z",
+      "side": 0,
+      "message": "This should have remained",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 28
+      },
+      "revId": "037e22cb68e0ec2adf1cfa0d9ef5a1966e17a562",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}

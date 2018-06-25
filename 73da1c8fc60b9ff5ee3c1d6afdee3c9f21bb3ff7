@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a819bb9c_cc76583a",
+        "filename": "charts/voltha.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-06-25T13:31:53Z",
+      "side": 1,
+      "message": "This is wrong. 1) you were not in the voltha directory. We added voltha, to don\u0027t have to go inside there.. it was correct as it was before. Please, revert back",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 5
+      },
+      "revId": "73da1c8fc60b9ff5ee3c1d6afdee3c9f21bb3ff7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c752d195_3cc6cdc7",
+        "filename": "charts/voltha.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-06-25T13:31:53Z",
+      "side": 1,
+      "message": "is there a non standard ? :)",
+      "range": {
+        "startLine": 49,
+        "startChar": 2,
+        "endLine": 49,
+        "endChar": 11
+      },
+      "revId": "73da1c8fc60b9ff5ee3c1d6afdee3c9f21bb3ff7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
