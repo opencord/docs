@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f629e9f8_ae3aa191",
+        "filename": "linux.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-06-25T16:42:20Z",
+      "side": 1,
+      "message": "It\u0027s very important to outline that this should not be executed on a developer laptop. Minikube on bare metal is explicitly outlined as \"Continuous Integration Support\" https://github.com/kubernetes/minikube#linux-continuous-integration-without-vm-support \n\nI believe this also kind of break the schema where \"helm\" and \"kubectl\" are client tools installed on the developer machine, as opposed to be installed on the target machine",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 48
+      },
+      "revId": "a1432b5ccb7a7550156c367d4652fd586c519557",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
