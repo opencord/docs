@@ -3,6 +3,8 @@
 * [Overview](overview.md)
     * [Navigating CORD](navigate.md)
     * [Quick Start](quickstart.md)
+        * [MacOS](macos.md)
+        * [Linux](linux.md)
 * [Installation Guide](README.md)
     * [Prerequisites](prereqs/README.md)
         * [Hardware Requirements](prereqs/hardware.md)
