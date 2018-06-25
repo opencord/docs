@@ -1,13 +1,21 @@
-# RCORD Subscriber without real OLT/ONU
+# Working on R-CORD Without an OLT/ONU
 
-This procedure combines few steps from "bottom-up provisioning" and "top-down provisioning" resulting in XOS automatically creating an RCORD-Subscriber.
-The Access device's (OLT/Ponport/ONU) are added to the model through "top-down provisioning" and the action of voltha publishing a newly discovered ONU to the kafka bus is simulated through a python script.
+This section describes a developer workflow that works in scenarios
+where you do not have a real OLT or ONU. It combines steps from
+the "bottom-up" and "top-down" subscriber provisioning sequences
+described [here](../profiles/rcord/configuration.md).
 
-**Pre-Requisites:**
+The idea is to add the access device's (OLT/PONPORT/ONU) to the XOS
+data model through "top-down" provisioning, with the "bottom-up"
+action of VOLTHA publishing a newly discovered ONU to the Kafka bus
+simulated by a python script.
 
-- all the components needed for RCORD-Lite are up and running on your POD (xos-core, rcord-lite, voltha, onos-voltha)
-- configure 'OLT/PONPORT/ONU' devices.
-  Sample TOSCA config given below:
+## Prerequisites
+
+- All the components needed for the R-CORD profile are up and running
+   on your POD (xos-core, rcord-lite, voltha, onos-voltha).
+- Configure `OLT/PONPORT/ONU` devices using the sample
+   TOSCA config given below:
 
 ```shell
 tosca_definitions_version: tosca_simple_yaml_1_0
@@ -51,13 +59,11 @@ topology_template:
 ~
 ```
 
-- configure 'kafka' 
-  To deploy it please follow [this instruction.](../charts/kafka.md).
+- Deploy `kafka` as described in [these instructions](../charts/kafka.md).
 
-- configure 'hippie-oss' services
-  To deploy the `hippie-oss` service follow [this instruction](../charts/hippie-oss.md).
+- Deploy `hippie-oss` as described in [these instructions](../charts/hippie-oss.md).
 
-**Push "onu-event" to kafka bus**
+## Push "onu-event" to Kafka
 
 The following event needs to be pushed manually.
 
@@ -70,9 +76,14 @@ event = json.dumps({
 })
 ```
 
-Make sure that the 'serial_number' in the event above matches the 'serial_number' you configured when adding the ONU device. XOS uses the serial number to make sure the device is actually listed (volt/onudevices).
+Make sure that the `serial_number` in the event matches the
+`serial_number`you configured when adding the ONU device.
+XOS uses the serial number to make sure the device is actually
+listed (`volt/onudevices`).
 
-The script for pushing the onu-event to kafka "onu_activate_event.py" is already available in the container running volt-synchronizer and you may execute it as:
+The script for pushing the `onu-event` to Kafka
+(`onu_activate_event.py`) is already available in the container
+running `volt-synchronizer` and you may execute it as:
 
 ```shell
 cordserver@cordserver:~$ kubectl get pods | grep rcord-lite-volt
@@ -81,13 +92,18 @@ rcord-lite-volt-dd98f78d6-rwwhz                                   1/1       Runn
 cordserver@cordserver:~$ kubectl exec rcord-lite-volt-dd98f78d6-rwwhz python /opt/xos/synchronizers/volt/onu_activate_event.py
 ```
 
-If you need to update the contents of event file, you have to do an "apt update" and "apt install vim" within the container.
+If you need to update the contents of the event file, you have to do
+an `apt update` and `apt install vim` within the container.
 
-**Verification**
+## Verification
 
-- verify the hippie-oss service instance is created for the event (verify the serial number of ONU). hippie-oss service is intended to verify ONU (serial number) with an external OSS-db. This verification is now configured to always validate the ONU.
-- verify a new rcord-subscriber service instance is created.
-- Once the rcord-subscriber service instance is created service graph will make sure a new service instances are created for volt and vsg-hw models.
+- Verify that the `hippie-oss` instance is created for the event
+   (i.e., verify the serial number of ONU). The `hippie-oss` container
+   is intended to verify ONU serial number with an external OSS-DB,
+   but this is now configured to always validate the ONU.
+- Verify a new `rcord-subscriber` service instance is created.
+- Once the `rcord-subscriber` service instance is created, make sure
+   new service instances are created for the `volt` and `vsg-hw` models.
 
 ```shell
 curl -X GET http://172.17.8.101:30006/xosapi/v1/hippie-oss/hippieossserviceinstances -u "admin@opencord.org:letmein"
