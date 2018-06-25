@@ -8,33 +8,41 @@ Add the kubernetes helm charts incubator repository
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 ```
 
-Build dependencies and step out of the voltha directory
-```shell
-helm dep build
-cd ..
-```
-
-Prerequisite:
-
-We need Kafka/Zookeeper for the Voltha components to work so if you have not installed it already, install it with the following command.
+Build dependencies
 
 ```shell
-#Install kafka and zookeeper with one replica each
-helm install --name voltha-kafka --set replicas=1 \
---set zookeeper.servers=1 \
---set persistence.enabled=false \
---set zookeeper.persistence.enabled=false incubator/kafka
+helm dep build voltha
 ```
-Note: We are assigning the name **voltha-kafka** to the helm kafka helm release. The Voltha helm chart assumes that this is the name of the kafka service. If you installed kafka independently with another name, you need to modify the **kafkaReleaseName** variable in the voltha helm chart for Voltha to work with your installation of kafka.
 
-## Standard Installation Process
+There's an etcd-operator **known bug** we're trying to solve that
+prevents users to deploy Voltha straight since the first time. We
+found a workaround.
 
-Run the following command from the `helm-charts` directory
+Few steps:
+
+Install Voltha (without etcd operator)
+
+```shell
+helm install -n voltha --set etcd-operator.customResources.createEtcdClusterCRD=false voltha
+```
+
+Uninstall Voltha
+
+```shell
+helm delete --purge voltha
+```
+
+Deploy Voltha
+
 ```shell
 helm install -n voltha voltha
 ```
 
-Note: This will install voltha components as well as etcd.
+## Standard Installation Process
+
+```shell
+helm install -n voltha voltha
+```
 
 ## Nodeports Exposed
 
@@ -45,11 +53,11 @@ Note: This will install voltha components as well as etcd.
     * Inner port: 8882
     * Nodeport: 30125
 
+## How to access the VOLTHA CLI
 
-## Standard Uninstallation Process
+Assuming you have not changed the default ports in the chart,
+you can use this command to access the VOLTHA CLI:
 
 ```shell
-helm delete --purge voltha
+ssh voltha@<pod-ip> -p 30110
 ```
-
-Note: This will uninstall the etcd store as well so your device state is lost.
