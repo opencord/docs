@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b9ab168_54bc3997",
+        "filename": "prereqs/kubernetes.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-26T21:43:52Z",
+      "side": 1,
+      "message": "redundant with earlier part of sentence?",
+      "range": {
+        "startLine": 7,
+        "startChar": 88,
+        "endLine": 7,
+        "endChar": 126
+      },
+      "revId": "7460838009459d97edd0ef56f0e146ba0456d555",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
