@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "022f7042_18be37d8",
+        "filename": "charts/xos-core.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-06-26T19:39:43Z",
+      "side": 1,
+      "message": "you",
+      "range": {
+        "startLine": 12,
+        "startChar": 22,
+        "endLine": 12,
+        "endChar": 24
+      },
+      "revId": "94ae9343e8b879b5af1408dfa02a42b8af1bbb60",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9e1dd126_7c34ef31",
+        "filename": "charts/xos-core.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-06-26T19:39:43Z",
+      "side": 1,
+      "message": "these",
+      "range": {
+        "startLine": 38,
+        "startChar": 2,
+        "endLine": 38,
+        "endChar": 6
+      },
+      "revId": "94ae9343e8b879b5af1408dfa02a42b8af1bbb60",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
