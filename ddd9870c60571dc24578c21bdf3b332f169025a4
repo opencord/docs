@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45772bfa_01cb66a7",
+        "filename": "charts/voltha.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-26T23:13:02Z",
+      "side": 1,
+      "message": "Is this bug in the `etcd` bug tracker, which we could link to here?  When it\u0027s fixed, we could remove the link.",
+      "range": {
+        "startLine": 28,
+        "startChar": 27,
+        "endLine": 28,
+        "endChar": 42
+      },
+      "revId": "ddd9870c60571dc24578c21bdf3b332f169025a4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
