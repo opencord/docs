@@ -1,8 +1,21 @@
 # Kubernetes
 
-CORD runs on any version of Kubernetes (1.9 or greater), and uses the
+CORD runs on any version of Kubernetes (1.10 or greater), and uses the
 Helm client-side tool. If you are new to Kubernetes, we recommend
 <https://kubernetes.io/docs/tutorials/> as a good place to start.
+
+Note: We are using a feature in kubernetes 1.10 to allow local persistence of data.
+This is a beta feature in K8S 1.10.x as of this writing and should be enabled by default.
+However, if it is not, you will need to enable it as a feature gate when
+launching kubernetes with the following feature gate settings:
+
+```shell
+PersistentLocalVolumes=true
+VolumeScheduling=true
+MountPropagation=true
+```
+
+More information about feature gates can be found [here](https://github.com/kubernetes-incubator/external-storage/tree/local-volume-provisioner-v2.0.0/local-volume#enabling-the-alpha-feature-gates).
 
 Although you are free to set up Kubernetes and Helm in whatever way makes
 sense for your deployment, the following provides guidelines, pointers, and
