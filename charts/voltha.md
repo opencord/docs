@@ -2,7 +2,7 @@
 
 ## First Time Installation
 
-Add the kubernetes helm charts incubator repository
+Download the helm charts `incubator` repository
 
 ```shell
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
@@ -25,33 +25,32 @@ helm install --name voltha-kafka \
 incubator/kafka
 ```
 
-There's an etcd-operator **known bug** we're trying to solve that
-prevents users to deploy Voltha straight since the first time. We
-found a workaround.
+There is an `etcd-operator` **known bug** that prevents deploying
+Voltha correctly the first time. We suggest the following workaround:
 
-Few steps:
-
-Install Voltha (without etcd custom resource definition)
+First, install Voltha without an `etcd` custom resource definition:
 
 ```shell
 helm install -n voltha --set etcd-operator.customResources.createEtcdClusterCRD=false voltha
 ```
 
-Upgrade Voltha (which defaults to using the etcd custom resource definition)
+Then upgrade Voltha, which defaults to using the `etcd` custom
+resource definition:
 
 ```shell
 helm upgrade voltha ./voltha
 ```
 
-After this point, you can use the standard uninstallation and installation processes for uninstalling and installing voltha helm chart
+After this first installation, you can use the standard
+install/uninstall procedure described below.
 
-## Standard Uninstallation Process
+## Standard Uninstall
 
 ```shell
 helm delete --purge voltha
 ```
 
-## Standard Installation Process
+## Standard Install
 
 ```shell
 helm install -n voltha voltha
@@ -66,7 +65,7 @@ helm install -n voltha voltha
     * Inner port: 8882
     * Nodeport: 30125
 
-## How to access the VOLTHA CLI
+## Accessing the VOLTHA CLI
 
 Assuming you have not changed the default ports in the chart,
 you can use this command to access the VOLTHA CLI:

@@ -21,6 +21,7 @@
     * [Bringing Up CORD](profiles/intro.md)
         * [R-CORD](profiles/rcord/install.md)
             * [OLT Setup](openolt/README.md)
+	        * [Emulated OLT/ONU](profiles/rcord/emulate.md)
         * [M-CORD](profiles/mcord/install.md)
             * [EnodeB Setup](profiles/mcord/enodeb-setup.md)
     * [Helm Reference](charts/helm.md)
