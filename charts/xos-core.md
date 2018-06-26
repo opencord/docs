@@ -7,7 +7,7 @@ helm dep update xos-core
 helm install -n xos-core xos-core
 ```
 
-## Customizing sercurity information
+## Customizing security information
 
 We strongly recommend you to override the default values of `xosAdminUser` and
 `xosAdminPassword` with custom values.
