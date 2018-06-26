@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79943c26_1c0fcb03",
+        "filename": "charts/xos-core.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-26T23:18:42Z",
+      "side": 1,
+      "message": "spelling",
+      "range": {
+        "startLine": 10,
+        "startChar": 15,
+        "endLine": 10,
+        "endChar": 24
+      },
+      "revId": "c6dbfe6b279130fcd7e9eea592168a5d653d3bcb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
