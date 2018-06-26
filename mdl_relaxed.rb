@@ -48,3 +48,6 @@ exclude_rule 'MD031'
 
 # Exclude rule: Emphasis used instead of a header
 exclude_rule 'MD036'
+
+# Gitbook won't care about multiple blank lines
+exclude_rule 'MD012'
