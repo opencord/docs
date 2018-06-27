@@ -146,7 +146,7 @@ You should see output like the following:
 | ID                                   | Name            | Status | Networks                                                                                           | Image            | Flavor    |
 +--------------------------------------+-----------------+--------+----------------------------------------------------------------------------------------------------+------------------+-----------+
 | 7e197142-afb1-459d-b421-cad91306d19f | mysite_vmme-2   | ACTIVE | s6a_network=120.0.0.9; flat_network_s1mme=118.0.0.5; management=172.27.0.15; s11_network=112.0.0.2 | image_mme_v0.1   | m1.large  |
-| 9fe385f5-a064-40e0-94d3-17ea87b955fc | mysite_vspgwu-1 | ACTIVE | management=172.27.0.5; sgi_network=115.0.0.3; spgw_network=117.0.0.3; flat_network_s1u=119.0.0.10  | image_spgwu_v0.1 | m1.xlarge |
+| 9fe385f5-a064-40e0-94d3-17ea87b955fc | mysite_vspgwu-1 | ACTIVE | management=172.27.0.5; sgi_network=115.0.0.3; spgw_network=117.0.0.3; flat_network_s1u=119.0.0.2   | image_spgwu_v0.1 | m1.xlarge |
 | aa6805fe-3d72-4f1e-a2eb-5546d7916073 | mysite_hssdb-5  | ACTIVE | management=172.27.0.13; db_network=121.0.0.12                                                      | image_hssdb_v0.1 | m1.large  |
 | e53138ed-2893-4073-9c9a-6eb4aa1892f1 | mysite_vhss-4   | ACTIVE | s6a_network=120.0.0.2; management=172.27.0.4; db_network=121.0.0.5                                 | image_hss_v0.1   | m1.large  |
 | 4a5960b5-b5e4-4777-8fe4-f257c244f198 | mysite_vspgwc-3 | ACTIVE | management=172.27.0.7; spgw_network=117.0.0.8; s11_network=112.0.0.4                               | image_spgwc_v0.1 | m1.large  |
