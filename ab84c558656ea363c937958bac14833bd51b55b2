@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe810ed_7158a7ac",
+        "filename": "fabric-setup.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-06-27T13:48:50Z",
+      "side": 1,
+      "message": "this is a way, but it causes the process to remain appended. Now OFDPA comes with a service ofagentd and a configuration file /etc/ofagent/ofagent.conf.\n\nTo connect a switch, I usually uncomment the OPT_ARGS line and \nI modify it as follows:\n\nOPT_ARGS\u003d\"-d 2 -c 2 -c 4 -t POD_IP:31653 -i $DPID\"\n\nThe -d and -c params are for printing more debug info, but are not mandatory. Ask Charles for more details.\n\nThen, I do service ofagentd start/stop/restart\n\nAlso, I would substitute ONOS_FABRIC_POD with something like K8S_NODE_IP.",
+      "range": {
+        "startLine": 54,
+        "startChar": 3,
+        "endLine": 55,
+        "endChar": 16
+      },
+      "revId": "ab84c558656ea363c937958bac14833bd51b55b2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
