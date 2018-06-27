@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0b72eb5f_3f583cf7",
+        "filename": "prereqs/kubernetes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-06-27T10:41:07Z",
+      "side": 1,
+      "message": "I\u0027ve not being able to follow this completely....is this to let configurations survive over reboots? Are the data preserved all the ones that go inside pgsql?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 15
+      },
+      "revId": "a273cfd5aa03b2350aeee2f923e3a088f6ac5070",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
