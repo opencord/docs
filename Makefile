@@ -1,93 +1,82 @@
 # Makefile for building CORD docs site, guide.opencord.org
 # Building docs requires the following tools:
 #  - Gitbook toolchain: https://toolchain.gitbook.com/setup.html
+#  - git
 #  - NPM (for Gitbook and Swagger)
-#  - Python (for build glossary script)
 #  - linkchecker (for test target) http://wummel.github.io/linkchecker/
+#  - markdownlint (for lint target) https://github.com/markdownlint/markdownlint
 
 default: serve
 
-# use bash for pushd/popd, and to fail if commands within  a pipe fail
-SHELL = bash -o pipefail
+# use bash for pushd/popd, and to fail quickly
+SHELL = bash -eu -o pipefail
 
-GENERATED_DOCS =
+# Other repos with documentation that's included in the gitbook
+# edit the `git_refs` file with the commit/tag/branch that you want to use
+OTHER_REPO_DOCS ?= cord-tester fabric hippie-oss kubernetes-service olt-service onos-service openolt openstack rcord simpleexampleservice vrouter xos xos-gui xos-tosca
+GENERATED_DOCS  ?= # should be 'swagger', but currently broken
+ALL_DOCS        ?= $(OTHER_REPO_DOCS) $(GENERATED_DOCS)
 
-LINT_STYLE ?= mdl_relaxed.rb
-
-serve: setup
+# build targets
+serve: | $(ALL_DOCS) gitbook-setup
 	npm start
 
-build: setup
+build: _book
+
+_book: | $(ALL_DOCS) gitbook-setup
 	gitbook build
 
-setup: automation-tools cord-tester simpleexampleservice openstack fabric hippie-oss kubernetes-service olt-service onos-service openolt rcord vrouter xos xos-gui xos-tosca swagger $(GENERATED_DOCS)
+gitbook-setup:
 	gitbook init
 	gitbook install
 
-test: linkcheck lint
+clean:
+	rm -rf _book
+	rm -rf node_modules
+	rm -rf repos/*
+	rm -rf $(ALL_DOCS)
 
-linkcheck: build
-	linkchecker -a _book/
+# testing targets
+test: lint linkcheck
+LINT_STYLE ?= mdl_relaxed.rb
 
-lint:
+lint: | $(OTHER_REPO_DOCS)
 	@echo "markdownlint(mdl) version: `mdl --version`"
 	@echo "style config:"
 	@echo "---"
 	@cat $(LINT_STYLE)
 	@echo "---"
-	mdl -s $(LINT_STYLE) `find -L . ! -path "./partials/*" ! -path "./_book/*" ! -path "./node_modules/*" ! -path "./cord-tester/modules/*" -name "*.md"`
+	mdl -s $(LINT_STYLE) `find -L . ! -path "./partials/*" ! -path "./_book/*" ! -path "./repos/*"  ! -path "./node_modules/*" ! -path "./cord-tester/modules/*" -name "*.md"`
 
-# link directories that contain other documentation
-automation-tools:
-	ln -s ../automation-tools automation-tools
+linkcheck: $(ALL_DOCS) _book
+	linkchecker -a _book/
 
-cord-tester:
-	ln -s ../test/cord-tester/docs cord-tester
+# Host holding the git server
+REPO_HOST   ?= https://gerrit.opencord.org
 
-fabric:
-	ln -s ../orchestration/xos_services/fabric/docs fabric
+# checkout the repos inside repos/ dir
+repos:
+	mkdir repos
 
-hippie-oss:
-	ln -s ../orchestration/xos_services/hippie-oss/docs hippie-oss
+# build directory paths in repos/* to perform 'git clone <repo>' into
+CHECKOUT_REPOS=$(foreach repo,$(OTHER_REPO_DOCS),repos/$(repo))
 
-olt-service:
-	ln -s ../orchestration/xos_services/olt-service/docs olt-service
+# clone (only if doesn't exist), then checkout ref in repos/*
+$(CHECKOUT_REPOS):  git_refs | repos
+	GIT_REF=`grep '^$(@F) ' git_refs | awk '{print $$3}'` ;\
+	if [ ! -d '$@' ] ;\
+		then git clone $(REPO_HOST)/$(@F) $@ ;\
+  fi ;\
+	pushd $@ ;\
+	git checkout $$GIT_REF ;\
+	popd
 
-onos-service:
-	ln -s ../orchestration/xos_services/onos-service/docs onos-service
+# link subdirectories (if applicable) into main docs dir
+$(OTHER_REPO_DOCS): | $(CHECKOUT_REPOS)
+	GIT_SUBDIR=`grep '^$@ ' git_refs | awk '{print $$2}'` ;\
+	ln -s repos/$(@)$$GIT_SUBDIR $@
 
-kubernetes-service:
-	ln -s ../orchestration/xos_services/kubernetes-service/docs kubernetes-service
-
-openolt:
-	ln -s ../incubator/openolt openolt
-
-rcord:
-	ln -s ../orchestration/profiles/rcord/docs rcord
-
-vrouter:
-	ln -s ../orchestration/xos_services/vrouter/docs vrouter
-
-openstack:
-	ln -s ../orchestration/xos_services/openstack/docs openstack
-
-simpleexampleservice:
-	ln -s ../orchestration/xos_services/simpleexampleservice/docs simpleexampleservice
-
-xos:
-	ln -s ../orchestration/xos/docs xos
-
-xos-gui:
-	ln -s ../orchestration/xos-gui/docs xos-gui
-
-xos-tosca:
-	ln -s ../orchestration/xos-tosca/docs xos-tosca
-
+# swagger docs generation
 swagger: xos
-	pushd ../orchestration/xos/docs/; make swagger_docs; popd;
+	pushd repos/xos/docs; make swagger_docs; popd;
 
-clean:
-	rm -rf $(GENERATED_DOCS)
-	rm -rf _book
-	rm -rf node_modules
-	rm -rf openstack automation-tools cord-tester fabric hippie-oss kubernetes-service olt-service onos-service openolt rcord vrouter test xos xos-gui xos-tosca simpleexampleservice
