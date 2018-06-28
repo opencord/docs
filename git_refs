@@ -1,0 +1,17 @@
+# Add the name of the repo, then the branch/tag/commit you want to use to
+# generate the docs from in this file.
+
+cord-tester						 master
+fabric								 master
+hippie-oss						 master
+kubernetes-service		 master
+olt-service						 master
+onos-service					 master
+openstack							 master
+rcord									 master
+simpleexampleservice   master
+vrouter                master
+xos-gui                master
+xos-tosca              master
+xos                    master
+
