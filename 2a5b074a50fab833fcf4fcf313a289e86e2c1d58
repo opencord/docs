@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2a47d522_f1e7ebe8",
+        "filename": "profiles/mcord/enodeb-setup.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-06-28T17:21:33Z",
+      "side": 1,
+      "message": "How to obtain these IP addresses?",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 51
+      },
+      "revId": "2a5b074a50fab833fcf4fcf313a289e86e2c1d58",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51be9a26_fd698b7b",
+        "filename": "profiles/mcord/enodeb-setup.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-06-28T17:21:33Z",
+      "side": 1,
+      "message": "How to do this?",
+      "range": {
+        "startLine": 44,
+        "startChar": 30,
+        "endLine": 44,
+        "endChar": 77
+      },
+      "revId": "2a5b074a50fab833fcf4fcf313a289e86e2c1d58",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "40c6bec8_b8f71307",
+        "filename": "profiles/mcord/enodeb-setup.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-06-28T17:21:33Z",
+      "side": 1,
+      "message": "Do we also need to configure the S1U interface on the eNodeB?",
+      "range": {
+        "startLine": 45,
+        "startChar": 28,
+        "endLine": 45,
+        "endChar": 42
+      },
+      "revId": "2a5b074a50fab833fcf4fcf313a289e86e2c1d58",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe1136d7_7cf807f3",
+        "filename": "profiles/mcord/enodeb-setup.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-06-28T17:21:33Z",
+      "side": 1,
+      "message": "Seems like adding subscriber information is something that XOS should be doing.",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 68
+      },
+      "revId": "2a5b074a50fab833fcf4fcf313a289e86e2c1d58",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a2e56d41_d9706919",
+        "filename": "profiles/mcord/enodeb-setup.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-06-28T17:21:33Z",
+      "side": 1,
+      "message": "Is there anything else that the user can do to verify that the vEPC is working?",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 32
+      },
+      "revId": "2a5b074a50fab833fcf4fcf313a289e86e2c1d58",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
