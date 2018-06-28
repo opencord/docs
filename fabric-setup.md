@@ -47,3 +47,27 @@ Three OFDPA drivers are available:
 * [EdgeCore 5712-54X / 5812-54X / 6712-32X](https://github.com/onfsdn/atrium-docs/blob/master/16A/ONOS/builds/ofdpa_3.0.5.5%2Baccton1.7-1_amd64.deb?raw=true) - *checksum: sha256:db228b6e79fb15f77497b59689235606b60abc157e72fc3356071bcc8dc4c01f*
 * [QuantaMesh T3048-LY8](https://github.com/onfsdn/atrium-docs/blob/master/16A/ONOS/builds/ofdpa-ly8_0.3.0.5.0-EA5-qct-01.01_amd64.deb?raw=true) - *checksum: sha256:f8201530b1452145c1a0956ea1d3c0402c3568d090553d0d7b3c91a79137da9e*
 * [QuantaMesh BMS T7032-IX1/IX1B](https://github.com/onfsdn/atrium-docs/blob/master/16A/ONOS/builds/ofdpa-ix1_0.3.0.5.0-EA5-qct-01.00_amd64.deb?raw=true) *checksum: sha256:278b8ffed8a8fc705a1b60d16f8e70377e78342a27a11568a1d80b1efd706a46*
+
+## Connect the Fabric Switches to ONOS
+
+If the switches are not already connected, ssh to each switch and configure */etc/ofagent/ofagent.conf* by uncommenting and editing the following line:
+
+```shell
+OPT_ARGS="-d 2 -c 2 -c 4 -t K8S_NODE_IP:31653 -i $DPID"
+```
+
+Then start ofagent by running
+
+```shell
+service ofagentd start
+```
+
+You can verify ONOS has recognized the devices using the following command:
+
+> NOTE: When prompted, use password `rocks`.
+
+```shell
+ssh -p 31101 onos@K8S_NODE_IP devices
+```
+
+> NOTE: It may take a few seconds for the switches to initialize and connect to ONOS
