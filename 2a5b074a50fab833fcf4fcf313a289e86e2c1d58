@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7efc0aa9_ab27b162",
+        "filename": "profiles/mcord/enodeb-setup.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2018-06-29T22:58:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a47d522_f1e7ebe8",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 51
+      },
+      "revId": "2a5b074a50fab833fcf4fcf313a289e86e2c1d58",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "51be9a26_fd698b7b",
         "filename": "profiles/mcord/enodeb-setup.md",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-28T17:21:33Z",
       "side": 1,
       "message": "How to do this?",
+      "range": {
+        "startLine": 44,
+        "startChar": 30,
+        "endLine": 44,
+        "endChar": 77
+      },
+      "revId": "2a5b074a50fab833fcf4fcf313a289e86e2c1d58",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ac56589_d851bcba",
+        "filename": "profiles/mcord/enodeb-setup.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2018-06-29T22:58:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51be9a26_fd698b7b",
       "range": {
         "startLine": 44,
         "startChar": 30,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "0f034fdb_bd38941b",
+        "filename": "profiles/mcord/enodeb-setup.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2018-06-29T22:58:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40c6bec8_b8f71307",
+      "range": {
+        "startLine": 45,
+        "startChar": 28,
+        "endLine": 45,
+        "endChar": 42
+      },
+      "revId": "2a5b074a50fab833fcf4fcf313a289e86e2c1d58",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fe1136d7_7cf807f3",
         "filename": "profiles/mcord/enodeb-setup.md",
         "patchSetId": 4
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "bef3c86b_c773837c",
+        "filename": "profiles/mcord/enodeb-setup.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2018-06-29T22:58:25Z",
+      "side": 1,
+      "message": "maybe we can improve this point later.",
+      "parentUuid": "fe1136d7_7cf807f3",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 68
+      },
+      "revId": "2a5b074a50fab833fcf4fcf313a289e86e2c1d58",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a2e56d41_d9706919",
         "filename": "profiles/mcord/enodeb-setup.md",
         "patchSetId": 4
@@ -105,6 +201,54 @@
       "writtenOn": "2018-06-28T17:21:33Z",
       "side": 1,
       "message": "Is there anything else that the user can do to verify that the vEPC is working?",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 32
+      },
+      "revId": "2a5b074a50fab833fcf4fcf313a289e86e2c1d58",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d24d6a6_7e39d1b5",
+        "filename": "profiles/mcord/enodeb-setup.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2018-06-29T22:58:25Z",
+      "side": 1,
+      "message": "This is the most traditional and simple way.\nAdd another way for testing",
+      "parentUuid": "a2e56d41_d9706919",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 32
+      },
+      "revId": "2a5b074a50fab833fcf4fcf313a289e86e2c1d58",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eaf5d49e_04debd3f",
+        "filename": "profiles/mcord/enodeb-setup.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2018-06-29T22:58:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2e56d41_d9706919",
       "range": {
         "startLine": 99,
         "startChar": 0,
