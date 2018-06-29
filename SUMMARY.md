@@ -67,6 +67,8 @@
     * [Developer Workflows](developer/workflows.md)
         * [Working on R-CORD Without an OLT/ONU](developer/configuration_rcord.md)
     * [Building Docker Images](developer/imagebuilder.md)
+    * Tutorials
+        * [Synchronizer Hello World](developer/tutorials/basic-synchronizer/intro.md)
     * [Platform Services](developer/platform.md)
         * [Kubernetes](kubernetes-service/kubernetes-service.md)
         * [OpenStack](openstack/openstack-service.md)
