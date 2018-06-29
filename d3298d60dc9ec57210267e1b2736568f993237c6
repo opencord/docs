@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "96eef137_a70a9a1d",
+        "filename": "SUMMARY.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-29T21:00:09Z",
+      "side": 1,
+      "message": "Fixed in next patch",
+      "parentUuid": "28a3a69b_288dc056",
+      "range": {
+        "startLine": 23,
+        "startChar": 11,
+        "endLine": 23,
+        "endChar": 30
+      },
+      "revId": "d3298d60dc9ec57210267e1b2736568f993237c6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d9c09c4b_62b28521",
         "filename": "examples/examples.md",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-29T07:37:44Z",
       "side": 1,
       "message": "empty?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 18
+      },
+      "revId": "d3298d60dc9ec57210267e1b2736568f993237c6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "22aa3167_0a42d6cd",
+        "filename": "examples/examples.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-06-29T21:00:09Z",
+      "side": 1,
+      "message": "The SUMMARY.md creates this.   I added a short description in next patchset.",
+      "parentUuid": "d9c09c4b_62b28521",
       "range": {
         "startLine": 1,
         "startChar": 0,
