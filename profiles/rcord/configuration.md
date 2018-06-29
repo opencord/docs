@@ -304,3 +304,126 @@ topology_template:
 
 For instructions on how to push TOSCA into a CORD POD, please
 refer to this [guide](../../xos-tosca/README.md).
+
+### Know issues
+
+There is a set of issue that we have seen from time to time.
+They are currently undergoing a deeper investigation, but here is how to identify
+and correct them.
+
+#### OLTDevices are not pushed to VOLTHA
+
+If you have configured OLTDevices in XOS and you are not seeing them in VOLTHA,
+you should check the vOLT-synchronizer logs:
+
+```shell
+kubectl logs -f $(kubectl get pods | grep volt- | awk '{print $1}')
+```
+
+If the logs are not moving, restart the synchronizer:
+
+```shell
+kubectl delete pod $(kubectl get pods | grep volt- | awk '{print $1}')
+```
+
+#### ONU Activate events are not received by XOS
+
+Once OLTs have been activated, XOS should receive events and create
+`HippieOssServiceInstance` models for each event.
+
+To check if XOS has been received from XOS you can use this command:
+
+```shell
+kubectl logs -f $(kubectl get pods | grep volt- | awk '{print $1}') | grep "onu.event"
+```
+
+If the events have been received you should see something like:
+
+```shell
+Processing event               msg=ConsumerRecord(topic=u'onu.events', partition=0, offset=42, timestamp=1530296353275, timestamp_type=0, key=None, value='{"timestamp":1530296353275,"status":"activated","serial_number":"ALPHe3d1cfde","uni_port_id":48,"of_dpid":"of:000000000a5a0097"}', checksum=100437027, serialized_key_size=-1, serialized_value_size=128) step=ONUEventStep
+onu.events: received event     value={u'status': u'activated', u'timestamp': 1530296353275, u'uni_port_id': 48, u'of_dpid': u'of:000000000a5a0097', u'serial_number': u'ALPHe3d1cfde'}
+onu.events: activate onu       value={u'status': u'activated', u'timestamp': 1530296353275, u'uni_port_id': 48, u'of_dpid': u'of:000000000a5a0097', u'serial_number': u'ALPHe3d1cfde'}
+onu.events: Calling OSS for ONUDevice with serial_number ALPHe3d1cfde
+```
+
+If you don't see that, you can force ONOS-VOLTHA to send the events again.
+
+Connect to the ONOS-VOLTHA CLI:
+
+```shell
+ssh karaf@<pod-ip> -p $(kubectl get svc -n voltha | grep -i onos-voltha-ssh |  awk '{print substr($5,6,5)}')
+```
+Remove the device:
+
+```shell
+onos> device-remove <device-ofid>
+```
+
+The device will be automatically discovered again, and events are sent.
+
+##### Check if the events appears in Kafka
+
+If you are still not seeing the events in XOS, you can check if they appear into Kafka.
+
+To do that `exec` into any synchronizer container:
+
+```shell
+kubectl exec -it $(kubectl get pods | grep volt- | awk '{print $1}') bash
+apt-get update
+apt-get install kafkacat -y
+kafkacat -b cord-kafka.default.svc.cluster.local:9092 -t onu.events
+```
+
+If the events have reached `kafka` you should see this message:
+
+```shell
+{"timestamp":1530301582776,"status":"activated","serial_number":"ALPHe3d1cfde","uni_port_id":48,"of_dpid":"of:000000000a5a0097"}
+```
+
+If they have not you are probably missing the correct configuration in ONOS-VOLTHA,
+to verify that, ssh into ONOS-VOLTHA:
+
+```shell
+ssh karaf@<pod-ip> -p $(kubectl get svc -n voltha | grep -i onos-voltha-ssh |  awk '{print substr($5,6,5)}')
+```
+
+and check if there is any configuration for the `org.opencord.olt` app:
+
+```shell
+onos> netcfg apps org.opencord.olt
+{
+  "kafka" : {
+    "bootstrapServers" : "cord-kafka.default.svc.cluster.local:9092"
+  }
+}
+```
+
+If you don't have that configuration, you can resubmit it by going into the XOS-GUI,
+search for `ServiceInstanceAttributes` and save the configuration again.
+
+#### Subscribers are not created as a result of an ONU Activate event
+
+If you see `HippieOssServiceInstances` but you don't see any `Subscriber` in XOS,
+you should check if the model policies for the `HippieOssServiceInstances` have been executed:
+
+```shell
+kubectl logs -f $(kubectl get pods | grep hippie- | awk '{print $1}') | grep -i "model_policy"
+```
+
+I this is the only line you are seeing:
+
+```shell
+Loaded model policies          policies=[<class 'model_policy_hippieossserviceinstance.OSSServiceInstancePolicy'>]
+```
+
+Go to the XOS-GUI, search for `HippieOssServiceInstances` and save them again.
+You should see the above command print more logs and `Subscriber`s beeing created.
+
+#### ONU Ports are down
+
+If everything is correctly configured across the POD, but you can't ping
+the gateway from your client, it's possible that the ports on the ONU are not up.
+
+Assuming that your client is connected to the OLT via the interface `eth1`,
+you can check if the client sees the port as up or not. If the port is not up,
+reboot the ONU.
