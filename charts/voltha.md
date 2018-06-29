@@ -38,7 +38,7 @@ Then upgrade Voltha, which defaults to using the `etcd` custom
 resource definition:
 
 ```shell
-helm upgrade voltha ./voltha
+helm upgrade --set etcd-operator.customResources.createEtcdClusterCRD=true voltha ./voltha
 ```
 
 After this first installation, you can use the standard
