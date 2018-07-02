@@ -12,8 +12,9 @@ For development versions, using either SemVer or the slightly different
 [PEP440](https://www.python.org/dev/peps/pep-0440/) syntax (`.dev#` instead of
 `-dev#`) if using Python code are the recommended formats.
 
-To avoid confusion, all components that existed prior to 6.0 started their
-independent versioning at version `6.0.0`.
+As this is the first time that many of these components recieved a version
+number, most of them started with version `1.0.0`, except for the `xos` core,
+which starts at `2.0.0`.
 
 ## CORD Releases
 
@@ -64,10 +65,10 @@ As it's confusing to have multiple git commits that contain the same released
 version string in the `VERSION` file, Jenkins jobs have been put in place to
 prevent this from happening. The implementation is as follows:
 
-- When a patchset is submitted to Gerrit, the `tag-collision-reject` Jenkins
-  job runs. This checks that the version string in `VERSION` is does not
-  already exist as a git tag, and rejects any patchsets that have duplicate
-  released versions. It ignores development and non-SemVer version strings.
+- When a patchset is submitted to Gerrit, the `tag-collision` Jenkins job runs.
+  This checks that the version string in `VERSION` is does not already exist as
+  a git tag, and rejects any patchsets that have duplicate released versions.
+  It ignores development and non-SemVer version strings.
 
   This job also checks that if a released version number is used, any
   Dockerfile parent images are also using a fixed parent version, to better
