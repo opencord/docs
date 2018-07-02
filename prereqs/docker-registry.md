@@ -27,7 +27,7 @@ helm install stable/docker-registry --set service.nodePort=30500,service.type=No
 The registry can be queried at any time, for example:
 
 ```shell
-curl -X GET https://KUBERNETES_IP:30500/v2/_catalog
+curl -X GET http://KUBERNETES_IP:30500/v2/_catalog
 ```
 
 {% include "/partials/push-images-to-registry.md" %}
