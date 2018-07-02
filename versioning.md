@@ -12,8 +12,9 @@ For development versions, using either SemVer or the slightly different
 [PEP440](https://www.python.org/dev/peps/pep-0440/) syntax (`.dev#` instead of
 `-dev#`) if using Python code are the recommended formats.
 
-To avoid confusion, all components that existed prior to 6.0 started their
-independent versioning at version `6.0.0`.
+As this is the first time that many of these components received a version
+number, most of them started with version `1.0.0`, except for the `xos` core,
+which starts at `2.0.0`.
 
 ## CORD Releases
 
@@ -48,6 +49,58 @@ will be provided for 6.0 and 5.0, dropping 4.1
    version string, and Docker images with the tag will be built and sent to
    Docker Hub.
 
+## How to create a new CORD release
+
+For 6.0 and later releases, please follow these steps to create a new release.
+
+### Pre-release steps
+
+Per the instructions above, create versioned releases of all the individual
+components, primarily the docker images.
+
+In the `helm-charts` repo, check that all charts use only released versions of
+container images (no `master` or `candidate` tags), and that the `Chart.yaml`
+has the correct *new* `version` field set for the release.
+
+Test the release with this version of the charts, making sure to not override
+the image versions.
+
+### Release steps
+
+Update the `VERSION` file on both the `automation-tools` and `helm-charts`
+repos then commit and merge the patch. Jenkins will then create git tags from
+the contents of the `VERSION` file.
+
+Create a branch in Gerrit using the form `cord-#.#` on those repos starting
+with the new tagged commit.
+
+In the `docs` project, on the `master` branch add an entry to the `book.json`
+to add the new branch, and create a directory on the `guide.opencord.org` site
+for the branch docs.  Create a `cord-#.#` branch on the `docs` repo in Gerrit,
+then update the `git_refs` file within that repo with the commits that have
+the most pertinent documentation.  The `make freeze` command can help generate
+the contents of the `git_refs` file by listing the current git `HEAD` of each
+repo.
+
+Create a `cord-#.#` branch on the `manifest` repo, setting the `revision`
+attribute to `cord-#.#` on the `automation-tools`, `docs`, and `helm-charts`
+projects (and any other projects that have that patch branch).
+
+### Updates to a released branch
+
+Patches to individual components are generally done on the `master` branch of
+their respective projects and given component versions.
+
+Once released, these component versions are integrated into charts, the
+`version` field of the `Chart.yaml` for the chart is updated, and a new point
+release of the `helm-charts` repo is created on the `cord-#.#` branch.
+
+All patches on a released branch of the `helm-charts` and `automation-tools`
+repos should be SemVer release versions, not development versions.
+
+Documentation updates are less strict, with changes within the repo or to
+`git_refs` happening on the patch branch as needed.
+
 ## Details of the release process
 
 To create a new version, the version string is updated in the language or
@@ -64,10 +117,10 @@ As it's confusing to have multiple git commits that contain the same released
 version string in the `VERSION` file, Jenkins jobs have been put in place to
 prevent this from happening. The implementation is as follows:
 
-- When a patchset is submitted to Gerrit, the `tag-collision-reject` Jenkins
-  job runs. This checks that the version string in `VERSION` is does not
-  already exist as a git tag, and rejects any patchsets that have duplicate
-  released versions. It ignores development and non-SemVer version strings.
+- When a patchset is submitted to Gerrit, the `tag-collision` Jenkins job runs.
+  This checks that the version string in `VERSION` is does not already exist as
+  a git tag, and rejects any patchsets that have duplicate released versions.
+  It ignores development and non-SemVer version strings.
 
   This job also checks that if a released version number is used, any
   Dockerfile parent images are also using a fixed parent version, to better
