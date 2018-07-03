@@ -61,15 +61,22 @@ repos:
 # build directory paths in repos/* to perform 'git clone <repo>' into
 CHECKOUT_REPOS=$(foreach repo,$(OTHER_REPO_DOCS),repos/$(repo))
 
+# For QA patchset validation - set SKIP_CHECKOUT to the repo name and
+# pre-populate it under epos with the specific commit to being validated
+SKIP_CHECKOUT ?=
+
 # clone (only if doesn't exist), then checkout ref in repos/*
 $(CHECKOUT_REPOS):  git_refs | repos
 	GIT_REF=`grep '^$(@F) ' git_refs | awk '{print $$3}'` ;\
 	if [ ! -d '$@' ] ;\
-		then git clone $(REPO_HOST)/$(@F) $@ ;\
-  fi ;\
-	pushd $@ ;\
-	git checkout $$GIT_REF ;\
-	popd
+	  then git clone $(REPO_HOST)/$(@F) $@ ;\
+	fi ;\
+	if [ "$(SKIP_CHECKOUT)" = "$(@F)" ] ;\
+	  then echo "Skipping checkout of repo $(SKIP_CHECKOUT) as it's being tested" ;\
+	else pushd $@ ;\
+	  git checkout $$GIT_REF ;\
+	  popd ;\
+	fi
 
 # link subdirectories (if applicable) into main docs dir
 $(OTHER_REPO_DOCS): | $(CHECKOUT_REPOS)
