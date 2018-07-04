@@ -72,14 +72,22 @@ have tested over time in lab trials.
         copper cable, 3m length - S/N: QSFP-40G-03C
 
 * **R-CORD Access Devices and Optics**
+    * **GPON**
+        * **OLT**: Celestica CLS Ruby S1010 (experimental, only top-down provisioning is supported - through manual customizations)
+            * Compatible **OLT optics**
+                * OptoWiz LSP4343-CKSA-R GPON SFP OLT Transceiver
+        * **ONUs**:
+            * Celestica Tellion GP-1204
+            * Movistar ONU (with CPE included) (manifactured by Telefonica: <http://www.movistar.es/particulares/movil/moviles/hgu>)
     * **XGS-PON**
         * **OLT**: EdgeCore ASFVOLT16 (for more info <bartek_raszczyk@edge-core.com>)
-        * Compatible **OLT optics**
-            * Hisense/Ligent: LTH7226-PC, LTH7226-PC+
-            ** Source Photonics: XPP-XG2-N1-CDFA
-        * **ONU**: AlphaNetworks PON-34000B (for more info <ed-y_chen@alphanetworks.com>)
-        * Compatible **ONU optics**
-            * Hisense/Ligent: LTF7225-BC, LTF7225-BH+
+            * Compatible **OLT optics**
+                * Hisense/Ligent: LTH7226-PC, LTH7226-PC+
+                * Source Photonics: XPP-XG2-N1-CDFA
+        * **ONUs**:
+            * AlphaNetworks PON-34000B (for more info <ed-y_chen@alphanetworks.com>)
+                * Compatible **ONU optics**
+                    * Hisense/Ligent: LTF7225-BC, LTF7225-BH+
 
 * **M-CORD Specific Requirements**
     * **Servers**: Some components of CORD require at least a Intel XEON CPU with Haswell microarchitecture or better.
