@@ -75,6 +75,7 @@
         * [VTN and Service Composition](xos/xos_vtn.md)
     * [Example Services](examples/examples.md)
         * [SimpleExampleService](simpleexampleservice/simple-example-service.md)
+        * [ExampleService](exampleservice/example-service.md)
     * [GUI Development](xos-gui/developer/README.md)
         * [Quickstart](xos-gui/developer/quickstart.md)
         * [GUI Extensions](xos-gui/developer/gui_extensions.md)
