@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e73c03c_fd6984d3",
+        "filename": "operating_cord/veth_intf.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-07-05T18:12:03Z",
+      "side": 1,
+      "message": "\"link it\" ?",
+      "range": {
+        "startLine": 9,
+        "startChar": 90,
+        "endLine": 9,
+        "endChar": 102
+      },
+      "revId": "76ab2b783ce8d223b3054aad7245cf9696e6fab7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "04a2e295_2fab6d51",
+        "filename": "operating_cord/veth_intf.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-07-05T18:12:03Z",
+      "side": 1,
+      "message": "Should these be underscores (emphasis/strong)?",
+      "range": {
+        "startLine": 13,
+        "startChar": 128,
+        "endLine": 13,
+        "endChar": 147
+      },
+      "revId": "76ab2b783ce8d223b3054aad7245cf9696e6fab7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "faf0b71f_1d20d788",
+        "filename": "operating_cord/veth_intf.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-07-05T18:12:03Z",
+      "side": 1,
+      "message": "completeness",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 16
+      },
+      "revId": "76ab2b783ce8d223b3054aad7245cf9696e6fab7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3d1fcb7_33ae607d",
+        "filename": "operating_cord/veth_intf.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-07-05T18:12:03Z",
+      "side": 1,
+      "message": "specific",
+      "range": {
+        "startLine": 32,
+        "startChar": 47,
+        "endLine": 32,
+        "endChar": 54
+      },
+      "revId": "76ab2b783ce8d223b3054aad7245cf9696e6fab7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed8cbfed_1b0280d5",
+        "filename": "operating_cord/veth_intf.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-07-05T18:12:03Z",
+      "side": 1,
+      "message": "maybe call this \"cleanup\" ?",
+      "range": {
+        "startLine": 99,
+        "startChar": 1,
+        "endLine": 101,
+        "endChar": 141
+      },
+      "revId": "76ab2b783ce8d223b3054aad7245cf9696e6fab7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
