@@ -21,6 +21,7 @@ openolt               /        master
 openstack             /docs    master
 rcord                 /docs    master
 simpleexampleservice  /docs    master
+exampleservice        /docs    master
 vrouter               /docs    master
 xos-gui               /docs    master
 xos-tosca             /docs    master
