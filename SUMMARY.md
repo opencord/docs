@@ -64,11 +64,10 @@
             * [Synchronizer Reference](xos/dev/sync_reference.md)
         * [Core Models](xos/core_models.md)
         * [Security Policies](xos/security_policies.md)
+        * [Tutorial](xos/tutorials/basic_synchronizer.md)
     * [Developer Workflows](developer/workflows.md)
         * [Working on R-CORD Without an OLT/ONU](developer/configuration_rcord.md)
     * [Building Docker Images](developer/imagebuilder.md)
-    * Tutorials
-        * [Synchronizer Hello World](developer/tutorials/basic-synchronizer/intro.md)
     * [Platform Services](developer/platform.md)
         * [Kubernetes](kubernetes-service/kubernetes-service.md)
         * [OpenStack](openstack/openstack-service.md)
