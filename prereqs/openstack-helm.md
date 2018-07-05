@@ -61,6 +61,15 @@ export OSH_EXTRA_HELM_ARGS_GLANCE="-f /tmp/glance-cord.yaml"
 ```
 
 ```bash
+cat <<EOF > /tmp/libvirt-cord.yaml
+---
+network:
+  backend: []
+EOF
+export OSH_EXTRA_HELM_ARGS_LIBVIRT="-f /tmp/libvirt-cord.yaml"
+```
+
+```bash
 cat <<EOF > /tmp/nova-cord.yaml
 ---
 labels:
