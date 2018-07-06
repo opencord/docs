@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa47b010_38244934",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-07-06T13:46:17Z",
+      "side": 1,
+      "message": "Does this belong at the top level of CORD install, or is it specific to R-CORD?",
+      "revId": "ac0812ae174f6e6ee63bcac06a3c7401be9af0fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
