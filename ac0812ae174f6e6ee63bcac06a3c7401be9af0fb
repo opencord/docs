@@ -16,6 +16,24 @@
       "revId": "ac0812ae174f6e6ee63bcac06a3c7401be9af0fb",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6b20010a_18ad13cf",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-07-06T13:47:19Z",
+      "side": 1,
+      "message": "I put it under operating CORD, since it\u0027s generic to any use-case",
+      "parentUuid": "fa47b010_38244934",
+      "revId": "ac0812ae174f6e6ee63bcac06a3c7401be9af0fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
