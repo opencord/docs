@@ -51,3 +51,7 @@ exclude_rule 'MD036'
 
 # Gitbook won't care about multiple blank lines
 exclude_rule 'MD012'
+
+# Causes failures within code block when MD031 is also excluded
+exclude_rule 'MD046'
+
