@@ -88,6 +88,9 @@ have tested over time in lab trials.
             * AlphaNetworks PON-34000B (for more info <ed-y_chen@alphanetworks.com>)
                 * Compatible **ONU optics**
                     * Hisense/Ligent: LTF7225-BC, LTF7225-BH+
+            * Iskratel Innbox G108 (for more info <info@innbox.net>)
+                * Compatible **ONU optics**
+                    * SUNSTAR D22799-STCC, EZconn ETP69966-7TB4-I2
 
 * **M-CORD Specific Requirements**
     * **Servers**: Some components of CORD require at least a Intel XEON CPU with Haswell microarchitecture or better.
