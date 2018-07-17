@@ -8,4 +8,4 @@ for the full set of services checked into [Gerrit](https://gerrit.opencord.org).
 
 You can access the REST API specification on a running POD by going to
 the `/apidocs/` URL on the Chameleon REST endpoint (exposed at
-port 30006 by default): <http://pod-ip-or-dns-address:30006/apidocs/>.
+port 30006 by default): `http://pod-ip-or-dns-address:30006/apidocs/`.
