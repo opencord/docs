@@ -7,7 +7,12 @@ To install kafka you can use:
 
 ```shell
 helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
-helm install --name cord-kafka incubator/kafka
+helm install --name cord-kafka \
+--set replicas=1 \
+--set persistence.enabled=false \
+--set zookeeper.servers=1 \
+--set zookeeper.persistence.enabled=false \
+incubator/kafka
 ```
 
 If you are experierencing problems with a multi instance installation of kafka,
