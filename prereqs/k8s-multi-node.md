@@ -88,7 +88,7 @@ At the end of the procedure, Kubespray should be installed and running
 on the remote machines.
 
 The configuration file to access the POD will be saved in the
-sub-directory *configs/onf.conf*.
+sub-directory *inventories/onf/artifacts/admin.conf*.
 
 If you want to deploy another POD without affecting your existing
 deployment run the following:
