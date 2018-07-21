@@ -11,19 +11,19 @@
 
 _REPO NAME_           _DIR_    _REF_
 
-cord-tester           /docs    master
-fabric                /docs    master
-hippie-oss            /docs    master
-kubernetes-service    /docs    master
-olt-service           /docs    master
-onos-service          /docs    master
-openolt               /        master
-openstack             /docs    master
-rcord                 /docs    master
-simpleexampleservice  /docs    master
-exampleservice        /docs    master
-vrouter               /docs    master
-xos-gui               /docs    master
-xos-tosca             /docs    master
-xos                   /docs    master
+cord-tester           /docs    99252835d5174d4cc61da7eb87b9d55234a88b2a
+fabric                /docs    cbf1c050d3b9e34e85541dd02941868717cd723d
+hippie-oss            /docs    4ce964961945de132401bacd23076de5f2b972bf
+kubernetes-service    /docs    960aa9251a398c400e89138be3dbdc12fc79d301
+olt-service           /docs    a61fb3d91cbd8de4cd2c852e9d4f7299ef11cec5
+onos-service          /docs    07c19a7dd449813167175c560ef3e390d085bdf8
+openolt               /        59f72ba2c7ddc7b874e0ff6d14cc9dd22a24cb2b
+openstack             /docs    5a96c5874ff345a77d418f950fcf26e8966cdf8e
+rcord                 /docs    fbcea9b2662d1aefa1a8b66aff75cb512fa2dff1
+simpleexampleservice  /docs    aa12aaca8d958c041f218d1ee2ac2a91e7e8fbce
+exampleservice        /docs    886a4b9d041d229229f2aad92cd29e94960d3c6b
+vrouter               /docs    bb913598b132c8635ad3b3189c4f58031fe096ae
+xos                   /docs    b4a75d138cbf14f25a3baa7db366f6f2b8577d6e
+xos-gui               /docs    a9fe46b958baac61d24b00f4433d77600df1e0f0
+xos-tosca             /docs    cd9db56b8a7a62112eb0cc9449940e3e7545db7b
 
