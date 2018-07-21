@@ -21,16 +21,16 @@
           "text": "Master (Devel)"
         },
         {
+          "value": "/cord-6.0",
+          "text": "6.0 (Stable)"
+        },
+        {
           "value": "/cord-5.0",
           "text": "5.0 (Stable)"
         },
         {
           "value": "/cord-4.1",
           "text": "4.1 (Stable)"
-        },
-        {
-          "value": "/cord-4.0",
-          "text": "4.0 (Stable)"
         },
         {
           "value": "https://wiki.opencord.org/display/CORD/Building+and+Installing+CORD",
