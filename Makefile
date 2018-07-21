@@ -87,3 +87,13 @@ $(OTHER_REPO_DOCS): | $(CHECKOUT_REPOS)
 swagger: xos
 	pushd repos/xos/docs; make swagger_docs; popd;
 
+# generate a list of git checksums suitable for updating git_refs
+freeze: repos
+	@for repo in $(OTHER_REPO_DOCS) ; do \
+	  GIT_SUBDIR=`grep "^$$repo " git_refs | awk '{print $$2}'` ;\
+	  cd "repos/$$repo" > /dev/null ;\
+	    HEAD_SHA=`git rev-parse HEAD` ;\
+	    printf "%-21s %-8s %-40s\n" $$repo $$GIT_SUBDIR $$HEAD_SHA ;\
+	  cd ../.. ;\
+	done
+
