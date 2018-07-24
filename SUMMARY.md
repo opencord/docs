@@ -21,6 +21,7 @@
     * [Bringing Up CORD](profiles/intro.md)
         * [R-CORD](profiles/rcord/install.md)
             * [EdgeCore (OpenOLT driver) Setup](openolt/README.md)
+            * [Celestica / Microsemi Setup](profiles/rcord/celestica-olt-setup.md)
             * [Emulated OLT/ONU](profiles/rcord/emulate.md)
         * [M-CORD](profiles/mcord/install.md)
             * [EnodeB Setup](profiles/mcord/enodeb-setup.md)
