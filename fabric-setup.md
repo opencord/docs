@@ -45,6 +45,7 @@ dpkg -i your-ofdpa.deb
 Three OFDPA drivers are available:
 
 * [EdgeCore 5712-54X / 5812-54X / 6712-32X](https://github.com/onfsdn/atrium-docs/blob/master/16A/ONOS/builds/ofdpa_3.0.5.5%2Baccton1.7-1_amd64.deb?raw=true) - *checksum: sha256:db228b6e79fb15f77497b59689235606b60abc157e72fc3356071bcc8dc4c01f*
+* [EdgeCore 7712-32X](https://github.com/onfsdn/atrium-docs/blob/master/16A/ONOS/builds/ofdpa_3.0.5.5%2Baccton1.7-1_amd64.deb) - *checksum: sha256:4f78e8f43976dc86ab1cdc2f98afa743ce2e0cc5923e429c91f96b0edc3ddf4b*
 * [QuantaMesh T3048-LY8](https://github.com/onfsdn/atrium-docs/blob/master/16A/ONOS/builds/ofdpa-ly8_0.3.0.5.0-EA5-qct-01.01_amd64.deb?raw=true) - *checksum: sha256:f8201530b1452145c1a0956ea1d3c0402c3568d090553d0d7b3c91a79137da9e*
 * [QuantaMesh BMS T7032-IX1/IX1B](https://github.com/onfsdn/atrium-docs/blob/master/16A/ONOS/builds/ofdpa-ix1_0.3.0.5.0-EA5-qct-01.00_amd64.deb?raw=true) *checksum: sha256:278b8ffed8a8fc705a1b60d16f8e70377e78342a27a11568a1d80b1efd706a46*
 
