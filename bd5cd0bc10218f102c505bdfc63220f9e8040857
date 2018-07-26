@@ -23,6 +23,30 @@
       "revId": "bd5cd0bc10218f102c505bdfc63220f9e8040857",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e97ae935_60499484",
+        "filename": "profiles/rcord/celestica-olt-setup.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-07-26T15:42:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24d3b69d_a647f10d",
+      "range": {
+        "startLine": 33,
+        "startChar": 176,
+        "endLine": 33,
+        "endChar": 206
+      },
+      "revId": "bd5cd0bc10218f102c505bdfc63220f9e8040857",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
