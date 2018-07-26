@@ -1,0 +1,28 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "24d3b69d_a647f10d",
+        "filename": "profiles/rcord/celestica-olt-setup.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-07-26T15:36:07Z",
+      "side": 1,
+      "message": "Ok, makes sense.  `couple` ?",
+      "parentUuid": "cf852477_fad2efe6",
+      "range": {
+        "startLine": 33,
+        "startChar": 176,
+        "endLine": 33,
+        "endChar": 206
+      },
+      "revId": "bd5cd0bc10218f102c505bdfc63220f9e8040857",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
