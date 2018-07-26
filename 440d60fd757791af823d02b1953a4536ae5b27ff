@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "f9e27f98_4d2e40af",
+        "filename": "profiles/rcord/celestica-olt-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-07-26T15:36:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0981efa2_e94872bd",
+      "range": {
+        "startLine": 53,
+        "startChar": 52,
+        "endLine": 53,
+        "endChar": 90
+      },
+      "revId": "440d60fd757791af823d02b1953a4536ae5b27ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e9c93c0d_77ade6fe",
         "filename": "profiles/rcord/celestica-olt-setup.md",
         "patchSetId": 1
@@ -304,6 +328,30 @@
       "revId": "440d60fd757791af823d02b1953a4536ae5b27ff",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "395ef02d_810a910f",
+        "filename": "profiles/rcord/celestica-olt-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-07-26T15:36:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ded08cb7_7e1d8fe5",
+      "range": {
+        "startLine": 66,
+        "startChar": 155,
+        "endLine": 66,
+        "endChar": 191
+      },
+      "revId": "440d60fd757791af823d02b1953a4536ae5b27ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
