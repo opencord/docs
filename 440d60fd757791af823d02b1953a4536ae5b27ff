@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c623f39b_4737300f",
+        "filename": "profiles/rcord/celestica-olt-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-07-26T14:38:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27733429_3698d501",
+      "range": {
+        "startLine": 19,
+        "startChar": 152,
+        "endLine": 19,
+        "endChar": 252
+      },
+      "revId": "440d60fd757791af823d02b1953a4536ae5b27ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c6b78735_85f34e51",
         "filename": "profiles/rcord/celestica-olt-setup.md",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-07-26T14:20:22Z",
       "side": 1,
       "message": "software",
+      "range": {
+        "startLine": 21,
+        "startChar": 21,
+        "endLine": 21,
+        "endChar": 28
+      },
+      "revId": "440d60fd757791af823d02b1953a4536ae5b27ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d605d5e_e7b221a9",
+        "filename": "profiles/rcord/celestica-olt-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-07-26T14:38:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6b78735_85f34e51",
       "range": {
         "startLine": 21,
         "startChar": 21,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "cf852477_fad2efe6",
+        "filename": "profiles/rcord/celestica-olt-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-07-26T14:38:25Z",
+      "side": 1,
+      "message": "No, there\u0027s a MAC address assigned to each PON (which is composed by a master port and -below- the slave port)",
+      "parentUuid": "7633e32d_e41aa05c",
+      "range": {
+        "startLine": 33,
+        "startChar": 176,
+        "endLine": 33,
+        "endChar": 206
+      },
+      "revId": "440d60fd757791af823d02b1953a4536ae5b27ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "27ea0a1d_9c4c21f4",
         "filename": "profiles/rcord/celestica-olt-setup.md",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2018-07-26T14:20:22Z",
       "side": 1,
       "message": "To clarify, is this at the beginning of the provisioning process, right after you run `preprovision_olt`?",
+      "range": {
+        "startLine": 53,
+        "startChar": 52,
+        "endLine": 53,
+        "endChar": 90
+      },
+      "revId": "440d60fd757791af823d02b1953a4536ae5b27ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0981efa2_e94872bd",
+        "filename": "profiles/rcord/celestica-olt-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-07-26T14:38:25Z",
+      "side": 1,
+      "message": "no, after the enable command. I\u0027ll try to clarify",
+      "parentUuid": "27ea0a1d_9c4c21f4",
       "range": {
         "startLine": 53,
         "startChar": 52,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "4f29e924_968cf95b",
+        "filename": "profiles/rcord/celestica-olt-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-07-26T14:38:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9c93c0d_77ade6fe",
+      "range": {
+        "startLine": 57,
+        "startChar": 147,
+        "endLine": 57,
+        "endChar": 148
+      },
+      "revId": "440d60fd757791af823d02b1953a4536ae5b27ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a2e9a6bc_f7063128",
         "filename": "profiles/rcord/celestica-olt-setup.md",
         "patchSetId": 1
@@ -128,6 +248,30 @@
       "writtenOn": "2018-07-26T14:20:22Z",
       "side": 1,
       "message": "\"As in-band communication is done by L2 MAC address, the\" ?",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 15
+      },
+      "revId": "440d60fd757791af823d02b1953a4536ae5b27ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e93f3d3_1fa2791e",
+        "filename": "profiles/rcord/celestica-olt-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-07-26T14:38:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2e9a6bc_f7063128",
       "range": {
         "startLine": 59,
         "startChar": 0,
