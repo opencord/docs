@@ -305,6 +305,74 @@ topology_template:
 For instructions on how to push TOSCA into a CORD POD, please
 refer to this [guide](../../xos-tosca/README.md).
 
+### Complete the Subscriber config
+
+As a result of the OLT/ONU activation you'll find out that XOS has generated
+an `RCORDSubscriber` for you.
+That model has the `status` field set to `awaiting-auth`, that means that
+you can ping the gateway but not the internet.
+
+The authentication mechanism is not yet ready in CORD 6.0,
+so you need to configure few attributes manully,
+such as:
+
+- `ip_addres`
+- `mac_address`
+- set `status` to `enabled`
+
+You can do that via the GUI or you can use a TOSCA like the following:
+```yaml
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/rcordsubscriber.yaml
+description: Create a test subscriber
+topology_template:
+  node_templates:
+    # A subscriber
+    my_house:
+      type: tosca.nodes.RCORDSubscriber
+      properties:
+        name: My House
+        must-exist: true
+        status: enabled
+        mac_address: 00:AA:00:00:00:01 # subscriber mac address
+        ip_address: 10.8.2.1 # subscriber IP
+```
+
+For instructions on how to push TOSCA into a CORD POD, please
+refer to this [guide](../../xos-tosca/README.md).
+
+#### Pre-provision subscribers
+
+Another viable approach is to `pre-provision` subscribers,
+you can do that using this TOSCA:
+
+```yaml
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/rcordsubscriber.yaml
+
+description: Pre-provsion a subscriber
+
+topology_template:
+  node_templates:
+
+    # Pre-provision the subscriber the subscriber
+    my_house:
+      type: tosca.nodes.RCORDSubscriber
+      properties:
+        name: My House
+        status: pre-provisioned
+        c_tag: 111
+        onu_device: BRCM22222222
+        mac_address: 90:E2:BA:82:FA:81
+        ip_address: 192.168.0.1
+```
+>NOTE: if you do this you still need to set `status=enabled` after the ONU comes up
+
+For instructions on how to push TOSCA into a CORD POD, please
+refer to this [guide](../../xos-tosca/README.md).
+
 ### Know issues
 
 There is a set of issue that we have seen from time to time.
