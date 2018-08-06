@@ -46,6 +46,8 @@
             * [XOS Configuration](xos/modules/xosconfig.md)
     * [Configuring Profiles](operating_cord/profiles.md)
         * [R-CORD](profiles/rcord/configuration.md)
+            * Workflows
+                * [AT&T](profiles/rcord/workflows/att.md)
         * [M-CORD](profiles/mcord/configuration.md)
     * [Configuring Services](operating_cord/services.md)
         * [Fabric](fabric/README.md)
