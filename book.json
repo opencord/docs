@@ -4,6 +4,9 @@
   "structure": {
     "summary": "SUMMARY.md"
   },
+  "styles": {
+    "website": "styles/website.css"
+  },
   "variables": {
     "branch": "master"
   },
