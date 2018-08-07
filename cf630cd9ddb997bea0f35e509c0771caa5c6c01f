@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "33d63570_70819b22",
+        "filename": "profiles/rcord/workflows/att.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-08-07T18:23:42Z",
+      "side": 1,
+      "message": "Probably should use the `AT\u0026T` caps/format corporate branding here.  \n\nShould WORKFLOW in the H1 be in all caps?",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 3,
+        "endChar": 65
+      },
+      "revId": "cf630cd9ddb997bea0f35e509c0771caa5c6c01f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
