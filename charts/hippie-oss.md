@@ -1,6 +1,6 @@
 # Deploy Hippie OSS
 
-To insall a minimal (permissive) OSS container in support of subscriber
+To install a minimal (permissive) OSS container in support of subscriber
 provisioning for R-CORD, run the following:
 
 ```shell
