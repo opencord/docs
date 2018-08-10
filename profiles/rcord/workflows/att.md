@@ -2,6 +2,24 @@
 
 You can find a complete description of the SEBA workflow for At&t in [this document](https://docs.google.com/document/d/1nou2c8AsRzhaDJmA_eYvFgd0Y33KiCsioveU77AOVCI/edit#heading=h.x73smxj2xaib). This pages focus exclusively on the internals details of the workflow such as actions triggered by the environment and decisions taken by NEM.
 
+## Helm charts
+
+To replicate this workflow you'll need to install:
+
+- [xos-core](../../../charts/xos-core.md)
+- [cord-kafka](../../../charts/kafka.md)
+- [voltha-kafka](../../../charts/voltha.md)
+- [voltha](../../../charts/voltha.md)
+- [onos-voltha](../../../charts/onos.md#onos-voltha)
+- [onos-fabric](../../../charts/onos.md#onos-fabric)
+- att-workflow
+
+### Install the `att-workflow` chart
+
+```shell
+helm install -n att-workflow xos-profiles/att-workflow
+```
+
 ## Workflow description
 
 1. ONT discovered bottom-up
@@ -27,4 +45,110 @@ This schema summarizes the workflow, please note:
 
 ![att-workflow](../../../images/att_workflow.png)
 
-> NOTE: when we refer to `service chain` we are talking about the set of subscriber specific service instances that will trigger the `add_subscriber` call in ONOS-VOLTHA and provision the crossconnect in ONOS-FABRIC
+> NOTE: when we refer to `service chain` we are talking about the set of
+subscriber specific service instances that will trigger the `add_subscriber`
+call in ONOS-VOLTHA and provision the crossconnect in ONOS-FABRIC
+
+## Operations
+
+We assume your POD is already configured as per[this instructions](../configuration.md)
+(you need to complete only the first section)
+
+### Whitelist population
+
+To configure the ONU whitelist, you can use this TOSCA:
+
+```yaml
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/attworkflowdriverwhitelistentry.yaml
+  - custom_types/attworkflowdriverservice.yaml
+description: Create an entry in the whitelist
+topology_template:
+  node_templates:
+
+    service#att:
+      type: tosca.nodes.AttWorkflowDriverService
+      properties:
+        name: att-workflow-driver
+        must-exist: true
+
+    whitelist:
+      type: tosca.nodes.AttWorkflowDriverWhiteListEntry
+      properties:
+        serial_number: BRCM22222222
+      requirements:
+        - owner:
+            node: service#att
+            relationship: tosca.relationships.BelongsToOne
+```
+
+For instructions on how to push TOSCA into a CORD POD, please
+refer to this [guide](../../../xos-tosca/README.md).
+
+### Pre-provision subscribers
+
+You can `pre-provision` subscribers using this TOSCA:
+
+```yaml
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/rcordsubscriber.yaml
+
+description: Pre-provsion a subscriber
+
+topology_template:
+  node_templates:
+
+    # Pre-provision the subscriber the subscriber
+    my_house:
+      type: tosca.nodes.RCORDSubscriber
+      properties:
+        name: My House
+        status: pre-provisioned
+        c_tag: 111
+        onu_device: BRCM22222222
+```
+
+For instructions on how to push TOSCA into a CORD POD, please
+refer to this [guide](../../../xos-tosca/README.md).
+
+### OLT Activation
+
+Once the system knows about whitelisted ONUs and subscribers,
+you can activate the OLT:
+
+```yaml
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/oltdevice.yaml
+  - custom_types/voltservice.yaml
+description: Create a simulated OLT Device in VOLTHA
+topology_template:
+  node_templates:
+
+    service#volt:
+      type: tosca.nodes.VOLTService
+      properties:
+        name: volt
+        must-exist: true
+
+    olt_device:
+      type: tosca.nodes.OLTDevice
+      properties:
+        name: ONF OLT
+        device_type: openolt
+        host: 10.90.0.114
+        port: 9191
+        switch_datapath_id: of:0000000000000001
+        switch_port: "1"
+        outer_tpid: "0x8100"
+        uplink: "128"
+      requirements:
+        - volt_service:
+            node: service#volt
+            relationship: tosca.relationships.BelongsToOne
+```
+
+For instructions on how to push TOSCA into a CORD POD, please
+refer to this [guide](../../../xos-tosca/README.md).
