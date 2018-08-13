@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "231c015c_b3248b9d",
+        "filename": "developer/loadguiinterface.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-08-13T16:17:11Z",
+      "side": 1,
+      "message": "We have an installation guide (https://guide.opencord.org/prereqs/software.html) we should point to that for the prerequisites and for helm-chart usage. (duplicated content will fall out of sync)",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 9
+      },
+      "revId": "ad54d274ee3edd3bbab2790a3c10f7a56f619ef7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a78828c0_a0db776b",
+        "filename": "developer/loadguiinterface.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-08-13T16:17:11Z",
+      "side": 1,
+      "message": "We should explain what this yaml is used for and how to push it to XOS. Generally we use this format: https://guide.opencord.org/profiles/rcord/configuration.html#push-a-subscriber-into-cord",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 3
+      },
+      "revId": "ad54d274ee3edd3bbab2790a3c10f7a56f619ef7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2656c24e_2fae092b",
+        "filename": "developer/loadguiinterface.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-08-13T16:17:11Z",
+      "side": 1,
+      "message": "We actually don\u0027t need Docker as it will run inside the minikube VM",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 22
+      },
+      "revId": "ad54d274ee3edd3bbab2790a3c10f7a56f619ef7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dbf219aa_eda74aa5",
+        "filename": "developer/loadguiinterface.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-08-13T16:17:11Z",
+      "side": 1,
+      "message": "See the comment about the prerequisite section",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 3
+      },
+      "revId": "ad54d274ee3edd3bbab2790a3c10f7a56f619ef7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
