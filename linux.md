@@ -111,7 +111,7 @@ Create a CORD directory and run the following `git` command in it:
 ```shell
 mkdir ~/cord
 cd ~/cord
-git clone https://gerrit.opencord.org/helm-charts
+git clone https://gerrit.opencord.org/helm-charts -b cord-6.0
 cd helm-charts
 ```
 

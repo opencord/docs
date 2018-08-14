@@ -71,7 +71,7 @@ discussed in the [Operations Guide](../operating_cord/operating_cord.md).
 You can get the CORD helm charts by cloning the `helm-charts` repository:
 
 ```shell
-git clone https://gerrit.opencord.org/helm-charts
+git clone https://gerrit.opencord.org/helm-charts -b cord-6.0
 ```
 
 > **Note:** If you have downloaded the CORD code following the [Getting the Source
