@@ -10,7 +10,7 @@ The same chart can be used to deploy different flavors of ONOS, depending on the
 ## onos-fabric
 
 ```shell
-helm install -n onos-fabric -f configs/onos-fabric.yaml onos
+helm install -n onos-fabric -f configs/onos-fabric.yaml onos --set xos_service=ONOS_Fabric
 ```
 
 **Nodeports exposed**
