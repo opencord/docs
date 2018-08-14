@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e76f1743_5a1b4540",
+        "filename": "charts/onos.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-08-14T18:12:23Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we put this in the values?\nhttps://github.com/opencord/helm-charts/blob/master/configs/onos-cord.yaml",
+      "range": {
+        "startLine": 13,
+        "startChar": 61,
+        "endLine": 13,
+        "endChar": 90
+      },
+      "revId": "1328169b573141c2cc5ac0030dd1c4b993502447",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
