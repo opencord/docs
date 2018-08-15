@@ -11,6 +11,7 @@
 
 _REPO NAME_           _DIR_    _REF_
 
+att-workflow-driver   /docs    master
 cord-tester           /docs    master
 fabric                /docs    master
 hippie-oss            /docs    master
