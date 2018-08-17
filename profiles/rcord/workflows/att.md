@@ -77,6 +77,8 @@ topology_template:
       type: tosca.nodes.AttWorkflowDriverWhiteListEntry
       properties:
         serial_number: BRCM22222222
+        pon_port_id: 536870912
+        device_id: of:000000000a5a0072
       requirements:
         - owner:
             node: service#att
@@ -108,6 +110,8 @@ topology_template:
         status: pre-provisioned
         c_tag: 111
         onu_device: BRCM22222222
+        nas_port_id : "PON 1/1/03/1:1.1.1"
+        circuit_id: foo
 ```
 
 For instructions on how to push TOSCA into a CORD POD, please
