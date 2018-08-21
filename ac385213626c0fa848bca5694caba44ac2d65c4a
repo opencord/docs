@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e544f5b5_c992634b",
+        "filename": "charts/monitoring.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-08-21T20:34:10Z",
+      "side": 1,
+      "message": "Is port number correct, per other patch?",
+      "range": {
+        "startLine": 19,
+        "startChar": 19,
+        "endLine": 19,
+        "endChar": 24
+      },
+      "revId": "ac385213626c0fa848bca5694caba44ac2d65c4a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d75ec534_42327bdf",
+        "filename": "profiles/rcord/workflows/att.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-08-21T20:34:10Z",
+      "side": 1,
+      "message": "OLT?",
+      "range": {
+        "startLine": 160,
+        "startChar": 4,
+        "endLine": 160,
+        "endChar": 10
+      },
+      "revId": "ac385213626c0fa848bca5694caba44ac2d65c4a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
