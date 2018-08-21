@@ -35,6 +35,7 @@
             * [VTN Setup](prereqs/vtn-setup.md)
         * [M-CORD](charts/mcord.md)
         * [XOSSH](charts/xossh.md)
+        * [MONITORING](charts/monitoring.md)
 * [Operations Guide](operating_cord/operating_cord.md)
     * [General Info](operating_cord/general.md)
         * [GUI](operating_cord/gui.md)
