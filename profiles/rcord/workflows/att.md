@@ -17,6 +17,7 @@ To replicate this workflow you'll need to install:
 ### Install the `att-workflow` chart
 
 ```shell
+helm dep update xos-profiles/att-workflow
 helm install -n att-workflow xos-profiles/att-workflow
 ```
 
