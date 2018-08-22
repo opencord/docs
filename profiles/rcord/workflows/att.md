@@ -157,3 +157,7 @@ topology_template:
 
 For instructions on how to push TOSCA into a CORD POD, please
 refer to this [guide](../../../xos-tosca/README.md).
+
+### Device monitoring
+
+Please refer to the [monitoring](../../../charts/monitoring.md) chart.
