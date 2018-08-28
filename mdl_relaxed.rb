@@ -34,6 +34,9 @@ exclude_rule 'MD009'
 # Don't enforce line length limitations
 exclude_rule 'MD013'
 
+# Blank line inside blockquote (we want to have sequential notes)
+exclude_rule 'MD028'
+
 # Allow  ! and ? as trailing punctuation in headers
 rule 'MD026', :punctuation => '.,;:'
 

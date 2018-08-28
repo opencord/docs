@@ -361,6 +361,14 @@ onos> device-remove <device-ofid>
 
 The device will be automatically discovered again, and events are sent.
 
+> **Note:** If you the events are still not showing up and in the `onos-voltha`
+> logs you see kafka related errors, you can disable and enable the `org.opencord.olt`
+> application:
+> ```
+> app deactivate org.opencord.olt
+> app activate org.opencord.olt
+> ```
+
 ##### Check if the events appears in Kafka
 
 If you are still not seeing the events in XOS, you can check if they appear into Kafka.
