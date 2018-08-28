@@ -44,9 +44,12 @@ will also need to install the following two charts:
 - [cord-kafka](../../charts/kafka.md)
 - [hippie-oss](../../charts/hippie-oss.md)
 
+> **Important:** If you are planning to install `cord-kafka` you'll need
+> to install it **before** installing `onos-fabric` and `onos-voltha`
+
 > **Note:** If you install both VOLTHA and the optional Kafka, you
-> will end up with two instantiations of Kafka: `kafka-voltha` and
-> `kafka-cord`.
+> will end up with two instantiations of Kafka: `voltha-kafka` and
+> `cord-kafka`.
 
 Once your R-CORD deployment is complete, please read the
 following guide to understand how to configure it:
