@@ -10,8 +10,7 @@ To replicate this workflow you'll need to install:
 - [cord-kafka](../../../charts/kafka.md)
 - [voltha-kafka](../../../charts/voltha.md)
 - [voltha](../../../charts/voltha.md)
-- [onos-voltha](../../../charts/onos.md#onos-voltha)
-- [onos-fabric](../../../charts/onos.md#onos-fabric)
+- [onos](../../../charts/onos.md#generic-onos)
 - att-workflow
 
 ### Install the `att-workflow` chart

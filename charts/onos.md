@@ -47,7 +47,10 @@ helm install -n onos-cord -f configs/onos-cord.yaml onos
 ## Generic ONOS
 
 ```shell
-helm install -n onos onos
+helm install -n onos onos -f configs/onos.yaml
 ```
 
-The configuration doesn't expose any nodeport.
+**Nodeports exposed**
+
+* SSH: 30115
+* REST/UI: 30120

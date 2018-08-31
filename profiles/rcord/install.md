@@ -25,8 +25,7 @@ The R-CORD profile has dependencies on the following platform
 charts, so they need to be installed next:
 
 - [xos-core](../../charts/xos-core.md)
-- [onos-fabric](../../charts/onos.md#onos-fabric)
-- [onos-voltha](../../charts/onos.md#onos-voltha)
+- [onos](../../charts/onos.md#generic-onos)
 
 ## Install R-CORD Profile
 
