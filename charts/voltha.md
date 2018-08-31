@@ -73,3 +73,5 @@ you can use this command to access the VOLTHA CLI:
 ```shell
 ssh voltha@<pod-ip> -p 30110
 ```
+
+The default VOLTHA password is `admin`.
