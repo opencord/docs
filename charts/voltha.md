@@ -1,28 +1,21 @@
 # Deploy VOLTHA
 
+VOLTHA depends on having a [kafka message bus](kafka.md) deployed with a name
+of `voltha-kafka`, so deploy that with helm before deploying the voltha chart.
+
+
 ## First Time Installation
 
-Download the helm charts `incubator` repository
+Download the helm charts `incubator` repository:
 
 ```shell
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 ```
 
-Build dependencies
+Update dependencies within the voltha chart:
 
 ```shell
-helm dep build voltha
-```
-
-Install the kafka dependency
-
-```shell
-helm install --name voltha-kafka \
---set replicas=1 \
---set persistence.enabled=false \
---set zookeeper.servers=1 \
---set zookeeper.persistence.enabled=false \
-incubator/kafka
+helm dep up voltha
 ```
 
 There is an `etcd-operator` **known bug** that prevents deploying
