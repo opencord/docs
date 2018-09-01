@@ -159,4 +159,4 @@ refer to this [guide](../../../xos-tosca/README.md).
 
 ### Device monitoring
 
-Please refer to the [monitoring](../../../charts/monitoring.md) chart.
+Please refer to the [monitoring](../../../charts/logging-monitoring.md) chart.
