@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4bea75b6_b43ceab7",
+        "filename": "charts/storage.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-09-04T19:59:31Z",
+      "side": 1,
+      "message": "volume to a node",
+      "range": {
+        "startLine": 66,
+        "startChar": 27,
+        "endLine": 66,
+        "endChar": 40
+      },
+      "revId": "d2731b4541ce2f728bb9e79c16c1d331eee3fb3f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eff65f69_f22c729b",
+        "filename": "charts/storage.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-09-04T19:59:31Z",
+      "side": 1,
+      "message": "its",
+      "range": {
+        "startLine": 142,
+        "startChar": 61,
+        "endLine": 142,
+        "endChar": 65
+      },
+      "revId": "d2731b4541ce2f728bb9e79c16c1d331eee3fb3f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
