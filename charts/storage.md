@@ -14,24 +14,47 @@ scenarios.
 
 ## Local Directory
 
-The `local-provisioner` chart creates
+The `local-directory` chart creates
 [local](https://kubernetes.io/docs/concepts/storage/volumes/#local) volumes on
 specific nodes, from directories. As there are no enforced limits for volume
 size and the node names are preconfigured, this chart is intended for use only
 for development and testing.
 
 Multiple directories can be specified in the `volumes` list - an example is
-given in the `values.yaml` file of the chart.
+given in the `values.yaml` file of the chart.  You should create another values
+file that is specific to your deployment that overrides these with the
+deployments node and directory names, and then ensure that these directories
+are created before running this chart.
 
-The `StorageClass` created for all volumes is `local-directory`.
+The `StorageClass` created for all volumes created by this chart is
+`local-directory`.
 
-There is an ansible script that automates the creation of directories on all
-the kubernetes nodes.  Make sure that the inventory name in ansible matches the
-one given as `host` in the `volumes` list, then invoke with:
+There is an ansible playbook that automates the creation of directories on all
+the kubernetes nodes given a values file.  Make sure that the inventory name in
+ansible matches the name of the `host` in the `volumes` list, then invoke
+with:
 
 ```shell
-ansible-playbook -i <path to ansbible inventory> --extra-vars "helm_values_file:<path to values.yaml>" local-directory-playbook.yaml
+ansible-playbook -i <path to ansible inventory> --extra-vars "helm_values_file:<path to values.yaml>" local-directory-playbook.yaml
 ```
+
+to create all local directories.
+
+Then load the helm chart:
+
+```shell
+helm install -f <path to values.yaml> -n local-directory local-directory
+```
+
+You should then be able to list the local directory PV's:
+
+```shell
+$ kubectl get pv
+NAME       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM     STORAGECLASS      REASON    AGE
+large-pv   10Gi       RWO            Retain           Available             local-directory             8s
+small-pv   2Gi        RWO            Retain           Available             local-directory             8s
+```
+
 
 ## Local Provisioner
 
@@ -310,7 +333,10 @@ for the workload you're trying to run.
 
 ### Example: XOS Database on a local directory
 
-For development and testing, it may be useful to persist the XOS database
+For development and testing, it may be useful to persist the XOS database.
+
+First, configure your nodes to deploy the [local-directory](#local-directory)
+chart, then run:
 
 ```shell
 helm install -f examples/xos-db-local-dir.yaml -n xos-core xos-core
@@ -322,6 +348,9 @@ The XOS Database (Postgres) wants a volume that persists if a node goes down or
 is taken out of service, not shared with other containers running Postgres,
 thus the Ceph RBD volume is a reasonable choice to use with it.
 
+Deploy the [rook-operator and rook-cluster](#ceph-deployed-with-rook) charts,
+then load the XOS core charts with:
+
 ```shell
 helm install -f examples/xos-db-ceph-rbd.yaml -n xos-core xos-core
 ```
@@ -331,7 +360,8 @@ helm install -f examples/xos-db-ceph-rbd.yaml -n xos-core xos-core
 The Docker Registry wants a filesystem that is the shared across all
 containers, so it's a suitable workload for the `cephfs` shared filesystem.
 
-There's an example values file available in `helm-charts/examples/registry-cephfs.yaml`
+Deploy the [rook-operator and rook-cluster](#ceph-deployed-with-rook) charts,
+then load the registry chart with:
 
 ```shell
 helm install -f examples/registry-cephfs.yaml -n docker-registry stable/docker-registry
