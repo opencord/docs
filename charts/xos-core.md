@@ -6,6 +6,11 @@ To deploy the XOS core and affiliated containers, run the following:
 helm dep update xos-core
 helm install -n xos-core xos-core
 ```
+**Nodeports exposed**
+
+* UI: 30001
+* REST: 30006
+* Tosca: 30007
 
 ## Customizing security information
 
