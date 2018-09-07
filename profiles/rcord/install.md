@@ -19,22 +19,18 @@ When running on a physical POD with OLT/ONU hardware, the
 first step to bringing up R-CORD is to install the
 [VOLTHA helm chart](../../charts/voltha.md).
 
-## Install CORD Platform
+## Install ONOS
 
-The R-CORD profile has dependencies on the following platform
-charts, so they need to be installed next:
+Install [onos](../../charts/onos.md#onos-manages-fabric--voltha).
+It will manage both Voltha and the fabric infrastructure.
 
-- [xos-core](../../charts/xos-core.md)
-- [onos](../../charts/onos.md#generic-onos)
+## Install XOS
 
-## Install R-CORD Profile
+The R-CORD profile the orchestrator [xos-core](../../charts/xos-core.md) to be installed.
 
-You are now ready to install the R-CORD profile:
+## Install the R-CORD Profile
 
-```shell 
-helm dep update xos-profiles/rcord-lite
-helm install -n rcord-lite xos-profiles/rcord-lite
-```
+You are now ready to install the [R-CORD profile](../../charts/rcord.md):
 
 Optionally, if you want to use the "bottom up" subscriber provisioning
 workflow described in the [Operations Guide](configuration.md), you

@@ -7,31 +7,18 @@ The same chart can be used to deploy different flavors of ONOS, depending on the
 * **onos-vtn**: a speciic version of ONOS used to control VTN
 * **no configuration applied**: if no configurations are applied, a generic ONOS instance will be installed
 
-## onos-fabric
+## ONOS (manages fabric + voltha)
 
 ```shell
-helm install -n onos-fabric -f configs/onos-fabric.yaml onos
+helm install -n onos -f configs/onos.yaml onos
 ```
 
 **Nodeports exposed**
 
-* ovsdb: 31640
 * OpenFlow: 31653
-* SSH: 31101
-* REST/UI: 31181
-
-## onos-voltha
-
-> **Note:** This requires [VOLTHA](voltha.md) to be installed
-
-```shell
-helm install -n onos-voltha -f configs/onos-voltha.yaml onos
-```
-
-**Nodeports exposed**
-
 * SSH: 30115
 * REST/UI: 30120
+* Karaf debugger: 30555
 
 ## onos-cord (onos-vtn)
 
@@ -47,10 +34,20 @@ helm install -n onos-cord -f configs/onos-cord.yaml onos
 ## Generic ONOS
 
 ```shell
-helm install -n onos onos -f configs/onos.yaml
+helm install -n onos onos
 ```
 
 **Nodeports exposed**
 
-* SSH: 30115
-* REST/UI: 30120
+No ports are exposed
+
+## Modify default debug level
+
+An option can be added either to the default ONOS *values.yaml* file, or overritten through an external configuration file. Here is an example:
+
+```yaml
+application_logs: |
+  log4j.logger.org.opencord.olt = DEBUG
+  log4j.logger.org.opencord.kafka = DEBUG
+  log4j.logger.org.opencord.sadis = DEBUG
+```

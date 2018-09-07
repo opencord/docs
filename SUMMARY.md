@@ -33,6 +33,7 @@
         * [Hippie OSS](charts/hippie-oss.md)
         * [Base OpenStack](charts/base-openstack.md)
             * [VTN Setup](prereqs/vtn-setup.md)
+        * [R-CORD](charts/rcord.md)
         * [M-CORD](charts/mcord.md)
         * [XOSSH](charts/xossh.md)
         * [Logging and Monitoring](charts/logging-monitoring.md)
