@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eebaff9_9ffbb9f4",
+        "filename": "profiles/mcord/install.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2018-09-19T18:44:04Z",
+      "side": 1,
+      "message": "Should we just support 1 way, like just single node? just support multiple node?",
+      "range": {
+        "startLine": 46,
+        "startChar": 22,
+        "endLine": 47,
+        "endChar": 43
+      },
+      "revId": "83c9c476c067abfd0a8155f902c62ad8412f1b86",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
