@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "01a9b256_73c1ce73",
+        "filename": "profiles/mcord/install.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-09-20T23:54:25Z",
+      "side": 1,
+      "message": "jump",
+      "range": {
+        "startLine": 35,
+        "startChar": 70,
+        "endLine": 35,
+        "endChar": 71
+      },
+      "revId": "488283e9d5fa5f90cd2306ba87e6c6d0c249f107",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7d0f52e_6fde6a6e",
+        "filename": "profiles/mcord/install.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-09-20T23:54:25Z",
+      "side": 1,
+      "message": "to the",
+      "range": {
+        "startLine": 36,
+        "startChar": 9,
+        "endLine": 36,
+        "endChar": 10
+      },
+      "revId": "488283e9d5fa5f90cd2306ba87e6c6d0c249f107",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "06c26629_9ceba7c0",
+        "filename": "profiles/mcord/install.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-09-20T23:54:25Z",
+      "side": 1,
+      "message": "section?",
+      "range": {
+        "startLine": 36,
+        "startChar": 72,
+        "endLine": 36,
+        "endChar": 77
+      },
+      "revId": "488283e9d5fa5f90cd2306ba87e6c6d0c249f107",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a0c268e_b6e2e619",
+        "filename": "profiles/mcord/install.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-09-20T23:54:25Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 52,
+        "startChar": 9,
+        "endLine": 52,
+        "endChar": 12
+      },
+      "revId": "488283e9d5fa5f90cd2306ba87e6c6d0c249f107",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b496d735_ee858052",
+        "filename": "profiles/mcord/install.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-09-20T23:54:25Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 52,
+        "startChar": 20,
+        "endLine": 52,
+        "endChar": 22
+      },
+      "revId": "488283e9d5fa5f90cd2306ba87e6c6d0c249f107",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
