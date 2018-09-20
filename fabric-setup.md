@@ -16,7 +16,9 @@ All CORD-compatible switches use
 The [latest compatible ONL image](https://github.com/opencord/OpenNetworkLinux/releases/download/2017-10-19.2200-1211610/ONL-2.0.0_ONL-OS_2017-10-19.2200-1211610_AMD64_INSTALLED_INSTALLER) can be downloaded from [here](https://github.com/opencord/OpenNetworkLinux/releases/download/2017-10-19.2200-1211610/ONL-2.0.0_ONL-OS_2017-10-19.2200-1211610_AMD64_INSTALLED_INSTALLER).
 
 **Checksum**: *sha256:2db316ea83f5dc761b9b11cc8542f153f092f3b49d82ffc0a36a2c41290f5421*
+
 ### Instructions to install ONL on Delta Switches
+
 If the Delta switch you are using has the following in /etc/machine.conf:
 ```shell
 onie_platform=x86_64_<platform name>-r0      
@@ -55,6 +57,13 @@ Then, install the DEB package
 
 ```shell
 dpkg -i your-ofdpa.deb
+```
+
+### Instructions for Delta switches
+
+If optical sfp cables are not coming up, please use the following command to launch ofdpa:
+```shell
+./launcher ofagentapp -t <ip address of the controller>
 ```
 
 Three OFDPA drivers are available:
