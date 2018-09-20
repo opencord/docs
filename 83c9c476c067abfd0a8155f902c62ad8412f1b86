@@ -46,6 +46,30 @@
       "revId": "83c9c476c067abfd0a8155f902c62ad8412f1b86",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d9a35957_ddaacf1f",
+        "filename": "profiles/mcord/install.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-09-20T23:54:25Z",
+      "side": 1,
+      "message": "It doesn\u0027t matter how many k8s nodes you use ...it should be totally transparent for the user",
+      "parentUuid": "f2b7bf61_ea660c2c",
+      "range": {
+        "startLine": 46,
+        "startChar": 22,
+        "endLine": 47,
+        "endChar": 43
+      },
+      "revId": "83c9c476c067abfd0a8155f902c62ad8412f1b86",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
