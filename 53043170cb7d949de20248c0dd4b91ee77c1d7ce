@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7ccb091b_d643c1c5",
+        "filename": "fabric-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000482
+      },
+      "writtenOn": "2018-09-21T18:21:52Z",
+      "side": 1,
+      "message": "ok.",
+      "parentUuid": "33650c65_2b8492fa",
+      "range": {
+        "startLine": 24,
+        "startChar": 39,
+        "endLine": 24,
+        "endChar": 45
+      },
+      "revId": "53043170cb7d949de20248c0dd4b91ee77c1d7ce",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b66a624d_39ae1c1d",
         "filename": "fabric-setup.md",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "f47833ca_90ba92d8",
+        "filename": "fabric-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000482
+      },
+      "writtenOn": "2018-09-21T18:21:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b66a624d_39ae1c1d",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 3
+      },
+      "revId": "53043170cb7d949de20248c0dd4b91ee77c1d7ce",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "db48327d_294c1492",
         "filename": "fabric-setup.md",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2018-09-20T22:13:18Z",
       "side": 1,
       "message": "do you require a different OFDPA driver? Alternatively, can you please add your switch name to one of these?",
+      "range": {
+        "startLine": 71,
+        "startChar": 2,
+        "endLine": 73,
+        "endChar": 20
+      },
+      "revId": "53043170cb7d949de20248c0dd4b91ee77c1d7ce",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1635b8dc_7c7b4328",
+        "filename": "fabric-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000482
+      },
+      "writtenOn": "2018-09-21T18:21:52Z",
+      "side": 1,
+      "message": "Ack\nYes, Luca we have a seperate driver for this.I can add the switch name, but how do i upload the image to onfsdn repo? Or are you going to upload the image that Charles has tested ?",
+      "parentUuid": "db48327d_294c1492",
       "range": {
         "startLine": 71,
         "startChar": 2,
