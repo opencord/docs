@@ -140,6 +140,30 @@
       "revId": "53043170cb7d949de20248c0dd4b91ee77c1d7ce",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a22d006_b282fe0b",
+        "filename": "fabric-setup.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-09-21T18:39:26Z",
+      "side": 1,
+      "message": "Sure, you can send it over email either to me or charles and we\u0027ll update it for you. Once it\u0027s updated we can insert the name and the link",
+      "parentUuid": "1635b8dc_7c7b4328",
+      "range": {
+        "startLine": 71,
+        "startChar": 2,
+        "endLine": 73,
+        "endChar": 20
+      },
+      "revId": "53043170cb7d949de20248c0dd4b91ee77c1d7ce",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
