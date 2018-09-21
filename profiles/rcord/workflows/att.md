@@ -8,7 +8,6 @@ To replicate this workflow you'll need to install:
 
 - [xos-core](../../../charts/xos-core.md)
 - [cord-kafka](../../../charts/kafka.md)
-- [voltha-kafka](../../../charts/voltha.md)
 - [voltha](../../../charts/voltha.md)
 - [onos](../../../charts/onos.md#generic-onos)
 - att-workflow

@@ -16,7 +16,7 @@ helm install -n nem-monitoring nem-monitoring
 ```
 
 > NOTE: In order to display `voltha` kpis you need to have `voltha`
-> and `voltha-kafka` installed.
+> and `cord-kafka` installed.
 
 ### Monitoring Dashboards
 
