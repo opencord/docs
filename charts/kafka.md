@@ -3,13 +3,14 @@
 The `kafka` helm chart is not maintained by CORD,
 but it is available online at: <https://github.com/kubernetes/charts/tree/master/incubator/kafka>
 
-To install kafka you can use:
+To install kafka using the `cord-kafka` name, run the following commands:
 
 ```shell
 helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
 helm install -f examples/kafka-single.yaml --version 0.8.8 -n cord-kafka incubator/kafka
-helm install -f examples/kafka-single.yaml --version 0.8.8 -n voltha-kafka incubator/kafka
 ```
+> NOTE: Historically there were two kafka busses deployed (another one named
+> `voltha-kafka`) but these have been consolidated.
 
 ## Viewing events with kafkacat
 
@@ -17,30 +18,39 @@ As a debugging tool you can deploy a container containing `kafkacat` and use
 that to listen for events:
 
 ```shell
-helm install -n kafkacat xos-tools/kafkacat/
+cd helm-charts
+helm install -n kafkacat xos-tools/kafkacat
 ```
 
-Once the container is up and running you can exec into the pod and use various
-commands.  For a complete reference, please refer to the [`kafkacat`
+Once the container is up and running you can exec into the pod and run kafkacat
+to perform various diagnostic commands.
+
+```shell
+kubectl exec -it kafkacat-##########-##### bash
+```
+
+For a complete reference, please refer to the [`kafkacat`
 guide](https://github.com/edenhill/kafkacat)
 
  A few examples:
 
 - List available topics:
   ```shell
-  kafkacat -L -b <kafka-service>
+  kafkacat -b cord-kafka -L
   ```
 
 - Listen for events on a particular topic:
   ```shell
-  kafkacat -C -b <kafka-service> -t <kafka-topic>
+  kafkacat -b cord-kafka -C -t <kafka-topic>
   ```
 
-- Some common topics to listen for on `cord-kafka` and `voltha-kafka`:
+- Some example topics to listen on:
 
   ```shell
-  kafkacat -b cord-kafka -t onu.events
-  kafkacat -b cord-kafka -t authentication.events
-  kafkacat -b cord-kafka -t dhcp.events
-  kafkacat -b voltha-kafka -t voltha.events
+  kafkacat -b cord-kafka -C -t xos.log.core
+  kafkacat -b cord-kafka -C -t xos.gui_events
+  kafkacat -b cord-kafka -C -t voltha.events
+  kafkacat -b cord-kafka -C -t onu.events
+  kafkacat -b cord-kafka -C -t authentication.events
+  kafkacat -b cord-kafka -C -t dhcp.events
   ```

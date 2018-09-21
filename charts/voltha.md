@@ -1,7 +1,7 @@
 # Deploy VOLTHA
 
 VOLTHA depends on having a [kafka message bus](kafka.md) deployed with a name
-of `voltha-kafka`, so deploy that with helm before deploying the voltha chart.
+of `cord-kafka`, so deploy that with helm before deploying the voltha chart.
 
 
 ## First Time Installation
