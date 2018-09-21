@@ -22,6 +22,30 @@
       "revId": "8703ea55763ba993a8e10a39171d9dd0258c2e4e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a08ab087_7de196de",
+        "filename": "charts/rcord.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-09-21T23:24:16Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "460621d6_d649a707",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 8
+      },
+      "revId": "8703ea55763ba993a8e10a39171d9dd0258c2e4e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
