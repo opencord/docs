@@ -17,10 +17,10 @@ This is meant only for *lab trials* and *demo use*.
 ## Requirements
 
 * **Operator/Developer Machine** (1x, either physical or virtual machine)
-    * Has Git installed
-    * Has Python3 installed (<https://www.python.org/downloads/>)
-    * Has a stable version of Ansible installed (<http://docs.ansible.com/ansible/latest/intro_installation.html>), tested with version `2.5.3`
-    * Has [ansible-modules-hashivault](https://pypi.org/project/ansible-modules-hashivault/) installed where ansible can use it.
+    * Has the following software installed:
+        * Git
+        * Python 2 with `virtualenv` installed (used for setting up ansible and modules to run the kubespray playbooks)
+        * Python 3 (for running the kubespray inventory script)
     * Is able to reach the target servers (ssh into them)
 * **Target/Cluster Machines** (at least 3x, either physical or virtual machines)
     * Run Ubuntu 16.04 server
