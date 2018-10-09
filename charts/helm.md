@@ -82,35 +82,102 @@ git clone https://gerrit.opencord.org/helm-charts
 
 ### Add the CORD Repository to Helm
 
-If you don't want to download the repository, you can just add the OPENCord charts to your helm repo:
+If you don't want to download the repository, you can make the charts available
+to helm by adding the repo to the list of repos it can obtain charts from:
 
 ```shell
 helm repo add cord https://charts.opencord.org/master
 helm repo update
 ```
 
-If you decide to follow this route, the `cord/` prefix needs to be
-added to specify the repo to use. For example:
+If you decide to follow this route, you have to use the repo name (in this case
+`cord`) with a prefix ( `cord/`) to specify which repo to obtain a chart from.
+
+For example:
 
 ```shell
 helm install -n xos-core xos-core
 ```
 
-will become
+would become:
 
 ```shell
 helm install -n xos-core cord/xos-core
 ```
 
-## CORD Example Values
+## Overriding chart values
 
-There is an `example` directory in the `helm-chart` repository.
-The files contained in that directory are examples of possible overrides
-to obtain a custom deployment.
+Occasionally you may need to [override and customize the default
+settings](https://docs.helm.sh/using_helm/#customizing-the-chart-before-installing)
+of a chart.
 
-For example, it is possible to deploy a single instance of `kafka`,
-for development purposes, by using this value file:
+This is done using a "values file", and is done most frequently during
+development or when customizing a deployment.
 
-```shell
-helm install --name cord-kafka incubator/kafka -f examples/kafka-single.yaml
+Development-specific and deployment example values files can be found in the
+[helm-charts/examples](https://gerrit.opencord.org/gitweb?p=helm-charts.git;a=tree;f=examples)
+directory.
+
+### Specifying a Docker registry
+
+Most charts specify a global value for the address of a Docker image registry.
+By default this is blank, assuming that images will be pulled from the global
+hub.docker.com registry:
+
+```yaml
+global:
+  registry: ''
 ```
+
+This would be overridden as follows - make sure to include the trailing `/`
+character to separate the registry from the name of the container:
+
+```yaml
+global:
+  registry: '10.90.0.101:30500/'
+```
+
+Note that using setting this value with change the registry setting for every
+image in a chart.
+
+To handle building and pushing images to a registry, see the [development
+documentation](../developer/workflows.md#pushing-changes-to-a-remote-registry).
+
+If you want to change only the registry for one specific image, the easiest way
+is to modify the `repository` setting - for example:
+
+```yaml
+images:
+  xos_gui:
+    repository: 'xosproject/xos-gui'
+    tag: '2.1.0'
+    pullPolicy: 'Always'
+
+  xos_ws:
+    repository: 'xosproject/xos-ws'
+    tag: '2.0.0'
+    pullPolicy: 'Always'
+
+global:
+  registry: ''
+```
+
+You would modify the `repository` value for the specific image, but not the
+global `registry` value:
+
+```yaml
+images:
+  xos_gui:
+    repository: '10.90.0.101:30500/xosproject/xos-gui'
+    tag: '2.1.0'
+    pullPolicy: 'Always'
+
+  xos_ws:
+    repository: 'xosproject/xos-ws'
+    tag: '2.0.0'
+    pullPolicy: 'Always'
+
+global:
+  registry: ''
+```
+
