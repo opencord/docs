@@ -13,7 +13,7 @@ simulated by a python script.
 ## Prerequisites
 
 - All the components needed for the R-CORD profile are up and running
-   on your POD (xos-core, rcord-lite, voltha, onos-voltha).
+   on your POD (xos-core, rcord-lite, voltha, onos).
 - Configure `OLT/PONPORT/ONU` devices using the sample
    TOSCA config given below:
 

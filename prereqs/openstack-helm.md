@@ -121,7 +121,7 @@ conf:
       ml2_type_vxlan:
         vni_ranges: 1001:2000
       onos:
-        url_path: http://onos-cord-ui.default.svc.cluster.local:8181/onos/cordvtn
+        url_path: http://onos-ui.default.svc.cluster.local:8181/onos/cordvtn
         username: onos
         password: rocks
 EOF
