@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c0ce26f7_9534af39",
+        "filename": "SUMMARY.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-11-02T17:40:34Z",
+      "side": 1,
+      "message": "It\u0027s also possible to omit links if we don\u0027t have content",
+      "range": {
+        "startLine": 76,
+        "startChar": 34,
+        "endLine": 76,
+        "endChar": 60
+      },
+      "revId": "a0492a10ec1ced9cb58ba7b9bff3282f669c5b45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
