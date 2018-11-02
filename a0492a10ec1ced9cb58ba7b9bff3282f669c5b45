@@ -22,6 +22,30 @@
       "revId": "a0492a10ec1ced9cb58ba7b9bff3282f669c5b45",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "95c32a28_cfb7e94b",
+        "filename": "SUMMARY.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2018-11-02T17:43:06Z",
+      "side": 1,
+      "message": "Ah, I think that would be preferred, as I didn\u0027t have much to say in northbound.md. I\u0027ll make this change.",
+      "parentUuid": "c0ce26f7_9534af39",
+      "range": {
+        "startLine": 76,
+        "startChar": 34,
+        "endLine": 76,
+        "endChar": 60
+      },
+      "revId": "a0492a10ec1ced9cb58ba7b9bff3282f669c5b45",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
