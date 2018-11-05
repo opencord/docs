@@ -24,6 +24,19 @@ helm install -n onos -f configs/onos.yaml onos
 * REST/UI: 30120
 * Karaf debugger: 30555
 
+## Use VOLTHA-ONOS
+
+```shell
+helm install -n onos -f configs/onos-voltha.yaml onos
+```
+
+**Nodeports exposed**
+
+* OpenFlow: 31653
+* SSH: 30115
+* REST/UI: 30120
+* Karaf debugger: 30555
+
 ## Generic ONOS
 
 ```shell
