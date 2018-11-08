@@ -38,6 +38,7 @@
         * [XOSSH](charts/xossh.md)
         * [Logging and Monitoring](charts/logging-monitoring.md)
         * [Persistent Storage](charts/storage.md)
+        * [BBSim](charts/bbsim.md)
 * [Operations Guide](operating_cord/operating_cord.md)
     * [General Info](operating_cord/general.md)
         * [GUI](operating_cord/gui.md)
