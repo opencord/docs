@@ -78,13 +78,11 @@ The suggested way to do that is:
 cd ~/cord/incubator/voltha
 REPOSITORY=voltha/ TAG=dev VOLTHA_BUILD=docker make build
 cd ~/cord/automation-tools/developer
-bash tag_and_push.sh dev 192.168.99.100:30500
+bash tag_and_push.sh -t dev -r 192.168.99.100:30500
 ```
 
 _This set of commands will build the VOLTHA containers and push them to a local
-[docker registry](../prereqs/docker-registry.md) using a TAG called `dev`_
-
-> NOTE: Read more about the `tag_and_push` script [here](../prereqs/docker-registry.md)
+[docker registry](../partials/push-images-to-registry.md) using a TAG called *dev*.
 
 Once the images are pushed to a docker registry on the POD,
 you can use a values file like the following one:

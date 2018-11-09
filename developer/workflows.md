@@ -93,14 +93,14 @@ everything.
 > the containers, you can just delete the corresponding POD and kubernetes will
 > restart it with the new image.
 
-## Pushing Changes to a Remote Registry
+## Pushing Changes to a docker registry
 
 If you have a remote POD that you want to test your changes on, you
-need to push your docker images to a registry that can be accessed
+need to push your docker images to a docker registry that can be accessed
 from the POD.
 
-The way we recommend doing this is via a private docker-registry.
+The way we recommend doing this is via a private docker registry.
 You can find more informations about what a
-docker-registry is [here](../prereqs/docker-registry.md).
+docker registry is in the [offline installation section](../offline-install.md).
 
 {% include "/partials/push-images-to-registry.md" %}
