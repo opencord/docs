@@ -12,30 +12,33 @@ Download the helm charts `incubator` repository:
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 ```
 
+Install the etcd-operator helm chart.   This chart provides a convenient way of creating and managing etcd clusters.   When voltha installs it will attempt to use etcd-operator to create its etcd cluster.  Once installed etcd-operator can be left running.
+
+```shell
+helm install -n etcd-operator stable/etcd-operator --version 0.8.0
+```
+
+Allow etcd-operator enough time to create the EtdCluster CustomResourceDefinitions.  This should only be a couple of seconds after the etcd-operator pods are running.  Check the CRD are ready by running the following:
+
+```shell
+kubectl get crd | grep etcd
+```
+
+
+
 Update dependencies within the voltha chart:
 
 ```shell
 helm dep up voltha
 ```
 
-There is an `etcd-operator` **known bug** that prevents deploying
-Voltha correctly the first time. We suggest the following workaround:
-
-First, install Voltha without an `etcd` custom resource definition:
+Install the voltha helm chart.   This will create the voltha pods and additionally create the etcd-cluster pods
 
 ```shell
-helm install -n voltha --set etcd-operator.customResources.createEtcdClusterCRD=false voltha
+helm install -n voltha voltha
 ```
 
-Then upgrade Voltha, which defaults to using the `etcd` custom
-resource definition:
-
-```shell
-helm upgrade --set etcd-operator.customResources.createEtcdClusterCRD=true voltha ./voltha
-```
-
-After this first installation, you can use the standard
-install/uninstall procedure described below.
+Allow enough time for the 3 etcd-cluster pods to start before using the voltha pods.
 
 ## Standard Uninstall
 
@@ -91,11 +94,32 @@ you can use a values file like the following one:
 
 ```yaml
 # voltha-values.yaml
-envoyForEtcdImage: 'voltha/voltha-envoy:dev'
-netconfImage: 'voltha/voltha-netconf:dev'
-ofagentImage: 'voltha/voltha-ofagent:dev'
-vcliImage: 'voltha/voltha-cli:dev'
-vcoreImage: 'voltha/voltha-voltha:dev'
+images:
+  vcore:
+    repository: '192.168.99.100:30500/voltha-voltha'
+    tag: 'dev'
+    pullPolicy: 'Always'
+
+  vcli:
+    repository: '192.168.99.100:30500/voltha-cli'
+    tag: 'dev'
+    pullPolicy: 'Always'
+
+  ofagent:
+    repository: '192.168.99.100:30500/voltha-ofagent'
+    tag: 'dev'
+    pullPolicy: 'Always'
+
+  netconf:
+    repository: '192.168.99.100:30500/voltha-netconf'
+    tag: 'dev'
+    pullPolicy: 'Always'
+
+  envoy_for_etcd:
+    repository: '192.168.99.100:30500/voltha-envoy'
+    tag: 'dev'
+    pullPolicy: 'Always'
+
 ```
 
 and you can install VOLTHA using:
