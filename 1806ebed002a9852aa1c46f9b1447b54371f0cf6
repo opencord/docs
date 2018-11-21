@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "46ab417e_e89c6bff",
+        "filename": "offline-install.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-11-21T18:27:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb02d543_53e4129e",
+      "range": {
+        "startLine": 37,
+        "startChar": 15,
+        "endLine": 37,
+        "endChar": 41
+      },
+      "revId": "1806ebed002a9852aa1c46f9b1447b54371f0cf6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1ef1fefb_8ad19315",
         "filename": "offline-install.md",
         "patchSetId": 3
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "bcde0e2c_5a5317cd",
+        "filename": "offline-install.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-11-21T18:27:47Z",
+      "side": 1,
+      "message": "Yeah...but there\u0027s also a cp done before. The images_from_charts at this point lives tmp in the helm-chart directory..just an example.",
+      "parentUuid": "1ef1fefb_8ad19315",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 26
+      },
+      "revId": "1806ebed002a9852aa1c46f9b1447b54371f0cf6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "91215dbf_9159a019",
         "filename": "offline-install.md",
         "patchSetId": 3
@@ -82,6 +130,30 @@
       "writtenOn": "2018-11-21T18:10:41Z",
       "side": 1,
       "message": "maybe save this into a shell variable rather than running the command over and over.",
+      "range": {
+        "startLine": 289,
+        "startChar": 48,
+        "endLine": 289,
+        "endChar": 104
+      },
+      "revId": "1806ebed002a9852aa1c46f9b1447b54371f0cf6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "193facb0_205603aa",
+        "filename": "offline-install.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-11-21T18:27:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91215dbf_9159a019",
       "range": {
         "startLine": 289,
         "startChar": 48,
