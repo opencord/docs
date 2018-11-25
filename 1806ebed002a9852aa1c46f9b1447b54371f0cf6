@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "c098a596_de97ecf2",
+        "filename": "offline-install.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-11-25T14:34:31Z",
+      "side": 1,
+      "message": "Ah, didn\u0027t notice that. Got it.",
+      "parentUuid": "bcde0e2c_5a5317cd",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 26
+      },
+      "revId": "1806ebed002a9852aa1c46f9b1447b54371f0cf6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "91215dbf_9159a019",
         "filename": "offline-install.md",
         "patchSetId": 3
