@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b408fb80_f754427b",
+        "filename": "offline-install.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-11-26T21:44:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff7d8699_cfa9e231",
+      "range": {
+        "startLine": 13,
+        "startChar": 18,
+        "endLine": 13,
+        "endChar": 21
+      },
+      "revId": "2ff6fa04363ef7fbec72ee1e11b8755a1761e20f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6aa5831a_e5189c8c",
         "filename": "offline-install.md",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2018-11-26T21:32:32Z",
       "side": 1,
       "message": "largely",
+      "range": {
+        "startLine": 37,
+        "startChar": 11,
+        "endLine": 37,
+        "endChar": 19
+      },
+      "revId": "2ff6fa04363ef7fbec72ee1e11b8755a1761e20f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e782d66_fc239489",
+        "filename": "offline-install.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-11-26T21:44:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6aa5831a_e5189c8c",
       "range": {
         "startLine": 37,
         "startChar": 11,
