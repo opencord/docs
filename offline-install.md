@@ -42,7 +42,7 @@ Next steps largely depend on the type of profile you want to install.
 
 * Modify the CORD helm charts to instruct kubernetes to pull the images from your local registry (where images will be pushed), instead of DockerHub. One option is to modify the *values.yaml* in each chart. A better option consists in extending the charts, rather than directly modifying them. This way, the original configuration can be kept as is, just overriding some values as needed. You can do this by writing your additional configuration yaml file, and parsing it as needed, adding `-f my-additional-config.yml` while using the helm install/upgrade commands. The full CORD helm charts reference documentation is available [here](../charts/helm.md).
 
-* Download the ONOS applications (OAR files). Informations about the oar applications used can be found here: <https://github.com/opencord/onos-service/blob/master/xos/synchronizer/steps/sync_onos_app.py#L125-L130>
+* Download the ONOS applications (OAR files). Informations about the oar applications used can be found here: <https://github.com/opencord/helm-charts/blob/master/xos-profiles/att-workflow/values.yaml>
 
 * Pull from DockerHub all the Docker images that need to be used on your POD. The *automation-tools* repository has a *images_from_charts.sh* utility inside the *developer* folder that can help you to get all the image names given the helm-chart repository and a list of chart names. More informations in the sections below.
 
@@ -164,7 +164,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm dep update voltha
 helm dep update xos-core
 helm dep update xos-profiles/att-workflow
-xos-profiles/base-kubernetes
+helm dep update xos-profiles/base-kubernetes
 helm dep update nem-monitoring
 helm dep update logging
 helm dep update storage/rook-operator
