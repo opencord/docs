@@ -164,7 +164,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm dep update voltha
 helm dep update xos-core
 helm dep update xos-profiles/att-workflow
-xos-profiles/base-kubernetes
+helm dep update xos-profiles/base-kubernetes
 helm dep update nem-monitoring
 helm dep update logging
 helm dep update storage/rook-operator
