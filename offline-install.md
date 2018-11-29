@@ -106,7 +106,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm fetch bitnami/nginx --untar
 
 # Then, while deploying offline
-helm install -n maven-repo --set service.nodePort.http=30160,service.type=NodePort bitnami/nginx
+helm install -n mavenrepo --set service.nodePorts.http=30160,service.type=NodePort nginx
 ```
 
 The webserver will be up in few seconds and you'll be able to reach the root web page using the IP of one of your Kubernetes nodes, port *30160*. For example, you can do:
@@ -118,7 +118,7 @@ wget KUBERNETES_IP:30160
 OAR images can be copied to the document root of the web server using the *kubectl cp* command. For example:
 
 ```shell
-kubectl cp my-onos-app.oar `kubectl get pods | grep maven-repo | awk '{print $1;}'`:/opt/bitnami/nginx/html
+kubectl cp my-onos-app.oar `kubectl get pods | grep mavenrepo | awk '{print $1;}'`:/opt/bitnami/nginx/html
 ```
 
 ## Example: offline SEBA install
@@ -182,17 +182,17 @@ helm dep update kafka
 helm install stable/docker-registry --set service.nodePort=30500,service.type=NodePort -n docker-registry
 
 # For demo, install the local web-server to host ONOS images
-helm install -n maven-repo bitnami/nginx
+helm install -n mavenrepo bitnami/nginx
 
 # Identify images form the official helm charts and pull images from DockerHub. If you see some "skipped value for filters" warning that's fine
 bash images_from_charts.sh kafka etcd-cluster etcd-operator voltha onos xos-core xos-profiles/att-workflow xos-profiles/base-kubernetes nem-monitoring logging storage/rook-operator | bash pull_images.sh > images
 
 # Download ONOS apps
-wget https://oss.sonatype.org/service/local/repositories/snapshots/content/org/opencord/olt-app/2.1.0-SNAPSHOT/olt-app-2.1.0-20181030.071543-35.oar
-wget https://oss.sonatype.org/service/local/repositories/snapshots/content/org/opencord/sadis-app/2.2.0-SNAPSHOT/sadis-app-2.2.0-20181030.071559-154.oar
-wget https://oss.sonatype.org/service/local/repositories/snapshots/content/org/opencord/dhcpl2relay/1.5.0-SNAPSHOT/dhcpl2relay-1.5.0-20181030.071500-154.oar
-wget https://oss.sonatype.org/service/local/repositories/snapshots/content/org/opencord/aaa/1.8.0-SNAPSHOT/aaa-1.8.0-20181113.081456-110.oar
-wget https://oss.sonatype.org/service/local/repositories/snapshots/content/org/opencord/kafka/1.0.0-SNAPSHOT/kafka-1.0.0-20181030.071524-104.oar
+curl -L "https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencord&a=olt-app&v=2.1.0-SNAPSHOT&e=oar" > olt.oar
+curl -L "https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencord&a=sadis-app&v=2.2.0-SNAPSHOT&e=oar" > sadis.oar
+curl -L "https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencord&a=dhcpl2relay&v=1.5.0-SNAPSHOT&e=oar" > dhcpl2relay.oar
+curl -L "https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencord&a=aaa&v=1.8.0-SNAPSHOT&e=oar" > aaa.oar
+curl -L "https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencord&a=kafka&v=1.0.0-SNAPSHOT&e=oar" > kafka.oar
 
 # Create file to extend the helm charts (call it extend.yaml)
 global:
@@ -264,11 +264,11 @@ logstash:
   image:
     repository: 192.168.0.100:30500/docker.elastic.co/logstash/logstash-oss
 
-oltAppUrl: http://192.168.0.100:30160/olt-app-2.1.0-20181030.071543-35.oar
-sadisAppUrl: http://192.168.0.100:30160/sadis-app-2.2.0-20181030.071559-154.oar
-dhcpL2RelayAppUrl: http://192.168.0.100:30160/dhcpl2relay-1.5.0-20181030.071500-154.oar
-aaaAppUrl: http://192.168.0.100:30160/aaa-1.8.0-20181113.081456-110.oar
-kafkaAppUrl: http://192.168.0.100:30160/kafka-1.0.0-20181030.071524-104.oar
+oltAppUrl: http://192.168.0.100:30160/olt.oar
+sadisAppUrl: http://192.168.0.100:30160/sadis.oar
+dhcpL2RelayAppUrl: http://192.168.0.100:30160/dhcpl2relay.oar
+aaaAppUrl: http://192.168.0.100:30160/aaa.oar
+kafkaAppUrl: http://192.168.0.100:30160/kafka.oar
 
 # Download the openolt.deb driver installation file from the vendor website (command varies)
 scp/wget... openolt.deb
@@ -283,12 +283,12 @@ cd helm-charts
 cat images | bash tag_and_push.sh -r 192.168.0.100:30500
 
 # Copy the ONOS applications to the local web server
-MAVEN_REPO=$(kubectl get pods | grep maven-repo | awk '{print $1;}')
-kubectl cp olt-app-2.1.0-20181030.071543-35.oar $MAVEN_REPO:/opt/bitnami/nginx/html
-kubectl cp sadis-app-2.2.0-20181030.071559-154.oar $MAVEN_REPO:/opt/bitnami/nginx/html
-kubectl cp dhcpl2relay-1.5.0-20181030.071500-154.oar $MAVEN_REPO:/opt/bitnami/nginx/html
-kubectl cp aaa-1.8.0-20181113.081456-110.oar $MAVEN_REPO:/opt/bitnami/nginx/html
-kubectl cp kafka-1.0.0-20181030.071524-104.oar $MAVEN_REPO:/opt/bitnami/nginx/html
+MAVEN_REPO=$(kubectl get pods | grep mavenrepo | awk '{print $1;}')
+kubectl cp olt.oar $MAVEN_REPO:/opt/bitnami/nginx/html
+kubectl cp sadis.oar $MAVEN_REPO:/opt/bitnami/nginx/html
+kubectl cp dhcpl2relay.oar $MAVEN_REPO:/opt/bitnami/nginx/html
+kubectl cp aaa.oar $MAVEN_REPO:/opt/bitnami/nginx/html
+kubectl cp kafka.oar $MAVEN_REPO:/opt/bitnami/nginx/html
 
 # Install SEBA
 helm install -n etcd-operator -f extend.yaml --version 0.8.0 etcd-operator
