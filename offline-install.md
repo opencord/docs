@@ -185,7 +185,7 @@ helm install stable/docker-registry --set service.nodePort=30500,service.type=No
 helm install -n maven-repo bitnami/nginx
 
 # Identify images form the official helm charts and pull images from DockerHub. If you see some "skipped value for filters" warning that's fine
-bash images_from_charts.sh etcd-cluster etcd-operator voltha onos xos-core xos-profiles/att-workflow xos-profiles/base-kubernetes nem-monitoring logging storage/rook-operator | bash pull_images.sh > images
+bash images_from_charts.sh kafka etcd-cluster etcd-operator voltha onos xos-core xos-profiles/att-workflow xos-profiles/base-kubernetes nem-monitoring logging storage/rook-operator | bash pull_images.sh > images
 
 # Download ONOS apps
 wget https://oss.sonatype.org/service/local/repositories/snapshots/content/org/opencord/olt-app/2.1.0-SNAPSHOT/olt-app-2.1.0-20181030.071543-35.oar
