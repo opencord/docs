@@ -106,13 +106,13 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm fetch bitnami/nginx --untar
 
 # Then, while deploying offline
-helm install -n maven-repo bitnami/nginx
+helm install -n maven-repo --set service.nodePort.http=30160,service.type=NodePort bitnami/nginx
 ```
 
-The webserver will be up in few seconds and you'll be able to reach the root web page using the IP of one of your Kubernetes nodes, port *30278*. For example, you can do:
+The webserver will be up in few seconds and you'll be able to reach the root web page using the IP of one of your Kubernetes nodes, port *30160*. For example, you can do:
 
 ```shell
-wget KUBERNETES_IP:30278
+wget KUBERNETES_IP:30160
 ```
 
 OAR images can be copied to the document root of the web server using the *kubectl cp* command. For example:
@@ -264,11 +264,11 @@ logstash:
   image:
     repository: 192.168.0.100:30500/docker.elastic.co/logstash/logstash-oss
 
-oltAppUrl: http://192.168.0.100:30278/olt-app-2.1.0-20181030.071543-35.oar
-sadisAppUrl: http://192.168.0.100:30278/sadis-app-2.2.0-20181030.071559-154.oar
-dhcpL2RelayAppUrl: http://192.168.0.100:30278/dhcpl2relay-1.5.0-20181030.071500-154.oar
-aaaAppUrl: http://192.168.0.100:30278/aaa-1.8.0-20181113.081456-110.oar
-kafkaAppUrl: http://192.168.0.100:30278/kafka-1.0.0-20181030.071524-104.oar
+oltAppUrl: http://192.168.0.100:30160/olt-app-2.1.0-20181030.071543-35.oar
+sadisAppUrl: http://192.168.0.100:30160/sadis-app-2.2.0-20181030.071559-154.oar
+dhcpL2RelayAppUrl: http://192.168.0.100:30160/dhcpl2relay-1.5.0-20181030.071500-154.oar
+aaaAppUrl: http://192.168.0.100:30160/aaa-1.8.0-20181113.081456-110.oar
+kafkaAppUrl: http://192.168.0.100:30160/kafka-1.0.0-20181030.071524-104.oar
 
 # Download the openolt.deb driver installation file from the vendor website (command varies)
 scp/wget... openolt.deb
