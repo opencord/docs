@@ -106,7 +106,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm fetch bitnami/nginx --untar
 
 # Then, while deploying offline
-helm install -n maven-repo --set service.nodePort.http=30160,service.type=NodePort bitnami/nginx
+helm install -n mavenrepo --set service.nodePorts.http=30160,service.type=NodePort nginx
 ```
 
 The webserver will be up in few seconds and you'll be able to reach the root web page using the IP of one of your Kubernetes nodes, port *30160*. For example, you can do:
