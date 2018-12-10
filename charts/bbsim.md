@@ -9,10 +9,10 @@ helm install -n bbsim bbsim
 
 ## Set a different number of ONUs
 
-You can configure the number of ONUs trough a parameter in the installation:
+You can configure the number of ONUs through a parameter in the installation:
 
 ```shell
-helm install -n bbsim bbsim --set onus_per_pon_port={number_od_onus}
+helm install -n bbsim bbsim --set onus_per_pon_port={number_of_onus}
 ```
 
 ## Set a different mode
