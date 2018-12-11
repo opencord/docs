@@ -1,4 +1,4 @@
-# Offline installation
+# Offline Install
 
 Often, CORD PODs' (management networks) don't have access to Internet.
 

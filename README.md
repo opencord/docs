@@ -2,11 +2,12 @@
 
 This guide describes how to install CORD. It identifies a set of
 [prerequisites](prereqs/README.md), and then walks through
-the steps involved in bringing up one of three CORD profiles:
+the steps involved in bringing up the [Platform](platform.md). Once
+the Platform is installed, you are ready to bring up one of the
+available Profiles:
 
-* [R-CORD](./profiles/rcord/install.md)
-* [M-CORD](./profiles/mcord/install.md)
 * [SEBA](./profiles/seba/install.md)
+* [M-CORD](./profiles/mcord/install.md)
 
 If you are anxious to jump straight to a [Quick Start](quickstart.md)
 procedure that brings up an emulated version of CORD running

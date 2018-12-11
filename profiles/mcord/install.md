@@ -1,4 +1,4 @@
-# M-CORD
+# Install  M-CORD Charts
 
 > **Note**: Currently the M-CORD is under maintenance.
 > Check the link below for more information:
