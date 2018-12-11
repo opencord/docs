@@ -1,6 +1,10 @@
-# SEBA Profile
+# Install SEBA Charts
 
-SEBA is a lightweight platform based on a variant of R-CORD.
-[Click here for a high-level overview.](https://www.opennetworking.org/seba/)
+This page walks through the sequence of Helm operations needed to
+bring up the SEBA profile. It assumes the Platform has already been
+installed.
 
-Quick start: [SEBA-in-a-Box](siab.md)
+## Install VOLTHA
+
+Install [voltha](../../charts/voltha.md).
+It will manage the OLT devices.
