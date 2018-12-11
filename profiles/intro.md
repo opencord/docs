@@ -1,7 +1,7 @@
-# Bringing Up CORD
+# Profile Reference
 
 CORD is a general-purpose platform that is able to run one or more
-profiles, each of which includes some access technology (e.g., OLT,
+*profiles*, each of which includes some access technology (e.g., OLT,
 RAN) and some collection of services (called a service graph or
 service mesh).
 

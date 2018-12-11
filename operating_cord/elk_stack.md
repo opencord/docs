@@ -1,4 +1,4 @@
-# Diagnostics
+# ELK Stack
 
 CORD uses ELK Stack for logging information at all levels. CORD’s ELK Stack
 logger collects information from several components, including the XOS Core,
