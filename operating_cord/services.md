@@ -1,7 +1,7 @@
-# Configuring Services
+# Service Reference
 
-This sections contains detailed instructions about how to configure
-individual services. Among other things, it describes what services
-depend on, which is particularly useful in case you want to create
-your own service graph. As with profiles, services are typically
-configured using a TOSCA workflow.
+Each release of CORD includes a collection of services, some of which
+are considered *platform services* (i.e., configured into all profiles) and
+some of which are *profile-specific*.  The following documents the
+available services, specifying how each is modeled using `xproto`, and
+how each is configured and provisioned using TOSCA.
