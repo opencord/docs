@@ -1,20 +1,9 @@
 # Deploy ONOS
 
-## Configurations
-
-The same chart can be used to deploy different flavors of ONOS, depending on
-the configuration applied. These configurations can be found in the
-`helm-charts/configs` directory.
-
-* **onos**: ONOS configured for the CORD scenarios with Trellis (Fabric), VOLTHA,
-  and VTN
-* **no configuration applied**: if no configurations are applied, a generic
-  ONOS instance will be installed
-
-## ONOS with CORD configuration
+To install ONOS run:
 
 ```shell
-helm install -n onos -f configs/onos.yaml onos
+helm install -n onos
 ```
 
 **Nodeports exposed**
@@ -23,29 +12,6 @@ helm install -n onos -f configs/onos.yaml onos
 * SSH: 30115
 * REST/UI: 30120
 * Karaf debugger: 30555
-
-## Use VOLTHA-ONOS
-
-_This is intendend for development purposes_
-
-```shell
-helm install -n onos -f configs/onos-voltha.yaml onos
-```
-
-**Nodeports exposed**
-
-* OpenFlow: 31653
-* SSH: 30115
-* REST/UI: 30120
-* Karaf debugger: 30555
-
-## Generic ONOS
-
-```shell
-helm install -n onos onos
-```
-
-**Nodeports exposed**: None
 
 ## ONOS logging
 
@@ -80,4 +46,10 @@ application_logs: |
   log4j.logger.org.opencord.olt = DEBUG
   log4j.logger.org.opencord.kafka = DEBUG
   log4j.logger.org.opencord.sadis = DEBUG
+```
+
+A configuration file called *onos-debug.yaml* can be found in the *configs* folder of the helm-chart repository. That already contains examplar lines to augment the ONOS logging level while deploying the ONOS pod. To use the onos-debug configuration, run:
+
+```shell
+helm install -n onos -f configs/onos-debug.yaml onos
 ```
