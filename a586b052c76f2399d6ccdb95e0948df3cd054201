@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "59ab1b9c_27657713",
+        "filename": "profiles/mcord/README.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-12T23:35:55Z",
+      "side": 1,
+      "message": "M-CORD 6.0 can\u0027t be installed any more because the VNFs are not available.  Do we want to note this?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 26
+      },
+      "revId": "a586b052c76f2399d6ccdb95e0948df3cd054201",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
