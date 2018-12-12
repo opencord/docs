@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9dec61b6_8e41cebe",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-12-12T16:49:41Z",
+      "side": 1,
+      "message": "I disagree. These are intended for people that want a quick intro without investing a lot of time.  To discuss.",
+      "parentUuid": "e4f17cf3_9b8354ab",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "cfbfb724cfb4e04cad14e484b77487c9db59ffe5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "29dcfde6_1860c74f",
         "filename": "SUMMARY.md",
         "patchSetId": 2
@@ -59,6 +83,30 @@
       "writtenOn": "2018-12-12T00:04:57Z",
       "side": 1,
       "message": "This section is what confuses me... I\u0027d like to know in one menu the steps I need to install a full seba pod. And I don\u0027t think a quick start is enough...this is what our users asked for so far...",
+      "range": {
+        "startLine": 75,
+        "startChar": 1,
+        "endLine": 75,
+        "endChar": 40
+      },
+      "revId": "cfbfb724cfb4e04cad14e484b77487c9db59ffe5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "66de4bf8_e47dd5f6",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-12-12T16:49:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f96d4f1_83a95015",
       "range": {
         "startLine": 75,
         "startChar": 1,
@@ -140,6 +188,30 @@
     },
     {
       "key": {
+        "uuid": "a5bb0721_093e0527",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-12-12T16:49:41Z",
+      "side": 1,
+      "message": "Agreed. Both are types of services. Both have models and configs.",
+      "parentUuid": "535c134f_6ef0a4eb",
+      "range": {
+        "startLine": 97,
+        "startChar": 2,
+        "endLine": 97,
+        "endChar": 20
+      },
+      "revId": "cfbfb724cfb4e04cad14e484b77487c9db59ffe5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2a0c4854_841b9e26",
         "filename": "SUMMARY.md",
         "patchSetId": 2
@@ -151,6 +223,30 @@
       "writtenOn": "2018-12-12T00:04:57Z",
       "side": 1,
       "message": "For some reason this has nothing inside....and it\u0027s anyway maybe no longer relevant (for now..)",
+      "range": {
+        "startLine": 115,
+        "startChar": 6,
+        "endLine": 115,
+        "endChar": 31
+      },
+      "revId": "cfbfb724cfb4e04cad14e484b77487c9db59ffe5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "20682b15_f4b93a58",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-12-12T16:49:41Z",
+      "side": 1,
+      "message": "Lots of \"todo\" pages still in here.",
+      "parentUuid": "2a0c4854_841b9e26",
       "range": {
         "startLine": 115,
         "startChar": 6,
