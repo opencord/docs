@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e4f17cf3_9b8354ab",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-12T00:04:57Z",
+      "side": 1,
+      "message": "I don\u0027t see any need for this...I would remove them.",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "cfbfb724cfb4e04cad14e484b77487c9db59ffe5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "29dcfde6_1860c74f",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-12T00:04:57Z",
+      "side": 1,
+      "message": "remove end of line spaces",
+      "range": {
+        "startLine": 34,
+        "startChar": 24,
+        "endLine": 37,
+        "endChar": 39
+      },
+      "revId": "cfbfb724cfb4e04cad14e484b77487c9db59ffe5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0f96d4f1_83a95015",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-12T00:04:57Z",
+      "side": 1,
+      "message": "This section is what confuses me... I\u0027d like to know in one menu the steps I need to install a full seba pod. And I don\u0027t think a quick start is enough...this is what our users asked for so far...",
+      "range": {
+        "startLine": 75,
+        "startChar": 1,
+        "endLine": 75,
+        "endChar": 40
+      },
+      "revId": "cfbfb724cfb4e04cad14e484b77487c9db59ffe5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "483a8e3b_4a60b8fd",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-12T00:04:57Z",
+      "side": 1,
+      "message": "Content is still relevant but it should become SEBA..",
+      "range": {
+        "startLine": 76,
+        "startChar": 6,
+        "endLine": 82,
+        "endChar": 55
+      },
+      "revId": "cfbfb724cfb4e04cad14e484b77487c9db59ffe5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c098f53e_0e0d7d8c",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-12T00:04:57Z",
+      "side": 1,
+      "message": "since m-cord is the only menu item, should we just bind the page to configuring?",
+      "range": {
+        "startLine": 87,
+        "startChar": 10,
+        "endLine": 88,
+        "endChar": 55
+      },
+      "revId": "cfbfb724cfb4e04cad14e484b77487c9db59ffe5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "535c134f_6ef0a4eb",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-12T00:04:57Z",
+      "side": 1,
+      "message": "This still seems a kind of mix and match of profiles and workflows...",
+      "range": {
+        "startLine": 97,
+        "startChar": 2,
+        "endLine": 97,
+        "endChar": 20
+      },
+      "revId": "cfbfb724cfb4e04cad14e484b77487c9db59ffe5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2a0c4854_841b9e26",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-12T00:04:57Z",
+      "side": 1,
+      "message": "For some reason this has nothing inside....and it\u0027s anyway maybe no longer relevant (for now..)",
+      "range": {
+        "startLine": 115,
+        "startChar": 6,
+        "endLine": 115,
+        "endChar": 31
+      },
+      "revId": "cfbfb724cfb4e04cad14e484b77487c9db59ffe5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
