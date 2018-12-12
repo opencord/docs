@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f77f3fc5_57b56114",
+        "filename": "SUMMARY.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-12T23:39:22Z",
+      "side": 1,
+      "message": "I would like to clearly distinguish between install steps with physical and emulated hardware - perhaps the two SiaB items can be subsections of a \"Emulated Hardware\" page",
+      "revId": "1b67448455feec051a4fd7762457b7342845a812",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "90feb969_abb4e63e",
+        "filename": "SUMMARY.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-12T23:39:22Z",
+      "side": 1,
+      "message": "This one is not officially supported by SEBA. Not sure what to do with it to be honest",
+      "revId": "1b67448455feec051a4fd7762457b7342845a812",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49cf6526_d5793084",
+        "filename": "SUMMARY.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-12T23:39:22Z",
+      "side": 1,
+      "message": "This one can be removed entirely as it has been replaced with Siab",
+      "revId": "1b67448455feec051a4fd7762457b7342845a812",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
