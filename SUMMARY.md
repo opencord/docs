@@ -79,6 +79,7 @@
             * [Install SEBA Charts](profiles/seba/install.md)
             * [SEBA-in-a-Box](profiles/seba/siab.md)
             * [SEBA-in-a-Box with Fabric Switch](profiles/seba/siab-with-fabric-switch.md)
+            * [Scale testing with BBSim](profiles/seba/bbsim.md)
             * [Celestica / Microsemi Setup](profiles/rcord/celestica-olt-setup.md)
             * [Emulated OLT/ONU](profiles/rcord/emulate.md)
             * Workflows
