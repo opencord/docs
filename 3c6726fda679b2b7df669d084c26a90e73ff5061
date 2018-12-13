@@ -22,6 +22,30 @@
       "revId": "3c6726fda679b2b7df669d084c26a90e73ff5061",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5762e65_93a58858",
+        "filename": "charts/onos.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-13T16:29:56Z",
+      "side": 1,
+      "message": "Yes, good point!",
+      "parentUuid": "136e5637_04087c3c",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 3
+      },
+      "revId": "3c6726fda679b2b7df669d084c26a90e73ff5061",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
