@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "136e5637_04087c3c",
+        "filename": "charts/onos.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-12-13T16:24:43Z",
+      "side": 1,
+      "message": "Could these statements be consolidated?\n\nI looked at configs/onos-debug.yaml, and it contains the same lines as the inline example (and a few other items I\u0027m not sure are needed anymore): \n\nhttps://gerrit.opencord.org/gitweb?p\u003dhelm-charts.git;a\u003dblob;f\u003dconfigs/onos-debug.yaml",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 3
+      },
+      "revId": "3c6726fda679b2b7df669d084c26a90e73ff5061",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
