@@ -7,7 +7,6 @@
         * [Linux](linux.md)
 
 ## Guides
-
 * [Installation Guide](README.md)
     * [Prerequisites](prereqs/README.md)
         * [Hardware Requirements](prereqs/hardware.md)
@@ -72,7 +71,6 @@
     * [System Tests](cord-tester/validate_pods.md)
 
 ## References
-
 * [Profile Reference](profiles/intro.md)
     * [SEBA](profiles/seba/README.md)
         * Install
@@ -92,6 +90,7 @@
         * [Configure](profiles/mcord/configuration.md)
 * [Service Reference](operating_cord/services.md)
     * [Fabric](fabric/README.md)
+    * [Fabric Crossconnect](fabric-crossconnect/README.md)
     * [ONOS](onos-service/README.md)
     * [RCORD](rcord/README.md)
     * [vOLT](olt-service/README.md)
