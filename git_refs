@@ -14,6 +14,7 @@ _REPO NAME_           _DIR_    _REF_
 att-workflow-driver   /docs    master
 cord-tester           /docs    master
 fabric                /docs    master
+fabric-crossconnect   /docs    master
 hippie-oss            /docs    master
 kubernetes-service    /docs    master
 olt-service           /docs    master
