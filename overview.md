@@ -1,7 +1,14 @@
 # CORD Guide
 
-This is a curated set of guides that describe how to install, operate, test,
-and develop [CORD](https://opencord.org).
+This is a curated set of documents that describe how to install, operate, test,
+and develop [CORD](https://www.opennetworking.org/cord/).
+The material is organized in two parts:
+
+* *Guides:* Outlines the process of installing, operating, testing and
+   developing for CORD as a whole.
+
+* *References:* Definitions and specifications about individual
+   components that make up CORD.
 
 CORD is a community-based open source project. In addition to this guide, you
 can find information about this community, its projects, and its governance on
@@ -9,9 +16,9 @@ the [CORD wiki](https://wiki.opencord.org). This includes early white papers
 and design notes that have shaped [CORD's
 architecture](https://wiki.opencord.org/display/CORD/Documentation).
 
-## Navigating the Guide
+## Navigating the Guides
 
-The guide is organized around the major stages in the lifecycle of CORD:
+The guides are organized around the major stages in the lifecycle of CORD:
 
 * [Installation](README.md): Installing (and later upgrading) CORD.
 * [Operations](operating_cord/operating_cord.md): Operating an already
@@ -24,7 +31,24 @@ The guide is organized around the major stages in the lifecycle of CORD:
 These are all fairly obvious. What's less obvious is the relationship among
 these stages, which is helpful in [Navigating CORD](navigate.md).
 
-## Making Changes to the Guide
+## Navigating the References
+
+CORD is built from components and the aggregation of components into a
+coherent solution. The References are organized accordingly:
+
+* [Profile Reference](profiles/intro.md): Installation and
+  configuation details for specific solutions built using CORD
+  components.
+* [Service Reference](operating_cord/services.md): Configuration
+   (TOSCA) and modeling (xproto) definitions for individual CORD
+   components.
+* [Helm Refernce](charts/helm.md): Helm charts used to install
+   individual CORD components.
+
+For more information on the relationship between Profiles and
+Services, see [Navigating CORD](navigate.md).
+
+## Making Changes to this Document
 
 The [http://guide.opencord.org](http://guide.opencord.org) website is built
 using the [GitBook Toolchain](https://toolchain.gitbook.com/), with the

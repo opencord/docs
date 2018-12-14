@@ -1,5 +1,37 @@
 # Navigating CORD
 
+## Assembled in Layers
+
+A given instance of CORD is constructed from a set of disaggregated
+components. This assembly is done according to the general pattern
+shown in the following conceptual diagram.
+
+![Layers](images/layers.png)
+
+The three layers are:
+
+* **Platform:** The bottom-most layer consists of ONOS, XOS,
+  Kafka, and collection of Logging and Monitoring micro-services,
+  all running on a Kubernetes foundation (not shown). This is the
+  starting point for all configurations of CORD.
+
+* **Profile:** The middle layer typically consists of a set of
+  services (e.g., access services, VNFs, other cloud services). These
+  components run on the underlying platform, and includes both
+  abstract services on-boarded into XOS and SDN control apps running
+  on ONOS.
+
+* **Workflows:** The top-most layer consists of one or more
+  workflows, each of which defines the business logic and state
+  machine for one of the access technologies included in the
+  profile. A workflow augments/parameterizes a profile for the target
+  deployment environment; it's not a software layer, per se.
+
+The diagram also shows a hardware bill-of-materials, which must be
+defined for a given POD.
+
+## Operationalized in Stages
+
 Understanding the relationship between installing, operating, and developing
 CORD—and the corresponding toolsets and specification files used by
 each stage—is helpful in navigating CORD.
