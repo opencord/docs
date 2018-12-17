@@ -1,7 +1,7 @@
 # APIs
 
 This section describes workflows for interacting with the API of the
-CORD. There are multiple API mechanisms. Some of them are used in a
+CORD. There are multiple APIs. Some of them are used in a
 Northbound context, for services sitting on top the CORD, and some are
 used internally for components to communicate with each other.
 
