@@ -13,10 +13,12 @@
   "plugins": [
     "anchorjs",
     "smart-nav-collapse",
+    "custom-favicon",
     "page-toc",
     "versions-select"
   ],
-  "pluginsConfig": {
+"pluginsConfig": {
+    "favicon": "images/cord.ico",
     "versions": {
       "options": [
         {
