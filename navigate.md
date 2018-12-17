@@ -19,13 +19,15 @@ The three layers are:
   services (e.g., access services, VNFs, other cloud services). These
   components run on the underlying platform, and includes both
   abstract services on-boarded into XOS and SDN control apps running
-  on ONOS.
+  on ONOS.  Examples of profiles are [SEBA](profiles/seba) and
+  [M-CORD](profiles/mcord).
 
 * **Workflows:** The top-most layer consists of one or more
   workflows, each of which defines the business logic and state
   machine for one of the access technologies included in the
   profile. A workflow augments/parameterizes a profile for the target
-  deployment environment; it's not a software layer, per se.
+  deployment environment; it's not a software layer, per se.  SEBA's
+  [AT&T Workflow](profiles/seba/workflows/att.md) is an example.
 
 The diagram also shows a hardware bill-of-materials, which must be
 defined for a given POD.
@@ -44,7 +46,7 @@ each stage—is helpful in navigating CORD.
   More information about `helm-charts` can be found [here](charts/helm.md).
 
 * **Operations (TOSCA):** A running CORD POD supports multiple Northbound
-  Interfaces (e.g., a GUI and REST API), but we typically use `TOSCA` to specify
+  Interfaces (e.g., a GUI and REST API).  We typically use `TOSCA` to specify
   a workflow for configuring and provisioning a running system. A freshly
   installed CORD POD has a set of control plane and platform level containers
   running (e.g., XOS, ONOS, OpenStack), but until provisioned using `TOSCA`,
@@ -63,7 +65,7 @@ each stage—is helpful in navigating CORD.
 
 These tools and containers are inter-related as follows:
 
-* An initial install brings up a set of XOS-related containers (e.g., `xos-core`,
+* Installing the platform brings up a set of XOS-related containers (e.g., `xos-core`,
   `xos-gui`, `xos-tosca`) that have been configured with a base set of models.
   Of these, the `xos-tosca` container implements the TOSCA engine, which
   takes TOSCA workflows as input and configures/provisions CORD accordingly.
