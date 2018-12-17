@@ -1,14 +1,18 @@
 # Operations Guide
 
-This guide defines various processes and procedures for operating a
-CORD POD. It assumes the [install](../README.md) is already
-complete, and you want to operate and manage a running POD.
+This guide defines various processes, procedures, and tools for
+operating a CORD POD. It assumes the [install](../README.md) is
+already complete, and you want to operate and manage a running POD.
 
-Today, CORD most often runs for demo, development, or evaluation
-purposes, so this guide is limited to simple procedures suitable for
-such settings. We expect more realistic operational scenarios will be
-supported in the future.
+Note that the first step in operating a POD is to provision and configure
+the set of *Services* included in the selected *Profile*. Configuration
+details are specified in the follow two References:
 
+* [Configuring Profiles](../profiles/intro.md)
+* [Configuring Services](services.md)
+
+Default configurations are currently loaded into the POD at
+installation time.
 
 
 
