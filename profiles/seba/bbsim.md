@@ -1,20 +1,25 @@
 # Scale testing using BBSim
 
 Broadband Simulator (BBSim) is a control-plane only simulator that is used to
-test the sistem at scale.
+test a SEBA POD at scale. On the one hand, unlike ponsim which emulates both the
+control and data plane, BBSim only does the former. On the other hand, BBsim can
+potentially simulate tens of OLTs and thousands of ONUs, making it an ideal tool
+for control plane scale testing. One additional benefit of BBSim is that it
+uses the OpenOLT adaptor in VOLTHA, unlike ponsim which uses its own specialized
+adaptor.
 
-You can run BBSim on top of any SEBA installation, for instructions on how to
-install it you can refer to the [bbsim](../../charts/bbsim.md) helm reference.
+You can run BBSim on top of any SEBA installation, physical or virtual (SiaB).
+For instructions on how to install it you can refer to the [bbsim](../../charts/bbsim.md) helm reference.
 
 ## System configurations that affects BBSim
 
-The most important detail that determine how BBSim will behave is the DHCP
-configuration.
+The most important detail that determines how BBSim will behave is the L2-DHCP-relay
+configuration of the SEBA installation.
 
 There are two options:
 
-- sending packets out of the switch
-- sending packets back to the OLT
+- sending DHCP packets out of the AGG switch's uplink port
+- sending DHCP packets out of the OLT's NNI port
 
 ### DHCP Packets through the aggregation switch
 
