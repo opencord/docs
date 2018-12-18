@@ -97,6 +97,7 @@
         * [Configure](profiles/mcord/configuration.md)
 * [Service Reference](operating_cord/services.md)
     * [Fabric](fabric/README.md)
+    * [Fabric Crossconnect](fabric-crossconnect/README.md)
     * [ONOS](onos-service/README.md)
     * [RCORD](rcord/README.md)
     * [vOLT](olt-service/README.md)
