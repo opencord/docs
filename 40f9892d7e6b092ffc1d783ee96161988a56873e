@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1217596a_8ab1fd22",
+        "filename": "platform.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2018-12-18T23:12:18Z",
+      "side": 1,
+      "message": "I know this isn\u0027t in the changeset, but could you fix this?",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 15
+      },
+      "revId": "40f9892d7e6b092ffc1d783ee96161988a56873e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
