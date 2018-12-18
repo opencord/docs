@@ -5,9 +5,12 @@ You can find a complete description of the SEBA workflow for At&t in [this docum
 ## Install the `att-workflow` chart
 
 ```shell
-helm dep update xos-profiles/att-workflow
-helm install -n att-workflow xos-profiles/att-workflow
+helm install -n att-workflow cord/att-workflow --version=1.0.0
 ```
+
+> NOTE: if you have installed the `cord-platform` chart as a sum of its components,
+> then you need to specify `--set att-workflow-driver.kafkaService=cord-kafka`
+> during the installation command to match the name of the kafka service.
 
 ## Workflow description
 
