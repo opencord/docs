@@ -15,7 +15,52 @@ ONU, OLT, and agg switch.
 
 [This page](siab-with-fabric-switch.md) describes how to set up SiaB with a physical switch instead of an emulated Mininet topology. An external server running DHCP services connected to the switch acts as the BNG.
 
+## Quick start
+
+A Makefile can be used to install SEBA-in-a-Box in an automated manner on an Ubuntu 16.04 system:
+
+```bash
+mkdir -p ~/cord
+cd ~/cord
+git clone https://gerrit.opencord.org/automation-tools
+cd automation-tools/seba-in-a-box
+```
+
+To build a SiaB that uses the released service versions specified in the Helm charts:
+
+```bash
+make    # or 'make stable'
+```
+
+To build a SiaB that uses the latest development code:
+
+```bash
+make latest
+```
+
+After a successful install, you will see the message:
+
+```text
+SEBA-in-a-Box installation finished!
+```
+
+If the install fails for some reason, you can re-run the make command and the install will try to resume where it left off.
+
+You can optionally install the logging and nem-monitoring charts during the installation by passing one or both of them (space delimited) via the INFRA\_CHARTS variable.  E.g.:
+
+```bash
+make INFRA_CHARTS='logging nem-monitoring' stable
+```
+
+To test basic SEBA functionality, you can run:
+
+```bash
+make run-tests
+```
+
 ## Installation procedure
+
+The rest of this page describes a manual method for installing SEBA-in-a-Box.
 
 ### Prerequisites
 
@@ -137,7 +182,7 @@ Run these commands:
 ```bash
 cd ~/cord/helm-charts
 helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
-helm install -n cord-kafka -f examples/kafka-single.yaml incubator/kafka
+helm install -n cord-kafka --version=0.8.8 -f examples/kafka-single.yaml incubator/kafka
 # Wait for Kafka to come up
 kubectl wait pod/cord-kafka-0 --for condition=Ready --timeout=180s
 helm install -n onos -f configs/onos.yaml onos
@@ -410,47 +455,6 @@ rtt min/avg/max/mdev = 34.940/37.343/39.615/1.917 ms
 
 That’s it.  Currently it’s not possible to send traffic to destinations on the Internet.
 
-## Convenience script
-
-A Makefile can be used to install SEBA-in-a-Box in an automated manner on an Ubuntu 16.04 system.  To try it out:
-
-```bash
-mkdir -p ~/cord
-cd ~/cord
-git clone https://gerrit.opencord.org/automation-tools
-cd automation-tools/seba-in-a-box
-```
-
-To build a “stable” version of SiaB that uses the service versions specified in the Helm charts:
-
-```bash
-make stable    # or just ‘make’
-```
-
-To build a SiaB that uses the latest development code:
-
-```bash
-make latest
-```
-
-After a successful install, you will see the message:
-
-```text
-SEBA-in-a-Box installation finished!
-```
-
-If the install fails for some reason, you can re-run the make command and the install will try to resume where it left off.
-
-You can optionally install the logging and nem-monitoring charts during the installation by passing one or both of them (space delimited) via the INFRA\_CHARTS variable.  E.g.:
-
-```bash
-make INFRA_CHARTS='logging nem-monitoring' stable
-```
-
-To run the E2E ping test described above, as well as tests of other SEBA functionality, you can run:
-
-```bash
-make run-tests
-```
+## Getting help
 
 Report any problems to `acb` on the CORD Slack channel.
