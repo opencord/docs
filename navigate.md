@@ -8,25 +8,27 @@ shown in the following conceptual diagram.
 
 ![Layers](images/layers.png)
 
-The three layers are:
+There are four major elements:
 
-* **Platform:** The bottom-most layer consists of ONOS, XOS,
+* **Kubernetes:** All elements of the CORD control plane run in
+  Kubernetes containers. CORD assumes a Kubernetes foundation,
+  but does not prescribe how the hardware or Kubernetes are installed.
+
+* **Platform:** The Platform layer consists of ONOS, XOS,
   Kafka, and collection of Logging and Monitoring micro-services,
-  all running on a Kubernetes foundation (not shown). This is the
-  starting point for all configurations of CORD.
+  all running on a Kubernetes foundation.
 
-* **Profile:** The middle layer typically consists of a set of
-  services (e.g., access services, VNFs, other cloud services). These
-  components run on the underlying platform, and includes both
-  abstract services on-boarded into XOS and SDN control apps running
-  on ONOS.  Examples of profiles are [SEBA](profiles/seba) and
+* **Profile:** Each unique CORD configuration corresponds to a
+  Profile. It consists of a set of services (e.g., access services,
+  VNFs, other cloud services), including both abstract services
+  on-boarded into XOS and SDN control apps running on ONOS.
+  Examples of profiles are [SEBA](profiles/seba) and
   [M-CORD](profiles/mcord).
-
-* **Workflows:** The top-most layer consists of one or more
-  workflows, each of which defines the business logic and state
-  machine for one of the access technologies included in the
-  profile. A workflow augments/parameterizes a profile for the target
-  deployment environment; it's not a software layer, per se.  SEBA's
+  
+* **Workflow:** A Profile includes one or more workflows, each of
+  which defines the business logic and state machine for one of the
+  access technologies. A workflow augments/parameterizes a Profile for
+  the target deployment environment; it is not a layer, per se.  SEBA's
   [AT&T Workflow](profiles/seba/workflows/att-install.md) is an example.
 
 The diagram also shows a hardware bill-of-materials, which must be
@@ -47,7 +49,7 @@ each stage—is helpful in navigating CORD.
 
 * **Operations (TOSCA):** A running CORD POD supports multiple Northbound
   Interfaces (e.g., a GUI and REST API).  We typically use `TOSCA` to specify
-  a workflow for configuring and provisioning a running system. A freshly
+  a recipe for configuring and provisioning a running system. A freshly
   installed CORD POD has a set of control plane and platform level containers
   running (e.g., XOS, ONOS, OpenStack), but until provisioned using `TOSCA`,
   there are no services and no service graph. More information about `TOSCA`
@@ -59,9 +61,9 @@ each stage—is helpful in navigating CORD.
   writen in the `xproto` modeling language, and processed by the XOS
   tool-chain. Among other things, this tool-chain generates the
   TOSCA-engine that is used to process the configuration and provisioning
-  workflows used to operate CORD. More information about `xproto` (and
-  other details about on-boarding a service) can be found
-  [here](xos/dev/xproto.md).
+  recipes used to operate CORD. More information about `xproto` (and
+  other details about on-boarding a service) can be found in a companion
+  [XOS Guide](https://guide.xosproject.org).
 
 These tools and containers are inter-related as follows:
 
@@ -73,7 +75,7 @@ These tools and containers are inter-related as follows:
 * While the install and operate stages are distinct, for convenience,
   some helm-charts elect to launch a `tosca-loader` container
   (in Kubernetes parlance, it's a *job* and not a *service*) to load an initial
-  TOSCA workflow into a newly deployed set of services. This is how a
+  TOSCA recipe into a newly deployed set of services. This is how a
   service graph is typically instantiated.
 
 * While the CORD control plane is deployed as a set of Docker
@@ -81,14 +83,13 @@ These tools and containers are inter-related as follows:
   Some services run in VMs managed by OpenStack (this is currently
   the case for M-CORD) and some services are implemented as ONOS
   applications that have been packaged using Maven. In such cases,
-  the VM image and the Maven package are still specified in the TOSCA
-  workflow.
+  the VM image and the Maven package are still specified in TOSCA.
 
 * Every service (whether implemented in Docker, OpenStack, or ONOS)
   has a counter-part *synchronizer* container running as part of the CORD
   control plane (e.g., `volt-synchronizer` for the vOLT service). Typically,
   the helm-chart for a service launches this synchronizer container, whereas
-  the TOSCA worflow creates, provisions, and initializes the backend container,
+  the TOSCA recipe creates, provisions, and initializes the backend container,
   VM, or ONOS app.
 
 * Bringing up additional services in a running POD involves executing

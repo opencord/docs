@@ -34,7 +34,7 @@ these stages, which is helpful in [Navigating CORD](navigate.md).
 ## Navigating the References
 
 CORD is built from components and the aggregation of components into a
-coherent solution. The References are organized accordingly:
+composite solution. The References are organized accordingly:
 
 * [Profile Reference](profiles/intro.md): Installation and
   configuation details for specific solutions built using CORD
