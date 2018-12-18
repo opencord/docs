@@ -1,24 +1,24 @@
 # Install Platform
 
 Once the prerequisites have been met, the next step to installing CORD is
-to bring up the Helm charts for the platform components. This includes the
-following steps:
+to bring up the Helm charts for the platform components. 
 
-## Install ONOS
+## CORD Platform as a whole
 
-Install [onos](./charts/onos.md#onos-manages-fabric--voltha). 
-It will manage the fabric infrastructure.
+To install the CORD Platform you can use the corresponding chart:
 
-## Install XOS
+```shell
+helm install -n cord-platform cord/cord-platform --version=6.1.0
+```
 
-Install [xos-core](./charts/xos-core.md). It will orchestrate the services.
+## CORD Platform as separate components
 
-## Install Kafka
+The main reason to install the CORD Platform by installing its standalone components
+is if you're developing on it and you need granular control.
 
-Install [cord-kafka](./charts/kafka.md). It will implement a shared 
-message bus.
+There are the components included in the `cord-platform` chart:
 
-## Install Logging and Monitoring
-
-Install [loggin-monitoring](./charts/logging-monitoring.md). Log and monitor
-events in the POD.
+- [ONOS](./charts/onos.md#onos-manages-fabric--voltha)
+- [xos-core](./charts/xos-core.md)
+- [cord-kafka](./charts/kafka.md)
+- [logging-monitoring](./charts/logging-monitoring.md)
