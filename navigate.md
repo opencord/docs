@@ -27,7 +27,7 @@ The three layers are:
   machine for one of the access technologies included in the
   profile. A workflow augments/parameterizes a profile for the target
   deployment environment; it's not a software layer, per se.  SEBA's
-  [AT&T Workflow](profiles/seba/workflows/att.md) is an example.
+  [AT&T Workflow](profiles/seba/workflows/att-install.md) is an example.
 
 The diagram also shows a hardware bill-of-materials, which must be
 defined for a given POD.
