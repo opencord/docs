@@ -111,7 +111,7 @@
     * [ONOS](charts/onos.md)
     * [VOLTHA](charts/voltha.md)
     * [Kafka](charts/kafka.md)
-    * [Hippie OSS](charts/hippie-oss.md)
+    * [Base Kubernetes](charts/base-kubernetes.md)
     * [Base OpenStack](charts/base-openstack.md)
         * [VTN Setup](prereqs/vtn-setup.md)
     * [R-CORD](charts/rcord.md)

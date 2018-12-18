@@ -1,5 +1,7 @@
 # Working on R-CORD Without an OLT/ONU
 
+> OUTDATED!!!
+
 This section describes a developer workflow that works in scenarios
 where you do not have a real OLT or ONU. It combines steps from
 the "bottom-up" and "top-down" subscriber provisioning sequences
@@ -58,10 +60,6 @@ topology_template:
             relationship: tosca.relationships.BelongsToOne
 ~
 ```
-
-- Deploy `kafka` as described in [these instructions](../charts/kafka.md).
-
-- Deploy `hippie-oss` as described in [these instructions](../charts/hippie-oss.md).
 
 ## Push "onu-event" to Kafka
 

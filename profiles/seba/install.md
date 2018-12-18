@@ -4,12 +4,25 @@ This page walks through the sequence of Helm operations needed to
 bring up the SEBA profile. It assumes the Platform has already been
 installed.
 
-## Install VOLTHA
+## Installing SEBA
 
-Install [voltha](../../charts/voltha.md).
-It will manage the OLT devices.
+In order to run SEBA you need to have the [CORD Platform](../../platform.md) installed.
 
-## Install Seba-Services
+### SEBA as a whole
 
-Install [seba-services](../../charts/seba-services.md).
-This will run all the XOS services necessary to manage the data plane.
+To install the SEBA Profile you can use the corresponding chart:
+
+```shell
+helm install -n seba cord/seba --version=1.0.0
+```
+
+### SEBA as separate components
+
+The main reason to install the SEBA Profile by installing its standalone
+components is if you're developing on it and you need granular control.
+
+There are the components included in the `seba` chart:
+
+- [VOLTHA and etcd-operator](../../charts/voltha.md)
+- [seba-services](../../charts/seba-services.md)
+- [base-kubernetes](../../charts/base-kubernetes.md)
