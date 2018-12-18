@@ -191,8 +191,8 @@ helm ls
 
 ## Deploy CORD Helm Charts
 
-Deploy the service profiles corresponding to the `xos-core`,
-`base-kubernetes`, and `demo-simpleexampleservice` helm-charts:
+Deploy the Helm Charts corresponding to the `xos-core`, plus
+the service profiles `base-kubernetes` and `demo-simpleexampleservice`:
 
 ```shell
 cd ~/cord/helm-charts
