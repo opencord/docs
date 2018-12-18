@@ -11,7 +11,11 @@ platform, plus a `SimpleExampleService`, on a single machine. Once you
 complete these steps, you might be interested in jumping ahead to the
 [SimpleExampleService Tutorial](simpleexampleservice/simple-example-service.md)
 to learn more about the make-up of a CORD service. Another option
-would be to explore CORD's [operational interfaces](operating_cord/general.md). 
+would be to explore CORD's [operational interfaces](operating_cord/general.md).
 
 * [MacOS](macos.md)
 * [Linux](linux.md)
+
+Instead if you want to quickly get started with a complete CORD system together
+with the CORD platform, a profile such as SEBA, an exemplar operator workflow and
+an emulated data-plane, consider [SEBA-in-a-Box](./profiles/seba/siab-overview.md).

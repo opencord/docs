@@ -65,14 +65,31 @@
     * [SEBA](profiles/seba/README.md)
         * Install
             * [Install SEBA Charts](profiles/seba/install.md)
-            * [SEBA-in-a-Box](profiles/seba/siab.md)
-            * [SEBA-in-a-Box with Fabric Switch](profiles/seba/siab-with-fabric-switch.md)
-            * [Scale testing with BBSim](profiles/seba/bbsim.md)
-            * [Celestica / Microsemi Setup](profiles/rcord/celestica-olt-setup.md)
-            * [Emulated OLT/ONU](profiles/rcord/emulate.md)
             * Workflows
-                * [AT&T](profiles/seba/workflows/att.md)
-        * [Configure](profiles/seba/configuration.md)
+                * [Install AT&T workflow](profiles/seba/workflows/att-install.md)
+            * [SEBA-in-a-Box Overview](profiles/seba/siab-overview.md)
+                * [SEBA-in-a-Box](profiles/seba/siab.md)
+                * [SEBA-in-a-Box with Fabric Switch](profiles/seba/siab-with-fabric-switch.md)
+            * [Scale testing with BBSim](profiles/seba/bbsim.md)
+            * [BETA: Celestica / Microsemi Setup](profiles/seba/celestica-olt-setup.md)
+        * Configure
+            * [POD specific configuration](profiles/seba/configuration.md)
+            * Workflow specific configuration
+                * [Configure AT&T workflow](profiles/seba/workflows/att-configure.md)
+        * Operate
+            * [Disable/Enable an ONU](profiles/seba/operate/onu-ops.md)
+            * [Edit a Whitelist entry](profiles/seba/operate/whitelist-ops.md)
+            * [Disable/Delete an OLT](profiles/seba/operate/olt-ops.md)
+            * [Fix configuration errors](profiles/seba/operate/config-ops.md)
+            * [Add a cross-connect in the AGG switch](profiles/seba/operate/agg-ops.md)
+            * [Try a new version of *](profiles/seba/operate/k8s-helm-ops.md)
+        * [Known Issues](profiles/seba/known-issues.md)
+        * Troubleshoot (FAQ)
+            * [I can't ping](profiles/seba/troubleshoot/no-ping.md)
+            * [No ONUs discovered](profiles/seba/troubleshoot/no-onus.md)
+            * [I can't authenticate](profiles/seba/troubleshoot/no-aaa.md)
+            * [DHCP is not working](profiles/seba/troubleshoot/no-dhcp.md)
+            * [No AttWorkflowDriver service instances](profiles/seba/troubleshoot/no-att-si.md)
     * [M-CORD](profiles/mcord/README.md)
         * Install
             * [Install M-CORD Charts](profiles/mcord/install.md)
@@ -102,4 +119,3 @@
     * [Logging and Monitoring](charts/logging-monitoring.md)
     * [Persistent Storage](charts/storage.md)
     * [BBSim](charts/bbsim.md)
-
