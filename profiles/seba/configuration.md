@@ -2,34 +2,48 @@
 
 Once all the components needed for the SEBA profile are up and
 running on your POD, you will need to configure it. This is typically
-done using TOSCA. This configuration is environment specific, so
+done using TOSCA.
+
+In this page we are describing the process as a three steps process:
+
+- [Fabric Setup](./configuration.md#fabric-setup)
+- [OLT Provisioning](./configuration.md#olt-provisioning)
+- [Subscriber Provisioning](./configuration.md#subscriber-provisioning)
+
+as that is what logically makes sense, but be aware that all the configurations
+can be unified in a single TOSCA file.
+
+This configuration is environment specific, so
 you will need to create your own, but the following can serve as a
 reference:
+
+## Fabric Setup
 
 ```yaml
 tosca_definitions_version: tosca_simple_yaml_1_0
 imports:
-  - custom_types/oltdevice.yaml
   - custom_types/switch.yaml
   - custom_types/switchport.yaml
   - custom_types/portinterface.yaml
-  - custom_types/voltservice.yaml
-  - custom_types/vrouterserviceinstance.yaml
-  - custom_types/vrouterstaticroute.yaml
+  - custom_types/bngportmapping.yaml
+  - custom_types/attworkflowdriverwhitelistentry.yaml
+  - custom_types/attworkflowdriverservice.yaml
+  - custom_types/serviceinstanceattribute.yaml
+  - custom_types/onosapp.yaml
 
 description: Configures a full SEBA POD
 
 topology_template:
   node_templates:
     # Fabric configuration
-    switch#my_fabric_switch:
+    switch#leaf_1:
       type: tosca.nodes.Switch
       properties:
         driver: ofdpa3
         ipv4Loopback: 192.168.0.201
         ipv4NodeSid: 17
         isEdgeRouter: True
-        name: my_fabric_switch
+        name: AGG_SWITCH
         ofId: of:0000000000000001
         routerMac: 00:00:02:01:06:01
 
@@ -41,80 +55,85 @@ topology_template:
         host_learning: false
       requirements:
         - switch:
-            node: switch#my_fabric_switch
+            node: switch#leaf_1
             relationship: tosca.relationships.BelongsToOne
 
-    # Setup the OLT switch port interface
-    interface#olt_interface:
-      type: tosca.nodes.PortInterface
-      properties:
-        ips: 192.168.0.254/24
-        name: olt_interface
-      requirements:
-        - port:
-            node: port#olt_port
-            relationship: tosca.relationships.BelongsToOne
-
-    # Setup the fabric switch port where the external
-    # router is connected to
-    port#vrouter_port:
+    # Port connected to the BNG
+    port#bng_port:
       type: tosca.nodes.SwitchPort
       properties:
         portId: 31
       requirements:
         - switch:
-            node: switch#my_fabric_switch
+            node: switch#leaf_1
             relationship: tosca.relationships.BelongsToOne
 
-    # Setup the fabric switch port interface where the
-    # external router is connected to
-    interface#vrouter_interface:
-      type: tosca.nodes.PortInterface
+    # Setup the fabric switch port where the external
+    # router is connected to
+    bngmapping:
+      type: tosca.nodes.BNGPortMapping
       properties:
-        name: vrouter_interface
-        vlanUntagged: 40
-        ips: 10.231.254.2/29
+        s_tag: any
+        switch_port: 31
+
+    # DHCP L2 Relay config
+    onos_app#dhcpl2relay:
+      type: tosca.nodes.ONOSApp
+      properties:
+        name: dhcpl2relay
+        must-exist: true
+
+    dhcpl2relay-config-attr:
+      type: tosca.nodes.ServiceInstanceAttribute
+      properties:
+        name: /onos/v1/network/configuration/apps/org.opencord.dhcpl2relay
+        value: >
+          {
+            "dhcpl2relay" : {
+              "useOltUplinkForServerPktInOut" : false,
+              "dhcpServerConnectPoints" : [ "of:0000000000000001/31" ]
+            }
+          }
       requirements:
-        - port:
-            node: port#vrouter_port
+        - service_instance:
+            node: onos_app#dhcpl2relay
             relationship: tosca.relationships.BelongsToOne
+```
 
-    # Add a vRouter (ONOS)
-    vrouter#my_vrouter:
-      type: tosca.nodes.VRouterServiceInstance
-      properties:
-        name: my_vrouter
+For instructions on how to push TOSCA into a CORD POD, please
+refer to this [guide](../../xos-tosca/README.md).
 
-    # Add a static route to the vRouter (ONOS)
-    route#my_route:
-      type: tosca.nodes.VRouterStaticRoute
-      properties:
-        prefix: "0.0.0.0/0"
-        next_hop: "10.231.254.1"
-      requirements:
-        - vrouter:
-            node: vrouter#my_vrouter
-            relationship: tosca.relationships.BelongsToOne
+## OLT Provisioning
 
-    # Setup the OLT service
+```yaml
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/oltdevice.yaml
+  - custom_types/onudevice.yaml
+  - custom_types/voltservice.yaml
+description: Create an OLT Device in VOLTHA
+topology_template:
+  node_templates:
+
     service#volt:
       type: tosca.nodes.VOLTService
       properties:
         name: volt
         must-exist: true
 
-    # Setup the OLT device
     olt_device:
       type: tosca.nodes.OLTDevice
       properties:
-        name: volt-1
+        name: My OLT
         device_type: openolt
-        host: 10.90.0.114
+        host: 10.90.0.122
         port: 9191
-        switch_datapath_id: of:0000000000000001
-        switch_port: "1"
+        switch_datapath_id: of:0000000000000002 # the openflow switch to with the OLT is connected
+        switch_port: "1" # the port on the switch on which the OLT is connected
         outer_tpid: "0x8100"
-        uplink: "128"
+        uplink: "65536"
+        nas_id: "NAS_ID"
+        serial_number: "10.90.0.122:9191"
       requirements:
         - volt_service:
             node: service#volt
@@ -124,17 +143,12 @@ topology_template:
 For instructions on how to push TOSCA into a CORD POD, please
 refer to this [guide](../../xos-tosca/README.md).
 
-## Top-Down Subscriber Provisioning
+## Subscriber Provisioning
 
-Once the POD has been configured, you can create a subscriber. This
-section describes a "top-down" approach for doing that. (The following
-section describes an alternative, "bottom up" approach.)
+Once the POD has been configured, you can create a subscriber.
 
-To create a subscriber, you need to retrieve some information:
-
-- ONU Serial Number
-- Mac Address
-- IP Address
+To create a subscriber, you'll need to know the serial number of the ONU it is
+attached to.
 
 ### Find ONU Serial Number
 
@@ -216,9 +230,8 @@ topology_template:
       properties:
         name: My House
         c_tag: 111
+        s_tag: 222
         onu_device: BRCM1234 # Serial Number of the ONU Device to which this subscriber is connected
-        mac_address: 00:AA:00:00:00:01 # subscriber mac address
-        ip_address: 10.8.2.1 # subscriber IP
 ```
 
 For instructions on how to push TOSCA into a CORD POD, please
