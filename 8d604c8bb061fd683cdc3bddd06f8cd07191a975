@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f7068ba_9f1f2561",
+        "filename": "profiles/seba/operate/k8s-helm-ops.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-19T21:52:46Z",
+      "side": 1,
+      "message": "Maybe change to \"Deploying ONOS Apps\" or something?",
+      "range": {
+        "startLine": 78,
+        "startChar": 3,
+        "endLine": 78,
+        "endChar": 36
+      },
+      "revId": "8d604c8bb061fd683cdc3bddd06f8cd07191a975",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "558c91ee_d4f09e82",
+        "filename": "profiles/seba/operate/k8s-helm-ops.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-19T21:52:46Z",
+      "side": 1,
+      "message": "Maybe this bit is more appropriate in a developer guide?  Would an operator do this?",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 76
+      },
+      "revId": "8d604c8bb061fd683cdc3bddd06f8cd07191a975",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b4be69a2_164b030e",
+        "filename": "profiles/seba/operate/k8s-helm-ops.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-19T21:52:46Z",
+      "side": 1,
+      "message": "information about this workflow is available",
+      "range": {
+        "startLine": 87,
+        "startChar": 5,
+        "endLine": 87,
+        "endChar": 50
+      },
+      "revId": "8d604c8bb061fd683cdc3bddd06f8cd07191a975",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d3031088_0a3338eb",
+        "filename": "profiles/seba/operate/k8s-helm-ops.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-19T21:52:46Z",
+      "side": 1,
+      "message": "I\u0027d suggest deleting the above \u0027onos-app\u0027 workflow and this heading.  The section is just about using Helm/TOSCA/GUI to update the apps from a webserver.",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 33
+      },
+      "revId": "8d604c8bb061fd683cdc3bddd06f8cd07191a975",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7ec3f28_cb0728b6",
+        "filename": "profiles/seba/operate/k8s-helm-ops.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-19T21:52:46Z",
+      "side": 1,
+      "message": "Don\u0027t we also need to update the version number in TOSCA as described in the next section?\n\n(Also we should probably clean that up so that the app\u0027s version is a parameter in values.yaml)",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 36
+      },
+      "revId": "8d604c8bb061fd683cdc3bddd06f8cd07191a975",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
