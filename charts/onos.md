@@ -13,6 +13,17 @@ helm install -n onos
 * REST/UI: 30120
 * Karaf debugger: 30555
 
+## Accessing the ONOS CLI
+
+Assuming you have not changed the default ports in the chart,
+you can use this command to access the ONOS CLI:
+
+```shell
+ssh karaf@<pod-ip> -p 30115
+```
+
+The default ONOS password is `karaf`.
+
 ## ONOS logging
 
 ### `onos-log-agent` Sidecar container
