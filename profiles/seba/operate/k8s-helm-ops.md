@@ -65,7 +65,7 @@ the `xosproject/att-workflow-driver:1.0.12` Docker image from Docker Hub.  Suppo
 
 ```bash
 helm upgrade --version=1.0.0 --reuse-values \
-    --set att-workflow-driver.image.repository=myrepo/att-workflow-driver
+    --set att-workflow-driver.image.repository=myrepo/att-workflow-driver \
     --set att-workflow-driver.image.tag=test-image \
     att-workflow cord/att-workflow
 ```
@@ -74,3 +74,90 @@ To verify that you're specifying the `--set` arguments correctly, you can
 replace `helm upgrade` with `helm template` in the above commands.  This will
 print out all the Kubernetes resources that Helm generates, and you can
 check that the image has actually been updated in the resources.
+
+## Deploying ONOS Apps
+
+If your applications are available on a webserver you can configure
+the `seba` chart to use those applications or change them at runtime via TOSCA/GUI.
+
+#### Configure ONOS apps at installation time
+
+If you are going to install a POD with custom ONOS applications you can create a
+custom values file as the following:
+
+```yaml
+# myvalues.yaml
+seba-services:
+  aaaAppUrl: "https://<my-webserver>/aaa/1.8.0/aaa-1.8.0.oar"
+  sadisAppUrl: "https://<my-webserver>/sadis-app/2.2.0/sadis-app-2.2.0.oar"
+  dhcpl2relayAppUrl: "https://<my-webserver>/dhcpl2relay/1.5.0/dhcpl2relay-1.5.0.oar"
+  oltAppUrl: "https://<my-webserver>/olt-app/2.1.0/olt-app-2.1.0.oar"
+  kafkaAppUrl: "https://<my-webserver>/kafka/1.0.0/kafka-1.0.0.oar"
+```
+
+and then install the `seba` chart using:
+
+```bash
+helm install -n seba cord/seba -f myvalues.yaml
+```
+
+For more informations on how to create a webserver containing the ONOS Apps
+and deploy it on the POD you can look at the [Offline Install](../../../offline-install.md#install-a-local-web-server-using-helm-optional)
+
+#### Change ONOS apps at runtime
+
+If you already have a POD installed but you want to replace an application,
+you have two options:
+
+**Update ONOS apps using TOSCA**
+
+To update an ONOS app on a running system you can use a TOSCA similar to
+the following one:
+
+```yaml
+tosca_definitions_version: tosca_simple_yaml_1_0
+
+imports:
+   - custom_types/onosapp.yaml
+   - custom_types/onosservice.yaml
+
+description: Replace an ONOS applications
+
+topology_template:
+  node_templates:
+
+    service#onos:
+      type: tosca.nodes.ONOSService
+      properties:
+          name: onos
+          must-exist: true
+
+    onos_app#olt:
+      type: tosca.nodes.ONOSApp
+      properties:
+        name: olt
+        app_id: org.opencord.olt
+        url: https://<my-webserver>/olt-app/2.1.0/olt-app-2.1.0.oar
+        version: 2.1.0
+        dependencies: org.opencord.sadis
+      requirements:
+        - owner:
+            node: service#onos
+            relationship: tosca.relationships.BelongsToOne
+```
+
+For instructions on how to push TOSCA into a CORD POD, please
+refer to this [guide](../../../xos-tosca/README.md).
+
+**Update ONOS apps via the GUI**
+
+If you want to update the version of an ONOS application via the GUI,
+you can simply navigate to `ONOS -> ONOS Applications` then select the application
+you want to update by clicking on the magnifier icon.
+
+Once you are in the detailed view of that application, you can just change the
+`url` field and save it. Note that if the `version` has changed you'll need to
+update that to.
+
+![ONOS Application detailed view in XOS](./screenshots/onos_apps_detail_view.png "ONOS Application detailed view in XOS")
+
