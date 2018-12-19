@@ -1,10 +1,10 @@
 # Summary
 
 * [Overview](overview.md)
-    * [Navigating CORD](navigate.md)
-    * [Quick Start](quickstart.md)
-        * [MacOS](macos.md)
-        * [Linux](linux.md)
+* [Navigating CORD](navigate.md)
+* [Quick Start](quickstart.md)
+    * [MacOS](macos.md)
+    * [Linux](linux.md)
 
 ## Guides
 
@@ -67,11 +67,12 @@
             * [Install SEBA Charts](profiles/seba/install.md)
             * Workflows
                 * [Install AT&T workflow](profiles/seba/workflows/att-install.md)
+            * [EdgeCore OLT Setup (OpenOLT driver)](openolt/README.md)
+            * [BETA: Celestica / Microsemi Setup](profiles/seba/celestica-olt-setup.md)
             * [SEBA-in-a-Box Overview](profiles/seba/siab-overview.md)
                 * [SEBA-in-a-Box](profiles/seba/siab.md)
                 * [SEBA-in-a-Box with Fabric Switch](profiles/seba/siab-with-fabric-switch.md)
             * [Scale testing with BBSim](profiles/seba/bbsim.md)
-            * [BETA: Celestica / Microsemi Setup](profiles/seba/celestica-olt-setup.md)
         * Configure
             * [POD specific configuration](profiles/seba/configuration.md)
             * Workflow specific configuration
