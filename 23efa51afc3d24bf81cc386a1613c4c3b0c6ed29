@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a4c95e4e_95431211",
+        "filename": "SUMMARY.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-19T22:18:20Z",
+      "side": 1,
+      "message": "Why remove these tabs? It was good that they were under overview",
+      "revId": "23efa51afc3d24bf81cc386a1613c4c3b0c6ed29",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0ab6ff3_a22c86cb",
+        "filename": "SUMMARY.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-19T22:18:20Z",
+      "side": 1,
+      "message": "I\u0027d like to leave the BETA feature where it was i.e below Siab and BBSim",
+      "revId": "23efa51afc3d24bf81cc386a1613c4c3b0c6ed29",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
