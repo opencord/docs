@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e856e2dc_fa7cc84f",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-12-19T15:35:09Z",
+      "side": 1,
+      "message": "Stable or not stable. There is no \"stable\". --Yoda",
+      "range": {
+        "startLine": 29,
+        "startChar": 11,
+        "endLine": 29,
+        "endChar": 19
+      },
+      "revId": "6cb3e561653774694aac99814d516c57e17361e8",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
