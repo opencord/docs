@@ -18,7 +18,7 @@ node, suitable for evaluation or testing.  Requirements:
 ### Target server on CloudLab (optional)
 
 If you do not have a target server available that meets the above
-requirements, you can borrow one on [CloudLab](https://www.cloudlab.us). Sign
+requirements, you can borrow one on CloudLab. Sign
 up for an account using your organization's email address and choose "Join
 Existing Project"; for "Project Name" enter `cord-testdrive`.
 
@@ -30,7 +30,7 @@ Once your account is approved, start an experiment using the
 `OnePC-Ubuntu16.04-HWE` profile on the Wisconsin cluster. This will provide
 you with a temporary target server meeting the above requirements.
 
-Refer to the [CloudLab documentation](http://docs.cloudlab.us/) for more information.
+Refer to the CloudLab documentation for more information.
 
 ### Convenience Script
 
