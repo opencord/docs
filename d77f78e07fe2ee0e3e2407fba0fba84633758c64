@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49b9624f_2e0c9a52",
+        "filename": "profiles/seba/operate/olt-ops.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-12-19T19:09:41Z",
+      "side": 1,
+      "message": "information (drop the s).",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 16
+      },
+      "revId": "d77f78e07fe2ee0e3e2407fba0fba84633758c64",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "965fdccb_62381b64",
+        "filename": "profiles/seba/operate/olt-ops.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-12-19T19:09:41Z",
+      "side": 1,
+      "message": "it is",
+      "range": {
+        "startLine": 8,
+        "startChar": 27,
+        "endLine": 8,
+        "endChar": 29
+      },
+      "revId": "d77f78e07fe2ee0e3e2407fba0fba84633758c64",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf46fd95_51e8dcf2",
+        "filename": "profiles/seba/operate/olt-ops.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-12-19T19:09:41Z",
+      "side": 1,
+      "message": "subscriber is",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 15,
+        "endChar": 23
+      },
+      "revId": "d77f78e07fe2ee0e3e2407fba0fba84633758c64",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0b8b7131_c6ceaade",
+        "filename": "profiles/seba/workflows/att-configure.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-12-19T19:09:41Z",
+      "side": 1,
+      "message": "...any time. It doesn\u0027t need... or ...any time; it doesn\u0027t need...",
+      "range": {
+        "startLine": 8,
+        "startChar": 50,
+        "endLine": 8,
+        "endChar": 54
+      },
+      "revId": "d77f78e07fe2ee0e3e2407fba0fba84633758c64",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
