@@ -1,10 +1,10 @@
 # Summary
 
 * [Overview](overview.md)
-    * [Navigating CORD](navigate.md)
-    * [Quick Start](quickstart.md)
-        * [MacOS](macos.md)
-        * [Linux](linux.md)
+*[Navigating CORD](navigate.md)
+* [Quick Start](quickstart.md)
+    * [MacOS](macos.md)
+    * [Linux](linux.md)
 
 ## Guides
 
@@ -71,6 +71,7 @@
                 * [SEBA-in-a-Box](profiles/seba/siab.md)
                 * [SEBA-in-a-Box with Fabric Switch](profiles/seba/siab-with-fabric-switch.md)
             * [Scale testing with BBSim](profiles/seba/bbsim.md)
+            * [EdgeCore OLT Setup (OpenOLT driver)](openolt/README.md)
             * [BETA: Celestica / Microsemi Setup](profiles/seba/celestica-olt-setup.md)
         * Configure
             * [POD specific configuration](profiles/seba/configuration.md)
