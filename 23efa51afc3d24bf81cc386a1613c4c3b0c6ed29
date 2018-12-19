@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a8c3e618_fda42af4",
+        "filename": "SUMMARY.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-19T22:21:21Z",
+      "side": 1,
+      "message": "This was really the only purpose of this patch...I personally always hated it..but if you want I just revert it. I wanted to make it the same of Guides and References. The problem is that if something is a title, it cannot have content (like in the case of overview)",
+      "parentUuid": "a4c95e4e_95431211",
+      "revId": "23efa51afc3d24bf81cc386a1613c4c3b0c6ed29",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e0ab6ff3_a22c86cb",
         "filename": "SUMMARY.md",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2018-12-19T22:18:20Z",
       "side": 1,
       "message": "I\u0027d like to leave the BETA feature where it was i.e below Siab and BBSim",
+      "revId": "23efa51afc3d24bf81cc386a1613c4c3b0c6ed29",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5df9f02b_d42061ce",
+        "filename": "SUMMARY.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-19T22:21:21Z",
+      "side": 1,
+      "message": "I wanted to keep things that logically go together -indeed- together, but if another grouping for you is \"beta at the end\", that\u0027s fine too...I can change that.",
+      "parentUuid": "e0ab6ff3_a22c86cb",
       "revId": "23efa51afc3d24bf81cc386a1613c4c3b0c6ed29",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
