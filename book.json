@@ -15,10 +15,14 @@
     "smart-nav-collapse",
     "custom-favicon",
     "page-toc",
-    "versions-select"
+    "versions-select",
+    "ga"
   ],
 "pluginsConfig": {
     "favicon": "images/cord.ico",
+    "ga": {
+      "token": "UA-25767375-2"
+    },
     "versions": {
       "options": [
         {

@@ -4,6 +4,7 @@
   "description": "Documentation for the OpenCORD Project",
   "main": "index.js",
   "dependencies": {
+    "gitbook-plugin-ga": "^2.0.0"
   },
   "devDependencies": {},
   "scripts": {
