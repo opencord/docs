@@ -7,7 +7,6 @@
         * [Linux](linux.md)
 
 ## Guides
-
 * [Installation Guide](README.md)
     * [Prerequisites](prereqs/README.md)
         * [Hardware Requirements](prereqs/hardware.md)
@@ -60,7 +59,6 @@
     * [System Tests](cord-tester/validate_pods.md)
 
 ## References
-
 * [Profile Reference](profiles/intro.md)
     * [SEBA](profiles/seba/README.md)
         * Install
@@ -79,7 +77,7 @@
         * Operate
             * [Disable/Enable an ONU](profiles/seba/operate/onu-ops.md)
             * [Edit a Whitelist entry](profiles/seba/operate/whitelist-ops.md)
-            * [Disable/Delete an OLT](profiles/seba/operate/olt-ops.md)
+            * [Delete an OLT](profiles/seba/operate/olt-ops.md)
             * [Fix configuration errors](profiles/seba/operate/config-ops.md)
             * [Add a cross-connect in the AGG switch](profiles/seba/operate/agg-ops.md)
             * [Try a new version of *](profiles/seba/operate/k8s-helm-ops.md)
@@ -120,3 +118,4 @@
     * [Logging and Monitoring](charts/logging-monitoring.md)
     * [Persistent Storage](charts/storage.md)
     * [BBSim](charts/bbsim.md)
+
