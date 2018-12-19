@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c044590_0fbe4621",
+        "filename": "operating_cord/gui.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-19T19:41:12Z",
+      "side": 1,
+      "message": "lets",
+      "revId": "e29277a1da4bc6836088f24a1180f5453024e138",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d10e525d_acd38a53",
+        "filename": "operating_cord/gui.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-19T19:41:12Z",
+      "side": 1,
+      "message": "through",
+      "revId": "e29277a1da4bc6836088f24a1180f5453024e138",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8f894c37_b0a66e94",
+        "filename": "profiles/seba/operate/olt-ops.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-19T19:41:12Z",
+      "side": 1,
+      "message": "create or add?",
+      "revId": "e29277a1da4bc6836088f24a1180f5453024e138",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4d36581_cc6933af",
+        "filename": "profiles/seba/operate/olt-ops.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-19T19:41:12Z",
+      "side": 1,
+      "message": "Aren\u0027t there rest/grpc/tosca versions of these operations --\u003e there must be otherwise Abstract-OLT won\u0027t work.  Is there a place we are documenting those?",
+      "revId": "e29277a1da4bc6836088f24a1180f5453024e138",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b6eedb5d_74cff414",
+        "filename": "profiles/seba/workflows/att-configure.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-19T19:41:12Z",
+      "side": 1,
+      "message": "these instructions",
+      "revId": "e29277a1da4bc6836088f24a1180f5453024e138",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2af8971c_a60578f9",
+        "filename": "profiles/seba/workflows/att-configure.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-19T19:41:12Z",
+      "side": 1,
+      "message": "information",
+      "revId": "e29277a1da4bc6836088f24a1180f5453024e138",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
