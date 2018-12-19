@@ -114,6 +114,30 @@
       "revId": "8d604c8bb061fd683cdc3bddd06f8cd07191a975",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2a34cd0f_a3f3e4a2",
+        "filename": "profiles/seba/operate/k8s-helm-ops.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-12-19T22:00:13Z",
+      "side": 1,
+      "message": "Yeah good point. The way we used so far is that during app development you don\u0027t bump the version so we never had this issue, but should definitely consider it for the future.",
+      "parentUuid": "c7ec3f28_cb0728b6",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 36
+      },
+      "revId": "8d604c8bb061fd683cdc3bddd06f8cd07191a975",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
