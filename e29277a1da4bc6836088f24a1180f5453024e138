@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "70c95c14_871f1716",
+        "filename": "profiles/seba/operate/olt-ops.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2018-12-19T19:47:46Z",
+      "side": 1,
+      "message": "There\u0027s a a corresponding TOSCA, REST and gRPC interface. \n\nThe TOSCA interface is described in the \"Configure\" chapter,\ndo we need to document REST, gRPC in the operator documentation? I think those are more developer oriented",
+      "parentUuid": "e4d36581_cc6933af",
+      "revId": "e29277a1da4bc6836088f24a1180f5453024e138",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b6eedb5d_74cff414",
         "filename": "profiles/seba/workflows/att-configure.md",
         "patchSetId": 2
