@@ -1,9 +1,12 @@
 # Configure AT&T Workflow
 
-We assume your POD is already configured as per[this instructions](../configuration.md)
+We assume your POD is already configured as per [this instructions](../configuration.md)
 (you need to complete only the first section)
 
 ## Whitelist population
+
+> NOTE: the whitelist can be populated at any time. 
+> It doesn't need to be done upfront.
 
 To configure the ONU whitelist, you can use this TOSCA:
 
@@ -37,74 +40,30 @@ topology_template:
 For instructions on how to push TOSCA into a CORD POD, please
 refer to this [guide](../../../xos-tosca/README.md).
 
-## Pre-provision subscribers
+### Where to find the required informations
 
-You can `pre-provision` subscribers using this TOSCA:
+#### Serial Number
 
-```yaml
-tosca_definitions_version: tosca_simple_yaml_1_0
-imports:
-  - custom_types/rcordsubscriber.yaml
+To locate the ONU serial number you can open the ONU detail view (`vOLT -> ONU Devices`).
 
-description: Pre-provsion a subscriber
+![ONU Detail view](./screenshots/onu_sn.png)
 
-topology_template:
-  node_templates:
+> NOTE: most of the time the serial number is also printed on the physical device.
 
-    # Pre-provision the subscriber the subscriber
-    my_house:
-      type: tosca.nodes.RCORDSubscriber
-      properties:
-        name: My House
-        status: pre-provisioned
-        c_tag: 111
-        onu_device: BRCM22222222
-        nas_port_id : "PON 1/1/03/1:1.1.1"
-        circuit_id: foo
-```
+#### Pon Port ID
 
-For instructions on how to push TOSCA into a CORD POD, please
-refer to this [guide](../../../xos-tosca/README.md).
+The `pon_port_id` can be found from the ONU detail view, by selecting the `PON Port`
+tab:
 
-## OLT Activation
+![ONU Detail view](./screenshots/pon_port.png)
 
-Once the system knows about whitelisted ONUs and subscribers,
-you can activate the OLT:
+#### Device ID
 
-```yaml
-tosca_definitions_version: tosca_simple_yaml_1_0
-imports:
-  - custom_types/oltdevice.yaml
-  - custom_types/voltservice.yaml
-description: Create a simulated OLT Device in VOLTHA
-topology_template:
-  node_templates:
+The `device_id` can easily be found in the OLT list view. Note the `device_id` is
+the openflow ID of the logical device exposed to ONOS, and not the serial number
+of the device.
 
-    service#volt:
-      type: tosca.nodes.VOLTService
-      properties:
-        name: volt
-        must-exist: true
-
-    olt_device:
-      type: tosca.nodes.OLTDevice
-      properties:
-        name: ONF OLT
-        device_type: openolt
-        host: 10.90.0.114
-        port: 9191
-        switch_datapath_id: of:0000000000000001
-        switch_port: "1"
-        outer_tpid: "0x8100"
-        uplink: "128"
-      requirements:
-        - volt_service:
-            node: service#volt
-            relationship: tosca.relationships.BelongsToOne
-```
-
-For instructions on how to push TOSCA into a CORD POD, please
-refer to this [guide](../../../xos-tosca/README.md).
+![OLT List view](./screenshots/olt_device_id.png)
 
 ## Device monitoring
 

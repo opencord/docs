@@ -35,3 +35,16 @@ minikube service xos-gui
 ```
 
 This command opens the GUI in your default browser.
+
+## Using the GUI
+
+The GUI lets you explore the data model and gives immediate feedback on the state
+of the system through real time notifications.
+
+Some basic features:
+
+1. **Navigation**: Each item represent a service, click on it to see a list of models in that service
+2. **Search Box**: Full text search in the data model. Can't find something? Here's a good place to start from
+3. **Service Status**: Reports the status of each service and it's current version.
+
+![XOS GUI](../images/gui.png)
