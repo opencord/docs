@@ -7,7 +7,6 @@
     * [Linux](linux.md)
 
 ## Guides
-
 * [Installation Guide](README.md)
     * [Prerequisites](prereqs/README.md)
         * [Hardware Requirements](prereqs/hardware.md)
@@ -20,6 +19,7 @@
             * [Optional Packages](prereqs/optional.md)
                 * [OpenStack](prereqs/openstack-helm.md)
     * [Fabric Software Setup](fabric-setup.md)
+    * [OLT Software Setup](olt-setup.md)
     * [Install Platform](platform.md)
     * [Install Profile](profiles.md)
     * [Offline Install](offline-install.md)
@@ -60,7 +60,6 @@
     * [System Tests](cord-tester/validate_pods.md)
 
 ## References
-
 * [Profile Reference](profiles/intro.md)
     * [SEBA](profiles/seba/README.md)
         * Install
