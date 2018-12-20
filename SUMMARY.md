@@ -86,11 +86,11 @@
             * [Try a new version of *](profiles/seba/operate/k8s-helm-ops.md)
         * [Known Issues](profiles/seba/known-issues.md)
         * Troubleshoot (FAQ)
-            * [I can't ping](profiles/seba/troubleshoot/no-ping.md)
             * [No ONUs discovered](profiles/seba/troubleshoot/no-onus.md)
+            * [No AttWorkflowDriver service instances](profiles/seba/troubleshoot/no-att-si.md)
             * [I can't authenticate](profiles/seba/troubleshoot/no-aaa.md)
             * [DHCP is not working](profiles/seba/troubleshoot/no-dhcp.md)
-            * [No AttWorkflowDriver service instances](profiles/seba/troubleshoot/no-att-si.md)
+            * [I can't ping](profiles/seba/troubleshoot/no-ping.md)
     * [M-CORD](profiles/mcord/README.md)
         * Install
             * [Install M-CORD Charts](profiles/mcord/install.md)
