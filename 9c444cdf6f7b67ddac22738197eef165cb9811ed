@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e9200ac_953feda1",
+        "filename": "profiles/seba/troubleshoot/no-aaa.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-20T14:39:24Z",
+      "side": 1,
+      "message": "Standardize capitalization throughout: EAPOL, VLANs, UNI, etc.",
+      "range": {
+        "startLine": 14,
+        "startChar": 55,
+        "endLine": 14,
+        "endChar": 60
+      },
+      "revId": "9c444cdf6f7b67ddac22738197eef165cb9811ed",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d2252fd_57516191",
+        "filename": "profiles/seba/troubleshoot/no-aaa.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-20T14:39:24Z",
+      "side": 1,
+      "message": "Suggest removing",
+      "range": {
+        "startLine": 115,
+        "startChar": 19,
+        "endLine": 115,
+        "endChar": 79
+      },
+      "revId": "9c444cdf6f7b67ddac22738197eef165cb9811ed",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de10be0b_d18ea588",
+        "filename": "profiles/seba/troubleshoot/no-aaa.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-20T14:39:24Z",
+      "side": 1,
+      "message": "Suggest using backticks instead of single quotes in this paragraph",
+      "range": {
+        "startLine": 137,
+        "startChar": 16,
+        "endLine": 137,
+        "endChar": 43
+      },
+      "revId": "9c444cdf6f7b67ddac22738197eef165cb9811ed",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
