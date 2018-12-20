@@ -4,7 +4,8 @@ The [openstack-helm](https://github.com/openstack/openstack-helm)
 project can be used to install a set of Kubernetes nodes as OpenStack
 compute nodes, with the OpenStack control services (nova, neutron,
 keystone, glance, etc.) running as containers on Kubernetes. This is
-necessary, for example, to run the M-CORD profile.
+an easy way to bring up an OpenStack cluster that can be controlled
+by loading the [Base OpenStack](../charts/base-openstack.md) chart.
 
 Instructions for installing `openstack-helm` on a single node or a
 multi-node cluster can be found at
