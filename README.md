@@ -17,9 +17,10 @@ If you do not have the [prerequisite hardware](./prereqs/hardware.md) needed for
 consider running a complete system entirely emulated in software using
 [SEBA-in-a-Box](./profiles/seba/siab-overview.md).
 
-If you are anxious to jump straight to a [Quick Start](quickstart.md)
-procedure that brings up a subset of the CORD platform running
-on your laptop (without a subscriber data plane), that too is an option.
+If you prefer a gentle walk through of process bringing up a subset 
+of the CORD platform running on your lapto (e.g., to get an
+introduction to all the moving parts in CORD) then jumping to the
+[Quick Start](quickstart.md) page is also an option.
 
 Finally, if you want to get a broader lay-of-the-land, you
-might step back and start with an [Overview](overview.md).
+might step back and read the [Overview](overview.md).
