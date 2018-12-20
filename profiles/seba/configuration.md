@@ -128,7 +128,7 @@ topology_template:
         device_type: openolt
         host: 10.90.0.122
         port: 9191
-        switch_datapath_id: of:0000000000000002 # the openflow switch to with the OLT is connected
+        switch_datapath_id: of:0000000000000002 # the openflow switch to which the OLT is connected
         switch_port: "1" # the port on the switch on which the OLT is connected
         outer_tpid: "0x8100"
         uplink: "65536"
