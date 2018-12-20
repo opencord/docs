@@ -1,10 +1,10 @@
 # Navigating CORD
 
-## Assembled in Layers
+## Assembled from Components
 
-A given instance of CORD is constructed from a set of disaggregated
+A given instance of CORD is assembled from a set of disaggregated
 components. This assembly is done according to the general pattern
-shown in the following conceptual diagram.
+shown in the following diagram.
 
 ![Layers](images/layers.png)
 
@@ -12,11 +12,13 @@ There are four major elements:
 
 * **Kubernetes:** All elements of the CORD control plane run in
   Kubernetes containers. CORD assumes a Kubernetes foundation,
-  but does not prescribe how the hardware or Kubernetes are installed.
+  but does not prescribe how Kubernetes (or the underlying hardware)
+  are installed.
 
 * **Platform:** The Platform layer consists of ONOS, XOS,
   Kafka, and collection of Logging and Monitoring micro-services,
-  all running on a Kubernetes foundation.
+  all running on a Kubernetes foundation. The platform is common
+  to all Profiles.
 
 * **Profile:** Each unique CORD configuration corresponds to a
   Profile. It consists of a set of services (e.g., access services,
@@ -27,8 +29,8 @@ There are four major elements:
   
 * **Workflow:** A Profile includes one or more workflows, each of
   which defines the business logic and state machine for one of the
-  access technologies. A workflow augments/parameterizes a Profile for
-  the target deployment environment; it is not a layer, per se.  SEBA's
+  access technologies. A workflow customizes a Profile for the target
+  deployment environment; it is not a layer, per se.  SEBA's
   [AT&T Workflow](profiles/seba/workflows/att-install.md) is an example.
 
 The diagram also shows a hardware bill-of-materials, which must be

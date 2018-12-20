@@ -2,7 +2,7 @@
 
 This section walks you through an example installation sequence on two
 different Unix-based platforms. This is just a surface introduction to
-CORD. If you'd prefer to understand the installation process in more
+CORD. If you prefer to understand the installation process in more
 depth, including the full range of deployment options, you should
 start with the [Installation Guide](README.md) instead.
 
@@ -16,6 +16,7 @@ would be to explore CORD's [operational interfaces](operating_cord/general.md).
 * [MacOS](macos.md)
 * [Linux](linux.md)
 
-Instead if you want to quickly get started with a complete CORD system together
-with the CORD platform, a profile such as SEBA, an exemplar operator workflow and
-an emulated data-plane, consider [SEBA-in-a-Box](./profiles/seba/siab-overview.md).
+If you want to quickly get started with a complete CORD system
+running on your laptop—including the CORD platform, the SEBA profile,
+an exemplar operator workflow, and an emulated data-plane—you could
+give [SEBA-in-a-Box](./profiles/seba/siab-overview.md) a try.

@@ -29,11 +29,11 @@ The guides are organized around the major stages in the lifecycle of CORD:
  included in CORD.
 
 These are all fairly obvious. What's less obvious is the relationship among
-these stages, which is helpful in [Navigating CORD](navigate.md).
+these stages, which is explained in [Navigating CORD](navigate.md).
 
 ## Navigating the References
 
-CORD is built from components and the aggregation of components into a
+CORD is built from disaggregated components that are assembled into a
 composite solution. The References are organized accordingly:
 
 * [Profile Reference](profiles/intro.md): Installation and
