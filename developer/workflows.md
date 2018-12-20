@@ -23,26 +23,19 @@ install Helm: <https://docs.helm.sh/using_helm/#installing-helm>.
 
 Once both Helm and Minikube are installed, you can deploy the
 core components of XOS, along with the services that make
-up, for example, the R-CORD profile. This uses images published
+up, for example, the SEBA profile. This uses images published
 on DockerHub:
 
 ```shell
 cd ~/cord/helm-charts
 ```
 
-In this folder you can choose from the different charts which one to deploy.
-For example to deploy R-CORD you can follow [this guide](../profiles/rcord/install.md)
-
-### Deploy a Single Instance of Kafka
-
-Some profiles require a `kafka` message bus to work properly.
-If you need to deploy it for development purposes, a single instance
-deployment will be enough. You can do so as follows:
-
-```shell
-helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
-install --name cord-kafka incubator/kafka -f examples/kafka-single.yaml
-```
+In this folder you can choose from the different charts which one to
+deploy. For example to deploy SEBA you can follow
+[these instructions](../profiles/seba/install.md). Alternatively, if
+you are working on a new profile or a new service that is not part of
+any existing profile, you can install just the
+[CORD Platform](../platform.md).
 
 ## Making and Deploying Changes
 
@@ -93,14 +86,14 @@ everything.
 > the containers, you can just delete the corresponding POD and kubernetes will
 > restart it with the new image.
 
-## Pushing Changes to a docker registry
+## Pushing Changes to a Docker Registry
 
 If you have a remote POD that you want to test your changes on, you
 need to push your docker images to a docker registry that can be accessed
 from the POD.
 
 The way we recommend doing this is via a private docker registry.
-You can find more informations about what a
-docker registry is in the [offline installation section](../offline-install.md).
+You can find more information about what a docker registry is in the
+[offline installation section](../offline-install.md).
 
 {% include "/partials/push-images-to-registry.md" %}
