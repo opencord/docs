@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41a572b3_de5a9489",
+        "filename": "profiles/seba/troubleshoot/no-dhcp.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-20T23:46:36Z",
+      "side": 1,
+      "message": "DHCP  - also appears in a few other places",
+      "range": {
+        "startLine": 5,
+        "startChar": 35,
+        "endLine": 5,
+        "endChar": 39
+      },
+      "revId": "21489b79e9016ea1d98187c07824e2b2344c3e04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ce7a477_7552cbf7",
+        "filename": "profiles/seba/troubleshoot/no-dhcp.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-20T23:46:36Z",
+      "side": 1,
+      "message": "CLI",
+      "range": {
+        "startLine": 87,
+        "startChar": 14,
+        "endLine": 87,
+        "endChar": 17
+      },
+      "revId": "21489b79e9016ea1d98187c07824e2b2344c3e04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83445da8_1b0d9f11",
+        "filename": "profiles/seba/troubleshoot/no-dhcp.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-20T23:46:36Z",
+      "side": 1,
+      "message": "move outside backticks",
+      "range": {
+        "startLine": 125,
+        "startChar": 62,
+        "endLine": 125,
+        "endChar": 64
+      },
+      "revId": "21489b79e9016ea1d98187c07824e2b2344c3e04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f1fa0947_1077ef5b",
+        "filename": "profiles/seba/troubleshoot/no-dhcp.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-20T23:46:36Z",
+      "side": 1,
+      "message": "delete",
+      "range": {
+        "startLine": 127,
+        "startChar": 64,
+        "endLine": 127,
+        "endChar": 68
+      },
+      "revId": "21489b79e9016ea1d98187c07824e2b2344c3e04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f6c94016_c457efbd",
+        "filename": "profiles/seba/troubleshoot/no-dhcp.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-20T23:46:36Z",
+      "side": 1,
+      "message": "move outside",
+      "range": {
+        "startLine": 128,
+        "startChar": 31,
+        "endLine": 128,
+        "endChar": 33
+      },
+      "revId": "21489b79e9016ea1d98187c07824e2b2344c3e04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6b972310_f168bf82",
+        "filename": "profiles/seba/troubleshoot/no-dhcp.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2018-12-20T23:46:36Z",
+      "side": 1,
+      "message": "CLI:",
+      "range": {
+        "startLine": 161,
+        "startChar": 51,
+        "endLine": 161,
+        "endChar": 54
+      },
+      "revId": "21489b79e9016ea1d98187c07824e2b2344c3e04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
