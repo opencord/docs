@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6adda008_a093c387",
+        "filename": "profiles/seba/operate/config-ops.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-20T19:18:43Z",
+      "side": 1,
+      "message": "switch",
+      "revId": "d22940efad478da19c7c96f89817d03804fd7730",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
