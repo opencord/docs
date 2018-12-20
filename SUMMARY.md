@@ -23,7 +23,7 @@
     * [Install Platform](platform.md)
     * [Install Profile](profiles.md)
     * [Offline Install](offline-install.md)
-    * [Attach containers to external NICs](operating_cord/veth_intf.md)
+    * [Attach Container to a NIC](operating_cord/veth_intf.md)
 * [Operations Guide](operating_cord/operating_cord.md)
     * [General Info](operating_cord/general.md)
         * [GUI](operating_cord/gui.md)

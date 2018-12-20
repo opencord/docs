@@ -1,8 +1,10 @@
 # Offline Install
 
-Often, CORD PODs' (management networks) don't have access to Internet.
+In many cases, a CORD POD (specifically, its management network) does
+not have access to Internet.
 
-This section of the guide provides guidelines, best-practices and examples to deploy the CORD/SEBA software without Internet connectivity.
+This section provides guidelines, best-practices, and examples to
+deploy CORD software without Internet connectivity.
 
 > NOTE: The guide assumes that the Operating Systems (both on servers and on network devices) and Kubernetes are already installed and running.
 
@@ -10,19 +12,30 @@ The offline installation is useful
 
 * When the CORD POD has no access to Internet, so artifacts used for the installation (i.e. Docker images) cannot be downloaded directly to the POD.
 
-* While developing, you may want to test your changes pushing artifacts to the POD, before uploading them to the official docker repository.
+* While developing, you may want to test your changes by pushing artifacts to the POD, before uploading them to the official docker repository.
 
-## Target Infrastructure, requirements overview
+## Target Infrastructure / Requirements Overview
 
 Your target infrastructure (where the POD runs) needs
 
-* A **local Docker Registry** where to push your Docker images (previously pulled from the web). If you don't have one, follow the notes below to deploy with helm a local Docker registry on top of your existing Kubernetes cluster.
+* **Local Docker Registry:** To push your Docker images
+  (previously pulled from the web). If you don't have one, follow the
+  notes below to use Helm to deploy a local Docker registry on top
+  of your existing Kubernetes cluster.
 
 > More informations about docker registries can be found at <https://docs.docker.com/registry/>.
 
-* A **local webserver** to host the ONOS applications (.oar files), that are instead normally downloaded from Sonatype. If you don't have one, follow the notes below to quickly deploy a webserver on top of your existing Kubernetes cluster.
+* **Local Webserver:** To host the ONOS applications (.oar files),
+  that are instead normally downloaded from Sonatype. If you don't
+  have one, follow the notes below to quickly deploy a webserver on
+  top of your existing Kubernetes cluster.
+  
+* **Kubernetes Servers Default Gateway:** For `kube-dns` to
+  work, a default route (even pointing to a non-exisiting/working
+  gateway) needs to be set on the machines hosting Kubernetes. This is
+  something related to Kubernetes, not to CORD.
 
-## Prepare the offline installation
+## Prepare the Offline Installation
 
 This should be done from a machine that has access to Internet.
 
@@ -63,37 +76,55 @@ helm dep update name-of-the-repo/name-of-the-chart
 docker save IMAGE_NAME:TAG > FILE_NAME.tar
 ```
 
-* If the artifacts need to be deployed to the target infrastructure from a different machine, save the helm-charts directory, the ONOS applications, the docker images downloaded and the additional helm charts variable extension file.
+* If the artifacts need to be deployed to the target infrastructure
+  from a different machine, save the helm-charts directory, the ONOS
+  applications, the docker images downloaded and the additional helm
+  charts variable extension file.
 
-## Deploy the artifacts to your infrastructure and install CORD/SEBA
+## Deploy the Artifacts to Your Infrastructure
 
-This should not require any Internet connectivity. To deploy the artifacts to your POD, do the following from  machine that has access to your Kubernetes cluster:
+This should not require any Internet connectivity. To deploy the
+artifacts to your POD, do the following from  machine that has access
+to your Kubernetes cluster:
 
-* Optionally, if at the previous step you saved the Docker images on an external hard drive as .tar files, restore them in the deployment machine Docker registry. For each image (file), use the docker command
+* Optionally, if at the previous step you saved the Docker images on
+  an external hard drive as .tar files, restore them in the deployment
+  machine Docker registry. For each image (file), use the Docker
+  command:
 
 ```shell
 docker load < FILE_NAME.tar
 ```
 
-* Tag and push your Docker images to the local Docker registry running in your infrastructure. More info on this can be found in the paragraph below.
+* Tag and push your Docker images to the local Docker registry running
+  in your infrastructure. More info on this can be found in the
+  paragraph below.
 
-* Copy the ONOS applications to your local web server. The procedure largely varies from the web server you run, its configuration, and what ONOS applications you need.
+* Copy the ONOS applications to your local web server. The procedure
+  largely varies from the web server you run, its configuration, and
+  what ONOS applications you need.
 
-* Deploy CORD and its profile(s) using the helm charts. Remember to load with the *-f* option the additional configuration file to override the helm charts, if any.
+* Deploy CORD using the helm charts. Remember to load with the
+  *-f* option the additional configuration file to extend the helm
+  charts, if any.
 
 {% include "/partials/push-images-to-registry.md" %}
 
-## Optional packages
+## Optional Packages
 
-### Install a Docker Registry using helm
+### Install a Docker Registry Using Helm
 
-If you don't have a local Docker registry deployed in your infrastructure, you can install an **insecure** one using the official Kubernetes helm-chart.
+If you don't have a local Docker registry deployed in your
+infrastructure, you can install an **insecure** one using the official
+Kubernetes helm-chart.
 
 Since this specific docker registry is packaged as a kubernetes pod, shipped with helm, you'll need Internet connectivity to install it.
 
 > **Note:** *Insecure* registries can be used for development, POCs or lab trials. **You should not use this in production.** There are planty of documents online that guide you through secure registries setup.
 
-The following command deploys the registry and exposes the port *30500*. (You may want to change it with any value that fit your deployment needs).
+The following command deploys the registry and exposes the port
+*30500*. (You may want to change it with any value that fit your
+deployment needs).
 
 ```shell
 helm install stable/docker-registry --set service.nodePort=30500,service.type=NodePort -n docker-registry
@@ -105,9 +136,11 @@ The registry can be queried at any time, for example:
 curl -X GET http://KUBERNETES_IP:30500/v2/_catalog
 ```
 
-### Install a local web server using helm (optional)
+### Install a Local Webserver Using Helm (optional)
 
-If you don't have a local web server that can be accessed from the POD, you can easily install one on top of your existing Kubernetes cluster.
+If you don't have a local web server that can be accessed from the
+POD, you can easily install one on top of your existing Kubernetes
+cluster.
 
 ```shell
 # From the helm-charts directory, while preparing the offline install
@@ -118,21 +151,27 @@ helm fetch bitnami/nginx --untar
 helm install -n mavenrepo --set service.type=NodePort --set service.nodePorts.http=30160 bitnami/nginx
 ```
 
-The webserver will be up in few seconds and you'll be able to reach the root web page using the IP of one of your Kubernetes nodes, port *30160*. For example, you can do:
+The webserver will be up in few seconds and you'll be able to reach
+the root web page using the IP of one of your Kubernetes nodes, port
+*30160*. For example, you can do:
 
 ```shell
 wget KUBERNETES_IP:30160
 ```
 
-OAR images can be copied to the document root of the web server using the *kubectl cp* command. For example:
+OAR images can be copied to the document root of the web server using
+the *kubectl cp* command. For example:
 
 ```shell
 kubectl cp my-onos-app.oar `kubectl get pods | grep mavenrepo | awk '{print $1;}'`:/opt/bitnami/nginx/html
 ```
 
-## Example: offline SEBA install
+## Example: Offline SEBA Install
 
-The following section provides an exemplary list of commands to perform an offline SEBA POD installation. Please, note that some command details (i.e. chart names, image names, tools) may have changed over time.
+The following section provides an exemplary list of commands to
+perform an offline SEBA POD installation. Please, note that some
+command details (i.e. chart names, image names, tools) may have
+changed over time.
 
 ### Assumptions
 
@@ -152,7 +191,7 @@ The following section provides an exemplary list of commands to perform an offli
 
 * The IP address of the machine hosting Kubernetes is 192.168.0.100.
 
-### Prepare the installation
+### Prepare the Installation
 
 ```shell
 # Clone the automation-tools repo
@@ -281,7 +320,7 @@ seba-services:
 scp/wget... openolt.deb
 ```
 
-### Offline deployment
+### Offline Deployment
 
 ```shell
 # Tag and push the images to the local Docker registry

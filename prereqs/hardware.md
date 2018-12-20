@@ -29,7 +29,7 @@ A CORD POD is built using the following hardware components.
   emulate the fabric in software (e.g., using Mininet), but this applies
   only to specific use-cases.
 
-* **Access Devices**: At the moment, both R-CORD and M-CORD work
+* **Access Devices**: At the moment, SEBA and M-CORD work
   with very specific access devices, as described below. We strongly
   recommend using these tested devices.
 
@@ -72,7 +72,7 @@ have tested over time in lab trials.
         * Robofiber QSFP-40G-03C QSFP+ 40G direct attach passive
         copper cable, 3m length - S/N: QSFP-40G-03C
 
-* **R-CORD Access Devices and Optics**
+* **SEBA Access Devices and Optics**
     * **GPON**
         * **OLT**: Celestica CLS Ruby S1010 (experimental, only top-down provisioning is supported - through manual customizations)
             * Compatible **OLT optics**
