@@ -22,6 +22,30 @@
       "revId": "d2b88e6d5630abf5d79b37569773e20fb69fcd8d",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "276e6105_bc6932e8",
+        "filename": "SUMMARY.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2018-12-20T22:06:09Z",
+      "side": 0,
+      "message": "Working with R-CORD is out-of-date (it was relative to hippi-os). The two example services are included in XOS Guide (and were actually null links in this version).",
+      "parentUuid": "898f9c84_19ceeaa2",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 47,
+        "endChar": 31
+      },
+      "revId": "d2b88e6d5630abf5d79b37569773e20fb69fcd8d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
