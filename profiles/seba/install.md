@@ -8,9 +8,16 @@ installed.
 
 In order to run SEBA you need to have the [CORD Platform](../../platform.md) installed.
 
-### SEBA as a whole
+Specifically, wait for the EtcdCluster CustomResourceDefinitions to
+appear in Kubernetes:
 
-To install the SEBA Profile you can use the corresponding chart:
+```shell
+kubectl get crd | grep etcd
+```
+
+Once the CRDs are present, proceed with the `seba` chart installation.
+
+### SEBA as a whole
 
 ```shell
 helm install -n seba cord/seba --version=1.0.0
