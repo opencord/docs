@@ -1,4 +1,4 @@
-# SEBA-in-a-Box
+# SEBA-in-a-Box Overview
 
 If you do not have the [prerequisite hardware](../../prereqs/hardware.md) to
 install SEBA we have you covered. You can get a complete CORD system together
