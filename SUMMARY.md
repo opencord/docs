@@ -106,7 +106,7 @@
     * [AT&T Workflow Driver](att-workflow-driver/README.md)
     * [Kubernetes](kubernetes-service/kubernetes-service.md)
     * [OpenStack](openstack/openstack-service.md)
-    * [VTN](xos/xos_vtn.md)
+    * [VTN](vtn/README.md)
 * [Helm Reference](charts/helm.md)
     * [XOS-CORE](charts/xos-core.md)
     * [ONOS](charts/onos.md)
@@ -124,3 +124,4 @@
     * [PONNET](charts/ponnet.md)
     * [PONSIM v2](charts/ponsimv2.md)
     * [PONSIM Pod](charts/ponsim-pod.md)
+
