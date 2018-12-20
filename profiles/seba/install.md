@@ -21,7 +21,7 @@ helm install -n seba cord/seba --version=1.0.0
 The main reason to install the SEBA Profile by installing its standalone
 components is if you're developing on it and you need granular control.
 
-There are the components included in the `seba` chart:
+These are the components included in the `seba` chart:
 
 - [VOLTHA and etcd-operator](../../charts/voltha.md)
 - [seba-services](../../charts/seba-services.md)
