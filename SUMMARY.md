@@ -7,7 +7,6 @@
     * [Linux](linux.md)
 
 ## Guides
-
 * [Installation Guide](README.md)
     * [Prerequisites](prereqs/README.md)
         * [Hardware Requirements](prereqs/hardware.md)
@@ -17,8 +16,6 @@
                 * [Single Node](prereqs/k8s-single-node.md)
                 * [Multi-Node](prereqs/k8s-multi-node.md)
             * [Helm](prereqs/helm.md)
-            * [Optional Packages](prereqs/optional.md)
-                * [OpenStack](prereqs/openstack-helm.md)
     * [Fabric Software Setup](fabric-setup.md)
     * [Install Platform](platform.md)
     * [Install Profile](profiles.md)
@@ -60,7 +57,6 @@
     * [System Tests](cord-tester/validate_pods.md)
 
 ## References
-
 * [Profile Reference](profiles/intro.md)
     * [SEBA](profiles/seba/README.md)
         * Install
@@ -114,6 +110,7 @@
     * [Kafka](charts/kafka.md)
     * [Base Kubernetes](charts/base-kubernetes.md)
     * [Base OpenStack](charts/base-openstack.md)
+        * [OpenStack](prereqs/openstack-helm.md)
         * [VTN Setup](prereqs/vtn-setup.md)
     * [R-CORD](charts/rcord.md)
     * [M-CORD](charts/mcord.md)
