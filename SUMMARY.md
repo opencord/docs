@@ -106,7 +106,7 @@
     * [AT&T Workflow Driver](att-workflow-driver/README.md)
     * [Kubernetes](kubernetes-service/kubernetes-service.md)
     * [OpenStack](openstack/openstack-service.md)
-    * [VTN](xos/xos_vtn.md)
+    * [VTN](vtn-service/README.md)
 * [Helm Reference](charts/helm.md)
     * [XOS-CORE](charts/xos-core.md)
     * [ONOS](charts/onos.md)
