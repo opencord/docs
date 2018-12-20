@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22347dcb_599a9f2e",
+        "filename": "offline-install.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2018-12-20T16:07:05Z",
+      "side": 1,
+      "message": "overridden?",
+      "range": {
+        "startLine": 50,
+        "startChar": 475,
+        "endLine": 50,
+        "endChar": 483
+      },
+      "revId": "77b4a963286a2f1c7285d247428e37e5e8892b8e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a315b5f_af36040c",
+        "filename": "offline-install.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2018-12-20T16:07:05Z",
+      "side": 1,
+      "message": "packaged?",
+      "range": {
+        "startLine": 92,
+        "startChar": 39,
+        "endLine": 92,
+        "endChar": 47
+      },
+      "revId": "77b4a963286a2f1c7285d247428e37e5e8892b8e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
