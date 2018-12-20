@@ -3,7 +3,7 @@
 To install ONOS run:
 
 ```shell
-helm install -n onos
+helm install -n onos onos
 ```
 
 **Nodeports exposed**
