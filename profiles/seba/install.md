@@ -10,7 +10,21 @@ In order to run SEBA you need to have the [CORD Platform](../../platform.md) ins
 
 ### SEBA as a whole
 
-To install the SEBA Profile you can use the corresponding chart:
+To install the SEBA Profile requires two steps.  First, install the
+`etcd-operator` chart that is required by [VOLTHA](../../charts/voltha.md):
+
+```shell
+helm install -n etcd-operator stable/etcd-operator --version=0.8.0
+```
+
+Wait a few seconds for the EtcdCluster CustomResourceDefinitions to
+appear in Kubernetes:
+
+```shell
+kubectl get crd | grep etcd
+```
+
+Once the CRDs are present, install the main `seba` chart:
 
 ```shell
 helm install -n seba cord/seba --version=1.0.0
