@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "03d0c464_c618620f",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-20T18:44:02Z",
+      "side": 1,
+      "message": "space at the end;\n\u0027through of process of\u0027",
+      "revId": "68f677ddec5e9bb631977f24623b6fc1001819d7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69e2273c_49330dd8",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-20T18:44:02Z",
+      "side": 1,
+      "message": "Maybe we could suggest that the  Quick Start is more a developer Quick Start for understanding how XOS services work. Just a suggestion.",
+      "revId": "68f677ddec5e9bb631977f24623b6fc1001819d7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
