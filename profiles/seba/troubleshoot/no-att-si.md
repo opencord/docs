@@ -106,7 +106,7 @@ kubectl exec -it kafkacat-7f45f65485-2lgp8 bash
 root@kafkacat-7f45f65485-2lgp8:/# kafkacat -b cord-platform-kafka -t onu.events
 ```
 
-If evetyhing is correct you should see:
+If everything is correct you should see:
 
 ```shell
 {"timestamp":"2018-12-19T22:34:00.755Z","status":"activated","serial_number":"ALPHe3d1cfe3","uni_port_id":16,"of_dpid":"of:000000000a5a007a"}
