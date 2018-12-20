@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a4b013c5_afeda32c",
+        "filename": "SUMMARY.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-20T18:07:58Z",
+      "side": 1,
+      "message": "This is SEBA profile specific, and is covered in the SEBA reference",
+      "revId": "047c0ee622b6df26be2da3c3ae0d3dc729658637",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
