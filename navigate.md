@@ -12,7 +12,7 @@ There are four major elements:
 
 * **Kubernetes:** All elements of the CORD control plane run in
   Kubernetes containers. CORD assumes a Kubernetes foundation,
-  but does not prescribe how Kubernetes (or the underlying hardware)
+  but does not prescribe how Kubernetes or the underlying hardware
   are installed.
 
 * **Platform:** The Platform layer consists of ONOS, XOS,
@@ -20,7 +20,7 @@ There are four major elements:
   all running on a Kubernetes foundation. The platform is common
   to all Profiles.
 
-* **Profile:** Each unique CORD configuration corresponds to a
+* **Profile:** Each unique CORD configuration is defined by a
   Profile. It consists of a set of services (e.g., access services,
   VNFs, other cloud services), including both abstract services
   on-boarded into XOS and SDN control apps running on ONOS.
@@ -29,10 +29,12 @@ There are four major elements:
   
 * **Workflow:** A Profile includes one or more workflows, each of
   which defines the business logic and state machine for one of the
-  access technologies. A workflow customizes a Profile for the target
-  deployment environment; it is not a layer, per se.  SEBA's
-  [AT&T Workflow](profiles/seba/workflows/att-install.md) is an example.
-
+  access technologies contained in the Profile. A workflow customizes
+  a Profile for the target deployment environment; it is not a
+  software layer, per se.  SEBA's
+  [AT&T Workflow](profiles/seba/workflows/att-install.md)
+  is an example.
+  
 The diagram also shows a hardware bill-of-materials, which must be
 defined for a given POD.
 
