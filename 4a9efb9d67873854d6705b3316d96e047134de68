@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fbdb8a75_8af9af80",
+        "filename": "charts/base-kubernetes.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-21T17:55:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dbf89475_21a25197",
+      "revId": "4a9efb9d67873854d6705b3316d96e047134de68",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c469a32_236bbadc",
         "filename": "charts/seba-services.md",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "d424b8db_255c1d61",
+        "filename": "charts/seba-services.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-21T17:55:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c469a32_236bbadc",
+      "range": {
+        "startLine": 9,
+        "startChar": 3,
+        "endLine": 9,
+        "endChar": 7
+      },
+      "revId": "4a9efb9d67873854d6705b3316d96e047134de68",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4b93f9c1_5b309d3d",
         "filename": "charts/xossh.md",
         "patchSetId": 1
@@ -53,6 +95,24 @@
       "writtenOn": "2018-12-21T16:25:48Z",
       "side": 1,
       "message": "Missing `helm repo add...`",
+      "revId": "4a9efb9d67873854d6705b3316d96e047134de68",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b43702e6_660673e1",
+        "filename": "charts/xossh.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-21T17:55:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b93f9c1_5b309d3d",
       "revId": "4a9efb9d67873854d6705b3316d96e047134de68",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
