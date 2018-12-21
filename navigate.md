@@ -6,12 +6,12 @@ A given instance of CORD is assembled from a set of disaggregated
 components. This assembly is done according to the general pattern
 shown in the following diagram.
 
-![Layers](images/layers.png)
+![Layers](images/layers1.png)
 
 There are four major elements:
 
 * **Kubernetes:** All elements of the CORD control plane run in
-  Kubernetes containers. CORD assumes a Kubernetes foundation,
+  Kubernetes containers. CORD assumes a Kubernetes foundation (not shown above),
   but does not prescribe how Kubernetes or the underlying hardware
   are installed.
 
@@ -26,15 +26,15 @@ There are four major elements:
   on-boarded into XOS and SDN control apps running on ONOS.
   Examples of profiles are [SEBA](profiles/seba) and
   [M-CORD](profiles/mcord).
-  
-* **Workflow:** A Profile includes one or more workflows, each of
+
+* **Workflow:** A Profile typically includes a workflow,
   which defines the business logic and state machine for one of the
   access technologies contained in the Profile. A workflow customizes
-  a Profile for the target deployment environment; it is not a
+  a Profile for an operator's target deployment environment; it is not a
   software layer, per se.  SEBA's
   [AT&T Workflow](profiles/seba/workflows/att-install.md)
   is an example.
-  
+
 The diagram also shows a hardware bill-of-materials, which must be
 defined for a given POD.
 
@@ -103,7 +103,7 @@ These tools and containers are inter-related as follows:
   which is a pre-requisite for configuring and provisioning that new service.
 
 * Upgrading an existing service is similar to bringing up a new service,
-  where we depend on Kubernetes to incrermentally roll out the containers
+  where we depend on Kubernetes to incrementally roll out the containers
   that implement the service (and rollback if necessarily), and we depend
   on XOS to migrate from the old model to the new model (and support
   both old and new APIs during the transition period). Upgrading existing
