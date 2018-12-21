@@ -2,9 +2,10 @@
 
 This chart contains all the XOS services needed to install SEBA.
 
-You can install it using:
+{% include "../partials/helm/add-cord-repo.md" %}
 
-```bash
-helm dep update xos-profiles/seba-services
-helm install -n seba-service xos-profiles/seba-services/
+You can then install it using:
+
+```shell
+helm install -n seba-service cord/seba-services
 ```
