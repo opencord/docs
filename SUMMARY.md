@@ -110,7 +110,6 @@
     * [Base OpenStack](charts/base-openstack.md)
         * [OpenStack](prereqs/openstack-helm.md)
         * [VTN Setup](prereqs/vtn-setup.md)
-    * [R-CORD](charts/rcord.md)
     * [M-CORD](charts/mcord.md)
     * [XOSSH](charts/xossh.md)
     * [Logging and Monitoring](charts/logging-monitoring.md)
@@ -119,4 +118,3 @@
     * [PONNET](charts/ponnet.md)
     * [PONSIM v2](charts/ponsimv2.md)
     * [PONSIM Pod](charts/ponsim-pod.md)
-

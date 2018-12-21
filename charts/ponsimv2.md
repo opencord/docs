@@ -1,16 +1,18 @@
 # PONSIM v2 Helm Chart
 
-The `ponsimv2` chart deploys the PON Simulator (PONSIM) containers
-(a virtual OLT, ONU, and RG) in the context of VOLTHA.
+The `ponsimv2` chart deploys the PON Simulator (PONSIM) containers (a virtual OLT, ONU, and RG) in the context of VOLTHA.
 This chart is used by [SiaB](../profiles/seba/siab.md).
-More details about PONSIM can be found in
-[its README](https://github.com/opencord/voltha/blob/master/ponsim/v2/README.md).
+More details about PONSIM can be found in [its README](https://github.com/opencord/voltha/blob/master/ponsim/v2/README.md).
 
 You must install the [PONNET](ponnet.md) chart before installing this one.
-At that point you can install PONSIM using:
+At that point you can install PONSIM.
 
-```bash
-helm install -n ponsimv2 ponsimv2
+{% include "../partials/helm/add-cord-repo.md" %}
+
+Then, install ponsim doing:
+
+```shell
+helm install -n ponsimv2 cord/ponsimv2
 ```
 
 After a successful install you will see containers like these running in the

@@ -2,9 +2,10 @@
 
 This chart contains all the XOS services that interacts with Kubernetes.
 
-You can install it using:
+{% include "../partials/helm/add-cord-repo.md" %}
 
-```bash
-helm dep update xos-profiles/base-kubernetes
-helm install -n base-kubernetes xos-profiles/base-kubernetes/
+You can then install it using:
+
+```shell
+helm install -n base-kubernetes cord/base-kubernetes
 ```

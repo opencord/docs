@@ -7,12 +7,14 @@ There are currently two charts that deploy logging and monitoring
 functionality, `nem-monitoring` and `logging`.  Both of these charts depend on
 having [kafka](kafka.md) instances running in order to pass messages.
 
+## Add the cord repository
 
-## `nem-monitoring` charts
+{% include "../partials/helm/add-cord-repo.md" %}
+
+## nem-monitoring charts
 
 ```shell
-helm dep update nem-monitoring
-helm install -n nem-monitoring nem-monitoring
+helm install -n nem-monitoring cord/nem-monitoring
 ```
 
 > NOTE: In order to display `voltha` kpis you need to have `voltha`
@@ -22,18 +24,17 @@ helm install -n nem-monitoring nem-monitoring
 
 This chart exposes two dashboards:
 
-- [Grafana](http://docs.grafana.org/) on port `31300`
-- [Prometheus](https://prometheus.io/docs/) on port `31301`
+- [Grafana](http://docs.grafana.org/) on port *31300*
+- [Prometheus](https://prometheus.io/docs/) on port *31301*
 
-## `logging` charts
+## logging charts
 
 ```shell
-helm dep up logging
-helm install -n logging logging
+helm install -n logging cord/logging
 ```
 
 For smaller developer/test environments without persistent storage, please use
-the `examples/logging-single.yaml` file to run the logging chart, which doesn't
+the *examples/logging-single.yaml* file to run the logging chart, which doesn't
 create PVC's.
 
 ### Logging Dashboard
