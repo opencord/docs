@@ -19,6 +19,10 @@ Once the CRDs are present, proceed with the `seba` chart installation.
 
 ### SEBA as a whole
 
+{% include "../../partials/helm/add-cord-repo.md" %}
+
+Then, proceed with the SEBA chart installation:
+
 ```shell
 helm install -n seba cord/seba --version=1.0.0
 ```
