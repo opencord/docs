@@ -1,10 +1,13 @@
 # BBSim Helm Chart
 
 This chart let you install the broadband simulator.
-Note that this chart depends on [kafka](kafka.md)
+
+>**Note:** this chart depends on [kafka](kafka.md).
+
+{% include "../partials/helm/add-cord-repo.md" %}
 
 ```shell
-helm install -n bbsim bbsim
+helm install -n bbsim cord/bbsim
 ```
 
 ## Set a different number of ONUs
@@ -12,7 +15,7 @@ helm install -n bbsim bbsim
 You can configure the number of ONUs through a parameter in the installation:
 
 ```shell
-helm install -n bbsim bbsim --set onus_per_pon_port={number_of_onus}
+helm install -n bbsim cord/bbsim --set onus_per_pon_port={number_of_onus}
 ```
 
 ## Set a different mode
@@ -23,14 +26,14 @@ authentication requests, via EAPOL, and DHCP requests.
 You can change the behaviour via:
 
 ```shell
-helm install -n bbsim bbsim --set emulation_mode="{both|aaa|default}"
+helm install -n bbsim cord/bbsim --set emulation_mode="{both|aaa|default}"
 ```
 
 Where:
 
-- `both` stands for authentication and DHCP
-- `aaa` stands for authentication only
-- `default` will just activate the devices
+- *both* stands for authentication and DHCP
+- *aaa* stands for authentication only
+- *default* will just activate the devices
 
 ## Start BBSim without Kafka
 
@@ -41,7 +44,7 @@ If you want to start BBSim without pushing the logs to kafka, you can install it
 with:
 
 ```shell
-helm install -n bbsim bbsim --set kafka_broker=""
+helm install -n bbsim cord/bbsim --set kafka_broker=""
 ```
 
 ## Provision the BBSim OLT in NEM

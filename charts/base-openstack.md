@@ -14,13 +14,12 @@ satisfied by following [this guide](../prereqs/vtn-setup.md)
 
 ## Single-Node Configuration
 
-Here is an example of deploying the `xos-profiles/base-openstack` chart
-on a single-node OpenStack server set up by the
-`automation-tools/openstack-helm/openstack-helm-dev-setup.sh` script:
+Here is an example of deploying the *base-openstack* chart on a single-node OpenStack server set up by the *automation-tools/openstack-helm/openstack-helm-dev-setup.sh* script:
 
-```bash
-helm dep update xos-profiles/base-openstack
-helm install -n base-openstack xos-profiles/base-openstack \
+{% include "../partials/helm/add-cord-repo.md" %}
+
+```shell
+helm install -n base-openstack cord/base-openstack \
     --set computeNodes.master.name=`hostname` \
     --set vtn-service.sshUser=`whoami`
 ```

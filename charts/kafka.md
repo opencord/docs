@@ -1,14 +1,14 @@
 # Kafka Helm chart
 
-The `kafka` helm chart is not maintained by CORD,
-but it is available online at: <https://github.com/kubernetes/charts/tree/master/incubator/kafka>
+The *kafka* helm chart is not maintained by CORD, but it is available online at: <https://github.com/kubernetes/charts/tree/master/incubator/kafka>
 
-To install kafka using the `cord-kafka` name, run the following commands:
+To install kafka using the *cord-kafka* name, run the following commands:
 
 ```shell
 helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
 helm install -f examples/kafka-single.yaml --version 0.8.8 -n cord-kafka incubator/kafka
 ```
+
 > NOTE: Historically there were two kafka busses deployed (another one named
 > `voltha-kafka`) but these have been consolidated.
 
@@ -35,22 +35,24 @@ guide](https://github.com/edenhill/kafkacat)
  A few examples:
 
 - List available topics:
-  ```shell
-  kafkacat -b cord-kafka -L
-  ```
+
+```shell
+kafkacat -b cord-kafka -L
+```
 
 - Listen for events on a particular topic:
-  ```shell
-  kafkacat -b cord-kafka -C -t <kafka-topic>
-  ```
+
+```shell
+kafkacat -b cord-kafka -C -t <kafka-topic>
+```
 
 - Some example topics to listen on:
 
-  ```shell
-  kafkacat -b cord-kafka -C -t xos.log.core
-  kafkacat -b cord-kafka -C -t xos.gui_events
-  kafkacat -b cord-kafka -C -t voltha.events
-  kafkacat -b cord-kafka -C -t onu.events
-  kafkacat -b cord-kafka -C -t authentication.events
-  kafkacat -b cord-kafka -C -t dhcp.events
-  ```
+```shell
+kafkacat -b cord-kafka -C -t xos.log.core
+kafkacat -b cord-kafka -C -t xos.gui_events
+kafkacat -b cord-kafka -C -t voltha.events
+kafkacat -b cord-kafka -C -t onu.events
+kafkacat -b cord-kafka -C -t authentication.events
+kafkacat -b cord-kafka -C -t dhcp.events
+```

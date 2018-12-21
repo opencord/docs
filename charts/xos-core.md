@@ -2,9 +2,10 @@
 
 To deploy the XOS core and affiliated containers, run the following:
 
+{% include "../partials/helm/add-cord-repo.md" %}
+
 ```shell
-helm dep update xos-core
-helm install -n xos-core xos-core
+helm install -n xos-core cord/xos-core
 ```
 **Nodeports exposed**
 
@@ -14,11 +15,10 @@ helm install -n xos-core xos-core
 
 ## Customizing security information
 
-We strongly recommend you to override the default values of `xosAdminUser` and
-`xosAdminPassword` with custom values.
+We strongly recommend you to override the default values of *xosAdminUser* and
+*xosAdminPassword* with custom values.
 
-You can do it using a [`values.yaml`](https://docs.helm.sh/chart_template_guide/#values-files)
-file like this one:
+You can do it using a [`values.yaml`](https://docs.helm.sh/chart_template_guide/#values-files) file like this one:
 
 ```yaml
 # custom-security.yaml
@@ -29,14 +29,17 @@ xosAdminPassword: 'foobar'
 and add it to the install command:
 
 ```shell
-helm install -n xos-core xos-core -f custom-security.yaml
+helm install -f custom-security.yaml -n xos-core cord/xos-core
 ```
 
 or you can override the values from the CLI
 
 ```shell
-helm install -n xos-core xos-core --set xosAdminUser=MyUser --set xosAdminPassword=MySuperSecurePassword
+helm install -n xos-core cord/xos-core \
+    --set xosAdminUser=MyUser \
+    --set xosAdminPassword=MySuperSecurePassword
 ```
+
 > **Important!**
 > If you override security values in the `xos-core` chart, you'll need to pass
 > these values, either via a file or cli arguments, to all the xos related charts

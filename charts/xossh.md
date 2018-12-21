@@ -1,7 +1,9 @@
 # Deploy XOSSH
 
-To deploy the XOS-Shell, run the following:
+{% include "../partials/helm/add-cord-repo.md" %}
+
+Then, to deploy the XOS-Shell run the following:
 
 ```shell
-helm install xos-tools/xossh -n xossh
+helm install -n xossh cord/xossh
 ```
