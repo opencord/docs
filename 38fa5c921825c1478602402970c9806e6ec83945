@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b955ebde_e0866ce3",
+        "filename": "profiles/seba/workflows/att-install.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-21T21:43:14Z",
+      "side": 1,
+      "message": "Since this is already in the workflow session, it is better to point back to the configuration section inside SEBA\n\nhttps://guide.opencord.org/profiles/seba/configuration.html",
+      "revId": "38fa5c921825c1478602402970c9806e6ec83945",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
