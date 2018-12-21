@@ -72,6 +72,7 @@
             * Workflow specific configuration
                 * [Configure AT&T workflow](profiles/seba/workflows/att-configure.md)
         * Operate
+            * [AT&T workflow description](profiles/seba/operate/att-workflow-description.md)
             * [Disable/Enable an ONU](profiles/seba/operate/onu-ops.md)
             * [Edit a Whitelist entry](profiles/seba/operate/whitelist-ops.md)
             * [Delete an OLT](profiles/seba/operate/olt-ops.md)
