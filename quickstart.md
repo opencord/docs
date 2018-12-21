@@ -1,22 +1,9 @@
 # Quick Start
 
-This section walks you through an example installation sequence on two
-different Unix-based platforms. This is just a surface introduction to
-CORD. If you prefer to understand the installation process in more
-depth, including the full range of deployment options, you should
-start with the [Installation Guide](README.md) instead.
+If you prefer to understand the installation process in more depth, including the full range of deployment options, you should start with the [Installation Guide](README.md) instead.
 
-This Quick Start describes how to install a subset of the CORD
-platform, plus a `SimpleExampleService`, on a single machine. Once you
-complete these steps, you might be interested in jumping ahead to the
-[SimpleExampleService Tutorial](simpleexampleservice/simple-example-service.md)
-to learn more about the make-up of a CORD service. Another option
-would be to explore CORD's [operational interfaces](operating_cord/general.md).
+There are two Quick Starts available.
 
-* [MacOS](macos.md)
-* [Linux](linux.md)
+* If you've met the hardware prerequisites and quickly want to get SEBA installed, use the [SEBA Quick Start](./seba_quickstart.md). If you don't have the hardware, try [SEBA-in-a-Box](./profiles/seba/siab-overview.md).
 
-If you want to quickly get started with a complete CORD system
-running on your laptop—including the CORD platform, the SEBA profile,
-an exemplar operator workflow, and an emulated data-plane—you could
-give [SEBA-in-a-Box](./profiles/seba/siab-overview.md) a try.
+* The other quick start helps you quickly understand the internal workings of the CORD platform - for example, how xproto, TOSCA and Helm all interact for a [simple example service](./example_service_quickstart.md).
