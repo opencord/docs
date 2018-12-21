@@ -3,35 +3,19 @@
 The *kafka* helm chart is not maintained by CORD, but it is available online
 at: <https://github.com/kubernetes/charts/tree/master/incubator/kafka>
 
-To install kafka using the *cord-kafka* name, create a YAML values file to
-configure Kafka (for developers, this is in *helm-charts/example/kafka-single.yaml*):
-
-```yaml
----
-# Deploy a single replica of Kafka during development
-
-# configuration ref: https://kafka.apache.org/documentation/#configuration
-configurationOverrides:
-  "offsets.topic.replication.factor": 1
-  "log.retention.hours": 4
-  "log.message.timestamp.type": "LogAppendTime"
-
-replicas: 1
-
-persistence:
-  enabled: false
-
-zookeeper:
-  replicaCount: 1
-  persistence:
-    enabled: false
-```
-
-Then run the following commands to start Kafka:
+To install Kafka using the `cord-kafka` name run the following commands:
 
 ```shell
 helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
-helm install -f kafka-single.yaml --version 0.8.8 -n cord-kafka incubator/kafka
+helm install --version 0.8.8 \
+             --set configurationOverrides."offsets.topic.replication.factor"=1 \
+             --set configurationOverrides."log.retention.hours"=4 \
+             --set configurationOverrides."log.message.timestamp.type"="LogAppendTime" \
+             --set replicas=1 \
+             --set persistence.enabled=false \
+             --set zookeeper.replicaCount=1 \
+             --set zookeeper.persistence.enabled=false \
+             -n cord-kafka incubator/kafka
 ```
 
 > NOTE: Historically there were two kafka busses deployed (another one named
