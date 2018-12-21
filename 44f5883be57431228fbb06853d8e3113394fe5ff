@@ -91,6 +91,30 @@
       "revId": "44f5883be57431228fbb06853d8e3113394fe5ff",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0bb84e6_cb81793b",
+        "filename": "profiles/seba/known-issues.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2018-12-21T23:44:35Z",
+      "side": 1,
+      "message": "Luca, this is probably an issue all over the guide. Writing text all in one line makes it hard to view in gerrit reviews. However, I have fixed it on this page as I authored it. Many other places will have to be fixed -- there was a discussion today on slack about enforcing this ..",
+      "parentUuid": "77b2a299_0a9b6b4d",
+      "range": {
+        "startLine": 5,
+        "startChar": 1,
+        "endLine": 22,
+        "endChar": 32
+      },
+      "revId": "44f5883be57431228fbb06853d8e3113394fe5ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
