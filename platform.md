@@ -5,7 +5,9 @@ to bring up the Helm charts for the platform components.
 
 ## CORD Platform as a Whole
 
-To install the CORD Platform you can use the corresponding chart:
+{% include "partials/helm/add-cord-repo.md" %}
+
+Then, to install the CORD Platform you can use the corresponding chart:
 
 ```shell
 helm install -n cord-platform cord/cord-platform --version=6.1.0
