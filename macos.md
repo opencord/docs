@@ -146,7 +146,7 @@ helm install -n nem-monitoring nem-monitoring
 ```
 
 Logging (once running, access 
-[Kabana](https://www.elastic.co/guide/en/kibana/current/index.html) 
+[Kibana](https://www.elastic.co/guide/en/kibana/current/index.html) 
 Dashboard at port 30601):
 
 ```shell 
