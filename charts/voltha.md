@@ -1,18 +1,8 @@
 # Deploy VOLTHA
 
-VOLTHA depends on having a [kafka message bus](kafka.md) deployed with a name
-of `cord-kafka`, so deploy that with helm before deploying the voltha chart.
-
-
 ## First Time Installation
 
-Download the helm charts `incubator` repository:
-
-```shell
-helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
-```
-
-Install the etcd-operator helm chart.   This chart provides a convenient way of creating and managing etcd clusters.   When voltha installs it will attempt to use etcd-operator to create its etcd cluster.  Once installed etcd-operator can be left running.
+Install the etcd-operator helm chart first. This chart provides a convenient way of creating and managing etcd clusters. When VOLTHA installs it will attempt to use etcd-operator to create its etcd cluster. Once installed etcd-operator can be left running.
 
 ```shell
 helm install -n etcd-operator stable/etcd-operator --version 0.8.0
@@ -24,21 +14,15 @@ Allow etcd-operator enough time to create the EtdCluster CustomResourceDefinitio
 kubectl get crd | grep etcd
 ```
 
+{% include "../partials/helm/add-cord-repo.md" %}
 
-
-Update dependencies within the voltha chart:
-
-```shell
-helm dep up voltha
-```
-
-Install the voltha helm chart.   This will create the voltha pods and additionally create the etcd-cluster pods
+Then, install the VOLTHA helm chart. This will create the VOLTHA pods and  will create the etcd-cluster pods.
 
 ```shell
-helm install -n voltha voltha
+helm install -n voltha cord/voltha
 ```
 
-Allow enough time for the 3 etcd-cluster pods to start before using the voltha pods.
+Allow enough time for the 3 etcd-cluster pods to start before using the VOLTHA pods.
 
 ## Standard Uninstall
 
@@ -49,7 +33,7 @@ helm delete --purge voltha
 ## Standard Install
 
 ```shell
-helm install -n voltha voltha
+helm install -n voltha cord/voltha
 ```
 
 ## Nodeports Exposed
@@ -70,25 +54,23 @@ you can use this command to access the VOLTHA CLI:
 ssh voltha@<pod-ip> -p 30110
 ```
 
-The default VOLTHA password is `admin`.
+The default VOLTHA password is *admin*.
 
 ## Building and using development images
 
-In some cases you want to build custom images to try out development code.
-The suggested way to do that is:
+In some cases you may want to build custom images to try out development code. In order to do that, from the CORD repository, do:
 
 ```shell
-cd ~/cord/incubator/voltha
+cd incubator/voltha
 REPOSITORY=voltha/ TAG=dev VOLTHA_BUILD=docker make build
 cd ~/cord/automation-tools/developer
 bash tag_and_push.sh -t dev -r 192.168.99.100:30500
 ```
 
-_This set of commands will build the VOLTHA containers and push them to a local
-[docker registry](../partials/push-images-to-registry.md) using a TAG called *dev*.
+This set of commands builds the VOLTHA containers and pushes them to a local
+[docker registry](../partials/push-images-to-registry.md) using a tag called *dev*.
 
-Once the images are pushed to a docker registry on the POD,
-you can use a values file like the following one:
+Once the images are pushed to a docker registry on the POD, you can create a values file like the following one, to override the default chart values, so use your images:
 
 ```yaml
 # voltha-values.yaml
@@ -120,8 +102,8 @@ images:
 
 ```
 
-and you can install VOLTHA using:
+Then, install VOLTHA using:
 
 ```shell
-helm install -n voltha voltha -f voltha-values.yaml
+helm install -n voltha -f voltha-values.yaml cord/voltha
 ```

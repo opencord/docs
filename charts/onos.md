@@ -1,9 +1,11 @@
-# Deploy ONOS
+# ONOS
 
-To install ONOS run:
+{% include "../partials/helm/add-cord-repo.md" %}
+
+Then, to install ONOS run:
 
 ```shell
-helm install -n onos
+helm install -n cord/onos
 ```
 
 **Nodeports exposed**
@@ -38,11 +40,15 @@ in the pod when you run `kubectl` you may need to use the `-c` option to
 specify which container you want to interact with.  For example, to view the
 ONOS logs via kubectl, you would use:
 
-    kubectl logs onos-7bbc9555bf-2754p -c onos
+```shell
+kubectl logs onos-7bbc9555bf-2754p -c onos
+```
 
 and to view the filebeat logs:
 
-    kubectl logs onos-7bbc9555bf-2754p -c onos-log-agent
+```
+kubectl logs onos-7bbc9555bf-2754p -c onos-log-agent
+```
 
 If this the sidecar isn't required, it can be disabled when installing the
 chart by passing `--set log_agent.enabled=false` or by using a values file.

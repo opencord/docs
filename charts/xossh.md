@@ -3,5 +3,5 @@
 To deploy the XOS-Shell, run the following:
 
 ```shell
-helm install xos-tools/xossh -n xossh
+helm install -n xossh cord/xossh
 ```

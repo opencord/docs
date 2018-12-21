@@ -174,7 +174,6 @@ First, add the `rook-beta` repo to helm, then load the `rook-operator` chart
 into the `rook-ceph-system` namespace:
 
 ```shell
-cd helm-charts/storage
 helm repo add rook-beta https://charts.rook.io/beta
 helm dep update rook-operator
 helm install --namespace rook-ceph-system -n rook-operator rook-operator
@@ -338,8 +337,10 @@ For development and testing, it may be useful to persist the XOS database.
 First, configure your nodes to deploy the [local-directory](#local-directory)
 chart, then run:
 
+{% include "../partials/helm/add-cord-repo.md" %}
+
 ```shell
-helm install -f examples/xos-db-local-dir.yaml -n xos-core xos-core
+helm install -f examples/xos-db-local-dir.yaml -n xos-core cord/xos-core
 ```
 
 ### Example: XOS Database on a Ceph RBD volume
@@ -352,7 +353,7 @@ Deploy the [rook-operator and rook-cluster](#ceph-deployed-with-rook) charts,
 then load the XOS core charts with:
 
 ```shell
-helm install -f examples/xos-db-ceph-rbd.yaml -n xos-core xos-core
+helm install -f examples/xos-db-ceph-rbd.yaml -n xos-core cord/xos-core
 ```
 
 ### Example: Docker Registry on CephFS shared filesystem
