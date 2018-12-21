@@ -3,9 +3,8 @@
 The *kafka* helm chart is not maintained by CORD, but it is available online
 at: <https://github.com/kubernetes/charts/tree/master/incubator/kafka>
 
-To install kafka using the `cord-kafka` name, create a YAML values file to
-configure Kafka (for developers, this is in
-`helm-charts/example/kafka-single.yaml`):
+To install kafka using the *cord-kafka* name, create a YAML values file to
+configure Kafka (for developers, this is in *helm-charts/example/kafka-single.yaml*):
 
 ```yaml
 ---
@@ -38,10 +37,13 @@ helm install -f kafka-single.yaml --version 0.8.8 -n cord-kafka incubator/kafka
 > NOTE: Historically there were two kafka busses deployed (another one named
 > `voltha-kafka`) but these have been consolidated.
 
-## Viewing events with kafkacat
+## Optional tool: viewing events with kafkacat
 
-As a debugging tool you can deploy a container containing `kafkacat` and use
-that to listen for events:
+Optionally, you can deploy a *kafkacat* container to to listen for Kafka events and debug:
+
+{% include "../partials/helm/add-cord-repo.md" %}
+
+Then, you can proceed with the kafkacat installation:
 
 ```shell
 helm install -n kafkacat cord/kafkacat
