@@ -37,3 +37,13 @@ These are the components included in the `seba` chart:
 - [VOLTHA and etcd-operator](../../charts/voltha.md)
 - [seba-services](../../charts/seba-services.md)
 - [base-kubernetes](../../charts/base-kubernetes.md)
+
+## Verify your installation and next steps
+
+Once the installation completes, monitor your setup using `kubectl get pods`.
+Wait until all pods are in *Running* state and “tosca-loader” pods are in *Completed* state.
+
+>**Note:** Your pods may periodically transition into *error* state. This is expected. They will retry and eventually get to the desired state.
+>**Note:** Depending on the profile you're installing, you may need to check also different namespaces (for example, check the voltha namespace if you're installing SEBA with `kubectl get pods -n voltha`)
+
+You're now ready to install the desired workflow. At the moment SEBA supports the AT&T workflow only. Please, continue to the [AT&T workflow section](workflows/att-install.md).
