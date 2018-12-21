@@ -12,11 +12,12 @@ are programmed in the OLT as well as the AGG switch.
 
 Next it is important to understand that there are two ways the ONOS DHCP L2 Relay app
 can operate. DHCP packets received from the RG can be relayed to the server using
-either the OLT's uplink port (that connects to the AGG switch), or they can be
-relayed directly to the AGG switch's uplink port (that connects to the BNG/DHCP-server).
-By default, a SEBA pod uses the latter mechanism.
+the OLT's uplink port (that connects to the AGG switch), as shown below.
 
 ![OLT Uplink for DHCP](./screenshots/olt-uplink.png "OLT Uplink for DHCP")
+
+Or they can be relayed directly to the AGG switch's uplink port (that connects
+to the BNG/DHCP-server). By default, a SEBA pod uses the latter mechanism.
 
 ![Switch Uplink for DHCP](./screenshots/switch-uplink.png "Switch Uplink for DHCP")
 
