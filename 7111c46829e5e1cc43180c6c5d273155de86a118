@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d821d3b_4bccca9d",
+        "filename": "charts/logging-monitoring.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-21T21:42:36Z",
+      "side": 0,
+      "message": "this should all go in the command as agreed before",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 46
+      },
+      "revId": "7111c46829e5e1cc43180c6c5d273155de86a118",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "58e97cf4_ad5af194",
+        "filename": "charts/logging-monitoring.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-21T21:42:36Z",
+      "side": 0,
+      "message": "this doesn\u0027t appear to work in a common installation...I think it\u0027s just confusing for a user",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 59
+      },
+      "revId": "7111c46829e5e1cc43180c6c5d273155de86a118",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
