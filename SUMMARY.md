@@ -68,14 +68,14 @@
                 * [SEBA-in-a-Box with Fabric Switch](profiles/seba/siab-with-fabric-switch.md)
             * [Scale testing with BBSim](profiles/seba/bbsim.md)
         * Configure
-            * [POD specific configuration](profiles/seba/configuration.md)
+            * [POD configuration](profiles/seba/configuration.md)
             * Workflow specific configuration
                 * [Configure AT&T workflow](profiles/seba/workflows/att-configure.md)
         * Operate
             * [Disable/Enable an ONU](profiles/seba/operate/onu-ops.md)
             * [Edit a Whitelist entry](profiles/seba/operate/whitelist-ops.md)
             * [Delete an OLT](profiles/seba/operate/olt-ops.md)
-            * [Fix configuration errors](profiles/seba/operate/config-ops.md)
+            * [Runtime configuration](profiles/seba/operate/config-ops.md)
             * [Add a cross-connect in the AGG switch](profiles/seba/operate/agg-ops.md)
             * [Try a new version of *](profiles/seba/operate/k8s-helm-ops.md)
         * [Known Issues](profiles/seba/known-issues.md)
