@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "288d83d3_b11985f3",
+        "filename": "navigate.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-21T23:20:33Z",
+      "side": 1,
+      "message": "why lines are all broken? We should leave everything on the same line so the webpage will automatically re-adapt text properly when the screen redimentions..",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 16
+      },
+      "revId": "44f5883be57431228fbb06853d8e3113394fe5ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f296991a_86216de1",
+        "filename": "navigate.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-21T23:20:33Z",
+      "side": 1,
+      "message": "can\u0027t understand...",
+      "range": {
+        "startLine": 105,
+        "startChar": 2,
+        "endLine": 107,
+        "endChar": 32
+      },
+      "revId": "44f5883be57431228fbb06853d8e3113394fe5ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79bbd77f_a983a3a4",
+        "filename": "profiles/seba/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-21T23:20:33Z",
+      "side": 1,
+      "message": "fullstop.",
+      "range": {
+        "startLine": 3,
+        "startChar": 80,
+        "endLine": 3,
+        "endChar": 86
+      },
+      "revId": "44f5883be57431228fbb06853d8e3113394fe5ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77b2a299_0a9b6b4d",
+        "filename": "profiles/seba/known-issues.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-12-21T23:20:33Z",
+      "side": 1,
+      "message": "please, don\u0027t break lines",
+      "range": {
+        "startLine": 5,
+        "startChar": 1,
+        "endLine": 22,
+        "endChar": 32
+      },
+      "revId": "44f5883be57431228fbb06853d8e3113394fe5ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
