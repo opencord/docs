@@ -5,7 +5,7 @@ We assume your POD is already configured as per [this instructions](../configura
 
 ## Whitelist population
 
-> NOTE: the whitelist can be populated at any time. 
+> NOTE: the whitelist can be populated at any time.
 > It doesn't need to be done upfront.
 
 To configure the ONU whitelist, you can use this TOSCA:
@@ -40,7 +40,7 @@ topology_template:
 For instructions on how to push TOSCA into a CORD POD, please
 refer to this [guide](../../../xos-tosca/README.md).
 
-### Where to find the required informations
+### Where to find the required information
 
 #### Serial Number
 
