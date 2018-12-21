@@ -29,13 +29,50 @@ This chart exposes two dashboards:
 
 ## logging charts
 
+By default, the logging charts rely on the [Persistent Storage](storage.md)
+charts to provide a persistent ElasticSearch database.  You must install those
+first before running the `logging` chart.
+
+In development scenarios where persistence isn't required, it can be disabled
+by using the following values file (if developing, this is located in
+`helm-charts/examples/logging-single.yaml`):
+
+```yaml
+---
+# For development and testing logging, don't persist data and
+# run a minimum number of instances of elasticsearch components
+
+elasticsearch:
+
+  cluster:
+    env:
+      MINIMUM_MASTER_NODES: "1"
+
+  client:
+    replicas: 1
+
+  master:
+    replicas: 2
+    persistence:
+      enabled: false
+
+  data:
+    replicas: 1
+    persistence:
+      enabled: false
+```
+
+Then either install the logging chart with persistent storage:
+
 ```shell
 helm install -n logging cord/logging
 ```
 
-For smaller developer/test environments without persistent storage, please use
-the *examples/logging-single.yaml* file to run the logging chart, which doesn't
-create PVC's.
+Or without:
+
+```shell
+helm install -f logging-single.yaml -n logging cord/logging
+```
 
 ### Logging Dashboard
 
