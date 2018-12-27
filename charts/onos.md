@@ -21,7 +21,7 @@ Assuming you have not changed the default ports in the chart,
 you can use this command to access the ONOS CLI:
 
 ```shell
-ssh karaf@<pod-ip> -p 30115
+ssh karaf@<node-ip> -p 30115
 ```
 
 The default ONOS password is `karaf`.
@@ -68,5 +68,5 @@ application_logs: |
 A configuration file called *onos-debug.yaml* can be found in the *configs* folder of the helm-chart repository. That already contains examplar lines to augment the ONOS logging level while deploying the ONOS pod. To use the onos-debug configuration, run:
 
 ```shell
-helm install -n onos -f configs/onos-debug.yaml onos
+helm install -n onos -f configs/onos-debug.yaml cord/onos
 ```

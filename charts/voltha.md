@@ -51,7 +51,7 @@ Assuming you have not changed the default ports in the chart,
 you can use this command to access the VOLTHA CLI:
 
 ```shell
-ssh voltha@<pod-ip> -p 30110
+ssh voltha@<node-ip> -p 30110
 ```
 
 The default VOLTHA password is *admin*.
