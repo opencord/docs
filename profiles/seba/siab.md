@@ -305,15 +305,19 @@ Run these commands:
 cd ~/cord/helm-charts
 helm dep update xos-core
 helm install -n xos-core xos-core
-helm dep update xos-profiles/att-workflow
-helm install -n att-workflow -f configs/seba-ponsim.yaml xos-profiles/att-workflow
+helm dep update xos-profiles/seba-services
+helm install -n seba-services xos-profiles/seba-services
+helm dep update workflows/att-workflow
+helm install -n att-workflow workflows/att-workflow -f configs/seba-ponsim.yaml
+helm dep update xos-profiles/base-kubernetes
+helm install -n base-kubernetes xos-profiles/base-kubernetes
 ```
 
 **Before proceeding**
 
 Run:  `kubectl get pod`
 
-You should see all the NEM pods in Running state, except the att-workflow-tosca-loader pod which should eventually be in Completed state.  The latter may go through CrashLoopBackOff state and get restarted a few times first (less than 10).  To wait until this occurs you can run:
+You should see all the NEM pods in Running state, except a number of `*-tosca-loader` pods which should eventually be in Completed state.  The latter may go through CrashLoopBackOff state and get restarted a few times first (less than 10).  To wait until this occurs you can run:
 
 ```bash
 ~/cord/helm-charts/scripts/wait_for_pods.sh
