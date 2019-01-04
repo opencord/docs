@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84a0b533_52937224",
+        "filename": "profiles/seba/known-issues.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2019-01-04T22:16:29Z",
+      "side": 1,
+      "message": "Some typos\n\nre-created many times\npertaining instead of pretaining\nits ports instead of it\u0027s",
+      "revId": "4fcb93845d7276279903be346e3a26303498a85c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
