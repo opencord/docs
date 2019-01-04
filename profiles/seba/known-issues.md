@@ -2,13 +2,15 @@
 
 ## SEBA 1.0 Release
 
-The only known major issues have to do with reboot of physical hardware, both
-the OLT and the AGG switch. These issues are described in more detail in
+There are known major issues having to do with rebooting of the physical hardware, both
+the OLT and the AGG switch, as well as continuously deleting/re-creating of an OLT Device via NEM. These issues are described in more detail in below:
 
 * [SEBA-388](https://jira.opencord.org/browse/SEBA-388)
    With this issue, DHCP may not work after AGG switch reboot. A possible workaround is to use a different config for the DHCPl2Relay app that uses the OLT's uplink to reach the DHCP Server, instead of the Switch's uplink. More details are described [here](troubleshoot/no-dhcp.md)
 * [SEBA-385](https://jira.opencord.org/browse/SEBA-385)
    With this issue, the OLT may not pass traffic anymore after reboot. Currently, the only workaround is to, enter the ONOS CLI and force a 'device-remove <&lt;device-id>' for the device from VOLTHA (in other words, force VOLTHA to reconnect to ONOS), and then perform the authentication/dhcp steps again for the subscribers
+* [SEBA-393](https://jira.opencord.org/browse/SEBA-393)
+   With this issue, if an OLT device gets deleted and re-created many times within a short period of time (10+ times within an hour or so), VOLTHA may run into an issue where it's unable to save any information pertaining the OLT device such as its ports or any ONU devices connected to those ports. The workaround for this issue is to re-install VOLTHA and re-create the OLT device through NEM.
 
 Fixes to these issues will be addressed soon after the release.
 
