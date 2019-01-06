@@ -79,4 +79,4 @@ Wait until all pods are in *Running* state and “tosca-loader” pods are in *C
 >**Note:** The tosca-loader pods may periodically transition into *error* state. This is expected. They will retry and eventually get to the desired state.
 >**Note:** Depending on the profile you're installing, you may need to check also different namespaces (for example, check the voltha namespace if you're installing SEBA with `kubectl get pods -n voltha`)
 
-Your POD is now installed and ready for use. To learn how to operate your POD continue to the [SEBA configuration section](../configuration.md).
+Your POD is now installed and ready for use. To learn how to operate your POD continue to the [SEBA configuration section](./profiles/seba/configuration.md).
