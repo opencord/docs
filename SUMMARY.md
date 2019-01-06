@@ -3,8 +3,8 @@
 * [Overview](overview.md)
 * [Navigating CORD](navigate.md)
 * [Quick Start](quickstart.md)
-    * [SEBA Quick Start] (seba_quickstart.md)
-    * [ExampleService Quick Start] (example_service_quickstart.md)
+    * [SEBA Quick Start](seba_quickstart.md)
+    * [ExampleService Quick Start](example_service_quickstart.md)
         * [MacOS](macos.md)
         * [Linux](linux.md)
 
