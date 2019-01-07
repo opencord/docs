@@ -11,21 +11,21 @@
 
 _REPO NAME_           _DIR_    _REF_
 
-att-workflow-driver   /docs    master
-cord-tester           /docs    master
-fabric                /docs    master
-fabric-crossconnect   /docs    master
-hippie-oss            /docs    master
-kubernetes-service    /docs    master
-olt-service           /docs    master
-onos-service          /docs    master
-openolt               /        master
-openstack             /docs    master
-rcord                 /docs    master
-simpleexampleservice  /docs    master
-exampleservice        /docs    master
-vrouter               /docs    master
-xos-gui               /docs    master
-xos-tosca             /docs    master
-xos                   /docs    master
-vtn-service           /docs    master
+att-workflow-driver   /docs    a068d1982ece0952a69272603b171f2941d4ab8c
+cord-tester           /docs    e22a7e66c570c1af9425bb7290f64e80273f009b
+fabric                /docs    eb0ec5b0750309842dcf18408709815fb0dee95a
+fabric-crossconnect   /docs    e07730b74dd2540d3e6d354543195e266989f88b
+hippie-oss            /docs    11ae197a687b77979076bcf0ab4761dd013f8a28
+kubernetes-service    /docs    43fbf840173523ed6b55e5cb4cc2e9816158322c
+olt-service           /docs    e35bec4bf553e8eca45ddd87f56bc24384d07eb8
+onos-service          /docs    d35ab69cdf653badb630910c571f04673f8ffce9
+openolt               /        695eb484904667c0860ecbaf6833aaaacc1cd6c2
+openstack             /docs    f387536ea96a7da42257b37e1ac21c0604572c54
+rcord                 /docs    ada43dfeff8ff260b60b5bc6d3f0e12ffd0f14ac
+simpleexampleservice  /docs    ed94fc403146c73720444f7db17bf90703784fdb
+exampleservice        /docs    7c3c508068d1bf5774bdbfb0e68b03b3913fb30a
+vrouter               /docs    813f0f0b765383cdbe9906c1a08afedbaffb1dd4
+xos                   /docs    ea1f4d0562f78b4c36d0861b19ef2303ce2f2609
+xos-gui               /docs    0d4c34ec2077d13528851d646e48cf1c482db8c0
+xos-tosca             /docs    20e07e2892315ae9f4e120595dd636a84ef25e6d
+vtn-service           /docs    c12a086c4344582f3cf7238bca6912ada50bbe79
