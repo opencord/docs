@@ -105,6 +105,7 @@ topic:
 kubectl exec -it kafkacat-7f45f65485-2lgp8 bash
 root@kafkacat-7f45f65485-2lgp8:/# kafkacat -b cord-platform-kafka -t onu.events
 ```
+>**Note:** Replace `cord-platform-kafka` with `cord-kafka` in the command above if kafka was installed as a standalone component.
 
 If everything is correct you should see:
 
