@@ -27,7 +27,7 @@ Kubernetes node running OLT [ens1d1]-------[2]fabric switch[1]-----------[ens1d1
     $ sudo cp /tmp/pon0_group_fwd_mask /sys/class/net/pon0/bridge/group_fwd_mask
     ```
 
-1. Modify `~/cord/helm-charts/xos-profiles/ponsim-pod/tosca/020-pod-olt.yaml`.  Update `switch_datapath_id` to your fabric-switch dpid, and `switch_port` and `uplink` to the port number of Fabric-switch to which the Kubernetes node running OLT is connected.
+1. Modify `~/cord/helm-charts/xos-profiles/ponsim-pod/tosca/020-pod-olt.yaml`.  Update `switch_datapath_id` to your fabric-switch dpid and `switch_port` to the port number of Fabric-switch to which the Kubernetes node running OLT is connected.
     ```yaml
       olt_device:
         type: tosca.nodes.OLTDevice
@@ -72,5 +72,16 @@ Kubernetes node running OLT [ens1d1]-------[2]fabric switch[1]-----------[ens1d1
           switch_port: 1
           ...
     ```
+
+1. Configure Q-n-Q interface and enable DHCP services on the DHCP Server (BNG) interface connected to `Fabric-switch` (Change the interface names as per your setup).
+    
+    ```bash
+    sudo ip link add link ens1d1 name ens1d1.222 type vlan id 222
+    sudo ip link set ens1d1.222 up
+    sudo ip link add link ens1d1.222 name ens1d1.222.111 type vlan id 111
+    sudo ip link set ens1d1.222.111 up
+    sudo ip addr add 172.18.0.10/24 dev ens1d1.222.111
+    ```
+    Choose any dhcp-server of your choice and run DHCP services on the Q-n-Q interface with range `172.18.0.50 - 172.18.0.100`.
 
 1. Install the Modified TOSCA ponsim-pod charts and proceed to step [Validating the install](siab.md#validating-the-install).
