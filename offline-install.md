@@ -224,11 +224,11 @@ helm install -n mavenrepo --set service.type=NodePort --set service.nodePorts.ht
 bash automation-tools/developer/images_from_charts.sh cord-platform seba seba/charts/voltha/charts/etcd-cluster att-workflow | automation-tools/developer/bash pull_images.sh > images
 
 # Download ONOS apps
-curl -L "https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencord&a=olt-app&v=2.1.0-SNAPSHOT&e=oar" > olt.oar
-curl -L "https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencord&a=sadis-app&v=2.2.0-SNAPSHOT&e=oar" > sadis.oar
-curl -L "https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencord&a=dhcpl2relay&v=1.5.0-SNAPSHOT&e=oar" > dhcpl2relay.oar
-curl -L "https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencord&a=aaa&v=1.8.0-SNAPSHOT&e=oar" > aaa.oar
-curl -L "https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencord&a=kafka&v=1.0.0-SNAPSHOT&e=oar" > kafka.oar
+curl -L "https://oss.sonatype.org/service/local/repositories/releases/content/org/opencord/olt-app/2.1.0/olt-app-2.1.0.oar" > olt.oar
+curl -L "https://oss.sonatype.org/service/local/repositories/releases/content/org/opencord/sadis-app/2.2.0/sadis-app-2.2.0.oar" > sadis.oar
+curl -L "https://oss.sonatype.org/service/local/repositories/releases/content/org/opencord/dhcpl2relay/1.5.0/dhcpl2relay-1.5.0.oar" > dhcpl2relay.oar
+curl -L "https://oss.sonatype.org/service/local/repositories/releases/content/org/opencord/aaa/1.8.0/aaa-1.8.0.oar" > aaa.oar
+curl -L "https://oss.sonatype.org/service/local/repositories/releases/content/org/opencord/kafka/1.0.0/kafka-1.0.0.oar" > kafka.oar
 
 # Create file to override the default helm charts values (call it extend.yaml)
 global:
