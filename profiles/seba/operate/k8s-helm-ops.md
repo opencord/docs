@@ -60,7 +60,7 @@ file uses `image.tag` to specify the Docker image tag. So this command
 will pull down the new image and re-launch the `fabric-crossconnect`
 Kubernetes pod using this image.
 
-As another example, v1.0.0 of the `att-workflow` chart runs
+As another example, v1.0.2 of the `att-workflow` chart runs
 the `xosproject/att-workflow-driver:1.0.12` Docker image from Docker Hub.  Suppose that you want to install image `myrepo/att-workflow-driver:test-image` in its place.  To upgrade to this new image run:
 
 ```bash
