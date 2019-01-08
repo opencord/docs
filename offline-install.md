@@ -166,6 +166,14 @@ the *kubectl cp* command. For example:
 kubectl cp my-onos-app.oar `kubectl get pods | grep mavenrepo | awk '{print $1;}'`:/opt/bitnami/nginx/html
 ```
 
+#### Pre-loaded maven-repo
+
+If you are installing a released version of a profile you can take advantage of
+a Maven repo container that already includes all the necessary applications.
+
+You can find the Dockerfiles to build those containers in the [automation-tools](https://github.com/opencord/automation-tools/tree/master/developer/containers)
+repository.
+
 ## Example: Offline SEBA Install
 
 The following section provides an exemplary list of commands to
