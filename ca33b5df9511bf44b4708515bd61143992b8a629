@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "896c5c1b_20950a87",
+        "filename": "offline-install.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2019-01-08T22:01:11Z",
+      "side": 1,
+      "message": "only one, so:\n\n\u0027the `Dockerfile` to build that container\u0027",
+      "range": {
+        "startLine": 174,
+        "startChar": 13,
+        "endLine": 174,
+        "endChar": 57
+      },
+      "revId": "ca33b5df9511bf44b4708515bd61143992b8a629",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f652712_396f4bf5",
+        "filename": "offline-install.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2019-01-08T22:01:11Z",
+      "side": 1,
+      "message": "hyphen to make this the name of the repo?",
+      "range": {
+        "startLine": 174,
+        "startChar": 75,
+        "endLine": 174,
+        "endChar": 76
+      },
+      "revId": "ca33b5df9511bf44b4708515bd61143992b8a629",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
