@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f05c3c45_e1dea361",
+        "filename": "developer/linux.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-01-08T21:24:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7264786a_0e57f3d7",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 20
+      },
+      "revId": "96683c0cbbbff7baae89ae08c90eefaadad12a7c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c0a81b85_bbd7316a",
         "filename": "developer/macos.md",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-01-08T20:29:59Z",
       "side": 1,
       "message": "Did we decide to remove this file?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 20
+      },
+      "revId": "96683c0cbbbff7baae89ae08c90eefaadad12a7c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "112f1332_9917e2b8",
+        "filename": "developer/macos.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-01-08T21:24:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c0a81b85_bbd7316a",
       "range": {
         "startLine": 1,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "11f58116_17cbf521",
+        "filename": "developer/quickstart.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-01-08T21:24:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ff94bb6_a5477e81",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 37
+      },
+      "revId": "96683c0cbbbff7baae89ae08c90eefaadad12a7c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0c6e1d64_28e0ee7a",
         "filename": "profiles/seba/operate/k8s-helm-ops.md",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2019-01-08T20:29:59Z",
       "side": 1,
       "message": "1.0.2",
+      "range": {
+        "startLine": 67,
+        "startChar": 23,
+        "endLine": 67,
+        "endChar": 28
+      },
+      "revId": "96683c0cbbbff7baae89ae08c90eefaadad12a7c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4664c731_dd8d4192",
+        "filename": "profiles/seba/operate/k8s-helm-ops.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-01-08T21:24:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c6e1d64_28e0ee7a",
       "range": {
         "startLine": 67,
         "startChar": 23,
