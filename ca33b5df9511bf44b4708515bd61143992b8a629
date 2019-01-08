@@ -45,6 +45,30 @@
       "revId": "ca33b5df9511bf44b4708515bd61143992b8a629",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e40cf5e_d9460ce1",
+        "filename": "offline-install.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-01-08T22:49:12Z",
+      "side": 1,
+      "message": "Dockerfiles is plural",
+      "parentUuid": "896c5c1b_20950a87",
+      "range": {
+        "startLine": 174,
+        "startChar": 13,
+        "endLine": 174,
+        "endChar": 57
+      },
+      "revId": "ca33b5df9511bf44b4708515bd61143992b8a629",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
