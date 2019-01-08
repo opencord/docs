@@ -21,7 +21,7 @@ kubectl get crd | grep -i etcd | wc -l
 helm install -n seba --version 1.0.0 cord/seba
 
 # Install the AT&T workflow
-helm install -n att-workflow --version 1.0.0 cord/att-workflow
+helm install -n att-workflow --version 1.0.2 cord/att-workflow
 ```
 
 ## Alternatively, install as separate components
@@ -68,7 +68,7 @@ helm install -n seba-service cord/seba-services
 helm install -n base-kubernetes cord/base-kubernetes
 
 # Install the AT&T workflow
-helm install -n att-workflow --version 1.0.0 cord/att-workflow
+helm install -n att-workflow --version 1.0.2 cord/att-workflow
 ```
 
 ## Verify your installation and next steps
