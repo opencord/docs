@@ -206,7 +206,7 @@ helm repo update
 # Fetch helm charts
 helm fetch cord/cord-platform --version 6.1.0 --untar
 helm fetch cord/seba --version 1.0.0 --untar
-helm fetch cord/att-workflow --version 1.0.0 --untar
+helm fetch cord/att-workflow --version 1.0.2 --untar
 helm fetch stable/docker-registry --untar
 helm fetch bitnami/nginx --untar
 
