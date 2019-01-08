@@ -182,7 +182,7 @@ Run these commands:
 ```bash
 cd ~/cord/helm-charts
 helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
-helm install -n cord-kafka --version=0.8.8 -f examples/kafka-single.yaml incubator/kafka
+helm install -n cord-kafka --version=0.13.3 -f examples/kafka-single.yaml incubator/kafka
 # Wait for Kafka to come up
 kubectl wait pod/cord-kafka-0 --for condition=Ready --timeout=180s
 helm install -n onos -f configs/onos.yaml onos
@@ -195,7 +195,7 @@ Run these commands to install VOLTHA:
 ```bash
 cd ~/cord/helm-charts
 # Install the etcd-operator helm chart:
-helm install -n etcd-operator stable/etcd-operator --version 0.8.0
+helm install -n etcd-operator stable/etcd-operator --version 0.8.3
 # Allow etcd-operator enough time to create the EtdcCluster
 # CustomResourceDefinitions. This should only be a couple of seconds after the
 # etcd-operator pods are running. Check the CRD are ready by running the following:

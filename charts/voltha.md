@@ -5,7 +5,7 @@
 Install the etcd-operator helm chart first. This chart provides a convenient way of creating and managing etcd clusters. When VOLTHA installs it will attempt to use etcd-operator to create its etcd cluster. Once installed etcd-operator can be left running.
 
 ```shell
-helm install -n etcd-operator stable/etcd-operator --version 0.8.0
+helm install -n etcd-operator stable/etcd-operator --version 0.8.3
 ```
 
 Allow etcd-operator enough time to create the EtdCluster CustomResourceDefinitions.  This should only be a couple of seconds after the etcd-operator pods are running.  Check the CRD are ready by running the following:

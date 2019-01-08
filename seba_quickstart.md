@@ -38,7 +38,7 @@ helm repo update
 # Install the CORD platform components
 helm install -n onos cord/onos
 helm install -n xos-core cord/xos-core
-helm install --version 0.8.8 \
+helm install --version 0.13.3 \
              --set configurationOverrides."offsets.topic.replication.factor"=1 \
              --set configurationOverrides."log.retention.hours"=4 \
              --set configurationOverrides."log.message.timestamp.type"="LogAppendTime" \
@@ -59,7 +59,7 @@ helm install --set elasticsearch.cluster.env.MINIMUM_MASTER_NODES="1" \
              -n logging cord/logging
 
 # Install etcd-operator and wait until 3 etcd CRDs are present in Kubernetes
-helm install -n etcd-operator stable/etcd-operator --version 0.8.0
+helm install -n etcd-operator stable/etcd-operator --version 0.8.3
 kubectl get crd | grep -i etcd | wc -l
 
 # Install the rest of the SEBA profile components
