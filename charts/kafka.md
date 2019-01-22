@@ -7,7 +7,7 @@ To install Kafka using the `cord-kafka` name run the following commands:
 
 ```shell
 helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
-helm install --version 0.8.8 \
+helm install --version 0.13.3 \
              --set configurationOverrides."offsets\.topic\.replication\.factor"=1 \
              --set configurationOverrides."log\.retention\.hours"=4 \
              --set configurationOverrides."log\.message\.timestamp\.type"="LogAppendTime" \
