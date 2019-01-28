@@ -13,6 +13,24 @@ Then, to install the CORD Platform you can use the corresponding chart:
 helm install -n cord-platform cord/cord-platform --version=6.1.0
 ```
 
+### Disabling monitoring and logging
+
+In some cases, for example during testing/development, you may not need the `logging`
+or `monitoring` capabilites of the platform to save some resources. You can disable
+those feature by adding:
+
+```shell
+--set logging.enabled=false
+--set nem-monitoring.enabled=false
+```
+to the installation commands.
+
+To disable the both of them you can use:
+
+```shell
+helm install -n cord-platform cord/cord-platform --version=6.1.0 --set logging.enabled=false --set nem-monitoring.enabled=false
+```
+
 ## Alternatively, install CORD Platform as Separate Components
 
 Alternatively, you may want to install the individual components separately.
@@ -29,7 +47,7 @@ Optionally, you may also want to install logging and monitoring infrastructure c
 ## Verify your installation and next steps
 
 Once the installation completes, monitor your setup using `kubectl get pods`.
-Wait until all pods are in *Running* state and “Tosca-loader” pods are in *Completed* state.
+Wait until all pods are in *Running* state.
 
 >**Note:** Your pods may periodically transition into *error* state. This is expected. They will retry and eventually get to the desired state.
 
