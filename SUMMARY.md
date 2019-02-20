@@ -40,6 +40,7 @@
     * [Getting the Source Code](developer/getting_the_code.md)
     * [Modeling Services](developer/xos-intro.md)
     * [Developer Workflows](developer/workflows.md)
+        * [Service Migrations](xos/dev/xosmigrate.md)
     * [Building Docker Images](developer/imagebuilder.md)
     * [GUI Development](xos-gui/developer/README.md)
         * [Quickstart](xos-gui/developer/quickstart.md)
