@@ -185,7 +185,7 @@ helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubato
 helm install -n cord-kafka --version=0.13.3 -f examples/kafka-single.yaml incubator/kafka
 # Wait for Kafka to come up
 kubectl wait pod/cord-kafka-0 --for condition=Ready --timeout=180s
-helm install -n onos -f configs/onos.yaml onos
+helm install -n onos onos
 ```
 
 ## Install VOLTHA charts
@@ -458,6 +458,11 @@ rtt min/avg/max/mdev = 34.940/37.343/39.615/1.917 ms
 ```
 
 That’s it.  Currently it’s not possible to send traffic to destinations on the Internet.
+
+## Uninstall SEBA-in-a-Box
+
+If you're done with your testing, or want to change the version you are installing,
+the easiest way to remove a SiaB installation is to use the `make reset-kubeadm` target.
 
 ## Getting help
 
