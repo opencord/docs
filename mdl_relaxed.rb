@@ -55,3 +55,8 @@ exclude_rule 'MD012'
 # Causes failures within code block when MD031 is also excluded
 exclude_rule 'MD046'
 
+# Gitbook does not care about bare URLs
+exclude_rule 'MD034'
+
+# This is not true in case of "includes" placeholder
+exclude_rule 'MD041'
