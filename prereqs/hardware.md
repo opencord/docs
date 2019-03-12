@@ -56,13 +56,16 @@ have tested over time in lab trials.
         * OCP Accepted&trade; EdgeCore AS5812-54X
         * QuantaMesh T3048-LY8
         * Delta AG7648
+        * OCP Accepted&trade; Inventec D6254 (verified by Inventec)
     * **25G** models (with 100G uplinks)
         * QuantaMesh BMS T7032-IX1/IX1B (with 25G breakout cable)
+        * Inventec D7054Q28B (verified by Inventec)
     * **40G** models
         * OCP Accepted&trade; EdgeCore AS6712-32X
     * **100G** models
         * OCP Accepted&trade; EdgeCore AS7712-32X
         * QuantaMesh BMS T7032-IX1/IX1B
+        * OCP Accepted&trade; Inventec D7032Q28B (verified by Inventec)
 
 * **Fabric Optics and DACs**
     * **10G DACs**
@@ -107,7 +110,7 @@ The following are some BOM examples you might wish to adopt.
 Sufficient to modify/develop basic software components, and
 deploy locally in a lab.
 
-* 1x x86 server (maybe with a 10G interface if need to support VNFs)
+* 1x x86 server (maybe with a 10G interface if needed to support VNFs)
 * 1x fabric switch (10G)
 * 1 DAC cables (if need to support VNFs)
 * Ethernet copper cables as needed
@@ -127,4 +130,21 @@ following elements:
 * Access equipment as needed
 * 1 or more developers' workstations (i.e. laptop) to develop and deploy
 * Alternatively a management/development server
+* 1x L2 legacy management switch
+
+### SEBA BOM
+
+Refer to hardware listed above for tested and recommended hardware for the BOM
+
+* 3x x86 server (maybe 10G/25G/40G/100G)
+* 1x fabric switch (10G/25G/40G/100G) - port speeds depend on OLT NNI uplink speeds and server NICs
+* 4 DAC cables (connection to servers and OLT)
+* Ethernet copper cables as needed
+* 1x OLT
+* 1x OLT Transceiver
+* 1x ONT/ONU
+* 1x ONT Transceiver (Required only if ONT does not have onboard ‘BOSA’ port)
+* 1x OLT Splitter (typically 32 or 64 way split with SC/APC connectors)
+* 1 or more developers' workstations to develop and deploy
+* A workstation/server to simulate BNG
 * 1x L2 legacy management switch
