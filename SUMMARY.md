@@ -59,7 +59,7 @@
 ## References
 
 * [Profile Reference](profiles/intro.md)
-    * [SEBA](profiles/seba/README.md)
+    * [SEBA 1.0](profiles/seba/README.md)
         * Install
             * [Install SEBA Charts](profiles/seba/install.md)
             * Workflows
