@@ -110,7 +110,7 @@ root@kafkacat-7f45f65485-2lgp8:/# kafkacat -b cord-platform-kafka -t onu.events
 If everything is correct you should see:
 
 ```shell
-{"timestamp":"2018-12-19T22:34:00.755Z","status":"activated","serial_number":"ALPHe3d1cfe3","uni_port_id":16,"of_dpid":"of:000000000a5a007a"}
+{"timestamp":"2019-03-29T16:01:28.763Z","status":"activated","serialNumber":"PSMO12345678","portNumber":"128","deviceId":"of:0000aabbccddeeff"}
 ```
 
 If you can see events in Kafka you can proceed with the next step.
