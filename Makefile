@@ -49,7 +49,7 @@ lint: | $(OTHER_REPO_DOCS)
 	mdl -s $(LINT_STYLE) `find -L . ! -path "./partials/*" ! -path "./_book/*" ! -path "./repos/*"  ! -path "./node_modules/*" ! -path "./cord-tester/modules/*" -name "*.md"`
 
 linkcheck: $(ALL_DOCS) _book
-	linkchecker -a --check-extern _book/
+	linkchecker -a -f linkchecker.ini _book/
 
 # Host holding the git server
 REPO_HOST   ?= https://gerrit.opencord.org
