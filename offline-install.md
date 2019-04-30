@@ -29,7 +29,7 @@ Your target infrastructure (where the POD runs) needs
   that are instead normally downloaded from Sonatype. If you don't
   have one, follow the notes below to quickly deploy a webserver on
   top of your existing Kubernetes cluster.
-  
+
 * **Kubernetes Servers Default Gateway:** For `kube-dns` to
   work, a default route (even pointing to a non-exisiting/working
   gateway) needs to be set on the machines hosting Kubernetes. This is
@@ -166,13 +166,45 @@ the *kubectl cp* command. For example:
 kubectl cp my-onos-app.oar `kubectl get pods | grep mavenrepo | awk '{print $1;}'`:/opt/bitnami/nginx/html
 ```
 
-#### Pre-loaded maven-repo
+#### Build a Maven repo that already contains ONOS apps
 
 If you are installing a released version of a profile you can take advantage of
 a Maven repo container that already includes all the necessary applications.
 
-You can find the Dockerfiles to build those containers in the [automation-tools](https://github.com/opencord/automation-tools/tree/master/developer/containers)
+**If you want to test ONOS apps in development**
+You can find the Dockerfiles to build those containers in the
+[automation-tools](https://github.com/opencord/automation-tools/tree/master/developer/containers)
 repository.
+
+Then install `mavenrepo` using that image with:
+
+```bash
+helm install -n mavenrepo --set service.type=NodePort \
+--set service.nodePorts.http=30160 bitnami/nginx \
+--set image.tag=latest --set image.repository=<your-image-name>
+```
+
+**If you want to test ONOS apps in development**
+In case you want to build a `mavenrepo` container with development applications,
+you can follow this process:
+
+1. Make the appropriate changes in the ONOS app you are working on under `~/cord/onos-apps/apps/`
+2. Build the ONOS application(s) with `mvn clean install`
+3. Build the `mavenrepo` container using this commands
+
+```bash
+cd ~/cord/onos-apps
+docker build -t opencord/mavenrepo:latest -f Dockerfile.apps .
+```
+
+Since this images are not published on DockerHub, the suggested way to deploy
+them is to push it to a local docker registry:
+
+```shell
+docker build -t 10.90.100.69:30500/opencord/mavenrepo -f Dockerfile.apps .
+helm install -n mavenrepo cord/mavenrepo --set image.tag=latest \
+--set image.repository=10.90.100.69:30500/opencord/mavenrepo
+```
 
 ## Example: Offline SEBA Install
 
