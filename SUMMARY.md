@@ -2,14 +2,13 @@
 
 * [Overview](overview.md)
 * [Navigating CORD](navigate.md)
-* [Quick Start](quickstart.md)
-    * [SEBA Quick Start](seba_quickstart.md)
-    * [ExampleService Quick Start](example_service_quickstart.md)
-        * [MacOS](macos.md)
-        * [Linux](linux.md)
+* [Quick Start](quickstart/quickstart.md)
+    * [SEBA Quick Start](quickstart/seba_quickstart.md)
+    * [ExampleService Quick Start](quickstart/example_service_quickstart.md)
+        * [MacOS](quickstart/macos.md)
+        * [Linux](quickstart/linux.md)
 
 ## Guides
-
 * [Installation Guide](README.md)
     * [Prerequisites](prereqs/README.md)
         * [Hardware Requirements](prereqs/hardware.md)
@@ -19,11 +18,10 @@
                 * [Single Node](prereqs/k8s-single-node.md)
                 * [Multi-Node](prereqs/k8s-multi-node.md)
             * [Helm](prereqs/helm.md)
-    * [Fabric Software Setup](fabric-setup.md)
-    * [Install Platform](platform.md)
-    * [Install Profile](profiles.md)
-    * [Offline Install](offline-install.md)
-    * [Attach Container to a NIC](operating_cord/veth_intf.md)
+    * [Fabric Software Setup](installation/fabric-setup.md)
+    * [Install Platform](installation/platform.md)
+    * [Install Profile](installation/profiles.md)
+    * [Offline Install](installation/offline-install.md)
 * [Operations Guide](operating_cord/operating_cord.md)
     * [General Info](operating_cord/general.md)
         * [GUI](operating_cord/gui.md)
@@ -50,14 +48,13 @@
             * [Data Sources](xos-gui/architecture/data-sources.md)
         * [Tests](xos-gui/developer/tests.md)
     * [Unit Tests](xos/dev/unittest.md)
-    * [Versions and Releases](versioning.md)
+    * [Versions and Releases](developer/versioning.md)
 * [Testing Guide](cord-tester/README.md)
     * [Test Setup](cord-tester/qa_testsetup.md)
     * [Test Environment](cord-tester/qa_testenv.md)
     * [System Tests](cord-tester/validate_pods.md)
 
 ## References
-
 * [Profile Reference](profiles/intro.md)
     * [SEBA](profiles/seba/README.md)
         * Install

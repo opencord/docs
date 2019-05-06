@@ -6,7 +6,7 @@ installed.
 
 ## Installing SEBA
 
-In order to run SEBA you need to have the [CORD Platform](../../platform.md) installed.
+In order to run SEBA you need to have the [CORD Platform](../../installation/platform.md) installed.
 
 Specifically, wait for the three EtcdCluster CustomResourceDefinitions to
 appear in Kubernetes:
