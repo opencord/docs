@@ -2,7 +2,8 @@
   "title": "CORD Guide",
   "root": ".",
   "structure": {
-    "summary": "SUMMARY.md"
+    "summary": "SUMMARY.md",
+    "glossary": "terminology.md"
   },
   "styles": {
     "website": "styles/website.css"
