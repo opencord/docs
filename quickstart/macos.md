@@ -212,7 +212,7 @@ and password are defined in `~/cord/helm-charts/xos-core/values.yaml`.
 
 ## Next Steps
 
-* Explore other [installation options](README.md).
-* Take a tour of the [operational interfaces](operating_cord/general.md).
+* Explore other [installation options](../README.md).
+* Take a tour of the [operational interfaces](../operating_cord/general.md).
 * Learn more about using [XOS](https://guide.xosproject.org).
 * Drill down on the internals of [SimpleExampleService](https://guide.xosproject.org/simpleexampleservice/simple-example-service.html).

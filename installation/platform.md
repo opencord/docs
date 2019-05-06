@@ -5,7 +5,7 @@ to bring up the Helm charts for the platform components.
 
 ## CORD Platform as a Whole
 
-{% include "partials/helm/add-cord-repo.md" %}
+{% include "../partials/helm/add-cord-repo.md" %}
 
 Then, to install the CORD Platform you can use the corresponding chart:
 
@@ -36,13 +36,13 @@ helm install -n cord-platform cord/cord-platform --version=6.1.0 --set logging.e
 Alternatively, you may want to install the individual components separately.
 The following are the individual components included in the *cord-platform* chart:
 
-- [ONOS](./charts/onos.md#onos-manages-fabric--voltha)
-- [XOS](./charts/xos-core.md)
-- [Kafka](./charts/kafka.md)
+- [ONOS](../charts/onos.md#onos-manages-fabric--voltha)
+- [XOS](../charts/xos-core.md)
+- [Kafka](../charts/kafka.md)
 
 Optionally, you may also want to install logging and monitoring infrastructure components:
 
-- [Logging-Monitoring](./charts/logging-monitoring.md)
+- [Logging-Monitoring](../charts/logging-monitoring.md)
 
 ## Verify your installation and next steps
 

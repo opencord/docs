@@ -63,6 +63,6 @@ More specifically, in a typical CORD deployment Voltha runs as a set of containe
 Of course, also the OLT NNI port needs to be connected as well to the same fabric switch.
 If both the OLT and the server running Voltha are connected to the same fabric switch, a path needs to be provisioned between the two. This can be achieved -for example- in the CORD fabric using Trellis, through the configuration of a VLAN cross-connect or a pseudo-wire.
 
-Further more, the Voltha vcore container (called voltha in the Kubernetes based deployment) should be connected to the data plane port, connected to the OLT, which is a quite trivial but manual operation. The steps to connect containers and server ports can be found in the [veth interface configuration guide](../../operating_cord/veth_intf.md).
+Further more, the Voltha vcore container (called voltha in the Kubernetes based deployment) should be connected to the data plane port, connected to the OLT, which is a quite trivial but manual operation. The steps to connect containers and server ports can be found in the [veth interface configuration guide](../../profiles/seba/veth_intf.md).
 
 > **NOTE:** the Celestica OLT is known to work *only* with the top-down R-CORD configuration workflow.

@@ -43,5 +43,5 @@ command *helm ls* without errors.
 
 Once you are done, you are ready to deploy CORD components using their
 helm charts! Start by brining up the
-[CORD Platform](../platform.md). For more detailed information, see
+[CORD Platform](../installation/platform.md). For more detailed information, see
 the [Helm Reference](../charts/helm.md).

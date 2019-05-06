@@ -10,7 +10,7 @@ Kubernetes node running OLT [ens1d1]-------[2]fabric switch[1]-----------[ens1d1
 
 1. Perform all install procedures described in the [SEBA-in-a-Box installation instructions](siab.md) except sections **Install Mininet** and **Load TOSCA into NEM**.
 
-1. Fabric switch bringup.  To bring up the fabric switch, follow the procedure [here](../../fabric-setup.md) and verify the fabric switch is discovered by onos (`ssh -p 30115 onos@K8S_NODE_IP devices`).
+1. Fabric switch bringup.  To bring up the fabric switch, follow the procedure [here](../../installation/fabric-setup.md) and verify the fabric switch is discovered by onos (`ssh -p 30115 onos@K8S_NODE_IP devices`).
 
 1. Enable EAPOL on linux-bridge `pon0` and add the physical interface on the k8node, running PONSIM-OLT to `pon1` bridge.
 

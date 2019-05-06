@@ -102,7 +102,7 @@ helm install -n seba cord/seba -f myvalues.yaml
 ```
 
 For more informations on how to create a webserver containing the ONOS Apps
-and deploy it on the POD you can look at the [Offline Install](../../../offline-install.md#install-a-local-web-server-using-helm-optional)
+and deploy it on the POD you can look at the [Offline Install](../../../installation/offline-install.md#install-a-local-web-server-using-helm-optional)
 
 #### Change ONOS apps at runtime
 
