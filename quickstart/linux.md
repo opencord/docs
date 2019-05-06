@@ -219,6 +219,6 @@ are successful and none are in the error state.
 This completes our example walk-through. At this point, you can do one 
 of the following:
 
-* Explore other [installation options](README.md). 
-* Take a tour of the [operational interfaces](operating_cord/general.md). 
-* Drill down on the internals of [SimpleExampleService](simpleexampleservice/simple-example-service.md). 
+* Explore other [installation options](../README.md). 
+* Take a tour of the [operational interfaces](../operating_cord/general.md). 
+* Drill down on the internals of [SimpleExampleService](../simpleexampleservice/simple-example-service.md). 

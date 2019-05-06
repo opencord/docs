@@ -35,7 +35,7 @@ deploy. For example to deploy SEBA you can follow
 [these instructions](../profiles/seba/install.md). Alternatively, if
 you are working on a new profile or a new service that is not part of
 any existing profile, you can install just the
-[CORD Platform](../platform.md).
+[CORD Platform](../installation/platform.md).
 
 ## Making and Deploying Changes
 
@@ -94,6 +94,6 @@ from the POD.
 
 The way we recommend doing this is via a private docker registry.
 You can find more information about what a docker registry is in the
-[offline installation section](../offline-install.md).
+[offline installation section](../installation/offline-install.md).
 
 {% include "/partials/push-images-to-registry.md" %}

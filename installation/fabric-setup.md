@@ -7,7 +7,7 @@ The latest [Trellis Fabric](https://wiki.opencord.org/display/CORD/Trellis%3A+CO
 
 ## Supported Switches
 
-The list of supported hardware can be found in the [hardware requirements page](prereqs/hardware.md).
+The list of supported hardware can be found in the [hardware requirements page](../prereqs/hardware.md).
 
 ## Operating System
 
