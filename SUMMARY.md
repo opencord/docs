@@ -58,7 +58,7 @@
 ## References
 
 * [Profile Reference](profiles/intro.md)
-    * [SEBA 1.0](profiles/seba/README.md)
+    * [SEBA](profiles/seba/README.md)
         * Install
             * [Install SEBA Charts](profiles/seba/install.md)
             * Workflows
@@ -70,6 +70,7 @@
                 * [SEBA-in-a-Box](profiles/seba/siab.md)
                 * [SEBA-in-a-Box with Fabric Switch](profiles/seba/siab-with-fabric-switch.md)
             * [Scale testing with BBSim](profiles/seba/bbsim.md)
+            * [Configuring a lab setup](profiles/seba/lab-setup.md)
         * Configure
             * [POD configuration](profiles/seba/configuration.md)
             * Workflow specific configuration
