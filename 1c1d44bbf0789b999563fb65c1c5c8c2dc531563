@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "eb782fb3_d1a517a3",
+        "filename": "profiles/seba/lab-setup.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-07T20:50:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79d86c0f_9f218b71",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 29
+      },
+      "revId": "1c1d44bbf0789b999563fb65c1c5c8c2dc531563",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fb958fb5_f11cd7b6",
         "filename": "profiles/seba/lab-setup.md",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2019-05-07T18:56:43Z",
       "side": 1,
       "message": "represents",
+      "range": {
+        "startLine": 16,
+        "startChar": 17,
+        "endLine": 16,
+        "endChar": 26
+      },
+      "revId": "1c1d44bbf0789b999563fb65c1c5c8c2dc531563",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5464d36a_d81d37f9",
+        "filename": "profiles/seba/lab-setup.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-07T20:50:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb958fb5_f11cd7b6",
       "range": {
         "startLine": 16,
         "startChar": 17,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "dc8ee6e6_b30a81ae",
+        "filename": "profiles/seba/lab-setup.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-07T20:50:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f065b25d_5f00bf1d",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 7
+      },
+      "revId": "1c1d44bbf0789b999563fb65c1c5c8c2dc531563",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "994d9c35_51eb9ffe",
         "filename": "profiles/seba/lab-setup.md",
         "patchSetId": 3
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "b21e4b2e_20cd2a52",
+        "filename": "profiles/seba/lab-setup.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-07T20:50:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "994d9c35_51eb9ffe",
+      "range": {
+        "startLine": 54,
+        "startChar": 42,
+        "endLine": 54,
+        "endChar": 49
+      },
+      "revId": "1c1d44bbf0789b999563fb65c1c5c8c2dc531563",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2a5795bc_986debae",
         "filename": "profiles/seba/lab-setup.md",
         "patchSetId": 3
@@ -105,6 +201,30 @@
       "writtenOn": "2019-05-07T18:56:43Z",
       "side": 1,
       "message": "As an aside, where do these files come from?  Or do they not matter?",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 42
+      },
+      "revId": "1c1d44bbf0789b999563fb65c1c5c8c2dc531563",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e31def08_cfc72d6b",
+        "filename": "profiles/seba/lab-setup.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-07T20:50:42Z",
+      "side": 1,
+      "message": "They don\u0027t matter, added few words about this.",
+      "parentUuid": "2a5795bc_986debae",
       "range": {
         "startLine": 68,
         "startChar": 0,
