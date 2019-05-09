@@ -37,6 +37,7 @@
         * [ELK Stack](operating_cord/elk_stack.md)
 * [Development Guide](developer/developer.md)
     * [Getting the Source Code](developer/getting_the_code.md)
+        * [Contribute to the documentation](developer/contribute_to_the_docs.md)
     * [Modeling Services](developer/xos-intro.md)
     * [Developer Workflows](developer/workflows.md)
         * [Service Migrations](xos/dev/xosmigrate.md)
@@ -124,4 +125,3 @@
     * [VOLTHA](charts/voltha.md)
     * [XOS-CORE](charts/xos-core.md)
     * [XOSSH](charts/xossh.md)
-
