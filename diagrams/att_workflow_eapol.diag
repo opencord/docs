@@ -1,0 +1,24 @@
+// EAPOL/802.1x sequence for RG
+// Code performing each step is linked to in comments
+
+seqdiag {
+
+  // set order
+  VOLTHA; "ONOS OLT app"; "ONOS AAA app"; "ONOS Kafka app"; "XOS att-workflow";
+
+  VOLTHA -> "ONOS OLT app" [label = "Openflow", note "Trap EAPOL packets"];
+  // https://gerrit.opencord.org/gitweb?p=olt.git;a=blob;f=app/src/main/java/org/opencord/olt/impl/Olt.java
+
+  "ONOS OLT app" -> "ONOS AAA app" [note = "Handle EAPOL packets"];
+  // https://gerrit.opencord.org/gitweb?p=aaa.git;a=blob;f=src/main/java/org/opencord/aaa/AaaManager.java
+
+  "ONOS AAA app" -> "ONOS Kafka app";
+  // https://gerrit.opencord.org/gitweb?p=kafka-onos.git;a=blob;f=src/main/java/org/opencord/kafka/integrations/AaaKafkaIntegration.java
+
+  "ONOS Kafka app" -> "XOS att-workflow" [label = "Kafka: authentication.events", note = "authenticationState"];
+  // https://gerrit.opencord.org/gitweb?p=att-workflow-driver.git;a=blob;f=xos/synchronizer/event_steps/auth_event.py
+
+  "XOS att-workflow" -> "XOS att-workflow" [note = "Modify: AttWorkFlowDriverServiceInstance"];
+  // https://gerrit.opencord.org/gitweb?p=att-workflow-driver.git;a=blob;f=xos/synchronizer/helpers.py
+
+}

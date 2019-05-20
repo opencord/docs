@@ -30,6 +30,22 @@ gitbook-setup:
 	gitbook init
 	gitbook install
 
+
+SEQDIAG      ?= seqdiag
+DIAGRAMS     := $(sort $(wildcard diagrams/*.diag))
+DIAGRAMS_PNG := $(foreach f, $(DIAGRAMS), $(patsubst %.diag,%.diag.png,$(f)))
+DIAGRAMS_SVG := $(foreach f, $(DIAGRAMS), $(patsubst %.diag,%.diag.svg,$(f)))
+
+.PHONY: diagrams
+diagrams: ${DIAGRAMS_PNG} ${DIAGRAMS_SVG}
+
+diagrams/%.diag.png: diagrams/%.diag
+	${SEQDIAG} -a -Tpng -o $@ $<
+
+diagrams/%.diag.svg: diagrams/%.diag
+	${SEQDIAG} -Tsvg -o $@ $<
+
+
 clean:
 	rm -rf _book
 	rm -rf node_modules

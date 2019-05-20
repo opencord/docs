@@ -1,0 +1,24 @@
+// activation sequence for an ONU
+// Code performing each step is linked to in comments
+
+seqdiag {
+
+  // Do not show activity line
+  activation = none;
+
+  // set order
+  VOLTHA; "ONOS OLT app"; "ONOS Kafka app"; "XOS att-workflow";
+
+  VOLTHA -> "ONOS OLT app" [label = "Openflow", note = "activate"];
+  // https://gerrit.opencord.org/gitweb?p=olt.git;a=blob;f=app/src/main/java/org/opencord/olt/impl/Olt.java
+
+  "ONOS OLT app" -> "ONOS Kafka app" [note = "UNI_ADDED"];
+  // https://gerrit.opencord.org/gitweb?p=kafka-onos.git;a=blob;f=src/main/java/org/opencord/kafka/integrations/AccessDeviceKafkaIntegration.java
+
+  "ONOS Kafka app" -> "XOS att-workflow" [label = "Kafka: onu.events", note = "status: Activated"];
+  // https://gerrit.opencord.org/gitweb?p=att-workflow-driver.git;a=blob;f=xos/synchronizer/event_steps/onu_event.py
+
+  "XOS att-workflow" -> "XOS att-workflow" [note = "Create: AttWorkFlowDriverServiceInstance"];
+  // https://gerrit.opencord.org/gitweb?p=att-workflow-driver.git;a=blob;f=xos/synchronizer/helpers.py
+
+}

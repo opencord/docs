@@ -10,3 +10,7 @@ repos
 xos/_book
 venv-xosdocs
 .DS_Store
+
+# diagrams
+diagrams/*.png
+diagrams/*.svg
