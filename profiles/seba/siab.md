@@ -69,8 +69,7 @@ node) with the Calico CNI plugin installed.  You also need Helm and a
 few other software packages.
 
 The server or VM on which you are installing SEBA-in-a-Box should have
-at least two CPU cores, 8GB RAM, and 30GB disk space.  *Apparmor and
-SELinux should be disabled.*
+at least two CPU cores, 8GB RAM, and 30GB disk space.
 
 ### Kubernetes
 
@@ -78,7 +77,7 @@ You need to have Kubernetes with CNI enabled.  An easy way to set up a
 single-node Kubernetes that meets the requirements is with kubeadm.
 Instructions for installing kubeadm on various platforms can be found
 [here](https://www.google.com/url?q=https://kubernetes.io/docs/setup/inde
-pendent/install-kubeadm/&sa=D&ust=1542238113244000).  
+pendent/install-kubeadm/&sa=D&ust=1542238113244000).
 
 *NOTE: the setup has not been made to work with minikube; we recommend
 installing kubeadm instead.*
@@ -91,11 +90,11 @@ sudo apt-get update
 sudo apt-get install -y software-properties-common
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 0EBFCD88
 sudo add-apt-repository \
-       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-       $(lsb_release -cs) \
-       stable"
+       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+       $(lsb_release -cs) \
+       stable"
 sudo apt-get update
-sudo apt-get install -y "docker-ce=17.03*"
+sudo apt-get install -y "docker-ce=17.06*"
 
 echo "Installing kubeadm..."
 sudo apt-get update
@@ -106,7 +105,7 @@ deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 sudo cp /tmp/kubernetes.list /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
-sudo apt install -y "kubeadm=1.11.3-*" "kubelet=1.11.3-*" "kubectl=1.11.3-*"
+sudo apt install -y "kubeadm=1.12.7-*" "kubelet=1.12.7-*" "kubectl=1.12.7-*"
 sudo swapoff -a
 sudo kubeadm init --pod-network-cidr=192.168.0.0/16
 mkdir -p $HOME/.kube
@@ -126,7 +125,9 @@ Install the Calico CNI plugin in Kubernetes:
 
 ```bash
 kubectl apply -f \
-  https://docs.projectcalico.org/v2.6/getting-started/kubernetes/installation/hosted/kubeadm/1.6/calico.yaml
+  https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml
+kubectl apply -f \
+  https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml
 ```
 
 ### Helm
@@ -135,35 +136,17 @@ An example of installing Helm:
 
 ```bash
 echo "Installing helm..."
-curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
-cat > /tmp/helm.yaml <<EOF
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: helm
-  namespace: kube-system
----
-apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: ClusterRoleBinding
-metadata:
-  name: helm
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-  - kind: ServiceAccount
-    name: helm
-    namespace: kube-system
-EOF
-kubectl create -f /tmp/helm.yaml
-helm init --service-account helm
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > install-helm.sh
+bash install-helm.sh -v v2.12.1
+kubectl create serviceaccount --namespace kube-system tiller
+kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+helm init --service-account tiller
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 ```
 
 ### Other prerequisites
 
-Install the `http` and `jq` commands.  Run: `sudo apt install -y httpie jq`
+Install the `http` and `jq` commands.  Run: `sudo apt install -y httpie jq`
 
 ## Get the Helm charts
 
@@ -213,7 +196,7 @@ You should see the etcd-cluster pod up and running.
 
 ```bash
 $ kubectl get pod|grep etcd-cluster
-etcd-cluster-0000                                             1/1       Running     0          20m
+etcd-cluster-q9zhrwvllh                                       1/1       Running     0          20m
 ```
 
 ## Install Ponsim charts
@@ -408,7 +391,13 @@ http -a admin@opencord.org:letmein GET \
 
 ### Obtain an IP address for the RG
 
-Run the following commands inside the RG pod.
+On the host, remove the `dhclient` profile from `apparmor` if present:
+
+```bash
+sudo apparmor_parser -R /etc/apparmor.d/sbin.dhclient || true
+```
+
+Next run the following commands inside the RG pod.
 
 ```bash
 ifconfig eth0 0.0.0.0
