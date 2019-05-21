@@ -90,12 +90,9 @@ echo "Installing docker..."
 sudo apt-get update
 sudo apt-get install -y software-properties-common
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 0EBFCD88
-sudo add-apt-repository \
-       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-       $(lsb_release -cs) \
-       stable"
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
-sudo apt-get install -y "docker-ce=17.03*"
+sudo apt-get install -y "docker-ce=17.06*"
 
 echo "Installing kubeadm..."
 sudo apt-get update
@@ -106,7 +103,7 @@ deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 sudo cp /tmp/kubernetes.list /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
-sudo apt install -y "kubeadm=1.11.3-*" "kubelet=1.11.3-*" "kubectl=1.11.3-*"
+sudo apt install -y "kubeadm=1.12.7-*" "kubelet=1.12.7-*" "kubectl=1.12.7-*"
 sudo swapoff -a
 sudo kubeadm init --pod-network-cidr=192.168.0.0/16
 mkdir -p $HOME/.kube
@@ -126,7 +123,9 @@ Install the Calico CNI plugin in Kubernetes:
 
 ```bash
 kubectl apply -f \
-  https://docs.projectcalico.org/v2.6/getting-started/kubernetes/installation/hosted/kubeadm/1.6/calico.yaml
+  https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml
+kubectl apply -f \
+  https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml
 ```
 
 ### Helm
@@ -135,35 +134,17 @@ An example of installing Helm:
 
 ```bash
 echo "Installing helm..."
-curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
-cat > /tmp/helm.yaml <<EOF
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: helm
-  namespace: kube-system
----
-apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: ClusterRoleBinding
-metadata:
-  name: helm
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-  - kind: ServiceAccount
-    name: helm
-    namespace: kube-system
-EOF
-kubectl create -f /tmp/helm.yaml
-helm init --service-account helm
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > install-helm.sh
+bash install-helm.sh -v v2.12.1
+kubectl create serviceaccount --namespace kube-system tiller
+kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+helm init --service-account tiller
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 ```
 
 ### Other prerequisites
 
-Install the `http` and `jq` commands.  Run: `sudo apt install -y httpie jq`
+Install the `http` and `jq` commands.  Run: `sudo apt install -y httpie jq`
 
 ## Get the Helm charts
 
