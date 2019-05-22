@@ -13,7 +13,7 @@ SHELL = bash -eu -o pipefail
 
 # Other repos with documentation that's included in the gitbook
 # edit the `git_refs` file with the commit/tag/branch that you want to use
-OTHER_REPO_DOCS ?= att-workflow-driver cord-tester fabric fabric-crossconnect hippie-oss kubernetes-service olt-service onos-service openolt openstack rcord simpleexampleservice exampleservice vrouter xos xos-gui xos-tosca vtn-service
+OTHER_REPO_DOCS ?= att-workflow-driver cord-tester fabric fabric-crossconnect hippie-oss kubernetes-service olt-service onos-service openolt openstack rcord simpleexampleservice exampleservice vrouter xos xos-gui xos-tosca vtn-service cordctl
 GENERATED_DOCS  ?= # should be 'swagger', but currently broken
 ALL_DOCS        ?= $(OTHER_REPO_DOCS) $(GENERATED_DOCS)
 

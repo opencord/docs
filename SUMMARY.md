@@ -27,6 +27,7 @@
     * [General Info](operating_cord/general.md)
         * [GUI](operating_cord/gui.md)
             * [Configuring the Service Graph](xos-gui/developer/service_graph.md)
+        * [cordctl](cordctl/README.md)
         * [XOSSH](xos/dev/xossh.md)
     * [APIs](operating_cord/api.md)
         * [gRPC API](xos/dev/grpc_api.md)
