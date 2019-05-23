@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aedf7a2c_8facd407",
+        "filename": "_layouts/website/page.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2019-05-23T22:44:56Z",
+      "side": 1,
+      "message": "do",
+      "range": {
+        "startLine": 15,
+        "startChar": 78,
+        "endLine": 15,
+        "endChar": 83
+      },
+      "revId": "bbb52b93eb1d56d1045034648249c489574c113c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
