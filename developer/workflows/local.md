@@ -1,4 +1,4 @@
-# Developer Workflows
+# Local Development
 
 This section describes a typical workflow for developing the CORD
 control plane. This workflow does not include any data plane
@@ -9,7 +9,7 @@ elements (e.g., the underlying switching fabric or access devices).
 It is straightforward to set up a local Kubernetes environment on your laptop.
 The recommended way to do this is to use Minikube. This guide assumes
 you have done that. See the
-[Single-Node](../prereqs/k8s-single-node.md) case in the
+[Single-Node](../../prereqs/k8s-single-node.md) case in the
 Installation Guide for more information, or you can go directly
 to the documentation for Minikube:
 <https://kubernetes.io/docs/getting-started-guides/minikube/#installation>
@@ -32,15 +32,15 @@ cd ~/cord/helm-charts
 
 In this folder you can choose from the different charts which one to
 deploy. For example to deploy SEBA you can follow
-[these instructions](../profiles/seba/install.md). Alternatively, if
+[these instructions](../../profiles/seba/install.md). Alternatively, if
 you are working on a new profile or a new service that is not part of
 any existing profile, you can install just the
-[CORD Platform](../installation/platform.md).
+[CORD Platform](../../installation/platform.md).
 
 ## Making and Deploying Changes
 
 Assuming you have
-[downloaded the CORD source code](getting_the_code.md) and the entire
+[downloaded the CORD source code](../getting_the_code.md) and the entire
 source tree for CORD is under `~/cord`, you can edit and re-deploy the
 code as follows.
 
@@ -56,19 +56,18 @@ as it comes with the Minikube installation_).
 eval $(minikube docker-env)
 ```
 
-You will then need to build the containers from source:
+You will then need to build the containers from source, so enter the repo you modified:
 
 ```shell
-cd ~/cord/automation-tools/developer
-python imagebuilder.py -f ../../helm-charts/examples/filter-images.yaml -x
+cd ~/cord/orchestration/xos-services/rcord
+DOCKER_REPOSITORY=xosproject/ DOCKER_TAG=candidate make docker-build
 ```
 
 At this point, the images containing your changes will be available
 in the Docker environment used by Minikube.
 
-> **Note:** In some cases you can rebuild a single docker image to make the process
-> faster, but this assume that you have a good knowledge of the system and you
-> know what you’re doing.
+> **Note:** In some cases the command to build the docker image may vary. 
+> Please check the Makefile within the repo for more informations. 
 
 All that is left is to teardown and re-deploy the containers.
 
@@ -94,6 +93,6 @@ from the POD.
 
 The way we recommend doing this is via a private docker registry.
 You can find more information about what a docker registry is in the
-[offline installation section](../installation/offline-install.md).
+[offline installation section](../../installation/offline-install.md).
 
 {% include "/partials/push-images-to-registry.md" %}
