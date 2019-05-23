@@ -9,7 +9,6 @@
         * [Linux](quickstart/linux.md)
 
 ## Guides
-
 * [Installation Guide](README.md)
     * [Prerequisites](prereqs/README.md)
         * [Hardware Requirements](prereqs/hardware.md)
@@ -40,9 +39,11 @@
     * [Getting the Source Code](developer/getting_the_code.md)
         * [Contribute to the documentation](developer/contribute_to_the_docs.md)
     * [Modeling Services](developer/xos-intro.md)
-    * [Developer Workflows](developer/workflows.md)
+    * Developer Workflows
         * [Service Migrations](xos/dev/xosmigrate.md)
-    * [Building Docker Images](developer/imagebuilder.md)
+        * [Local Development](developer/workflows/local.md)
+        * [SiaB Development](developer/workflows/siab.md)
+            * [ONOS Apps Development](developer/workflows/onos-apps.md)
     * [GUI Development](xos-gui/developer/README.md)
         * [Quickstart](xos-gui/developer/quickstart.md)
         * [GUI Extensions](xos-gui/developer/gui_extensions.md)
@@ -58,7 +59,6 @@
     * [System Tests](cord-tester/validate_pods.md)
 
 ## References
-
 * [Profile Reference](profiles/intro.md)
     * [SEBA](profiles/seba/README.md)
         * Install
@@ -126,3 +126,4 @@
     * [VOLTHA](charts/voltha.md)
     * [XOS-CORE](charts/xos-core.md)
     * [XOSSH](charts/xossh.md)
+
