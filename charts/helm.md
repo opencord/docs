@@ -141,7 +141,7 @@ Note that using setting this value with change the registry setting for every
 image in a chart.
 
 To handle building and pushing images to a registry, see the [development
-documentation](../developer/workflows.md#pushing-changes-to-a-remote-registry).
+documentation](../developer/workflows/local.md#pushing-changes-to-a-remote-registry).
 
 If you want to change only the registry for one specific image, the easiest way
 is to modify the `repository` setting - for example:

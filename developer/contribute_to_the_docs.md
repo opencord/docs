@@ -79,7 +79,7 @@ open `~/cord/docs/SUMMARY.md` and insert the new link, such as:
 * [Development Guide](developer/developer.md)
     * [Getting the Source Code](developer/getting_the_code.md)
     * [Modeling Services](developer/xos-intro.md)
-    * [Developer Workflows](developer/workflows.md)
+    * [Developer Workflows](local.md)
         * [Service Migrations](xos/dev/xosmigrate.md)
     * [Building Docker Images](developer/imagebuilder.md)
     * [GUI Development](xos-gui/developer/README.md)
