@@ -32,6 +32,9 @@ To build a SiaB that uses the released service versions specified in the Helm ch
 make    # or 'make stable'
 ```
 
+> NOTE that `make` or `make stable` will install SEBA with the container versions that are
+> defined in the helm charts. If you want to install SEBA 1.0 please use: `make siab-1.0`  
+
 To build a SiaB that uses the latest development code:
 
 ```bash
