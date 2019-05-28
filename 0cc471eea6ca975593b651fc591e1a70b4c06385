@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3b353db6_9a083520",
+        "filename": "developer/workflows/siab.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-28T19:05:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89b94956_99bd20ba",
+      "range": {
+        "startLine": 6,
+        "startChar": 18,
+        "endLine": 6,
+        "endChar": 55
+      },
+      "revId": "0cc471eea6ca975593b651fc591e1a70b4c06385",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "53c05187_c801c4eb",
         "filename": "developer/workflows/siab.md",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2019-05-24T23:29:05Z",
       "side": 1,
       "message": "It would be good to add a comment to each line, saying what it does e.g. # create a directory to cord",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 15
+      },
+      "revId": "0cc471eea6ca975593b651fc591e1a70b4c06385",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb9f42af_df3b3cab",
+        "filename": "developer/workflows/siab.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-28T19:05:34Z",
+      "side": 1,
+      "message": "This are not complex commands, they should be self-descriptive (eg: someone that wants to collaborate to CORD most likely knows what is happening)",
+      "parentUuid": "53c05187_c801c4eb",
       "range": {
         "startLine": 21,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "1427702c_17512f06",
+        "filename": "developer/workflows/siab.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-28T19:05:34Z",
+      "side": 1,
+      "message": "This is described in the SiaB guide",
+      "parentUuid": "4285a083_21c8ac20",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 11
+      },
+      "revId": "0cc471eea6ca975593b651fc591e1a70b4c06385",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "90eccb56_2846b16e",
         "filename": "developer/workflows/siab.md",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2019-05-24T23:29:05Z",
       "side": 1,
       "message": "Please mention that you need to install a docker if you have not already installed (with a link to installation). I used https://hub.docker.com/editions/community/docker-ce-desktop-mac",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 10
+      },
+      "revId": "0cc471eea6ca975593b651fc591e1a70b4c06385",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14f61984_9118ee7e",
+        "filename": "developer/workflows/siab.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-28T19:05:34Z",
+      "side": 1,
+      "message": "Added a \"Prerequisites\" section that points to that guide",
+      "parentUuid": "90eccb56_2846b16e",
       "range": {
         "startLine": 47,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "29268c1d_ded9af01",
+        "filename": "developer/workflows/siab.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-28T19:05:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12577861_0a9742da",
+      "range": {
+        "startLine": 53,
+        "startChar": 11,
+        "endLine": 53,
+        "endChar": 30
+      },
+      "revId": "0cc471eea6ca975593b651fc591e1a70b4c06385",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "17855606_728a56df",
         "filename": "developer/workflows/siab.md",
         "patchSetId": 3
@@ -128,6 +248,30 @@
       "writtenOn": "2019-05-24T23:29:05Z",
       "side": 1,
       "message": "Please consider removing the first IP address and mentioning where the port can be written from i.e. 30500",
+      "range": {
+        "startLine": 55,
+        "startChar": 1,
+        "endLine": 55,
+        "endChar": 28
+      },
+      "revId": "0cc471eea6ca975593b651fc591e1a70b4c06385",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8f57f2eb_8a33b84c",
+        "filename": "developer/workflows/siab.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-28T19:05:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17855606_728a56df",
       "range": {
         "startLine": 55,
         "startChar": 1,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "6b158821_a1ac54cf",
+        "filename": "developer/workflows/siab.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-28T19:05:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a413daf_9fb52219",
+      "range": {
+        "startLine": 75,
+        "startChar": 64,
+        "endLine": 75,
+        "endChar": 66
+      },
+      "revId": "0cc471eea6ca975593b651fc591e1a70b4c06385",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c7b6324c_61d0349a",
         "filename": "developer/workflows/siab.md",
         "patchSetId": 3
@@ -174,6 +342,30 @@
       "writtenOn": "2019-05-24T23:29:05Z",
       "side": 1,
       "message": "I was not sure if it must be changed to the xos/ directory that I have in rcord or it is a directory in repository (I kept it as it was).",
+      "range": {
+        "startLine": 78,
+        "startChar": 62,
+        "endLine": 78,
+        "endChar": 72
+      },
+      "revId": "0cc471eea6ca975593b651fc591e1a70b4c06385",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e43d1b41_91c0dbc4",
+        "filename": "developer/workflows/siab.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-28T19:05:34Z",
+      "side": 1,
+      "message": "That stays as it is, the docker image format is:\nregistry/repository/image:tag\n\nThe rcord-synchronizer image lives in the xosproject repository.",
+      "parentUuid": "c7b6324c_61d0349a",
       "range": {
         "startLine": 78,
         "startChar": 62,
