@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "02571535_d0cbb945",
+        "filename": "developer/workflows/siab.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2019-05-28T19:52:30Z",
+      "side": 1,
+      "message": "I typically use my own Docker Hub registry.  It seems simpler to use Docker Hub than a private registry:\n\n  DOCKER_REGISTRY\u003dandybavier/ DOCKER_TAG\u003dlatest make docker-build docker-push\n\nIf that image\u0027s registry doesn\u0027t already exist then Docker Hub will automatically create it.  \n\nNot sure if you want to include this method as well.",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 94
+      },
+      "revId": "5a51f26455b6160ae1e72a3facd17b2d2caa6d5a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
