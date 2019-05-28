@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2add4227_38158f5f",
+        "filename": "developer/contribute_to_the_docs.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-28T22:01:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55098061_e0dc030d",
+      "range": {
+        "startLine": 82,
+        "startChar": 27,
+        "endLine": 82,
+        "endChar": 35
+      },
+      "revId": "5a51f26455b6160ae1e72a3facd17b2d2caa6d5a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9bb626f4_04963bca",
         "filename": "developer/workflows/local.md",
         "patchSetId": 4
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "b9aad97f_50294310",
+        "filename": "developer/workflows/local.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-28T22:01:11Z",
+      "side": 1,
+      "message": "Agreed, but as now we have many inconsistencies, so I figured it\u0027s better to let people know.\nWe should track them down and fix them.",
+      "parentUuid": "9bb626f4_04963bca",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 67
+      },
+      "revId": "5a51f26455b6160ae1e72a3facd17b2d2caa6d5a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "02571535_d0cbb945",
         "filename": "developer/workflows/siab.md",
         "patchSetId": 4
@@ -59,6 +107,30 @@
       "writtenOn": "2019-05-28T19:52:30Z",
       "side": 1,
       "message": "I typically use my own Docker Hub registry.  It seems simpler to use Docker Hub than a private registry:\n\n  DOCKER_REGISTRY\u003dandybavier/ DOCKER_TAG\u003dlatest make docker-build docker-push\n\nIf that image\u0027s registry doesn\u0027t already exist then Docker Hub will automatically create it.  \n\nNot sure if you want to include this method as well.",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 94
+      },
+      "revId": "5a51f26455b6160ae1e72a3facd17b2d2caa6d5a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a5e38f81_129806a9",
+        "filename": "developer/workflows/siab.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-05-28T22:01:11Z",
+      "side": 1,
+      "message": "I added a FAQ section that explain that",
+      "parentUuid": "02571535_d0cbb945",
       "range": {
         "startLine": 92,
         "startChar": 0,
