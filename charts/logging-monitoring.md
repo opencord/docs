@@ -27,6 +27,8 @@ This chart exposes two dashboards:
 - [Grafana](http://docs.grafana.org/) on port *31300*
 - [Prometheus](https://prometheus.io/docs/) on port *31301*
 
+For informations on how to use Prometheys please refer to the [Prometheus Operations Guide](../operating_cord/prometheus.md).
+
 ## logging charts
 
 By default, the logging charts rely on the [Persistent Storage](storage.md)
@@ -55,6 +57,4 @@ helm install --set elasticsearch.cluster.env.MINIMUM_MASTER_NODES="1" \
 The [Kibana](https://www.elastic.co/guide/en/kibana/current/index.html)
 dashboard can be found on port `30601`
 
-To start using Kibana, you must create an index under *Management > Index
-Patterns*.  Create one with a name of `logstash-*`, then you can search for
-events in the *Discover* section.
+For informations on how to use Elastic Stack please refer to the [ELK Stack Operations Guide](../operating_cord/elk_stack.md).
