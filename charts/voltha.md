@@ -64,7 +64,7 @@ In some cases you may want to build custom images to try out development code. I
 cd incubator/voltha
 REPOSITORY=voltha/ TAG=dev VOLTHA_BUILD=docker make build
 cd ~/cord/automation-tools/developer
-bash tag_and_push.sh -t dev -r 192.168.99.100:30500
+bash tag_and_push.sh -f dev -r 192.168.99.100:30500
 ```
 
 This set of commands builds the VOLTHA containers and pushes them to a local
