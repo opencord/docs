@@ -26,6 +26,8 @@ git clone https://gerrit.opencord.org/automation-tools
 cd automation-tools/seba-in-a-box
 ```
 
+### Quick start: Build SiaB using released charts
+
 To build a SiaB that uses the released service versions specified in the Helm charts:
 
 ```bash
@@ -33,13 +35,7 @@ make    # or 'make stable'
 ```
 
 > NOTE that `make` or `make stable` will install SEBA with the container versions that are
-> defined in the helm charts. If you want to install SEBA 1.0 please use: `make siab-1.0`  
-
-To build a SiaB that uses the latest development code:
-
-```bash
-make latest
-```
+> defined in the helm charts. If you want to install SEBA 1.0 please use: `make siab-1.0`
 
 After a successful install, you will see the message:
 
@@ -60,6 +56,77 @@ To test basic SEBA functionality, you can run:
 ```bash
 make run-tests
 ```
+
+### Quick start: Build SiaB using latest development code
+
+To build a SiaB that uses the latest development code:
+
+```bash
+make latest [NUM_OLTS=n]
+```
+
+With the `latest` target, you can specify the number of OLT/ONU/RG chains (up to 4) that you want to
+create.  Each OLT associates with a single ONU; adding multiple ONUs per OLT is future work.  If you
+specify more than one OLT you will see several OLT/ONU/RG containers when you run `kubectl -n voltha
+get pod`:
+
+```bash
+$ kubectl -n voltha get pod
+NAME                                        READY   STATUS    RESTARTS   AGE
+...
+olt0-774f9cb5f7-2z256                       1/1     Running   0          6m31s
+olt1-5f7c44f554-rkdbq                       1/1     Running   0          6m31s
+olt2-d949c6c9f-jcmgz                        1/1     Running   0          6m31s
+onu0-7db8455577-8n8ks                       1/1     Running   0          6m30s
+onu1-d64b87d79-kqmd5                        1/1     Running   0          6m31s
+onu2-5bb54b889-8g6w8                        1/1     Running   0          6m31s
+rg0-84b6654764-ztb4r                        1/1     Running   0          6m30s
+rg1-b8ccb5cfd-r2586                         1/1     Running   0          6m30s
+rg2-574c7d9f6-f5knh                         1/1     Running   0          6m30s
+...
+```
+
+Likewise `brctl show` will output:
+
+```bash
+$ brctl show
+bridge name bridge id           STP enabled   interfaces
+docker0     8000.02429b163213   no
+nni0        8000.e62fcf80f1ed   no            vethac65f4a9
+                                              vethcdad8664
+nni1        8000.06298b5e03f5   no            veth4c8048bf
+                                              vethdd2f29d1
+nni2        8000.aef29aa3595a   no            vetha7186d8a
+                                              vethd9610930
+pon0        8000.a24b3df352ac   no            veth1b61ec08
+                                              veth3f1056c1
+pon1        8000.824c4346fb80   no            veth631eb0a8
+                                              vethdae92661
+pon2        8000.6e30a2216b3c   no            veth66b840fa
+                                              veth72f061ad
+```
+
+Above there are three separate datapath chains: `rg0 -> pon0 -> onu0 -> olt0 -> nni0`, `rg1 -> pon1
+-> onu1 -> olt1 -> nni1`, etc.  All of the `nniX` bridges connect to the agg switch in Mininet on
+different ports.   A subscriber is created for each RG `rgX` with S-tag of `222+X` and C-tag of
+`111`.  After `rgX` is authenticated, it will get an IP address on subnet `172.18.X.0/24` and ping
+`172.18.X.10` as its BNG.
+
+After a successful install, you will see the message:
+
+```text
+SEBA-in-a-Box installation finished!
+```
+
+If the install fails for some reason, you can re-run the make command and the install will try to resume where it left off.
+
+To test basic SEBA functionality using the development code, you can run:
+
+```bash
+make run-tests-latest
+```
+
+Note that the tests currently assume a single OLT, so some tests will likely fail if you have configured multiple OLTs.
 
 ## Installation procedure
 
