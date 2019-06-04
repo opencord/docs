@@ -56,7 +56,7 @@ have tested over time in lab trials.
         * OCP Accepted&trade; EdgeCore AS5812-54X
         * QuantaMesh T3048-LY8
         * Delta AG7648
-        * OCP Accepted&trade; Inventec D6254 (verified by Inventec)
+        * Inventec D6254 (verified by Inventec)
     * **25G** models (with 100G uplinks)
         * QuantaMesh BMS T7032-IX1/IX1B (with 25G breakout cable)
         * Inventec D7054Q28B (verified by Inventec)
