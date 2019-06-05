@@ -214,6 +214,20 @@ helm init --service-account tiller
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 ```
 
+### Cordctl
+
+Install the `cordctl` command line tool:
+
+```bash
+export CORDCTL_VERSION=1.0.0
+export CORDCTL_PLATFORM=linux-amd64
+curl -L -o /tmp/cordctl "https://github.com/opencord/cordctl/releases/download/$CORDCTL_VERSION/cordctl-$CORDCTL_PLATFORM"
+sudo mv /tmp/cordctl /usr/local/bin/cordctl
+sudo chmod a+x /usr/local/bin/cordctl
+mkdir -p ~/.cord
+printf "server: localhost:30011\nusername: admin@opencord.org\npassword: letmein\ngrpc:\n  timeout: 10s\n" > ~/.cord/config
+```
+
 ### Other prerequisites
 
 Install the `http` and `jq` commands.  Run: `sudo apt install -y httpie jq`
@@ -388,13 +402,13 @@ helm install -n ponsim-pod xos-profiles/ponsim-pod
 
 Wait for the ponsim-pod container to reach Completed state, then log into the XOS GUI at `http://<hostname>:30001` (credentials: admin@opencord.org / letmein).  You should see an AttWorkflowDriver Service Instance with authentication state AWAITING.
 
-To automatically check for this condition you can run:
+To run the check from the command line you can run:
 
 ```bash
-http -a admin@opencord.org:letmein GET \
-      http://127.0.0.1:30001/xosapi/v1/att-workflow-driver/attworkflowdriverserviceinstances | \
-      jq '.items[0].authentication_state' | grep AWAITING
+cordctl model list AttWorkflowDriverServiceInstance -f "authentication_state=AWAITING"
 ```
+
+This will show only the AttWorkflowDriver Service Instances in AWAITING state.
 
 ## ONOS customizations
 
@@ -446,17 +460,13 @@ Hit Ctrl-C after this point to get back to the shell prompt.
 In the XOS GUI, the AttDriverWorkflow Service Instance should now be in APPROVED state.  You can check for this by running:
 
 ```bash
-http -a admin@opencord.org:letmein GET \
-      http://127.0.0.1:30001/xosapi/v1/att-workflow-driver/attworkflowdriverserviceinstances | \
-      jq '.items[0].authentication_state' | grep APPROVED
+cordctl model list AttWorkflowDriverServiceInstance -f "authentication_state=APPROVED"
 ```
 
 The FabricCrossconnect Service Instance should have a check in the Backend status column.  You can check for this by running:
 
 ```bash
-http -a admin@opencord.org:letmein GET \
-      http://127.0.0.1:30001/xosapi/v1/fabric-crossconnect/fabriccrossconnectserviceinstances | \
-      jq '.items[0].backend_status'|grep OK
+cordctl model list FabricCrossconnectServiceInstance -f 'backend_status=OK'
 ```
 
 ### Obtain an IP address for the RG
@@ -517,6 +527,12 @@ rtt min/avg/max/mdev = 34.940/37.343/39.615/1.917 ms
 ```
 
 That’s it.  Currently it’s not possible to send traffic to destinations on the Internet.
+
+## Restarting SEBA-in-a-Box after a reboot
+
+After a reboot of a server running SiaB, some services (such as etcd) will likely come up in
+a broken state.  The easiest thing to do in this situation is to teardown SiaB using
+`make reset-kubeadm` and then rebuild it.
 
 ## Uninstall SEBA-in-a-Box
 
