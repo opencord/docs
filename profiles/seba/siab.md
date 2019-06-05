@@ -214,6 +214,20 @@ helm init --service-account tiller
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 ```
 
+### Cordctl
+
+Install the `cordctl` command line tool:
+
+```bash
+export CORDCTL_VERSION=1.0.0
+export CORDCTL_PLATFORM=linux-amd64
+curl -L -o /tmp/cordctl "https://github.com/opencord/cordctl/releases/download/$CORDCTL_VERSION/cordctl-$CORDCTL_PLATFORM"
+sudo mv /tmp/cordctl /usr/local/bin/cordctl
+sudo chmod a+x /usr/local/bin/cordctl
+mkdir -p ~/.cord
+printf "server: localhost:30011\nusername: admin@opencord.org\npassword: letmein\ngrpc:\n  timeout: 10s\n" > ~/.cord/config
+```
+
 ### Other prerequisites
 
 Install the `http` and `jq` commands.  Run: `sudo apt install -y httpie jq`
@@ -297,9 +311,9 @@ freeradius-765c9b486c-6qs7t                 1/1       Running   0  
 netconf-7d7c96c88b-29cv2                    1/1       Running   0          6h
 nginx-ingress-controller-6db99757f7-d9cpk   1/1       Running   0          6h
 ofagent-7d7b854cd4-fx6gq                    1/1       Running   0          6h
-olt-5455744678-hqbwh                        1/1       Running   0          6h
-onu-5df655b9c9-prfjz                        1/1       Running   0          6h
-rg-75845c54bc-fjgrf                         1/1       Running   0          6h
+olt0-5455744678-hqbwh                       1/1       Running   0          6h
+onu0-5df655b9c9-prfjz                       1/1       Running   0          6h
+rg0-75845c54bc-fjgrf                        1/1       Running   0          6h
 vcli-6875544cf-rfdrh                        1/1       Running   0          6h
 vcore-0                                     1/1       Running   0          6h
 voltha-546cb8fd7f-5n9x4                     1/1       Running   3          6h
@@ -307,47 +321,11 @@ voltha-546cb8fd7f-5n9x4                     1/1       Running   3 
 
 If you see the olt pod in CrashLoopBackOff state, try deleting (`helm delete --purge`) and reinstalling the ponsimv2 chart.
 
-## Install Mininet
-
-Run these commands to install Mininet:
+Run `http GET http://127.0.0.1:30125/health|jq '.state'`.  It should return `"HEALTHY"`:
 
 ```bash
-cd ~/cord/helm-charts
-sudo modprobe openvswitch
-helm install -n mininet mininet
-```
-
-After the Mininet pod is running, you can get to the `mininet>` prompt using:
-
-```bash
-kubectl attach -ti deployment.apps/mininet
-```
-
-To detach press Ctrl-P Ctrl-Q.
-
-**Before proceeding**
-
-Run: `brctl show`
-
-You should see two interfaces on each of the pon0 and pon1 Linux bridges.
-
-```bash
-$ brctl show
-bridge name     bridge id               STP enabled     interfaces
-docker0         8000.02429d07b4e2       no
-pon0            8000.bec4912b1f6a       no              veth25c1f40b
-                                                        veth2a4c914f
-pon1            8000.0a580a170001       no              veth3cc603fe
-                                                        vethb6820963
-```
-
-## Enable pon0 to forward EAPOL packets
-
-This is necessary to enable the RG to authenticate.  Run these commands:
-
-```bash
-echo 8 > /tmp/pon0_group_fwd_mask
-sudo cp /tmp/pon0_group_fwd_mask /sys/class/net/pon0/bridge/group_fwd_mask
+$ http GET http://127.0.0.1:30125/health|jq '.state'
+"HEALTHY"
 ```
 
 ## Install NEM charts
@@ -370,7 +348,8 @@ helm install -n base-kubernetes xos-profiles/base-kubernetes
 
 Run:  `kubectl get pod`
 
-You should see all the NEM pods in Running state, except a number of `*-tosca-loader` pods which should eventually be in Completed state.  The latter may go through CrashLoopBackOff state and get restarted a few times first (less than 10).  To wait until this occurs you can run:
+You should see all the NEM pods in Running state, except a number of `*-tosca-loader` pods which should eventually be in Completed state.  
+To wait until this occurs you can run:
 
 ```bash
 ~/cord/helm-charts/scripts/wait_for_pods.sh
@@ -378,22 +357,84 @@ You should see all the NEM pods in Running state, except a number of `*-tosca-l
 
 ## Load TOSCA into NEM
 
-Run this commands:
+Run these commands:
 
 ```bash
 helm install -n ponsim-pod xos-profiles/ponsim-pod
+~/cord/helm-charts/scripts/wait_for_pods.sh
 ```
 
 **Before proceeding**
 
-Wait for the ponsim-pod container to reach Completed state, then log into the XOS GUI at `http://<hostname>:30001` (credentials: admin@opencord.org / letmein).  You should see an AttWorkflowDriver Service Instance with authentication state AWAITING.
+Log into the XOS GUI at `http://<hostname>:30001` (credentials: admin@opencord.org / letmein).  You should see an AttWorkflowDriver Service Instance with authentication state AWAITING.
 
-To automatically check for this condition you can run:
+To run the check from the command line:
 
 ```bash
-http -a admin@opencord.org:letmein GET \
-      http://127.0.0.1:30001/xosapi/v1/att-workflow-driver/attworkflowdriverserviceinstances | \
-      jq '.items[0].authentication_state' | grep AWAITING
+cordctl model list AttWorkflowDriverServiceInstance -f "authentication_state=AWAITING"
+```
+
+This will show only the AttWorkflowDriver Service Instances in AWAITING state.  Wait until you see something like:
+
+```bash
+$ cordctl model list AttWorkflowDriverServiceInstance -f "authentication_state=AWAITING"
+OWNER_ID    SERIAL_NUMBER    OF_DPID                UNI_PORT_ID    STATUS_MESSAGE                                      ID    NAME
+2           PSMO12345678     of:0000aabbccddeeff    128            ONU has been validated - Awaiting Authentication    56
+```
+
+## Install Mininet
+
+Ensure that the `openvswitch` kernel module is loaded:
+
+```bash
+sudo modprobe openvswitch
+```
+
+Wait for the `ofdpa-ovs` switch driver setting to be sync'ed to ONOS:
+
+```bash
+cordctl model sync Switch -f 'driver=ofdpa-ovs'
+```
+
+Next install the Mininet chart:
+
+```bash
+cd ~/cord/helm-charts
+helm install -n mininet mininet
+~/cord/helm-charts/scripts/wait_for_pods.sh
+```
+
+After the Mininet pod is running, you can get to the `mininet>` prompt using:
+
+```bash
+kubectl attach -ti deployment.apps/mininet
+```
+
+To detach press Ctrl-P Ctrl-Q.
+
+**Before proceeding**
+
+Run: `brctl show`
+
+You should see two interfaces on each of the pon0 and nni0 Linux bridges.
+
+```bash
+$ brctl show
+bridge name     bridge id               STP enabled     interfaces
+docker0         8000.02429d07b4e2       no
+pon0            8000.bec4912b1f6a       no              veth25c1f40b
+                                                        veth2a4c914f
+nni0            8000.0a580a170001       no              veth3cc603fe
+                                                        vethb6820963
+```
+
+## Enable pon0 to forward EAPOL packets
+
+This is necessary to enable the RG to authenticate.  Run these commands:
+
+```bash
+echo 8 > /tmp/pon0_group_fwd_mask
+sudo cp /tmp/pon0_group_fwd_mask /sys/class/net/pon0/bridge/group_fwd_mask
 ```
 
 ## ONOS customizations
@@ -416,7 +457,7 @@ At this point the system should be fully installed and functional.  
 Enter the RG pod in the voltha namespace:
 
 ```bash
-RG_POD=$( kubectl -n voltha get pod -l "app=rg" -o jsonpath='{.items[0].metadata.name}' )
+RG_POD=$( kubectl -n voltha get pod -l "app=rg0" -o jsonpath='{.items[0].metadata.name}' )
 kubectl -n voltha exec -ti $RG_POD bash
 ```
 
@@ -443,20 +484,34 @@ Hit Ctrl-C after this point to get back to the shell prompt.
 
 **Before proceeding**
 
-In the XOS GUI, the AttDriverWorkflow Service Instance should now be in APPROVED state.  You can check for this by running:
+In the XOS GUI, the AttDriverWorkflow Service Instance should now be in APPROVED state.  
+You can check for this on the command line by running:
 
 ```bash
-http -a admin@opencord.org:letmein GET \
-      http://127.0.0.1:30001/xosapi/v1/att-workflow-driver/attworkflowdriverserviceinstances | \
-      jq '.items[0].authentication_state' | grep APPROVED
+cordctl model list AttWorkflowDriverServiceInstance -f "authentication_state=APPROVED"
 ```
 
-The FabricCrossconnect Service Instance should have a check in the Backend status column.  You can check for this by running:
+It should return output like this:
 
 ```bash
-http -a admin@opencord.org:letmein GET \
-      http://127.0.0.1:30001/xosapi/v1/fabric-crossconnect/fabriccrossconnectserviceinstances | \
-      jq '.items[0].backend_status'|grep OK
+$ cordctl model list AttWorkflowDriverServiceInstance -f "authentication_state=APPROVED"
+OF_DPID                UNI_PORT_ID    STATUS_MESSAGE                                       ID    NAME    OWNER_ID    SERIAL_NUMBER
+of:0000aabbccddeeff    128            ONU has been validated - Authentication succeeded    56            2           PSMO12345678
+```
+
+The FabricCrossconnect Service Instance should have a check in the Backend status column in the GUI.
+You can check for this on the command line by running:
+
+```bash
+cordctl model list FabricCrossconnectServiceInstance -f 'backend_status=OK'
+```
+
+Wait until it returns output like this:
+
+```bash
+$ cordctl model list FabricCrossconnectServiceInstance -f 'backend_status=OK'
+SWITCH_DATAPATH_ID     SOURCE_PORT    ID    NAME    OWNER_ID    S_TAG
+of:0000000000000001    2              59            5           222
 ```
 
 ### Obtain an IP address for the RG
@@ -517,6 +572,12 @@ rtt min/avg/max/mdev = 34.940/37.343/39.615/1.917 ms
 ```
 
 That’s it.  Currently it’s not possible to send traffic to destinations on the Internet.
+
+## Restarting SEBA-in-a-Box after a reboot
+
+After a reboot of a server running SiaB, some services (such as etcd) will likely come up in
+a broken state.  The easiest thing to do in this situation is to teardown SiaB using
+`make reset-kubeadm` and then rebuild it.
 
 ## Uninstall SEBA-in-a-Box
 
