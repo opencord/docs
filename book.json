@@ -17,7 +17,8 @@
     "custom-favicon",
     "page-toc",
     "versions-select",
-    "ga"
+    "ga",
+    "copy-code-button"
   ],
 "pluginsConfig": {
     "favicon": "images/cord.ico",

@@ -4,6 +4,7 @@
   "description": "Documentation for the OpenCORD Project",
   "main": "index.js",
   "dependencies": {
+    "gitbook-plugin-copy-code-button": "0.0.2",
     "gitbook-plugin-ga": "^2.0.0"
   },
   "devDependencies": {},
