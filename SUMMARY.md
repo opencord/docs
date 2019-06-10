@@ -109,6 +109,7 @@
     * [AT&T Workflow Driver](att-workflow-driver/README.md)
     * [Kubernetes](kubernetes-service/kubernetes-service.md)
     * [OpenStack](openstack/openstack-service.md)
+    * [SimpleExampleService](simpleexampleservice/simple-example-service.md)
     * [VTN](vtn-service/README.md)
 * [Helm Reference](charts/helm.md)
     * [Base Kubernetes](charts/base-kubernetes.md)
