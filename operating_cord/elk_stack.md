@@ -197,3 +197,32 @@ curl -XGET "http://localhost:$ELK_PORT/_search" -H 'Content-Type: application/js
 }
 ' | jq .hits.hits
 ```
+
+### Get Operational status of the RADIUS server
+
+Operational status can be queried from Elastic search using Rest API calls.
+Three possible values for operational status are: 
+1) In Use
+2) Unknown
+3) Unavailable 
+
+```bash
+curl -XGET "http://localhost:$ELK_PORT/_search" -H 'Content-Type: application/json' -d'
+{
+  "query": {
+    "bool": {
+      "filter": {
+        "term": {
+          "kafka_topic": "radiusoperationalstatus.events"
+        }
+      }
+    }
+  }
+}' | jq .hits.hits[0]._source.radiusoperationalstatus
+```
+
+Example Response:
+
+```bash
+"In Use"
+```
