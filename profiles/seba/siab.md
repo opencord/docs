@@ -62,28 +62,37 @@ make run-tests
 To build a SiaB that uses the latest development code:
 
 ```bash
-make latest [NUM_OLTS=n]
+make latest [NUM_OLTS=n] [NUM_ONUS_PER_OLT=m]
 ```
 
-With the `latest` target, you can specify the number of OLT/ONU/RG chains (up to 4) that you want to
-create.  Each OLT associates with a single ONU; adding multiple ONUs per OLT is future work.  If you
-specify more than one OLT you will see several OLT/ONU/RG containers when you run `kubectl -n voltha
-get pod`:
+With the `latest` target, you can specify the number of OLTs (up to 4) and number of ONUs per OLT that you want to
+create.  Each OLT associates with "m" number of ONUs.  If you specify more than one OLT you will see several OLT/ONU/RG containers when you run `kubectl -n voltha get pod`:
+
+Naming convention:
+```
+1st OLT - olt0-xxx
+2nd OLT - olt1-xxx
+1st ONU attached to 1st OLT - onu0-0-xx (onu<olt>-<onu>)
+2nd ONU attached to 1st OLT - onu0-1-xx
+1st ONU attached to 2nd OLT - onu1-0-xx
+2nd ONU attached to 2nd OLT - onu1-1-xx
+RG also follows the same naming logic as ONU (rg0-0-xx, rg0-1-xx, rg1-0-xx, rg1-1-xx)
+linux bridges interconnecting ONU and RG also follows the same naming logic as ONU (pon0.0, pon0.1 ..)
+```
 
 ```bash
 $ kubectl -n voltha get pod
 NAME                                        READY   STATUS    RESTARTS   AGE
-...
-olt0-774f9cb5f7-2z256                       1/1     Running   0          6m31s
-olt1-5f7c44f554-rkdbq                       1/1     Running   0          6m31s
-olt2-d949c6c9f-jcmgz                        1/1     Running   0          6m31s
-onu0-7db8455577-8n8ks                       1/1     Running   0          6m30s
-onu1-d64b87d79-kqmd5                        1/1     Running   0          6m31s
-onu2-5bb54b889-8g6w8                        1/1     Running   0          6m31s
-rg0-84b6654764-ztb4r                        1/1     Running   0          6m30s
-rg1-b8ccb5cfd-r2586                         1/1     Running   0          6m30s
-rg2-574c7d9f6-f5knh                         1/1     Running   0          6m30s
-...
+voltha        olt0-774f9cb5f7-9mwwg           1/1     Running     0          33m
+voltha        olt1-5f7c44f554-n47mv           1/1     Running     0          33m
+voltha        onu0-0-5768c4567c-tc2rt         1/1     Running     0          33m
+voltha        onu0-1-859c87ccd9-sr9fq         1/1     Running     0          33m
+voltha        onu1-0-6c58d9957f-6bbk4         1/1     Running     0          33m
+voltha        onu1-1-8555c74487-6fzwb         1/1     Running     0          33m
+voltha        rg0-0-77fcd5d6bc-55cxt          1/1     Running     0          33m
+voltha        rg0-1-57cdc6956f-xm2gp          1/1     Running     0          33m
+voltha        rg1-0-7d6689bd85-tgjcp          1/1     Running     0          33m
+voltha        rg1-1-54994485c5-swnd2          1/1     Running     0          33m
 ```
 
 Likewise `brctl show` will output:
@@ -91,26 +100,33 @@ Likewise `brctl show` will output:
 ```bash
 $ brctl show
 bridge name bridge id           STP enabled   interfaces
-docker0     8000.02429b163213   no
-nni0        8000.e62fcf80f1ed   no            vethac65f4a9
-                                              vethcdad8664
-nni1        8000.06298b5e03f5   no            veth4c8048bf
-                                              vethdd2f29d1
-nni2        8000.aef29aa3595a   no            vetha7186d8a
-                                              vethd9610930
-pon0        8000.a24b3df352ac   no            veth1b61ec08
-                                              veth3f1056c1
-pon1        8000.824c4346fb80   no            veth631eb0a8
-                                              vethdae92661
-pon2        8000.6e30a2216b3c   no            veth66b840fa
-                                              veth72f061ad
+docker0         8000.02427dd2bfc4       no              veth0fbf0dd
+nni0            8000.76030be9e97b       no              veth3c7ade40
+                                                        vethc01838f1
+nni1            8000.ae08243d745e       no              vethe0df415e
+                                                        vetheef40c90
+pon0.0          8000.2aa5060d44b7       no              vethaa880e65
+                                                        vethae9c7b9d
+pon0.1          8000.3602b50c2521       no              veth32a2f3d2
+                                                        veth971b571b
+pon1.0          8000.7efc437e91e4       no              veth1ea11fe3
+                                                        veth51cbc451
+pon1.1          8000.e2423416a798       no              veth3323ad21
+                                                        veth3718d925
 ```
 
-Above there are three separate datapath chains: `rg0 -> pon0 -> onu0 -> olt0 -> nni0`, `rg1 -> pon1
--> onu1 -> olt1 -> nni1`, etc.  All of the `nniX` bridges connect to the agg switch in Mininet on
-different ports.   A subscriber is created for each RG `rgX` with S-tag of `222+X` and C-tag of
-`111`.  After `rgX` is authenticated, it will get an IP address on subnet `172.18.X.0/24` and ping
-`172.18.X.10` as its BNG.
+Above there are four separate datapath chains:
+```
+rg0-0 -> pon0.0 -> onu0-0 -> olt0 -> nni0
+rg0-1 -> pon0.1 -> onu0-1 -> olt0 -> nni0
+rg1-0 -> pon1.0 -> onu1-0 -> olt1 -> nni1
+rg1-1 -> pon1.1 -> onu1-1 -> olt1 -> nni1
+```
+All of the `nniX` bridges connect to the agg switch in Mininet on different ports.
+ 
+A subscriber is created for each RG `rg<olt>-<onu>` with S-tag of `222+<olt>` and C-tag of `111+<onu>`.
+After `rg<olt>-<onu>` is authenticated, it will get an IP address on subnet `172.18+<olt>.<onu>.0/24` and ping
+`172.18+<olt>.<onu>.10` as its BNG.
 
 After a successful install, you will see the message:
 
