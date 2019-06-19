@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ac9a57b6_cb1b45e4",
+        "filename": "SUMMARY.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000010
+      },
+      "writtenOn": "2019-06-19T15:39:34Z",
+      "side": 0,
+      "message": "I think we need these blank lines to make the documentation linter happy",
+      "revId": "b149922150f88dd84ec3eb02bc44a872cbe9c4ab",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
