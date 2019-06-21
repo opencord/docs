@@ -473,7 +473,7 @@ At this point the system should be fully installed and functional.  
 Enter the RG pod in the voltha namespace:
 
 ```bash
-RG_POD=$( kubectl -n voltha get pod -l "app=rg0" -o jsonpath='{.items[0].metadata.name}' )
+RG_POD=$( kubectl -n voltha get pod -l "app=rg0-0" -o jsonpath='{.items[0].metadata.name}' )
 kubectl -n voltha exec -ti $RG_POD bash
 ```
 
