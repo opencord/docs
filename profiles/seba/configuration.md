@@ -6,8 +6,8 @@ done using TOSCA.
 
 In this page we are describing the process as a three steps process:
 
-- [Fabric Setup](./configuration.md#fabric-setup)
-- [OLT Provisioning](./configuration.md#olt-provisioning)
+- [POD Setup](./configuration.md#pod-setup)
+- [PON Provisioning](./configuration.md#pon-provisioning)
 - [Subscriber Provisioning](./configuration.md#subscriber-provisioning)
 
 as that is what logically makes sense, but be aware that all the configurations
@@ -17,7 +17,15 @@ This configuration is environment specific, so
 you will need to create your own, but the following can serve as a
 reference:
 
-## Fabric Setup
+## POD Setup
+
+The POD Setup consists of
+
+- Fabric configuration (In this case a single aggregation switch, see [Fabric](../../fabric/README.md) for more information)
+- `BNGPortMapping` configuration (see [Fabric-crossconnet](../../fabric-crossconnect/README.md) for more information)
+- DHCP L2 Relay configuration (see [ONOS DHCP L2 RELAY Application](https://github.com/opencord/dhcpl2relay/#configuration) for more information)
+
+For simplicity this is encapsulated in a single TOSCA recipe:
 
 ```yaml
 tosca_definitions_version: tosca_simple_yaml_1_0
@@ -103,7 +111,13 @@ topology_template:
 For instructions on how to push TOSCA into a CORD POD, please
 refer to this [guide](../../xos-tosca/README.md).
 
-## OLT Provisioning
+## PON Provisioning
+
+The PON Provisioning consists of preparing all the configurations needed by ONOS and VOLTHA to manage the PON network,
+su as:
+
+- [OLT](../../olt-service/README.md#create-an-OLT)
+- [Technology Profile](https://github.com/opencord/voltha/tree/master/common/tech_profile)
 
 ```yaml
 tosca_definitions_version: tosca_simple_yaml_1_0
@@ -111,6 +125,7 @@ imports:
   - custom_types/oltdevice.yaml
   - custom_types/onudevice.yaml
   - custom_types/voltservice.yaml
+  - custom_types/technologyprofile.yaml
 description: Create an OLT Device in VOLTHA
 topology_template:
   node_templates:
@@ -128,16 +143,78 @@ topology_template:
         device_type: openolt
         host: 10.90.0.122
         port: 9191
-        switch_datapath_id: of:0000000000000002 # the openflow switch to which the OLT is connected
+        switch_datapath_id: of:0000000000000002 # the openflow id of the switch to which the OLT is connected
         switch_port: "1" # the port on the switch on which the OLT is connected
         outer_tpid: "0x8100"
         uplink: "65536"
         nas_id: "NAS_ID"
-        serial_number: "10.90.0.122:9191"
+        serial_number: EC1721000208 # the serial number of the OLT device
       requirements:
         - volt_service:
             node: service#volt
             relationship: tosca.relationships.BelongsToOne
+            
+    technologyProfile:
+      type: tosca.nodes.TechnologyProfile
+      properties:
+        profile_id: 64
+        technology: xgspon
+        profile_value: >
+          {
+            "name": "4QueueHybridProfileMap1",
+            "profile_type": "XPON",
+            "version": 1.0,
+            "num_gem_ports": 1,
+            "instance_control": {
+              "onu": "multi-instance",
+              "uni": "single-instance",
+              "max_gem_payload_size": "auto"
+            },
+            "us_scheduler": {
+              "additional_bw": "auto",
+              "direction": "UPSTREAM",
+              "priority": 0,
+              "weight": 0,
+              "q_sched_policy": "hybrid"
+            },
+            "ds_scheduler": {
+              "additional_bw": "auto",
+              "direction": "DOWNSTREAM",
+              "priority": 0,
+              "weight": 0,
+              "q_sched_policy": "hybrid"
+            },
+            "upstream_gem_port_attribute_list": [{
+                "pbit_map": "0b11000000",
+                "aes_encryption": "True",
+                "scheduling_policy": "StrictPriority",
+                "priority_q": 1,
+                "weight": 0,
+                "discard_policy": "TailDrop",
+                "max_q_size": "auto",
+                "discard_config": {
+                  "min_threshold": 0,
+                  "max_threshold": 0,
+                  "max_probability": 0
+                }
+              }
+            ],
+            "downstream_gem_port_attribute_list": [{
+                "pbit_map": "0b11000000",
+                "aes_encryption": "True",
+                "scheduling_policy": "StrictPriority",
+                "priority_q": 1,
+                "weight": 0,
+                "discard_policy": "TailDrop",
+                "max_q_size": "auto",
+                "discard_config": {
+                  "min_threshold": 0,
+                  "max_threshold": 0,
+                  "max_probability": 0
+                }
+              }
+            ]
+          }
 ```
 
 For instructions on how to push TOSCA into a CORD POD, please
@@ -146,6 +223,8 @@ refer to this [guide](../../xos-tosca/README.md).
 ## Subscriber Provisioning
 
 Once the POD has been configured, you can create a subscriber.
+
+This section will guide you through the configuration of `Subscriber` and associated `BandwidthProfile`s.
 
 To create a subscriber, you'll need to know the serial number of the ONU it is
 attached to.
@@ -221,17 +300,41 @@ customizing the following TOSCA and passing it into the POD:
 tosca_definitions_version: tosca_simple_yaml_1_0
 imports:
   - custom_types/rcordsubscriber.yaml
+  - custom_types/bandwidthprofile.yaml
 description: Create a test subscriber
 topology_template:
   node_templates:
+  
+    high_speed_bp:
+      type: tosca.nodes.BandwidthProfile
+      properties:
+         air: 2000
+         cbs: 2000
+         cir: 2000
+         ebs: 2000
+         eir: 2000
+         name: High Speed Internet
+
     # A subscriber
     my_house:
       type: tosca.nodes.RCORDSubscriber
       properties:
         name: My House
+        status: pre-provisioned # the status we want to create the subscriber in
         c_tag: 111
         s_tag: 222
-        onu_device: BRCM1234 # Serial Number of the ONU Device to which this subscriber is connected
+        onu_device: BRCM22222222 # Serial Number of the ONU Device to which this subscriber is connected
+        tech_profile_id: 64 # The ID of the technology profile that needs to be applied to this subscriber
+        nas_port_id : some-value # radius specific attributes
+        circuit_id: some-value # radius specific attributes
+        remote_id: some-value # radius specific attributes
+      requirements:
+        - upstream_bps:
+            node: high_speed_bp
+            relationship: tosca.relationships.BelongsToOne
+        - downstream_bps:
+            node: high_speed_bp
+            relationship: tosca.relationships.BelongsToOne
 ```
 
 For instructions on how to push TOSCA into a CORD POD, please
