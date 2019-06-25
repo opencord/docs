@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f3f22551_5341eb01",
+        "filename": "profiles/seba/configuration.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-06-25T22:53:16Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 28,
+        "startChar": 41,
+        "endLine": 28,
+        "endChar": 47
+      },
+      "revId": "779456b441763f2bdd5ffc64997517b0395e17c9",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d93f5fa0_39c2f152",
+        "filename": "profiles/seba/configuration.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-06-25T22:53:16Z",
+      "side": 1,
+      "message": "of instead of in",
+      "range": {
+        "startLine": 116,
+        "startChar": 30,
+        "endLine": 116,
+        "endChar": 32
+      },
+      "revId": "779456b441763f2bdd5ffc64997517b0395e17c9",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
