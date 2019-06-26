@@ -115,7 +115,7 @@ a value file called `~/custom.yaml` (on the SiaB host machine) with the followin
 
 
 ```yaml
-aaaAppUrl: "myregistrydomain.com:30160/repository/aaa-app-1.10.0-SNAPSHOT.oar"
+aaaAppUrl: "http://myregistrydomain.com:30160/repository/aaa-app-1.10.0-SNAPSHOT.oar"
 aaaAppVersion: "1.10.0.SNAPSHOT"
 ```
 
@@ -128,5 +128,5 @@ SEBAVALUES=~/custom.yaml make
 ```
 
 > You can find a full list of the application names and URLs here:
-> - https://github.com/opencord/helm-charts/blob/master/xos-profiles/seba-services/values.yaml#L43-L53 
+> - https://github.com/opencord/helm-charts/blob/master/xos-profiles/seba-services/values.yaml#L43-L53
 > - https://github.com/opencord/helm-charts/blob/master/workflows/att-workflow/values.yaml#L40-L41
