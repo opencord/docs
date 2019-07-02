@@ -31,11 +31,14 @@ cd automation-tools/seba-in-a-box
 To build a SiaB that uses the released service versions specified in the Helm charts:
 
 ```bash
-make    # or 'make stable'
+make [stable] [NUM_OLTS=n] [NUM_ONUS_PER_OLT=m]    # `make` and `make stable` are the same
 ```
 
 > NOTE that `make` or `make stable` will install SEBA with the container versions that are
-> defined in the helm charts. If you want to install SEBA 1.0 please use: `make siab-1.0`
+> defined in the helm charts. If you want to install SEBA 2.0 please use: `make siab-2.0`
+
+You can specify the number of OLTs (up to 4) and number of ONUs per OLT (up to 4) that you want to
+create.
 
 After a successful install, you will see the message:
 
@@ -57,6 +60,9 @@ To test basic SEBA functionality, you can run:
 make run-tests
 ```
 
+Note that the tests currently assume a single OLT/ONU, so some tests will
+likely fail if you have configured multiple OLTs and ONUs.
+
 ### Quick start: Build SiaB using latest development code
 
 To build a SiaB that uses the latest development code:
@@ -64,69 +70,8 @@ To build a SiaB that uses the latest development code:
 ```bash
 make latest [NUM_OLTS=n] [NUM_ONUS_PER_OLT=m]
 ```
-
-With the `latest` target, you can specify the number of OLTs (up to 4) and number of ONUs per OLT that you want to
-create.  Each OLT associates with "m" number of ONUs.  If you specify more than one OLT you will see several OLT/ONU/RG containers when you run `kubectl -n voltha get pod`:
-
-Naming convention:
-```
-1st OLT - olt0-xxx
-2nd OLT - olt1-xxx
-1st ONU attached to 1st OLT - onu0-0-xx (onu<olt>-<onu>)
-2nd ONU attached to 1st OLT - onu0-1-xx
-1st ONU attached to 2nd OLT - onu1-0-xx
-2nd ONU attached to 2nd OLT - onu1-1-xx
-RG also follows the same naming logic as ONU (rg0-0-xx, rg0-1-xx, rg1-0-xx, rg1-1-xx)
-linux bridges interconnecting ONU and RG also follows the same naming logic as ONU (pon0.0, pon0.1 ..)
-```
-
-```bash
-$ kubectl -n voltha get pod
-NAME                                        READY   STATUS    RESTARTS   AGE
-voltha        olt0-774f9cb5f7-9mwwg           1/1     Running     0          33m
-voltha        olt1-5f7c44f554-n47mv           1/1     Running     0          33m
-voltha        onu0-0-5768c4567c-tc2rt         1/1     Running     0          33m
-voltha        onu0-1-859c87ccd9-sr9fq         1/1     Running     0          33m
-voltha        onu1-0-6c58d9957f-6bbk4         1/1     Running     0          33m
-voltha        onu1-1-8555c74487-6fzwb         1/1     Running     0          33m
-voltha        rg0-0-77fcd5d6bc-55cxt          1/1     Running     0          33m
-voltha        rg0-1-57cdc6956f-xm2gp          1/1     Running     0          33m
-voltha        rg1-0-7d6689bd85-tgjcp          1/1     Running     0          33m
-voltha        rg1-1-54994485c5-swnd2          1/1     Running     0          33m
-```
-
-Likewise `brctl show` will output:
-
-```bash
-$ brctl show
-bridge name bridge id           STP enabled   interfaces
-docker0         8000.02427dd2bfc4       no              veth0fbf0dd
-nni0            8000.76030be9e97b       no              veth3c7ade40
-                                                        vethc01838f1
-nni1            8000.ae08243d745e       no              vethe0df415e
-                                                        vetheef40c90
-pon0.0          8000.2aa5060d44b7       no              vethaa880e65
-                                                        vethae9c7b9d
-pon0.1          8000.3602b50c2521       no              veth32a2f3d2
-                                                        veth971b571b
-pon1.0          8000.7efc437e91e4       no              veth1ea11fe3
-                                                        veth51cbc451
-pon1.1          8000.e2423416a798       no              veth3323ad21
-                                                        veth3718d925
-```
-
-Above there are four separate datapath chains:
-```
-rg0-0 -> pon0.0 -> onu0-0 -> olt0 -> nni0
-rg0-1 -> pon0.1 -> onu0-1 -> olt0 -> nni0
-rg1-0 -> pon1.0 -> onu1-0 -> olt1 -> nni1
-rg1-1 -> pon1.1 -> onu1-1 -> olt1 -> nni1
-```
-All of the `nniX` bridges connect to the agg switch in Mininet on different ports.
- 
-A subscriber is created for each RG `rg<olt>-<onu>` with S-tag of `222+<olt>` and C-tag of `111+<onu>`.
-After `rg<olt>-<onu>` is authenticated, it will get an IP address on subnet `172.18+<olt>.<onu>.0/24` and ping
-`172.18+<olt>.<onu>.10` as its BNG.
+You can specify the number of OLTs (up to 4) and number of ONUs per OLT (up to 4) that you want to
+create.
 
 After a successful install, you will see the message:
 
@@ -142,11 +87,12 @@ To test basic SEBA functionality using the development code, you can run:
 make run-tests-latest
 ```
 
-Note that the tests currently assume a single OLT, so some tests will likely fail if you have configured multiple OLTs.
+Note that the tests currently assume a single OLT/ONU, so some tests will
+likely fail if you have configured multiple OLTs and ONUs.
 
 ## Installation procedure
 
-The rest of this page describes a manual method for installing SEBA-in-a-Box.
+The rest of this page describes a manual method for installing SEBA-in-a-Box.  It also provides an overview of what is installed by each chart.
 
 ### Prerequisites
 
@@ -235,7 +181,7 @@ helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.c
 Install the `cordctl` command line tool:
 
 ```bash
-export CORDCTL_VERSION=1.0.0
+export CORDCTL_VERSION=1.1.1
 export CORDCTL_PLATFORM=linux-amd64
 curl -L -o /tmp/cordctl "https://github.com/opencord/cordctl/releases/download/$CORDCTL_VERSION/cordctl-$CORDCTL_PLATFORM"
 sudo mv /tmp/cordctl /usr/local/bin/cordctl
@@ -271,6 +217,16 @@ kubectl wait pod/cord-kafka-0 --for condition=Ready --timeout=180s
 helm install -n onos onos
 ```
 
+You should see the following pods running:
+
+```bash
+$ kubectl get pod
+NAME                     READY   STATUS    RESTARTS   AGE
+cord-kafka-0             1/1     Running   1          14h
+cord-kafka-zookeeper-0   1/1     Running   0          14h
+onos-558445d9bc-c2cd5    2/2     Running   0          14h
+```
+
 ## Install VOLTHA charts
 
 Run these commands to install VOLTHA:
@@ -285,19 +241,36 @@ helm install -n etcd-operator stable/etcd-operator --version 0.8.3
 kubectl get crd | grep etcd
 # After EtcdCluster CRD is in place
 helm dep up voltha
-helm install -n voltha -f configs/seba-ponsim.yaml voltha
+helm install -n voltha voltha  --set etcd-cluster.clusterSize=1
 ```
 
 **Before proceeding**
 
-Run: `kubectl get pod|grep etcd-cluster`
+Run: `kubectl get pod -l app=etcd`
 
 You should see the etcd-cluster pod up and running.
 
 ```bash
-$ kubectl get pod|grep etcd-cluster
-etcd-cluster-q9zhrwvllh                                       1/1       Running     0          20m
+$ kubectl get pod -l app=etcd
+NAME                      READY   STATUS    RESTARTS   AGE
+etcd-cluster-jcjk2x97w6   1/1     Running   0          14h
 ```
+
+You should see the VOLTHA pods created:
+
+```bash
+$ kubectl get pod -n voltha
+NAME                                        READY   STATUS    RESTARTS   AGE
+default-http-backend-798fb4f44c-fb696       1/1     Running   0          14h
+freeradius-754bc76b5-22lcm                  1/1     Running   0          14h
+netconf-66b767bddc-hbsgr                    1/1     Running   0          14h
+nginx-ingress-controller-5fc7b87c86-bd55x   1/1     Running   0          14h
+ofagent-556cd6c978-lknd4                    1/1     Running   0          14h
+vcli-67c996f87d-vw4pk                       1/1     Running   0          14h
+vcore-0                                     1/1     Running   0          14h
+voltha-6f8d7bf7b-4gkkj                      1/1     Running   1          14h
+```
+
 
 ## Install Ponsim charts
 
@@ -305,37 +278,46 @@ Run these commands to install Ponsim (after installing VOLTHA):
 
 ```bash
 cd ~/cord/helm-charts
-helm install -n ponnet ponnet
+NUM_OLTS=1          # can be between 1 and 4
+NUM_ONUS_PER_OLT=1  # can be between 1 and 4
+helm install -n ponnet ponnet --set numOlts=$(NUM_OLTS) --set numOnus=$(NUM_ONUS_PER_OLT)
 # Wait for CNI changes
 ~/cord/helm-charts/scripts/wait_for_pods.sh kube-system
-helm install -n ponsimv2 ponsimv2
+helm install -n ponsimv2 ponsimv2 --set numOlts=$(NUM_OLTS) --set numOnus=$(NUM_ONUS_PER_OLT)
 # Iptables setup
 sudo iptables -P FORWARD ACCEPT
 ```
 
+Setting `numOlts` and `numOnus` is optional; the default is 1.
+
 **Before proceeding**
 
-Run: `kubectl -n voltha get pod`
+Run: `kubectl -n voltha get pod -l app=ponsim`
 
-Make sure that all of the pods in the voltha namespace are in Running state.
 
 ```bash
-$ kubectl -n voltha get pod
-NAME                                        READY     STATUS    RESTARTS   AGE
-default-http-backend-846b65fb5f-rklfb       1/1       Running   0          6h
-freeradius-765c9b486c-6qs7t                 1/1       Running   0          6h
-netconf-7d7c96c88b-29cv2                    1/1       Running   0          6h
-nginx-ingress-controller-6db99757f7-d9cpk   1/1       Running   0          6h
-ofagent-7d7b854cd4-fx6gq                    1/1       Running   0          6h
-olt0-5455744678-hqbwh                       1/1       Running   0          6h
-onu0-5df655b9c9-prfjz                       1/1       Running   0          6h
-rg0-75845c54bc-fjgrf                        1/1       Running   0          6h
-vcli-6875544cf-rfdrh                        1/1       Running   0          6h
-vcore-0                                     1/1       Running   0          6h
-voltha-546cb8fd7f-5n9x4                     1/1       Running   3          6h
+$ kubectl -n voltha get pod -l app=ponsim
+NAME                      READY   STATUS    RESTARTS   AGE
+olt0-f4744dc5-xdrjb       1/1     Running   0          15h
+onu0-0-6bf67bf6c6-76gn7   1/1     Running   0          15h
+rg0-0-7b9d5cdb5c-jc8p5    1/1     Running   0          14h
 ```
 
-If you see the olt pod in CrashLoopBackOff state, try deleting (`helm delete --purge`) and reinstalling the ponsimv2 chart.
+Make sure that all of the pods in the voltha namespace are in Running state.
+If you see the `olt0` pod in CrashLoopBackOff state, try deleting (`helm delete --purge`) and reinstalling the ponsimv2 chart.
+
+If you install more than one OLT/ONU then you will see more containers above.  The naming convention:
+```
+1st OLT - olt0-xxx
+2nd OLT - olt1-xxx
+1st ONU attached to 1st OLT - onu0-0-xx (onu<olt>-<onu>)
+2nd ONU attached to 1st OLT - onu0-1-xx
+1st ONU attached to 2nd OLT - onu1-0-xx
+2nd ONU attached to 2nd OLT - onu1-1-xx
+RG follows the same naming logic as ONU (rg0-0-xx, rg0-1-xx, rg1-0-xx, rg1-1-xx)
+Linux bridges interconnecting ONU and RG follow the same naming logic as ONU (pon0.0, pon0.1 ...)
+Linux bridges interconnecting OLT and Mininet follow same naming logic as OLT (nni0, nni1, ...)
+```
 
 Run `http GET http://127.0.0.1:30125/health|jq '.state'`.  It should return `"HEALTHY"`:
 
@@ -343,6 +325,7 @@ Run `http GET http://127.0.0.1:30125/health|jq '.state'`.  It should return `"HE
 $ http GET http://127.0.0.1:30125/health|jq '.state'
 "HEALTHY"
 ```
+
 
 ## Install NEM charts
 
@@ -376,26 +359,26 @@ To wait until this occurs you can run:
 Run these commands:
 
 ```bash
-helm install -n ponsim-pod xos-profiles/ponsim-pod
+helm install -n ponsim-pod xos-profiles/ponsim-pod --set numOlts=$(NUM_OLTS) --set numOnus=$(NUM_ONUS_PER_OLT)
 ~/cord/helm-charts/scripts/wait_for_pods.sh
 ```
 
+The TOSCA creates a subscriber for each RG `rg<olt>-<onu>` with S-tag of `222+<olt>` and C-tag of `111+<onu>`.
+
 **Before proceeding**
 
-Log into the XOS GUI at `http://<hostname>:30001` (credentials: admin@opencord.org / letmein).  You should see an AttWorkflowDriver Service Instance with authentication state AWAITING.
-
-To run the check from the command line:
+Log into the XOS GUI at `http://<hostname>:30001` (credentials: admin@opencord.org / letmein).  You should see an AttWorkflowDriver Service Instance with authentication state AWAITING.  To check this from the command line:
 
 ```bash
 cordctl model list AttWorkflowDriverServiceInstance -f "authentication_state=AWAITING"
 ```
 
-This will show only the AttWorkflowDriver Service Instances in AWAITING state.  Wait until you see something like:
+This will show only the AttWorkflowDriver Service Instances in AWAITING state.  Wait until you see a line for each ONU:
 
 ```bash
 $ cordctl model list AttWorkflowDriverServiceInstance -f "authentication_state=AWAITING"
-OWNER_ID    SERIAL_NUMBER    OF_DPID                UNI_PORT_ID    STATUS_MESSAGE                                      ID    NAME
-2           PSMO12345678     of:0000aabbccddeeff    128            ONU has been validated - Awaiting Authentication    56
+ID    NAME    OF_DPID                OWNER_ID    SERIAL_NUMBER    STATUS_MESSAGE                                      UNI_PORT_ID
+56            of:0000d0d3e158fede    2           PSMO00000000     ONU has been validated - Awaiting Authentication    128
 ```
 
 ## Install Mininet
@@ -416,7 +399,7 @@ Next install the Mininet chart:
 
 ```bash
 cd ~/cord/helm-charts
-helm install -n mininet mininet
+helm install -n mininet mininet --set numOlts=$(NUM_OLTS) --set numOnus=$(NUM_ONUS_PER_OLT)
 ~/cord/helm-charts/scripts/wait_for_pods.sh
 ```
 
@@ -432,30 +415,32 @@ To detach press Ctrl-P Ctrl-Q.
 
 Run: `brctl show`
 
-You should see two interfaces on each of the pon0 and nni0 Linux bridges.
+You should see two interfaces on the `ponX.Y` and `nniX` Linux bridges.
 
 ```bash
 $ brctl show
 bridge name     bridge id               STP enabled     interfaces
 docker0         8000.02429d07b4e2       no
-pon0            8000.bec4912b1f6a       no              veth25c1f40b
+pon0.0          8000.bec4912b1f6a       no              veth25c1f40b
                                                         veth2a4c914f
 nni0            8000.0a580a170001       no              veth3cc603fe
                                                         vethb6820963
 ```
 
-## Enable pon0 to forward EAPOL packets
+You will see more bridges if you've configured multiple OLTs and ONUs.  All of the `nniX` Linux bridges connect to the agg switch in Mininet on different ports.
 
-This is necessary to enable the RG to authenticate.  Run these commands:
+## Enable pon bridges to forward EAPOL packets
+
+This is necessary to enable the RG to authenticate:
 
 ```bash
-echo 8 > /tmp/pon0_group_fwd_mask
-sudo cp /tmp/pon0_group_fwd_mask /sys/class/net/pon0/bridge/group_fwd_mask
+echo 8 > /tmp/group_fwd_mask
+for BRIDGE in /sys/class/net/pon*; do sudo cp /tmp/group_fwd_mask $BRIDGE/bridge/group_fwd_mask; done
 ```
 
 ## ONOS customizations
 
-Right now it’s necessary to install some custom configuration to ONOS directly.  Run this command:
+It’s necessary to install some custom configuration to ONOS directly.  Run this command:
 
 ```bash
 http -a karaf:karaf POST \
@@ -464,7 +449,7 @@ http -a karaf:karaf POST \
 
 The above command instructs the ONU to exchange untagged packets with the RG, rather than packets tagged with VLAN 0.
 
-At this point the system should be fully installed and functional.  
+At this point the system should be fully installed and functional.
 
 ## Validating the install
 
@@ -473,10 +458,11 @@ At this point the system should be fully installed and functional.  
 Enter the RG pod in the voltha namespace:
 
 ```bash
-RG_POD=$( kubectl -n voltha get pod -l "app=rg0-0" -o jsonpath='{.items[0].metadata.name}' )
+RG_POD=$( kubectl -n voltha get pod | grep rg0-0 | awk '{print $1}' )
 kubectl -n voltha exec -ti $RG_POD bash
 ```
 
+If you built SiaB with multiple OLTs and ONUs, you can choose any RG to authenticate.
 Inside the pod, run this command:
 
 ```bash
@@ -500,8 +486,7 @@ Hit Ctrl-C after this point to get back to the shell prompt.
 
 **Before proceeding**
 
-In the XOS GUI, the AttDriverWorkflow Service Instance should now be in APPROVED state.  
-You can check for this on the command line by running:
+In the XOS GUI, the AttDriverWorkflow Service Instance should now be in APPROVED state.  You can check for this on the command line by running:
 
 ```bash
 cordctl model list AttWorkflowDriverServiceInstance -f "authentication_state=APPROVED"
@@ -511,12 +496,11 @@ It should return output like this:
 
 ```bash
 $ cordctl model list AttWorkflowDriverServiceInstance -f "authentication_state=APPROVED"
-OF_DPID                UNI_PORT_ID    STATUS_MESSAGE                                       ID    NAME    OWNER_ID    SERIAL_NUMBER
-of:0000aabbccddeeff    128            ONU has been validated - Authentication succeeded    56            2           PSMO12345678
+ID    NAME    OF_DPID                OWNER_ID    SERIAL_NUMBER    STATUS_MESSAGE                                       UNI_PORT_ID
+56            of:0000d0d3e158fede    2           PSMO00000000     ONU has been validated - Authentication succeeded    128
 ```
 
-The FabricCrossconnect Service Instance should have a check in the Backend status column in the GUI.
-You can check for this on the command line by running:
+The FabricCrossconnect Service Instance should have a check in the Backend status column in the GUI.  You can check for this on the command line by running:
 
 ```bash
 cordctl model list FabricCrossconnectServiceInstance -f 'backend_status=OK'
@@ -526,8 +510,8 @@ Wait until it returns output like this:
 
 ```bash
 $ cordctl model list FabricCrossconnectServiceInstance -f 'backend_status=OK'
-SWITCH_DATAPATH_ID     SOURCE_PORT    ID    NAME    OWNER_ID    S_TAG
-of:0000000000000001    2              59            5           222
+ID    NAME    OWNER_ID    S_TAG    SOURCE_PORT    SWITCH_DATAPATH_ID
+59            4           222      2              of:0000000000000001
 ```
 
 ### Obtain an IP address for the RG
@@ -556,7 +540,7 @@ You can ignore the Device or resource busy errors.  The issue is that `/etc/re
 
 **Before proceeding**
 
-Make sure that eth0 inside the RG container has an IP address on the 172.18.0.0/24 subnet:
+`rg<olt>-<onu>` will get an IP address on subnet `172.18+<olt>.<onu>.0/24`.  Make sure that eth0 inside the RG container has an IP address on the proper subnet:
 
 ```bash
 $ ifconfig eth0
@@ -571,7 +555,7 @@ eth0      Link encap:Ethernet  HWaddr 0a:58:0a:16:00:06
 
 ### Ping the emulated BNG
 
-The emulated BNG has an IP address of 172.18.0.10.  After successfully running dhclient you should be able to ping it from the RG.
+`rg<olt>-<onu>` pings `172.18+<olt>.<onu>.10` as its BNG.
 
 ```bash
 $ ping -c 3 172.18.0.10
