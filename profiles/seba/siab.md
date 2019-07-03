@@ -35,7 +35,7 @@ make [stable] [NUM_OLTS=n] [NUM_ONUS_PER_OLT=m]    # `make` and `make stable` ar
 ```
 
 > NOTE that `make` or `make stable` will install SEBA with the container versions that are
-> defined in the helm charts. If you want to install SEBA 2.0 please use: `make siab-2.0`
+> defined in the helm charts. If you want to install SEBA 2.0 please use: `make siab-2.0-alpha1`
 
 You can specify the number of OLTs (up to 4) and number of ONUs per OLT (up to 4) that you want to
 create.

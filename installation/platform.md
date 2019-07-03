@@ -10,7 +10,7 @@ to bring up the Helm charts for the platform components.
 Then, to install the CORD Platform you can use the corresponding chart:
 
 ```shell
-helm install -n cord-platform cord/cord-platform --version=6.1.0
+helm install -n cord-platform cord/cord-platform --version=7.0.0
 ```
 
 ### Disabling monitoring and logging
@@ -28,7 +28,7 @@ those features by adding this to the installation commands:
 To disable both of them you can use:
 
 ```shell
-helm install -n cord-platform cord/cord-platform --version=6.1.0 --set logging.enabled=false --set nem-monitoring.enabled=false
+helm install -n cord-platform cord/cord-platform --version=7.0.0 --set logging.enabled=false --set nem-monitoring.enabled=false
 ```
 
 ## Alternatively, install the CORD Platform as set of Separate Components

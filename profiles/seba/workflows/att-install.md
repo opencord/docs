@@ -5,7 +5,7 @@ You can find a complete description of the SEBA workflow for AT&T in [this docum
 ## Install the `att-workflow` chart
 
 ```shell
-helm install -n att-workflow cord/att-workflow --version=1.0.2
+helm install -n att-workflow cord/att-workflow --version=1.2.4
 ```
 
 > NOTE: if you have installed the `cord-platform` chart as a sum of its components,
