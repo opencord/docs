@@ -24,7 +24,7 @@ Once the CRDs are present, proceed with the `seba` chart installation.
 Then, proceed with the SEBA chart installation:
 
 ```shell
-helm install -n seba cord/seba --version=1.0.0
+helm install -n seba cord/seba --version=2.0.0-alpha1
 ```
 
 ### Alternatively, install SEBA as separate components

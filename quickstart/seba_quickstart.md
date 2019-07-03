@@ -6,25 +6,29 @@ This section provides instructions to quickly bring up SEBA.
 
 ## Install components as a whole
 
+The commands below will bring up the SEBA 2.0-alpha release
+
 ```shell
 # Add the CORD repository and update indexes
 helm repo add cord https://charts.opencord.org
 helm repo update
 
 # Install the CORD platform
-helm install -n cord-platform --version 6.1.0 cord/cord-platform
+helm install -n cord-platform --version 7.0.0 cord/cord-platform
 
 # Wait until 3 etcd CRDs are present in Kubernetes
 kubectl get crd | grep -i etcd | wc -l
 
 # Install the SEBA profile
-helm install -n seba --version 1.0.0 cord/seba
+helm install -n seba --version 2.0.0-alpha1 cord/seba
 
 # Install the AT&T workflow
-helm install -n att-workflow --version 1.0.2 cord/att-workflow
+helm install -n att-workflow --version 1.2.4 cord/att-workflow
 ```
 
 ## Alternatively, install as separate components
+
+The commands below will bring up SEBA using the latest released versions of the Helm charts.  The resulting system should work but it may not correspond to an official SEBA release.
 
 ```shell
 # Add the official Kubernetes incubator repostiory (for Kafka) and update the indexes
@@ -63,12 +67,12 @@ helm install -n etcd-operator stable/etcd-operator --version 0.8.3
 kubectl get crd | grep -i etcd | wc -l
 
 # Install the rest of the SEBA profile components
-helm install -n voltha cord/voltha
+helm install -n voltha --version 1.0.6 cord/voltha     # Install VOLTHA 1.7.0
 helm install -n seba-service cord/seba-services
 helm install -n base-kubernetes cord/base-kubernetes
 
 # Install the AT&T workflow
-helm install -n att-workflow --version 1.0.2 cord/att-workflow
+helm install -n att-workflow cord/att-workflow
 ```
 
 ## Verify your installation and next steps
