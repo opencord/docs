@@ -1,35 +1,20 @@
 # Known Issues
 
-## SEBA 1.0 Release
+## SEBA 2.0-alpha Release
 
-There are known major issues having to do with rebooting of the physical hardware, both
-the OLT and the AGG switch, as well as continuously deleting/re-creating of an OLT Device via NEM. These issues are described in more detail in below:
+This release of SEBA is qualified as 'alpha' due to known major issues related to the use of OLT software from Broadcom referred to as BAL - Broadband Adaptation Layer. The SEBA 2.0-alpha release uses [BAL 2.6](https://github.com/balapi/bal-api-2.6), which is no longer supported by Broadcom.
 
-* [SEBA-388](https://jira.opencord.org/browse/SEBA-388)
-   With this issue, DHCP may not work after AGG switch reboot. A possible workaround is to use a different config for the DHCPl2Relay app that uses the OLT's uplink to reach the DHCP Server, instead of the Switch's uplink. More details are described [here](troubleshoot/no-dhcp.md)
-* [SEBA-385](https://jira.opencord.org/browse/SEBA-385)
-   With this issue, the OLT may not pass traffic anymore after reboot. Currently, the only workaround is to, enter the ONOS CLI and force a 'device-remove <&lt;device-id>' for the device from VOLTHA (in other words, force VOLTHA to reconnect to ONOS), and then perform the authentication/dhcp steps again for the subscribers
-* [SEBA-393](https://jira.opencord.org/browse/SEBA-393)
-   With this issue, if an OLT device gets deleted and re-created many times within a short period of time (10+ times within an hour or so), VOLTHA may run into an issue where it's unable to save any information pertaining the OLT device such as its ports or any ONU devices connected to those ports. The workaround for this issue is to re-install VOLTHA and re-create the OLT device through NEM.
+These issues are described in more detail in below:
 
-Fixes to these issues will be addressed soon after the release.
+* [SEBA-670](https://jira.opencord.org/browse/SEBA-670)
+   This issue can be triggered by disable and subsequent re-enable of the ONU via NEM (or VOLTHA). In the SEBA pod, using the AT&T workflow, these actions are accompanied by the removal of subscriber flows upon disable of the ONU, and the reprogramming of eapol flows upon re-enable of the ONU. An irrecoverable error is seen in BAL (specifically bal_core_dist) which does not allow flows to be added to the OLT. As a result authentication of RG's fail.
+* [SEBA-775](https://jira.opencord.org/browse/SEBA-775)
+   This issue is closely related to SEBA-670. The fundamental issue is the removal of flows in the OLT which possibly leaves behind state in BAL 2.6 that does not allow the subsequent reprogramming of flows. It can be triggered by the disable/re-enable of ONUs (as in SEBA-670) or by the remove-subscriber followed by the add-subscriber calls (without change of ONU state). It can be triggered in systems with a single-ONU, as well as in multi-ONU cases. Empirically the issue is more easily reproduced in multi-ONU scenarios. It is observed with single gem ports as well as when multiple gem ports are used for a subscriber in the technology profile.
+* [SEBA-777](https://jira.opencord.org/browse/SEBA-777)
+   Due to the issues mentioned above, subscriber speed profiles cannot be updated reliably, as the update requires the removal of subscriber flows that point to a bandwidth meter, and the reprogramming of flows that point to a new meter.
+* [SEBA-776](https://jira.opencord.org/browse/SEBA-776)
+   This issue is seen sometimes with the use of multiple gem ports in a technology profile. Packet duplication appears to mirror the number of gem ports - using 4 gem ports results in 4 packets for every packet transmitted.
 
-Another minor issue that does not affect functionality is related to the state of an ONU on the VOLTHA CLI, after disable/re-enable of the ONU.
+Fixes to these issues will be addressed in a future release  as we upgrade the OLT software to BAL 3.0.
 
-```shell
-(voltha) devices
-Devices:
-+------------------+-------------------+------+------------------+------------------+-------------+-------------+----------------+----------------+------------------+------------------------+-------------------------+--------------------------+----------------------+------------------------------+
-|               id |              type | root |        parent_id |    serial_number | admin_state | oper_status | connect_status | parent_port_no |    host_and_port |                 reason | proxy_address.device_id | proxy_address.channel_id | proxy_address.onu_id | proxy_address.onu_session_id |
-+------------------+-------------------+------+------------------+------------------+-------------+-------------+----------------+----------------+------------------+------------------------+-------------------------+--------------------------+----------------------+------------------------------+
-| 0001a82d21249c28 |           openolt | True | 000100000a5a007a | 10.90.0.122:9191 |     ENABLED |      ACTIVE |      REACHABLE |                | 10.90.0.122:9191 |                        |                         |                          |                      |                              |
-| 00014f81e9f21dbb | brcm_openomci_onu | True | 0001a82d21249c28 |     ALPHe3d1cf9d |     ENABLED |      ACTIVE |      REACHABLE |      536870912 |                  | initial-mib-downloaded |        0001a82d21249c28 |                          |                    1 |                            1 |
-| 0001666321e17127 | brcm_openomci_onu | True | 0001a82d21249c28 |     ALPHe3d1ced5 |     ENABLED |      ACTIVE |      REACHABLE |      536870912 |                  | initial-mib-downloaded |        0001a82d21249c28 |                          |                    2 |                            2 |
-| 000175a511654437 | brcm_openomci_onu | True | 0001a82d21249c28 |     ISKT71e80080 |     ENABLED |      ACTIVE |      REACHABLE |      536870927 |                  |      omci-flows-pushed |        0001a82d21249c28 |                       15 |                    1 |                            1 |
-| 0001cb66a703449d | brcm_openomci_onu | True | 0001a82d21249c28 |     ALPHe3d1cfe3 |     ENABLED |      ACTIVE |      REACHABLE |      536870912 |                  | initial-mib-downloaded |        0001a82d21249c28 |                          |                    3 |                            3 |
-| 0001246c72a99ddd | brcm_openomci_onu | True | 0001a82d21249c28 |     ALPHe3d1cf8e |     ENABLED |      ACTIVE |      REACHABLE |      536870912 |                  | initial-mib-downloaded |        0001a82d21249c28 |                          |                    4 |                            4 |
-| 000192f54601ecb4 | brcm_openomci_onu | True | 0001a82d21249c28 |     ALPHe3d1cf70 |     ENABLED |      ACTIVE |      REACHABLE |      536870912 |                  | initial-mib-downloaded |        0001a82d21249c28 |                          |                    5 |                            5 |
-+------------------+-------------------+------+------------------+------------------+-------------+-------------+----------------+----------------+------------------+------------------------+-------------------------+--------------------------+----------------------+------------------------------+
-```
-
-In the `reason` column of the devices table, the state of the ONU devices are displayed. Normally after an ONU is disabled, and then re-enabled, it should display the `initial-mib-downloaded` state, indicating that the RG behind the ONU should be ready to re-authenticate (as per the AT&T workflow). However, in this release, the state is incorrectly displayed as `omci-flows-pushed`. This does not affect authentication, dhcp or the subscribers.
+In addition, OLT-reboot [SEBA-385](https://jira.opencord.org/browse/SEBA-385) can result in some ONUs not returning to ACTIVE state in VOLTHA.
