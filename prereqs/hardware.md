@@ -84,10 +84,11 @@ have tested over time in lab trials.
             * Celestica Tellion GP-1204
             * Movistar ONU (with CPE included) (manifactured by Telefonica: <http://www.movistar.es/particulares/movil/moviles/hgu>)
     * **XGS-PON**
-        * **OLT**: EdgeCore ASFVOLT16 (for more info <bartek_raszczyk@edge-core.com>)
+        * **OLT**: Edgecore ASXvOLT16 (for more info <bartek_raszczyk@edge-core.com>)
             * Compatible **OLT optics**
                 * Hisense/Ligent: LTH7226-PC, LTH7226-PC+
                 * Source Photonics: XPP-XG2-N1-CDFA
+            * Notice: Edgecore XGS-PON OLT model name is **ASXvOLT16**, asfvolt16 in other pages is adapter name.
         * **ONUs**:
             * AlphaNetworks PON-34000B (for more info <ed-y_chen@alphanetworks.com>)
                 * Compatible **ONU optics**
