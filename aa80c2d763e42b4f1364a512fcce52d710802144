@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "971e8684_cfbdfbdb",
+        "filename": "prereqs/hardware.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2019-07-08T05:37:49Z",
+      "side": 1,
+      "message": "Maybe this is too detail for the hardware list",
+      "range": {
+        "startLine": 91,
+        "startChar": 12,
+        "endLine": 91,
+        "endChar": 113
+      },
+      "revId": "aa80c2d763e42b4f1364a512fcce52d710802144",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
