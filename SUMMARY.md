@@ -9,7 +9,6 @@
         * [Linux](quickstart/linux.md)
 
 ## Guides
-
 * [Installation Guide](README.md)
     * [Prerequisites](prereqs/README.md)
         * [Hardware Requirements](prereqs/hardware.md)
@@ -60,7 +59,6 @@
     * [System Tests](cord-tester/validate_pods.md)
 
 ## References
-
 * [Profile Reference](profiles/intro.md)
     * [SEBA](profiles/seba/README.md)
         * Install
@@ -113,13 +111,10 @@
     * [VTN](vtn-service/README.md)
 * [Helm Reference](charts/helm.md)
     * [Base Kubernetes](charts/base-kubernetes.md)
-    * [Base OpenStack](charts/base-openstack.md)
-        * [OpenStack](prereqs/openstack-helm.md)
-        * [VTN Setup](prereqs/vtn-setup.md)
     * [BBSim](charts/bbsim.md)
     * [Kafka](charts/kafka.md)
     * [Logging and Monitoring](charts/logging-monitoring.md)
-    * [M-CORD](charts/mcord.md)
+    * [Mininet](charts/mininet.md)
     * [ONOS](charts/onos.md)
     * [Persistent Storage](charts/storage.md)
     * [PONNET](charts/ponnet.md)

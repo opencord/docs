@@ -1,6 +1,6 @@
 # Deploy VOLTHA
 
-## First Time Installation
+## Prerequisites
 
 Install the etcd-operator helm chart first. This chart provides a convenient way of creating and managing etcd clusters. When VOLTHA installs it will attempt to use etcd-operator to create its etcd cluster. Once installed etcd-operator can be left running.
 
@@ -8,32 +8,30 @@ Install the etcd-operator helm chart first. This chart provides a convenient way
 helm install -n etcd-operator stable/etcd-operator --version 0.8.3
 ```
 
-Allow etcd-operator enough time to create the EtdCluster CustomResourceDefinitions.  This should only be a couple of seconds after the etcd-operator pods are running.  Check the CRD are ready by running the following:
+Wait for etcd-operator to create the EtdCluster CustomResourceDefinitions.  This should only be a couple of seconds after the etcd-operator pods are running.  Check the CRD are ready by running the following:
 
 ```shell
 kubectl get crd | grep etcd
 ```
 
+## Install
+
 {% include "../partials/helm/add-cord-repo.md" %}
 
-Then, install the VOLTHA helm chart. This will create the VOLTHA pods and  will create the etcd-cluster pods.
+To install the VOLTHA helm chart:
 
 ```shell
-helm install -n voltha cord/voltha
+helm install -n voltha cord/voltha --version=1.0.6 \
+    --set etcd-cluster.clusterSize=3
 ```
 
-Allow enough time for the 3 etcd-cluster pods to start before using the VOLTHA pods.
+Allow all etcd-cluster pods to start before using VOLTHA.  If not all etcd-cluster pods are starting successfully,
+you may want to try `--set etcd-cluster.clusterSize=1` above.
 
-## Standard Uninstall
+## Uninstall
 
 ```shell
 helm delete --purge voltha
-```
-
-## Standard Install
-
-```shell
-helm install -n voltha cord/voltha
 ```
 
 ## Nodeports Exposed
@@ -105,5 +103,5 @@ images:
 Then, install VOLTHA using:
 
 ```shell
-helm install -n voltha -f voltha-values.yaml cord/voltha
+helm install -n voltha -f voltha-values.yaml cord/voltha --version=1.0.6
 ```
