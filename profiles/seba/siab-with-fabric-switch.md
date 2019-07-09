@@ -12,19 +12,19 @@ Kubernetes node running OLT [ens1d1]-------[2]fabric switch[1]-----------[ens1d1
 
 1. Fabric switch bringup.  To bring up the fabric switch, follow the procedure [here](../../installation/fabric-setup.md) and verify the fabric switch is discovered by onos (`ssh -p 30115 onos@K8S_NODE_IP devices`).
 
-1. Enable EAPOL on linux-bridge `pon0` and add the physical interface on the k8node, running PONSIM-OLT to `pon1` bridge.
+1. Enable EAPOL on Linux bridge `pon0.0` and add the physical interface on the Kubernetes node running PONSIM-OLT to `nni0` bridge.
 
     ```bash
-    $ sudo brctl addif pon1 ens1d1
+    $ sudo brctl addif nni0 ens1d1
     $ brctl show
     bridge name     bridge id               STP enabled     interfaces
     docker0         8000.02426df5adb1       no
-    pon0            8000.52f6b00415e4       no              veth212f887a
-                                                            veth84cbf365
-    pon1            8000.0a580a170001       no              veth6abcdca3
+    nni0            8000.0a580a170001       no              veth6abcdca3
                                                             ens1d1
-    $ echo 8 > /tmp/pon0_group_fwd_mask
-    $ sudo cp /tmp/pon0_group_fwd_mask /sys/class/net/pon0/bridge/group_fwd_mask
+    pon0.0          8000.52f6b00415e4       no              veth212f887a
+                                                            veth84cbf365
+    $ echo 8 > /tmp/group_fwd_mask
+    $ sudo cp /tmp/group_fwd_mask /sys/class/net/pon0.0/bridge/group_fwd_mask
     ```
 
 1. Modify `~/cord/helm-charts/xos-profiles/ponsim-pod/tosca/020-pod-olt.yaml`.  Update `switch_datapath_id` to your fabric-switch dpid and `switch_port` to the port number of Fabric-switch to which the Kubernetes node running OLT is connected.

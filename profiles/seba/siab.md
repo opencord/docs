@@ -181,7 +181,7 @@ helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.c
 Install the `cordctl` command line tool:
 
 ```bash
-export CORDCTL_VERSION=1.1.1
+export CORDCTL_VERSION=1.1.2
 export CORDCTL_PLATFORM=linux-amd64
 curl -L -o /tmp/cordctl "https://github.com/opencord/cordctl/releases/download/$CORDCTL_VERSION/cordctl-$CORDCTL_PLATFORM"
 sudo mv /tmp/cordctl /usr/local/bin/cordctl

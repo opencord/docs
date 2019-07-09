@@ -9,25 +9,27 @@ At that point you can install PONSIM.
 
 {% include "../partials/helm/add-cord-repo.md" %}
 
-Then, install ponsim doing:
+To install:
 
 ```shell
-helm install -n ponsimv2 cord/ponsimv2
+helm install -n ponsimv2 cord/ponsimv2 \
+    --set numOlts=1 \
+    --set numOnus=1
 ```
+
+Arguments _numOlts_ and _numOnus_ can be set between 1 and 4.
 
 After a successful install you will see containers like these running in the
 VOLTHA namespace:
 
 ```bash
-$ kubectl -n voltha get pod
-NAME                                        READY     STATUS    RESTARTS   AGE
-...
-olt-77468cfccd-7ltzr                        1/1       Running   0          10m
-onu-6d7d5db8f-pk59s                         1/1       Running   0          10m
-rg-5fbddf9bdf-b292r                         1/1       Running   0          10m
-...
+$ kubectl -n voltha get pod -l app=ponsim
+NAME                      READY   STATUS    RESTARTS   AGE
+olt0-fb58fb79f-26g46      1/1     Running   0          22h
+onu0-0-5db946744d-bh5ms   1/1     Running   0          22h
+rg0-0-69cdbf6b58-dx6lm    1/1     Running   0          21h
 ```
 
 If any of the containers do not come up successfully, the issue is likely
 that the [PONNET](ponnet.md) chart is not loaded or was not able to create
-the two Linux bridges.
+the necessary Linux bridges.
