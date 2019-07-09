@@ -86,6 +86,7 @@
             * [Delete an OLT](profiles/seba/operate/olt-ops.md)
             * [Runtime configuration](profiles/seba/operate/config-ops.md)
             * [Add a cross-connect in the AGG switch](profiles/seba/operate/agg-ops.md)
+            * [Command-line Management Tools](profiles/seba/operate/cordctl.md)
             * [Try a new version of *](profiles/seba/operate/k8s-helm-ops.md)
         * [Known Issues](profiles/seba/known-issues.md)
         * Troubleshoot (FAQ)
