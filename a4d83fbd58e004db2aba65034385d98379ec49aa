@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "43c2b70f_1f08351b",
+        "filename": "developer/test_release_software.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-07-10T21:35:56Z",
+      "side": 1,
+      "message": "remove \"a\" or change patchsets to singular.",
+      "range": {
+        "startLine": 74,
+        "startChar": 13,
+        "endLine": 74,
+        "endChar": 14
+      },
+      "revId": "a4d83fbd58e004db2aba65034385d98379ec49aa",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51a2bebb_decf8e7a",
+        "filename": "developer/test_release_software.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-07-10T21:35:56Z",
+      "side": 1,
+      "message": "There are some Jenkins jobs that give a -1 code review instead of a -1 verification. Is that a bug? or is there a reason for the difference?",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 17
+      },
+      "revId": "a4d83fbd58e004db2aba65034385d98379ec49aa",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7bc80072_2297253b",
+        "filename": "developer/test_release_software.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-07-10T21:35:56Z",
+      "side": 1,
+      "message": "Should the job that publishes go binaries be listed? or is that specific to `cordctl` and `voltctl` ?",
+      "range": {
+        "startLine": 140,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 19
+      },
+      "revId": "a4d83fbd58e004db2aba65034385d98379ec49aa",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
