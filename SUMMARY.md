@@ -38,7 +38,8 @@
         * [ELK Stack](operating_cord/elk_stack.md)
 * [Development Guide](developer/developer.md)
     * [Getting the Source Code](developer/getting_the_code.md)
-        * [Contribute to the documentation](developer/contribute_to_the_docs.md)
+    * [Contribute to the documentation](developer/contribute_to_the_docs.md)
+    * [Testing and releasing software](developer/test_release_software.md)
     * [Modeling Services](developer/xos-intro.md)
     * Developer Workflows
         * [Service Migrations](xos/dev/xosmigrate.md)
