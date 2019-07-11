@@ -90,6 +90,7 @@
             * [Command-line Management Tools](profiles/seba/operate/cordctl.md)
             * [Try a new version of *](profiles/seba/operate/k8s-helm-ops.md)
         * [Known Issues](profiles/seba/known-issues.md)
+        * [Release Notes](profiles/seba/release-nodes.md)
         * Troubleshoot (FAQ)
             * [No ONUs discovered](profiles/seba/troubleshoot/no-onus.md)
             * [No AttWorkflowDriver service instances](profiles/seba/troubleshoot/no-att-si.md)
