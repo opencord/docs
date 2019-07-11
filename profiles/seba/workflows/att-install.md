@@ -8,7 +8,7 @@ You can find a complete description of the SEBA workflow for AT&T in [this docum
 helm install -n att-workflow cord/att-workflow --version=1.2.4
 ```
 
-> NOTE: if you have installed the `cord-platform` chart as a sum of its components,
+> NOTE: if you have installed the `seba-services` as [seperate components](../install.md),
 > then you need to specify `--set att-workflow-driver.kafkaService=cord-kafka`
 > during the installation command to match the name of the kafka service.
 
