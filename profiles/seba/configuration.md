@@ -226,6 +226,7 @@ topology_template:
   node_templates:
     # A subscriber
     my_house:
+      status: pre-provisioned
       type: tosca.nodes.RCORDSubscriber
       properties:
         name: My House
