@@ -64,6 +64,7 @@
 
 * [Profile Reference](profiles/intro.md)
     * [SEBA](profiles/seba/README.md)
+        * [Release Notes](profiles/seba/release-notes.md)
         * Install
             * [Install SEBA Charts](profiles/seba/install.md)
             * Workflows
