@@ -14,7 +14,7 @@ having [kafka](kafka.md) instances running in order to pass messages.
 ## nem-monitoring charts
 
 ```shell
-helm install -n nem-monitoring cord/nem-monitoring
+helm install -n nem-monitoring cord/nem-monitoring --version 1.0.5
 ```
 
 > NOTE: In order to display `voltha` kpis you need to have `voltha`

@@ -5,7 +5,7 @@ To deploy the XOS core and affiliated containers, run the following:
 {% include "../partials/helm/add-cord-repo.md" %}
 
 ```shell
-helm install -n xos-core cord/xos-core
+helm install -n xos-core cord/xos-core --version 3.0.9
 ```
 **Nodeports exposed**
 

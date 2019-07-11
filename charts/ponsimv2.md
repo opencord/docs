@@ -12,7 +12,7 @@ At that point you can install PONSIM.
 To install:
 
 ```shell
-helm install -n ponsimv2 cord/ponsimv2 \
+helm install -n ponsimv2 cord/ponsimv2 --version 1.2.1 \
     --set numOlts=1 \
     --set numOnus=1
 ```
