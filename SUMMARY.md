@@ -64,6 +64,7 @@
 
 * [Profile Reference](profiles/intro.md)
     * [SEBA](profiles/seba/README.md)
+        * [Release Notes](profiles/seba/release-notes.md)
         * Install
             * [Install SEBA Charts](profiles/seba/install.md)
             * Workflows
@@ -126,3 +127,4 @@
     * [VOLTHA](charts/voltha.md)
     * [XOS-CORE](charts/xos-core.md)
     * [XOSSH](charts/xossh.md)
+
