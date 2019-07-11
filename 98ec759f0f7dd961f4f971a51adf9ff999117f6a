@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a9f580e_7bf8b449",
+        "filename": "SUMMARY.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2019-07-11T21:09:46Z",
+      "side": 1,
+      "message": "Probably should move it to right before Install",
+      "revId": "98ec759f0f7dd961f4f971a51adf9ff999117f6a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "514785dc_ecf72ee7",
+        "filename": "profiles/seba/release-notes.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2019-07-11T21:09:46Z",
+      "side": 1,
+      "message": "The tag is now voltha-1.7.0 in the openolt driver repo\nand the debian file is openolt-1_7_0.deb",
+      "revId": "98ec759f0f7dd961f4f971a51adf9ff999117f6a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
