@@ -7,7 +7,7 @@ This chart let you install the broadband simulator.
 {% include "../partials/helm/add-cord-repo.md" %}
 
 ```shell
-helm install -n bbsim cord/bbsim
+helm install -n bbsim cord/bbsim --version 2.0.0
 ```
 
 ## Set a different number of ONUs

@@ -11,7 +11,7 @@ are not actually created until [PONSIM](ponsimv2.md) is installed.
 You can then install the chart using:
 
 ```bash
-helm install -n ponnet cord/ponnet \
+helm install -n ponnet cord/ponnet- -version 1.2.1 \
     --set numOlts=1 \
     --set numOnus=1
 ```

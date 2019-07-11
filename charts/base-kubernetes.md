@@ -7,5 +7,5 @@ This chart contains all the XOS services that interacts with Kubernetes.
 You can then install it using:
 
 ```shell
-helm install -n base-kubernetes cord/base-kubernetes
+helm install -n base-kubernetes cord/base-kubernetes --version 1.2.1
 ```

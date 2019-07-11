@@ -11,7 +11,7 @@ You must install the [PONNET](ponnet.md) chart before installing this one.
 To install:
 
 ```shell
-helm install -n mininet cord/mininet \
+helm install -n mininet --version 0.5.2 cord/mininet \
     --set numOlts=1 \
     --set numOnus=1
 ```
