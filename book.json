@@ -32,6 +32,10 @@
           "text": "Master (Devel)"
         },
         {
+          "value": "/cord-7.0",
+          "text": "7.0 (Stable)"
+        },
+        {
           "value": "/cord-6.1",
           "text": "6.1 (Stable)"
         },

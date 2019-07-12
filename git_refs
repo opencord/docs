@@ -11,22 +11,22 @@
 
 _REPO NAME_           _DIR_    _REF_
 
-att-workflow-driver   /docs    master
-cordctl               /        master
-cord-tester           /docs    master
-fabric                /docs    master
-fabric-crossconnect   /docs    master
-hippie-oss            /docs    master
-kubernetes-service    /docs    master
-olt-service           /docs    master
-onos-service          /docs    master
-openolt               /        master
-openstack             /docs    master
-rcord                 /docs    master
-simpleexampleservice  /docs    master
-exampleservice        /docs    master
-vrouter               /docs    master
-xos-gui               /docs    master
-xos-tosca             /docs    master
-xos                   /docs    master
-vtn-service           /docs    master
+att-workflow-driver   /docs    401b2cff017363b4529e4cb78ccd63f35f291fef
+cord-tester           /docs    db678c95df9d2539c3680cd9035d7f05015353e8
+cordctl               /        ce26569ab17c261830107aa9eb8f62a83f71bce0
+exampleservice        /docs    149635c64c43b03628e615102409f106a600804b
+fabric                /docs    b2c0cc01954e768f4cf616b48d0f6a0732127993
+fabric-crossconnect   /docs    a3233390a1d2d93bde0b8750472555fc37b1bc7b
+hippie-oss            /docs    bbbdb1ae4491742a78441ec68acb91d06bb90b20
+kubernetes-service    /docs    3ea0a9c663059b3d8d5cb6609254a05f7fe72219
+olt-service           /docs    b9d725d7d46ed63f63d7cc7d32e149c0ed26a1c6
+onos-service          /docs    32b165a35c8a2779827d91269be5dbac8f3e0cea
+openolt               /        584ae684727a9307399e18b9beb5a7c3471c098d
+openstack             /docs    f1897e0b6b0bb32dc6bc71ccbe21d87190359100
+rcord                 /docs    cd109155ec4d3172fb3d951a6e5c8dbc342e8885
+simpleexampleservice  /docs    ea2919f720a36f60aef284944db06725da503951
+vrouter               /docs    4a41f3dc135ddc3f7f0c7fc79817f76f3d681c5b
+vtn-service           /docs    a1177d553cac17ffac2199d22f7cfc378c68f6b7
+xos                   /docs    7377604fa7b88fb6c717b2c0f652f923548f18c6
+xos-gui               /docs    2e5f2031731c9dd11503bd6ae7368f2fb409cb5e
+xos-tosca             /docs    1ea12207ac6dc82153d4b533f2220610fe2f1125
