@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f610790_51f0ef99",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2019-07-12T13:57:01Z",
+      "side": 1,
+      "message": "remove this \".\"\n\nThis is likely the verification failure.",
+      "revId": "853a41bee3a4b85c67753381f3404535b1fd57eb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5be41895_071879dd",
+        "filename": "profiles/seba/operate/olt-ops.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2019-07-12T13:57:01Z",
+      "side": 1,
+      "message": "Why is this section in here ? It is not required to change the subscriber status to \"pre-provisioned\" to delete it. \n\nAlso, we dont want users to change the state of the subscriber right? It should update from the workflow instance.",
+      "revId": "853a41bee3a4b85c67753381f3404535b1fd57eb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bdb8f779_31370516",
+        "filename": "profiles/seba/operate/whitelist-ops.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2019-07-12T13:57:01Z",
+      "side": 1,
+      "message": "\",\" here ?",
+      "revId": "853a41bee3a4b85c67753381f3404535b1fd57eb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
