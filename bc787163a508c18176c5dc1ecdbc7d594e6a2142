@@ -22,6 +22,30 @@
       "revId": "bc787163a508c18176c5dc1ecdbc7d594e6a2142",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a11fbb80_1a1a21dc",
+        "filename": "charts/seba-services.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2019-07-12T23:04:49Z",
+      "side": 1,
+      "message": "fixed!",
+      "parentUuid": "eae69a38_332f544b",
+      "range": {
+        "startLine": 10,
+        "startChar": 62,
+        "endLine": 10,
+        "endChar": 64
+      },
+      "revId": "bc787163a508c18176c5dc1ecdbc7d594e6a2142",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
