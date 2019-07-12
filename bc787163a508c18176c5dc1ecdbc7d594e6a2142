@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eae69a38_332f544b",
+        "filename": "charts/seba-services.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-07-12T22:42:14Z",
+      "side": 1,
+      "message": "trailing whitespace?",
+      "range": {
+        "startLine": 10,
+        "startChar": 62,
+        "endLine": 10,
+        "endChar": 64
+      },
+      "revId": "bc787163a508c18176c5dc1ecdbc7d594e6a2142",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
