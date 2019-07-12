@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "99fc8951_ee785b67",
+        "filename": "SUMMARY.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2019-07-12T18:26:36Z",
+      "side": 1,
+      "message": "Gah  I didn\u0027t see that - thanks",
+      "parentUuid": "3f610790_51f0ef99",
+      "revId": "853a41bee3a4b85c67753381f3404535b1fd57eb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5be41895_071879dd",
         "filename": "profiles/seba/operate/olt-ops.md",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2019-07-12T13:57:01Z",
       "side": 1,
       "message": "Why is this section in here ? It is not required to change the subscriber status to \"pre-provisioned\" to delete it. \n\nAlso, we dont want users to change the state of the subscriber right? It should update from the workflow instance.",
+      "revId": "853a41bee3a4b85c67753381f3404535b1fd57eb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b45bd699_3f6942e7",
+        "filename": "profiles/seba/operate/olt-ops.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000068
+      },
+      "writtenOn": "2019-07-12T18:26:36Z",
+      "side": 1,
+      "message": "Good point - I\u0027ll remove it",
+      "parentUuid": "5be41895_071879dd",
       "revId": "853a41bee3a4b85c67753381f3404535b1fd57eb",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
