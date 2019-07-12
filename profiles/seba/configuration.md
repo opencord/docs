@@ -4,24 +4,20 @@ Once all the components needed for the SEBA profile are up and
 running on your POD, you will need to configure it. This is typically
 done using TOSCA.
 
-In this page we are describing the process as a three steps process:
+In this page we describe the process of configuring parts of the SEBA Pod which do not relate to the Access configuration.
+This configuration should happen before the Access configuration and provisioning that involves the ONUs, OLTs, TechProfiles and Subscribers.
 
-- [POD Setup](./configuration.md#pod-setup)
-- [PON Provisioning](./configuration.md#pon-provisioning)
-- [Subscriber Provisioning](./configuration.md#subscriber-provisioning)
+Note that we are showing this configuration as appearing in multiple files as that is what logically makes sense, but be aware that all the configuration can be unified in a single TOSCA file.
 
-as that is what logically makes sense, but be aware that all the configurations
-can be unified in a single TOSCA file.
-
-This configuration is environment specific, so
-you will need to create your own, but the following can serve as a
-reference:
+This configuration is environment specific, so you will need to create your own, but the following can serve as a reference:
 
 ## POD Setup
 
+The basic idea is to configure the Aggregation Switch, and provide information regarding the ports on which it connects to the OLTs and the external BNG.
+We also need to tell the dhcpl2relay app (in ONOS) about the dhcp server.
 The POD Setup consists of
 
-- Fabric configuration (In this case a single aggregation switch, see [Fabric](../../fabric/README.md) for more information)
+- AGG switch configuration (In this case a single aggregation switch, see [Fabric](../../fabric/README.md) for more information)
 - `BNGPortMapping` configuration (see [Fabric-crossconnet](../../fabric-crossconnect/README.md) for more information)
 - DHCP L2 Relay configuration (see [ONOS DHCP L2 RELAY Application](https://github.com/opencord/dhcpl2relay/#configuration) for more information)
 
@@ -43,23 +39,23 @@ description: Configures a full SEBA POD
 
 topology_template:
   node_templates:
-    # Fabric configuration
+    # AGG switch configuration (configuration for the segmentrouting app in ONOS that controls the AGG switch)
     switch#leaf_1:
       type: tosca.nodes.Switch
       properties:
-        driver: ofdpa3
-        ipv4Loopback: 192.168.0.201
-        ipv4NodeSid: 17
-        isEdgeRouter: True
+        driver: ofdpa3 # the ONOS driver used to talk to the switch
+        ipv4Loopback: 192.168.0.201 # use any private IP address - this functionality is not used in SEBA
+        ipv4NodeSid: 17 # use any number greater than 15 - this functionality is not used in SEBA
+        isEdgeRouter: True # used to identify a leaf, which is always the case in SEBA
         name: AGG_SWITCH
-        ofId: of:0000000000000001
-        routerMac: 00:00:02:01:06:01
+        ofId: of:0000000000000001 # the openflow switch id representing the AGG switch
+        routerMac: 00:00:02:01:06:01 # use any MAC address - this functionality is not used in SEBA
 
-    # Setup the OLT switch port
+    # Setup the AGG switch port that connects to the OLT (or multiple such OLTs each on a different port)
     port#olt_port:
       type: tosca.nodes.SwitchPort
       properties:
-        portId: 1
+        portId: 1 # the port on the AGG switch that connects to the OLT's NNI port
         host_learning: false
       requirements:
         - switch:
@@ -70,21 +66,23 @@ topology_template:
     port#bng_port:
       type: tosca.nodes.SwitchPort
       properties:
-        portId: 31
+        portId: 31 # the port on the AGG switch that connects to the BNG
       requirements:
         - switch:
             node: switch#leaf_1
             relationship: tosca.relationships.BelongsToOne
 
-    # Setup the fabric switch port where the external
-    # router is connected to
+    # Configure BNGPortMapping
     bngmapping:
       type: tosca.nodes.BNGPortMapping
       properties:
-        s_tag: any
-        switch_port: 31
+        s_tag: any # allow this mapping to apply to any vlan tag
+        switch_port: 31 # the port on the AGG switch that connects to the BNG
 
-    # DHCP L2 Relay config
+    # DHCP L2 Relay config configures the onos dhcpl2relay app to use the AGG switch's
+    # uplink port (that connects to the BNG) to reach the DHCP server. It uses the
+    # ONOS ConnectPoint structure that represents an <ofId>/<portId>, both of which
+    # are configured above
     onos_app#dhcpl2relay:
       type: tosca.nodes.ONOSApp
       properties:
@@ -105,235 +103,6 @@ topology_template:
       requirements:
         - service_instance:
             node: onos_app#dhcpl2relay
-            relationship: tosca.relationships.BelongsToOne
-```
-
-For instructions on how to push TOSCA into a CORD POD, please
-refer to this [guide](../../xos-tosca/README.md).
-
-## PON Provisioning
-
-The PON Provisioning consists of preparing all the configurations needed by ONOS and VOLTHA to manage the PON network,
-su as:
-
-- [OLT](../../olt-service/README.md#create-an-OLT)
-- [Technology Profile](https://github.com/opencord/voltha/tree/master/common/tech_profile)
-
-```yaml
-tosca_definitions_version: tosca_simple_yaml_1_0
-imports:
-  - custom_types/oltdevice.yaml
-  - custom_types/onudevice.yaml
-  - custom_types/voltservice.yaml
-  - custom_types/technologyprofile.yaml
-description: Create an OLT Device in VOLTHA
-topology_template:
-  node_templates:
-
-    service#volt:
-      type: tosca.nodes.VOLTService
-      properties:
-        name: volt
-        must-exist: true
-
-    olt_device:
-      type: tosca.nodes.OLTDevice
-      properties:
-        name: My OLT
-        device_type: openolt
-        host: 10.90.0.122
-        port: 9191
-        switch_datapath_id: of:0000000000000002 # the openflow id of the switch to which the OLT is connected
-        switch_port: "1" # the port on the switch on which the OLT is connected
-        outer_tpid: "0x8100"
-        uplink: "65536"
-        nas_id: "NAS_ID"
-        serial_number: EC1721000208 # the serial number of the OLT device
-      requirements:
-        - volt_service:
-            node: service#volt
-            relationship: tosca.relationships.BelongsToOne
-            
-    technologyProfile:
-      type: tosca.nodes.TechnologyProfile
-      properties:
-        profile_id: 64
-        technology: xgspon
-        profile_value: >
-          {
-            "name": "4QueueHybridProfileMap1",
-            "profile_type": "XPON",
-            "version": 1.0,
-            "num_gem_ports": 1,
-            "instance_control": {
-              "onu": "multi-instance",
-              "uni": "single-instance",
-              "max_gem_payload_size": "auto"
-            },
-            "us_scheduler": {
-              "additional_bw": "auto",
-              "direction": "UPSTREAM",
-              "priority": 0,
-              "weight": 0,
-              "q_sched_policy": "hybrid"
-            },
-            "ds_scheduler": {
-              "additional_bw": "auto",
-              "direction": "DOWNSTREAM",
-              "priority": 0,
-              "weight": 0,
-              "q_sched_policy": "hybrid"
-            },
-            "upstream_gem_port_attribute_list": [{
-                "pbit_map": "0b11000000",
-                "aes_encryption": "True",
-                "scheduling_policy": "StrictPriority",
-                "priority_q": 1,
-                "weight": 0,
-                "discard_policy": "TailDrop",
-                "max_q_size": "auto",
-                "discard_config": {
-                  "min_threshold": 0,
-                  "max_threshold": 0,
-                  "max_probability": 0
-                }
-              }
-            ],
-            "downstream_gem_port_attribute_list": [{
-                "pbit_map": "0b11000000",
-                "aes_encryption": "True",
-                "scheduling_policy": "StrictPriority",
-                "priority_q": 1,
-                "weight": 0,
-                "discard_policy": "TailDrop",
-                "max_q_size": "auto",
-                "discard_config": {
-                  "min_threshold": 0,
-                  "max_threshold": 0,
-                  "max_probability": 0
-                }
-              }
-            ]
-          }
-```
-
-For instructions on how to push TOSCA into a CORD POD, please
-refer to this [guide](../../xos-tosca/README.md).
-
-## Subscriber Provisioning
-
-Once the POD has been configured, you can create a subscriber.
-
-This section will guide you through the configuration of `Subscriber` and associated `BandwidthProfile`s.
-
-To create a subscriber, you'll need to know the serial number of the ONU it is
-attached to.
-
-### Find ONU Serial Number
-
-Once your POD is set up and the OLT has been pushed and activated in VOLTHA,
-XOS will discover the ONUs available in the system.
-
-You can find them through:
-
-- XOS GUI: on the left side click on `vOLT > ONUDevices`
-- XOS Rest API: `http://<pod-id>:<chameleon-port|30006>/xosapi/v1/volt/onudevices`
-- VOLTHA CLI: [Command Line Interface](../../charts/voltha.md#how-to-access-the-voltha-cli)
-
-If you are connected to the VOLTHA CLI you can use the following
-command to list all the existing devices:
-
-```shell
-(voltha) devices
-Devices:
-+------------------+--------------+------+------------------+-------------+-------------+----------------+----------------+------------------+----------+-------------------------+----------------------+------------------------------+
-|               id |         type | root |        parent_id | admin_state | oper_status | connect_status | parent_port_no |    host_and_port | vendor_id| proxy_address.device_id | proxy_address.onu_id | proxy_address.onu_session_id |
-+------------------+--------------+------+------------------+-------------+-------------+----------------+----------------+------------------+----------+-------------------------+----------------------+------------------------------+
-| 0001941bd45e71d8 |      openolt | True | 000100000a5a0072 |     ENABLED |      ACTIVE |      REACHABLE |                | 10.90.0.114:9191 |          |                         |                      |                              |
-| 00015698e67dc060 | broadcom_onu | True | 0001941bd45e71d8 |     ENABLED |      ACTIVE |      REACHABLE |      536870912 |                  |      BRCM|        0001941bd45e71d8 |                    1 |                            1 |
-+------------------+--------------+------+------------------+-------------+-------------+----------------+----------------+------------------+----------+-------------------------+----------------------+------------------------------+
-```
-
-Locate the correct ONU, then:
-
-```shell
-(voltha) device 00015698e67dc060
-(device 00015698e67dc060) show
-Device 00015698e67dc060
-+------------------------------+------------------+
-|                        field |            value |
-+------------------------------+------------------+
-|                           id | 00015698e67dc060 |
-|                         type |     broadcom_onu |
-|                         root |             True |
-|                    parent_id | 0001941bd45e71d8 |
-|                       vendor |         Broadcom |
-|                        model |              n/a |
-|             hardware_version |     to be filled |
-|             firmware_version |     to be filled |
-|                 images.image |        1 item(s) |
-|                serial_number |     BRCM22222222 |
-+------------------------------+------------------+
-|                      adapter |     broadcom_onu |
-|                  admin_state |                3 |
-|                  oper_status |                4 |
-|               connect_status |                2 |
-|      proxy_address.device_id | 0001941bd45e71d8 |
-|         proxy_address.onu_id |                1 |
-| proxy_address.onu_session_id |                1 |
-|               parent_port_no |        536870912 |
-|                    vendor_id |             BRCM |
-|                        ports |        2 item(s) |
-+------------------------------+------------------+
-|                  flows.items |        5 item(s) |
-+------------------------------+------------------+
-```
-
-to find the correct serial number.
-
-### Push a Subscriber into CORD
-
-Once you have this information, you can create the subscriber by
-customizing the following TOSCA and passing it into the POD:
-
-```yaml
-tosca_definitions_version: tosca_simple_yaml_1_0
-imports:
-  - custom_types/rcordsubscriber.yaml
-  - custom_types/bandwidthprofile.yaml
-description: Create a test subscriber
-topology_template:
-  node_templates:
-  
-    high_speed_bp:
-      type: tosca.nodes.BandwidthProfile
-      properties:
-         air: 2000
-         cbs: 2000
-         cir: 2000
-         ebs: 2000
-         eir: 2000
-         name: High Speed Internet
-
-    # A subscriber
-    my_house:
-      type: tosca.nodes.RCORDSubscriber
-      properties:
-        name: My House
-        status: pre-provisioned # the status we want to create the subscriber in
-        c_tag: 111
-        s_tag: 222
-        onu_device: BRCM22222222 # Serial Number of the ONU Device to which this subscriber is connected
-        tech_profile_id: 64 # The ID of the technology profile that needs to be applied to this subscriber
-        nas_port_id : some-value # radius specific attributes
-        circuit_id: some-value # radius specific attributes
-        remote_id: some-value # radius specific attributes
-      requirements:
-        - upstream_bps:
-            node: high_speed_bp
-            relationship: tosca.relationships.BelongsToOne
-        - downstream_bps:
-            node: high_speed_bp
             relationship: tosca.relationships.BelongsToOne
 ```
 

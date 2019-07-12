@@ -70,17 +70,19 @@
             * Workflows
                 * [Install AT&T workflow](profiles/seba/workflows/att-install.md)
             * [EdgeCore OLT Setup (OpenOLT driver)](openolt/README.md)
-            * [BETA: Celestica / Microsemi Setup](profiles/seba/celestica-olt-setup.md)
-                * [Attach Container to a NIC](profiles/seba/veth_intf.md)
             * [SEBA-in-a-Box Overview](profiles/seba/siab-overview.md)
                 * [SEBA-in-a-Box](profiles/seba/siab.md)
                 * [SEBA-in-a-Box with Fabric Switch](profiles/seba/siab-with-fabric-switch.md)
             * [Scale testing with BBSim](profiles/seba/bbsim.md)
-            * [Configuring a lab setup](profiles/seba/lab-setup.md)
+            * Other Setups
+                * [Configuring a lab setup](profiles/seba/lab-setup.md)
+                * [Attach Container to a NIC](profiles/seba/veth_intf.md)
         * Configure
-            * [POD configuration](profiles/seba/configuration.md)
-            * Workflow specific configuration
-                * [Configure AT&T workflow](profiles/seba/workflows/att-configure.md)
+            * [Configure the Pod](profiles/seba/configuration.md)
+            * [Configure ONU Whitelist](profiles/seba/configure/onu-whitelist.md)
+            * [Configure Tech Profiles](profiles/seba/configure/tech-profile.md)
+            * [Provision Subscribers](profiles/seba/configure/subscriber.md)
+            * [Provision OLTs](profiles/seba/configure/olt.md)
         * Operate
             * [AT&T workflow description](profiles/seba/operate/att-workflow-description.md)
             * [Disable/Enable an ONU](profiles/seba/operate/onu-ops.md)

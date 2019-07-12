@@ -1,12 +1,16 @@
-# Configure AT&T Workflow
+# Configure ONU Whitelist
 
-We assume your POD is already configured as per [this instructions](../configuration.md)
-(you need to complete only the first section)
+We assume your POD is already configured as per [these instructions](../configuration.md)
+Assuming you are using the AT&T Workflow (which is the only workflow supported in this release) you will need to configure ONUs in the whitelist, otherwise any ONU discovered in the PON that is not in the whitelist will get disabled administratively.
 
 ## Whitelist population
 
 > NOTE: the whitelist can be populated at any time.
 > It doesn't need to be done upfront.
+
+To configure the whitelist, you need to provide the ONU's serial number and location.
+The location is identified by the OLT device, and the PON port on the OLT device on which the ONU can be found.
+If either of these are configured incorrectly, the ONU will get disabled administratively.
 
 To configure the ONU whitelist, you can use this TOSCA:
 
@@ -28,9 +32,9 @@ topology_template:
     whitelist:
       type: tosca.nodes.AttWorkflowDriverWhiteListEntry
       properties:
-        serial_number: BRCM22222222
-        pon_port_id: 536870912
-        device_id: of:000000000a5a0072
+        serial_number: BRCM22222222 # the serial number of the ONU device
+        pon_port_id: 536870912 # information in VOLTHA regarding the PON port of the OLT
+        device_id: of:000000000a5a0072 # the device id representing the OLT
       requirements:
         - owner:
             node: service#att
@@ -64,7 +68,3 @@ the openflow ID of the logical device exposed to ONOS, and not the serial number
 of the device.
 
 ![OLT List view](./screenshots/olt_device_id.png)
-
-## Device monitoring
-
-Please refer to the [monitoring](../../../charts/logging-monitoring.md) chart.
