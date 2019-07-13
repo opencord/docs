@@ -5,7 +5,7 @@
 Then, to install ONOS run:
 
 ```shell
-helm install -n onos cord/onos
+helm install -n onos cord/onos --version 1.1.2
 ```
 
 **Nodeports exposed**
