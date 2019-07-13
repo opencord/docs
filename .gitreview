@@ -2,4 +2,5 @@
 host=gerrit.opencord.org
 port=29418
 project=docs.git
+defaultbranch=cord-7.0
 defaultremote=origin
