@@ -34,7 +34,7 @@ After the installation of ONL, if you don't see '/usr/bin' in your PATH variable
 export PATH=$PATH:/usr/bin/ofdpa
 ```
 
-Guidelines on how to install ONL on top of an ONIE compatible device can be found directly on the [ONL website](https://opennetlinux.org/docs/deploy).
+Guidelines on how to install ONL on top of an ONIE compatible device can be found directly on the [ONL website](https://opennetlinux.org/).
 
 This specific version of ONL has been customized to accept an IP address through DHCP on the management interface, *ma0*. If you'd like to use a static IP, first give
 it an IP address through DHCP, then login and change the configuration in
