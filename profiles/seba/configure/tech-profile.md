@@ -258,6 +258,28 @@ topology_template:
           }
 ```
 
-
 For instructions on how to push TOSCA into a CORD POD, please
 refer to this [guide](../../../xos-tosca/README.md).
+
+## Verify Tech Profile in NEM database
+
+On the NEM GUI, confirm that the tech profile is added. Note that this view does not currently pretty-print the json.
+
+![Tech Profile view](./screenshots/tp-0.png)
+
+
+## Verify Tech Profile in Etcd
+
+We can verify that the tech profile has been downloaded by NEM into the Etcd cluster. For that we first need to enter the etcd container using kubectl.
+
+```shell
+~$ kubectl exec -it $(kubectl get pods | grep etcd-cluster | awk 'NR==1{print $1}') /bin/sh
+```
+
+Once inside, we can use the etcdctl tool to fetch the stored information for the profile using the profile type and id.
+
+```shell
+/ # ETCDCTL_API=3 etcdctl get --prefix  service/voltha/technology_profiles/xgspon/64
+```
+If all is well, the above command should display the same tech profile information you configured.
+In a running system where the OLT has also been configured, and ONUs have been discovered and ranged, you should also see *instances* of the tech-profile in the display above for each ONU. These instances specify the particular GEM port ids and related Alloc ids used for the ONU.

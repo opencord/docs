@@ -44,9 +44,18 @@ topology_template:
 For instructions on how to push TOSCA into a CORD POD, please
 refer to this [guide](../../../xos-tosca/README.md).
 
-### Where to find the required information
+## Confirm whitelist
 
-#### Serial Number
+On the NEM GUI, confirm that the ONU has been added to the whitelist.
+
+![Whitelist view](./screenshots/whitelist-0.png)
+
+## Where to find the required information
+
+In production, an operator should already know all the information regarding the ONU - ie the ONU's serial number and location.
+In a lab setting you may need to bring up the system once to note down the serial number, pon port number and device id.
+
+### Serial Number
 
 To locate the ONU serial number you can open the ONU detail view (`vOLT -> ONU Devices`).
 
@@ -54,14 +63,14 @@ To locate the ONU serial number you can open the ONU detail view (`vOLT -> ONU D
 
 > NOTE: most of the time the serial number is also printed on the physical device.
 
-#### Pon Port ID
+### Pon Port ID
 
 The `pon_port_id` can be found from the ONU detail view, by selecting the `PON Port`
 tab:
 
 ![ONU Detail view](./screenshots/pon_port.png)
 
-#### Device ID
+### Device ID
 
 The `device_id` can easily be found in the OLT list view. Note the `device_id` is
 the openflow ID of the logical device exposed to ONOS, and not the serial number
