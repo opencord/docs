@@ -84,7 +84,11 @@
             * [Provision Subscribers](profiles/seba/configure/subscriber.md)
             * [Provision OLTs](profiles/seba/configure/olt.md)
         * Operate
-            * [AT&T workflow description](profiles/seba/operate/att-workflow-description.md)
+            * AT&T Workflow
+                * [AttWorkflowDriver service instances](profiles/seba/operate/att-si.md)
+                * [Workflow description](profiles/seba/operate/att-workflow-description.md)
+            * [Working with Tech Profiles](profiles/seba/operate/tp-ops.md)
+            * [Working with Bandwidth Profiles](profiles/seba/operate/bp-ops.md)
             * [Disable/Enable an ONU](profiles/seba/operate/onu-ops.md)
             * [Edit a Whitelist entry](profiles/seba/operate/whitelist-ops.md)
             * [Delete an OLT](profiles/seba/operate/olt-ops.md)
