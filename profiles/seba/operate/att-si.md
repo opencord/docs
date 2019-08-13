@@ -2,7 +2,7 @@
 
 In a running system, once OLTs have been configured and ONUs are in active/enabled/reachable state in VOLTHA, you should see instances of the AT&T Workflow Driver in the NEM GUI, as shown below.
 
-[ATT Workflow Instances](./screenshots/att-si-0.png)
+![ATT Workflow Instances](./screenshots/att-si-0.png)
 
 The graphic above shows two such workflow instances, one for each ONU. If you do not see any workflow instances, refresh your GUI. If you still don't see anything, consider the [troubleshooting guide](../troubleshoot/no-att-si.md).
 
@@ -12,7 +12,7 @@ For the Iskratel ONU `ISKT71e801a0`, it shows that the ONU has been validated ag
 
 Once both authentication and dhcp processes have succeeded, the workflow instances should display the following information.
 
-[ATT Workflow Instances](./screenshots/att-si-1.png)
+![ATT Workflow Instances](./screenshots/att-si-1.png)
 
 Note that the DHCP state displays `DHCPACK` and the IP addresses assigned by the external BNG are also displayed, together with the RG's MAC addresses discovered by the system. At this point the subscriber should be able to reach the Internet with the configured bandwidthprofile for the subscriber, and the traffic priorities determined by the configured tech profile.
 
