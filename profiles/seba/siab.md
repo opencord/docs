@@ -237,8 +237,12 @@ cd ~/cord/helm-charts
 helm install -n etcd-operator stable/etcd-operator --version 0.8.3
 # Allow etcd-operator enough time to create the EtdcCluster
 # CustomResourceDefinitions. This should only be a couple of seconds after the
-# etcd-operator pods are running. Check the CRD are ready by running the following:
-kubectl get crd | grep etcd
+# etcd-operator pods are running. Wait for the CRD to be ready by running the following:
+until kubectl get crd | grep etcdclusters; \
+do \
+    echo 'Waiting for etcdclusters CRD to be available'; \
+    sleep 5; \
+done
 # After EtcdCluster CRD is in place
 helm dep up voltha
 helm install -n voltha voltha  --set etcd-cluster.clusterSize=1
@@ -280,10 +284,10 @@ Run these commands to install Ponsim (after installing VOLTHA):
 cd ~/cord/helm-charts
 NUM_OLTS=1          # can be between 1 and 4
 NUM_ONUS_PER_OLT=1  # can be between 1 and 4
-helm install -n ponnet ponnet --set numOlts=$(NUM_OLTS) --set numOnus=$(NUM_ONUS_PER_OLT)
+helm install -n ponnet ponnet --set numOlts=$NUM_OLTS --set numOnus=$NUM_ONUS_PER_OLT
 # Wait for CNI changes
 ~/cord/helm-charts/scripts/wait_for_pods.sh kube-system
-helm install -n ponsimv2 ponsimv2 --set numOlts=$(NUM_OLTS) --set numOnus=$(NUM_ONUS_PER_OLT)
+helm install -n ponsimv2 ponsimv2 --set numOlts=$NUM_OLTS --set numOnus=$NUM_ONUS_PER_OLT
 # Iptables setup
 sudo iptables -P FORWARD ACCEPT
 ```
@@ -359,7 +363,7 @@ To wait until this occurs you can run:
 Run these commands:
 
 ```bash
-helm install -n ponsim-pod xos-profiles/ponsim-pod --set numOlts=$(NUM_OLTS) --set numOnus=$(NUM_ONUS_PER_OLT)
+helm install -n ponsim-pod xos-profiles/ponsim-pod --set numOlts=$NUM_OLTS --set numOnus=$NUM_ONUS_PER_OLT
 ~/cord/helm-charts/scripts/wait_for_pods.sh
 ```
 
@@ -399,7 +403,7 @@ Next install the Mininet chart:
 
 ```bash
 cd ~/cord/helm-charts
-helm install -n mininet mininet --set numOlts=$(NUM_OLTS) --set numOnus=$(NUM_ONUS_PER_OLT)
+helm install -n mininet mininet --set numOlts=$NUM_OLTS --set numOnus=$NUM_ONUS_PER_OLT
 ~/cord/helm-charts/scripts/wait_for_pods.sh
 ```
 
@@ -435,7 +439,10 @@ This is necessary to enable the RG to authenticate:
 
 ```bash
 echo 8 > /tmp/group_fwd_mask
-for BRIDGE in /sys/class/net/pon*; do sudo cp /tmp/group_fwd_mask $BRIDGE/bridge/group_fwd_mask; done
+for BRIDGE in /sys/class/net/pon*; \
+do \
+    sudo cp /tmp/group_fwd_mask $BRIDGE/bridge/group_fwd_mask; \
+done
 ```
 
 ## ONOS customizations
