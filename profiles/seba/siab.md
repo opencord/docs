@@ -187,7 +187,7 @@ curl -L -o /tmp/cordctl "https://github.com/opencord/cordctl/releases/download/$
 sudo mv /tmp/cordctl /usr/local/bin/cordctl
 sudo chmod a+x /usr/local/bin/cordctl
 mkdir -p ~/.cord
-printf "server: localhost:30011\nusername: admin@opencord.org\npassword: letmein\ngrpc:\n  timeout: 10s\n" > ~/.cord/config
+printf "server: 127.0.0.1:30011\nusername: admin@opencord.org\npassword: letmein\ngrpc:\n  timeout: 10s\n" > ~/.cord/config
 ```
 
 ### Other prerequisites

@@ -184,7 +184,7 @@ git repo, which has two targets:
 It also depends on the following environmental variables being set, with
 these default values:
 
-- `DOCKER\_REGISTRY` - Docker Registry DNS address/IP with port and trailing
+- `DOCKER_REGISTRY` - Docker Registry DNS address/IP with port and trailing
   slash
 
   Default value is blank, example value: 10.0.0.1:5000/
@@ -212,6 +212,23 @@ Write permission on the repo.
 
 Currently the build process only creates amd64 images, but in the future
 multiarch images may be built as well.
+
+### Publish artifacts to a GitHub releases: `github-release_*`
+
+This builds and publishes binary artifacts to the GitHub releases page under a
+repository.
+
+To use this functionality, your Makefile must have a `make release` target that
+will build binary artifacts.
+
+In the configuration of this job, you must specify the name of the
+`github-organization` this repository is uploaded under, and specify a shell
+glob as `artifact-glob` to identify the files that were created.
+
+When a git tagged version is created, the Jenkins job will run `make release`
+then upload all the artifacts matching `artifact-glob` as well as generating
+and uploading a `checksum.SHA256` file containing hashes for the artifacts,
+which should be used to validate downloaded artifacts.
 
 ## Making new Jenkins jobs
 
