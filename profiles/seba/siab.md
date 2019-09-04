@@ -330,6 +330,30 @@ $ http GET http://127.0.0.1:30125/health|jq '.state'
 "HEALTHY"
 ```
 
+## Install Logging and Monitoring charts (optional)
+
+This step installs Kibana for log aggregation and querying, and Prometheus/Grafana for graphing SEBA metrics.
+They are not necessary for the correct operation of SEBA so this step can be skipped if desired.
+[This page](../../operating_cord/diag.md) goes into more detail on these components.
+
+To install logging and monitoring services:
+```bash
+cd ~/cord/helm-charts
+helm dep update nem-monitoring
+helm install -n nem-monitoring nem-monitoring
+helm dep update logging
+helm install -n logging logging -f examples/logging-single.yaml
+```
+
+**Before proceeding**
+
+Run: `kubectl get pod`
+
+You should see all the pods in Running state.  To wait until this occurs you can run:
+
+```bash
+~/cord/helm-charts/scripts/wait_for_pods.sh
+```
 
 ## Install NEM charts
 
@@ -349,7 +373,7 @@ helm install -n base-kubernetes xos-profiles/base-kubernetes
 
 **Before proceeding**
 
-Run:  `kubectl get pod`
+Run: `kubectl get pod`
 
 You should see all the NEM pods in Running state, except a number of `*-tosca-loader` pods which should eventually be in Completed state.  
 To wait until this occurs you can run:
@@ -407,13 +431,8 @@ helm install -n mininet mininet --set numOlts=$NUM_OLTS --set numOnus=$NUM_ONUS_
 ~/cord/helm-charts/scripts/wait_for_pods.sh
 ```
 
-After the Mininet pod is running, you can get to the `mininet>` prompt using:
-
-```bash
-kubectl attach -ti deployment.apps/mininet
-```
-
-To detach press Ctrl-P Ctrl-Q.
+> Note: After Mininet is running, `kubectl attach -ti deployment.apps/mininet` will take you to the `mininet>` prompt.
+> To detach press Ctrl-P Ctrl-Q.
 
 **Before proceeding**
 
