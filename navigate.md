@@ -25,7 +25,7 @@ There are four major elements:
   VNFs, other cloud services), including both abstract services
   on-boarded into XOS and SDN control apps running on ONOS.
   Examples of profiles are [SEBA](profiles/seba) and
-  [M-CORD](profiles/mcord).
+  [COMAC](profiles/comac).
 
 * **Workflow:** A Profile typically includes a workflow,
   which defines the business logic and state machine for one of the
@@ -84,12 +84,11 @@ These tools and containers are inter-related as follows:
 
 * While the CORD control plane is deployed as a set of Docker
   containers, not all of the services themselves run in containers.
-  Some services run in VMs managed by OpenStack (this is currently
-  the case for M-CORD) and some services are implemented as ONOS
+  Some services are implemented as ONOS
   applications that have been packaged using Maven. In such cases,
-  the VM image and the Maven package are still specified in TOSCA.
+  the Maven package are still specified in TOSCA.
 
-* Every service (whether implemented in Docker, OpenStack, or ONOS)
+* Every service (whether implemented in Docker, or ONOS)
   has a counter-part *synchronizer* container running as part of the CORD
   control plane (e.g., `volt-synchronizer` for the vOLT service). Typically,
   the helm-chart for a service launches this synchronizer container, whereas
