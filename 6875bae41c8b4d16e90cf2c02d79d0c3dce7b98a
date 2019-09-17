@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f08ce26f_19d30184",
+        "filename": "profiles/comac/configure/enodeb.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-17T22:48:10Z",
+      "side": 1,
+      "message": "the enodeb content can be empty, I created a clean and new one for accelleran enodeb.",
+      "revId": "6875bae41c8b4d16e90cf2c02d79d0c3dce7b98a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
