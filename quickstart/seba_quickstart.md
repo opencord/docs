@@ -2,13 +2,13 @@
 
 This section provides instructions to quickly bring up SEBA.
 
->**Note:** This Quick start assumes that [prerequisite](../prereqs/README.md) hardware and software (up to Kubernetes and Helm) have already been installed.
+> **Note:** This Quick start assumes that [prerequisite](../guides/readme/prereqs/) hardware and software \(up to Kubernetes and Helm\) have already been installed.
 
 ## Install components as a whole
 
 The commands below will bring up the SEBA 2.0-alpha release
 
-```shell
+```text
 # Add the CORD repository and update indexes
 helm repo add cord https://charts.opencord.org
 helm repo update
@@ -28,9 +28,9 @@ helm install -n att-workflow --version 1.2.4 cord/att-workflow
 
 ## Alternatively, install as separate components
 
-The commands below will bring up SEBA using the latest released versions of the Helm charts.  The resulting system should work but it may not correspond to an official SEBA release.
+The commands below will bring up SEBA using the latest released versions of the Helm charts. The resulting system should work but it may not correspond to an official SEBA release.
 
-```shell
+```text
 # Add the official Kubernetes incubator repostiory (for Kafka) and update the indexes
 helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
 helm repo update
@@ -77,10 +77,9 @@ helm install -n att-workflow cord/att-workflow
 
 ## Verify your installation and next steps
 
-Once the installation completes, monitor your setup using `kubectl get pods`.
-Wait until all pods are in *Running* state and “tosca-loader” pods are in *Completed* state.
+Once the installation completes, monitor your setup using `kubectl get pods`. Wait until all pods are in _Running_ state and “tosca-loader” pods are in _Completed_ state.
 
->**Note:** The tosca-loader pods may periodically transition into *error* state. This is expected. They will retry and eventually get to the desired state.
->**Note:** Depending on the profile you're installing, you may need to check also different namespaces (for example, check the voltha namespace if you're installing SEBA with `kubectl get pods -n voltha`)
+> **Note:** The tosca-loader pods may periodically transition into _error_ state. This is expected. They will retry and eventually get to the desired state. **Note:** Depending on the profile you're installing, you may need to check also different namespaces \(for example, check the voltha namespace if you're installing SEBA with `kubectl get pods -n voltha`\)
 
-Your POD is now installed and ready for use. To learn how to operate your POD continue to the [SEBA configuration section](../profiles/seba/configuration.md).
+Your POD is now installed and ready for use. To learn how to operate your POD continue to the [SEBA configuration section](../references/intro/seba/configure/configuration.md).
+
