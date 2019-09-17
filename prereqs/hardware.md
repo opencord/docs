@@ -12,7 +12,7 @@ A CORD POD is built using the following hardware components.
   all the same). The characteristics of these machines depends several
   factors. At the very minimum, each machine should have a 4 cores
   CPU, 32GB of RAM, and 100G of disk capacity. More sophisticated
-  use-cases, for example M-CORD, require more resources (see below).
+  use-cases, for example COMAC, require more resources (see below).
 
 * **Network Cards**: For whatever server use, it should have at the
   very minimum a 1G network interface for management.
@@ -29,7 +29,7 @@ A CORD POD is built using the following hardware components.
   emulate the fabric in software (e.g., using Mininet), but this applies
   only to specific use-cases.
 
-* **Access Devices**: At the moment, SEBA and M-CORD work
+* **Access Devices**: At the moment, SEBA and COMAC work
   with very specific access devices, as described below. We strongly
   recommend using these tested devices.
 
@@ -96,7 +96,7 @@ have tested over time in lab trials.
                 * Compatible **ONU optics**
                     * SUNSTAR D22799-STCC, EZconn ETP69966-7TB4-I2
 
-* **M-CORD Specific Requirements**
+* **COMAC Specific Requirements**
     * **Servers**: Some components of CORD require at least a Intel XEON CPU with Haswell microarchitecture or better.
     * **eNodeBs**:
         * Cavium Octeon Fusion CNF7100 (for more info <kin-yip.liu@cavium.com>)

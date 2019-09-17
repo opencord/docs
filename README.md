@@ -3,7 +3,7 @@
 This guide describes how to install CORD on a physical POD. It identifies a set of [prerequisites](prereqs/README.md), and then walks through the steps involved in bringing up the [Platform](installation/platform.md). Once the Platform is installed, you are ready to bring up one of the available Profiles:
 
 * [SEBA](./profiles/seba/install.md)
-* [M-CORD](./profiles/mcord/install.md)
+* [COMAC](./profiles/comac/README.md)
 
 Alternatively if you just want to quickly bring up SEBA, try the [SEBA Quick Start](quickstart/seba_quickstart.md).
 
