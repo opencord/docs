@@ -97,9 +97,9 @@ have tested over time in lab trials.
                     * SUNSTAR D22799-STCC, EZconn ETP69966-7TB4-I2
 
 * **COMAC Specific Requirements**
-    * **Servers**: Some components of CORD require at least a Intel XEON CPU with Haswell microarchitecture or better.
+    * **Servers**: COMAC requires at least Intel XEON CPU with Haswell microarchitecture or better.
     * **eNodeBs**:
-        * Cavium Octeon Fusion CNF7100 (for more info <kin-yip.liu@cavium.com>)
+        * For this release, we tested a commercial enodeb: Accelleran E1000.
 
 ## BOM Examples
 
