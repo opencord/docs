@@ -166,30 +166,6 @@ cord@edge2:/home/cord# ip link show
 
 You can refer to the [Kubernetes page](https://guide.opencord.org/prereqs/kubernetes.html) for installation. In this section, we only describe the COMAC specific work.
 
-You can specify which node to run the OMEC control plane and which node to run the OMEC data plane in 
-"*kubespray/inventory/comac/hosts.ini*".   
-
-For example, on central cluster, you can specify:
-
-```shell
-[omec-cp]
-central1
-central2
-
-[omec-cp:vars]
-node_labels={"omec-cp":"enabled"}
-```
-
-On edge cluster, you can specify:
-
-```shell
-[omec-dp]
-edge3
-
-[omec-dp:vars]
-node_labels={"omec-dp":"enabled"}
-```
-
 ## Install CORD and COMAC
 
 * **Install CORD** 
