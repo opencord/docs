@@ -110,8 +110,7 @@
             * [Install Kubernetes](profiles/comac/install/kubernetes.md)
             * [Install OMEC](profiles/comac/install/omec.md)
             * [Install CDN](profiles/comac/install/cdn.md)
-            * [COMAC-in-a-Box Overview](profiles/comac/install/ciab-overview.md)
-                * [Install COMAC-in-a-Box](profiles/comac/install/ciab.md)
+            * [COMAC-in-a-Box](profiles/comac/install/ciab.md)
         * Configure
             * [Configure OMEC](profiles/comac/configure/omec.md)
             * [Configure eNodeB](profiles/comac/configure/enodeb.md)
