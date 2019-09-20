@@ -46,6 +46,30 @@
       "revId": "1ce6554b079be13c4962fc052168bc963cbafa40",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c88d1ed8_1fc31dc5",
+        "filename": "profiles/comac/configure/omec.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000324
+      },
+      "writtenOn": "2019-09-20T20:42:52Z",
+      "side": 1,
+      "message": "Could you please change it if you don\u0027t mind? Or, I can change it and ask you to review.",
+      "parentUuid": "4860b012_ee672ace",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 82
+      },
+      "revId": "1ce6554b079be13c4962fc052168bc963cbafa40",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
