@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d04341a2_f942c2fa",
+        "filename": "profiles/comac/install/ciab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000324
+      },
+      "writtenOn": "2019-09-20T20:37:48Z",
+      "side": 1,
+      "message": "When we successfully deploy everything, this POD has to go to `Completed`. Could you change the status Running to Completed here?",
+      "range": {
+        "startLine": 157,
+        "startChar": 71,
+        "endLine": 157,
+        "endChar": 78
+      },
+      "revId": "2b5c8aa65bfecfb76cb49cc84dd9c1ac05553e51",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
