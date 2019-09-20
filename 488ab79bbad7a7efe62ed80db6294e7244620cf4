@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4c2054a_b5c47520",
+        "filename": "profiles/comac/install/ciab.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-20T00:16:53Z",
+      "side": 1,
+      "message": "can you let people know whether this Error should happen or not, otherwise, people feel nervous when see error.",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 135,
+        "endChar": 99
+      },
+      "revId": "488ab79bbad7a7efe62ed80db6294e7244620cf4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
