@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9c99210a_a233ac24",
+        "filename": "profiles/comac/install/cdn.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000324
+      },
+      "writtenOn": "2019-09-20T22:00:15Z",
+      "side": 1,
+      "message": "Oh, ok. Let me check it.",
+      "parentUuid": "181d7865_78066436",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 26
+      },
+      "revId": "fddd7060db4ab8ac3a31c046b7f61876db21fdc2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "114601c6_f8d291e9",
         "filename": "profiles/comac/install/cdn.md",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2019-09-20T21:50:35Z",
       "side": 1,
       "message": "This block might better go to something like \"trouble shooting\" or omec instructions page. Or maybe mention after \"helm install cdn-local\" as a note. For example, if the cdn-local pod is stuck in \"Pending\" status too long, check node resources for available sriov_netdevice.",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 100
+      },
+      "revId": "fddd7060db4ab8ac3a31c046b7f61876db21fdc2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d77bee_dc895e0f",
+        "filename": "profiles/comac/install/cdn.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000324
+      },
+      "writtenOn": "2019-09-20T22:00:15Z",
+      "side": 1,
+      "message": "Ok good idea :) Will change this block as well as the below block which have same contents.",
+      "parentUuid": "114601c6_f8d291e9",
       "range": {
         "startLine": 67,
         "startChar": 0,
