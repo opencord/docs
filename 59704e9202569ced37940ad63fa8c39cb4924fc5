@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "407705c3_24ea675c",
+        "filename": "profiles/comac/configure/cdn.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-20T21:19:01Z",
+      "side": 1,
+      "message": "Maybe also tell people, they can just use the default CDN in comac without any change. If they want more features, they can following this page.???",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 37
+      },
+      "revId": "59704e9202569ced37940ad63fa8c39cb4924fc5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b1ea2845_a3be8c83",
+        "filename": "profiles/comac/configure/cdn.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-20T21:19:01Z",
+      "side": 1,
+      "message": "should we  use central?",
+      "range": {
+        "startLine": 5,
+        "startChar": 7,
+        "endLine": 5,
+        "endChar": 13
+      },
+      "revId": "59704e9202569ced37940ad63fa8c39cb4924fc5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d7643af1_373265c0",
+        "filename": "profiles/comac/configure/cdn.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-20T21:19:01Z",
+      "side": 1,
+      "message": "Too many Unfortunately ：）\n\nJust delete this word",
+      "range": {
+        "startLine": 46,
+        "startChar": 51,
+        "endLine": 46,
+        "endChar": 107
+      },
+      "revId": "59704e9202569ced37940ad63fa8c39cb4924fc5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "98d9752b_e0cda9c2",
+        "filename": "profiles/comac/configure/cdn.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-20T21:19:01Z",
+      "side": 1,
+      "message": "Too many Unfortunately, just delete this word maybe.\nThis is a good thing for people , data plane faster.",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 13
+      },
+      "revId": "59704e9202569ced37940ad63fa8c39cb4924fc5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
