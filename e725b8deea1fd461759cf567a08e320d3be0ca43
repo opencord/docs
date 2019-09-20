@@ -46,6 +46,30 @@
       "revId": "e725b8deea1fd461759cf567a08e320d3be0ca43",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "42d79318_5284f824",
+        "filename": "profiles/comac/configure/omec.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-20T23:48:04Z",
+      "side": 1,
+      "message": "Yes, in OMEC, People use them all the time.\n\nin 3GPP CP refers more than SGWC PGWC, also UP/DP refers more than  just SPGWU. When see CP-DP, can not immediately know, it is between just SPGWC and SPGWU. \n\nDoes not matter much.",
+      "parentUuid": "d2de454e_e838593c",
+      "range": {
+        "startLine": 29,
+        "startChar": 46,
+        "endLine": 29,
+        "endChar": 51
+      },
+      "revId": "e725b8deea1fd461759cf567a08e320d3be0ca43",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
