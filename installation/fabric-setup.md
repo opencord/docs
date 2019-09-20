@@ -3,7 +3,7 @@
 CORD uses the Trellis fabric to connect the data plane components together.
 This section describes how to setup the software for these switches.
 
-The latest [Trellis Fabric](https://wiki.opencord.org/display/CORD/Trellis%3A+CORD+Network+Infrastructure) documentation can be found on the CORD wiki.
+The latest [Trellis Fabric](https://docs.trellisfabric.org/) documentation can be found on the CORD wiki.
 
 ## Supported Switches
 
