@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf6fddac_b134b6ea",
+        "filename": "profiles/comac/configure/omec.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-20T22:11:51Z",
+      "side": 1,
+      "message": "CP and DP are private names. People may do not understand. spgwc and spgwu is better.",
+      "range": {
+        "startLine": 29,
+        "startChar": 46,
+        "endLine": 29,
+        "endChar": 51
+      },
+      "revId": "e725b8deea1fd461759cf567a08e320d3be0ca43",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
