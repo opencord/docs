@@ -107,7 +107,6 @@
         * [Release Notes](profiles/comac/release-notes.md)
         * Install
             * [Prerequisites](profiles/comac/install/prerequisites.md)
-            * [Install Kubernetes](profiles/comac/install/kubernetes.md)
             * [Install OMEC](profiles/comac/install/omec.md)
             * [Install CDN](profiles/comac/install/cdn.md)
             * [COMAC-in-a-Box Overview](profiles/comac/install/ciab-overview.md)
