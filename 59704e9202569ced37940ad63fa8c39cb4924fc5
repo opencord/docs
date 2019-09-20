@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "af4ad375_94173333",
+        "filename": "profiles/comac/configure/cdn.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000324
+      },
+      "writtenOn": "2019-09-20T22:42:46Z",
+      "side": 1,
+      "message": "Ok, good will do.",
+      "parentUuid": "134feccb_252d0614",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 105
+      },
+      "revId": "59704e9202569ced37940ad63fa8c39cb4924fc5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9691033a_cd4b5d39",
         "filename": "profiles/comac/configure/cdn.md",
         "patchSetId": 1
@@ -130,6 +154,30 @@
       "writtenOn": "2019-09-20T21:58:25Z",
       "side": 1,
       "message": "This is a open source project that anyone can contribute. Maybe just mentioning it will be fixed soon and not mentioning who will do.",
+      "range": {
+        "startLine": 42,
+        "startChar": 22,
+        "endLine": 42,
+        "endChar": 37
+      },
+      "revId": "59704e9202569ced37940ad63fa8c39cb4924fc5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9328333b_3df6031b",
+        "filename": "profiles/comac/configure/cdn.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000324
+      },
+      "writtenOn": "2019-09-20T22:42:46Z",
+      "side": 1,
+      "message": "Good point!",
+      "parentUuid": "9691033a_cd4b5d39",
       "range": {
         "startLine": 42,
         "startChar": 22,
@@ -247,6 +295,30 @@
       "writtenOn": "2019-09-20T21:58:25Z",
       "side": 1,
       "message": "Same here.",
+      "range": {
+        "startLine": 81,
+        "startChar": 71,
+        "endLine": 81,
+        "endChar": 81
+      },
+      "revId": "59704e9202569ced37940ad63fa8c39cb4924fc5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "039623d0_b7e5002a",
+        "filename": "profiles/comac/configure/cdn.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000324
+      },
+      "writtenOn": "2019-09-20T22:42:46Z",
+      "side": 1,
+      "message": "Will get rid of it :)",
+      "parentUuid": "84b01b2b_f0a9a342",
       "range": {
         "startLine": 81,
         "startChar": 71,
