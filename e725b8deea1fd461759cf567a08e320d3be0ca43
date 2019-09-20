@@ -22,6 +22,30 @@
       "revId": "e725b8deea1fd461759cf567a08e320d3be0ca43",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d2de454e_e838593c",
+        "filename": "profiles/comac/configure/omec.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000012
+      },
+      "writtenOn": "2019-09-20T23:11:23Z",
+      "side": 1,
+      "message": "Is it? I followed the name on ngic repo https://github.com/omec-project/ngic-rtc/blob/master/config/interface.cfg#L31.\nLet me know if you want to change it anyway.",
+      "parentUuid": "bf6fddac_b134b6ea",
+      "range": {
+        "startLine": 29,
+        "startChar": 46,
+        "endLine": 29,
+        "endChar": 51
+      },
+      "revId": "e725b8deea1fd461759cf567a08e320d3be0ca43",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
