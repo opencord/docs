@@ -96,6 +96,52 @@
     },
     {
       "key": {
+        "uuid": "134feccb_252d0614",
+        "filename": "profiles/comac/configure/cdn.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000012
+      },
+      "writtenOn": "2019-09-20T21:58:25Z",
+      "side": 1,
+      "message": "I personally don\u0027t think it\u0027s a good idea to directly edit the chart for overriding default values. How about just let user to know what values to be changed and let them choose how to override it?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 105
+      },
+      "revId": "59704e9202569ced37940ad63fa8c39cb4924fc5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9691033a_cd4b5d39",
+        "filename": "profiles/comac/configure/cdn.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000012
+      },
+      "writtenOn": "2019-09-20T21:58:25Z",
+      "side": 1,
+      "message": "This is a open source project that anyone can contribute. Maybe just mentioning it will be fixed soon and not mentioning who will do.",
+      "range": {
+        "startLine": 42,
+        "startChar": 22,
+        "endLine": 42,
+        "endChar": 37
+      },
+      "revId": "59704e9202569ced37940ad63fa8c39cb4924fc5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d7643af1_373265c0",
         "filename": "profiles/comac/configure/cdn.md",
         "patchSetId": 1
@@ -183,6 +229,29 @@
         "startChar": 0,
         "endLine": 81,
         "endChar": 13
+      },
+      "revId": "59704e9202569ced37940ad63fa8c39cb4924fc5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "84b01b2b_f0a9a342",
+        "filename": "profiles/comac/configure/cdn.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000012
+      },
+      "writtenOn": "2019-09-20T21:58:25Z",
+      "side": 1,
+      "message": "Same here.",
+      "range": {
+        "startLine": 81,
+        "startChar": 71,
+        "endLine": 81,
+        "endChar": 81
       },
       "revId": "59704e9202569ced37940ad63fa8c39cb4924fc5",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
