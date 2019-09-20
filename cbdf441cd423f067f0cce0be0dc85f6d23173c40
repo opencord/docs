@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "db0955d6_76209dc3",
+        "filename": "profiles/comac/install/omec.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-20T20:14:09Z",
+      "side": 1,
+      "message": "did not see create a name space first.",
+      "range": {
+        "startLine": 23,
+        "startChar": 16,
+        "endLine": 23,
+        "endChar": 20
+      },
+      "revId": "cbdf441cd423f067f0cce0be0dc85f6d23173c40",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
