@@ -104,6 +104,7 @@
             * [DHCP is not working](profiles/seba/troubleshoot/no-dhcp.md)
             * [I can't ping](profiles/seba/troubleshoot/no-ping.md)
     * [COMAC](profiles/comac/README.md)
+        * [Overview](profiles/comac/overview.md)
         * [Release Notes](profiles/comac/release-notes.md)
         * Install
             * [Prerequisites](profiles/comac/install/prerequisites.md)
