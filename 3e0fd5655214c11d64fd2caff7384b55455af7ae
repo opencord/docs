@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0c0615b5_5cc9c27b",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "two spaces in macdown is to cut off the line. It is a grammar.\nI changed most of them to return, only leave the very necessary ones.",
+      "parentUuid": "de305913_c17b75cd",
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e5f7d43_7c094ec0",
         "filename": "profiles/comac/install/prerequisites.md",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2019-09-21T01:06:29Z",
       "side": 1,
       "message": "Install OS to aline with the later items, \"install kubernetes, install cord and comac\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 16
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3e82ed4d_45f010da",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "Removed install OS and config nodes, those are covered in install k8s in cord.\n\nBecause  the prerequisites doc is in front of OMEC and CDN, and graphna, I do not know how you three describe the nodes, and IP addresses, So I  write down it in very detail for later you can describe where to run the containers.\n\nBut this afternoon when i review other docs, i saw you described not specific , so no need those any more.",
+      "parentUuid": "8e5f7d43_7c094ec0",
       "range": {
         "startLine": 7,
         "startChar": 2,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "d99d8f14_80fa8533",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "right, install comac will miss lead people",
+      "parentUuid": "418dd479_59af8669",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 25
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f6439302_e41a7184",
         "filename": "profiles/comac/install/prerequisites.md",
         "patchSetId": 3
@@ -76,6 +142,30 @@
       "writtenOn": "2019-09-21T01:06:29Z",
       "side": 1,
       "message": "Kubernetes is the only software requirements that I can think of...\nHow about explaining OS requirements and K8S in this category and remove \"Install OS on All Nodes\"?",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 24
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c1237519_4ffdb884",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "directly deleted, will explain the OS under node setup.",
+      "parentUuid": "f6439302_e41a7184",
       "range": {
         "startLine": 39,
         "startChar": 0,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "5ddb40e3_12fe2434",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "changed",
+      "parentUuid": "43e7d11d_2d4e4831",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 30
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1dcb5648_692fdcd9",
         "filename": "profiles/comac/install/prerequisites.md",
         "patchSetId": 3
@@ -122,6 +236,30 @@
       "writtenOn": "2019-09-21T01:06:29Z",
       "side": 1,
       "message": "Building K8S cluster does not need to be mentioned here. It is user\u0027s choice how to deploy K8S.",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 83
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6c8efd26_07a298f0",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "deleted",
+      "parentUuid": "1dcb5648_692fdcd9",
       "range": {
         "startLine": 48,
         "startChar": 0,
@@ -157,6 +295,30 @@
     },
     {
       "key": {
+        "uuid": "28e61622_6b26e941",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "38ba4a0c_d5cd85fd",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 77
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1160ce64_f41ef327",
         "filename": "profiles/comac/install/prerequisites.md",
         "patchSetId": 3
@@ -168,6 +330,30 @@
       "writtenOn": "2019-09-21T01:06:29Z",
       "side": 1,
       "message": "These are all covered by general K8S deploy instructions, most of them are preparations for running ansible-playbook. Don\u0027t need to cover them here. You can just mention COMAC specific K8S configurations here and proceed to node setup assuming that K8S is already installed.",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 146,
+        "endChar": 1
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bbe5be84_2f0870b1",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "same as before,  the  IP config part, I guess the omec cdn ... may needed later.\ndeleted the whole Config All Nodes.",
+      "parentUuid": "1160ce64_f41ef327",
       "range": {
         "startLine": 60,
         "startChar": 0,
@@ -226,6 +412,54 @@
     },
     {
       "key": {
+        "uuid": "21bc0036_c305530d",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "6929c884_77dee457",
+      "range": {
+        "startLine": 175,
+        "startChar": 204,
+        "endLine": 175,
+        "endChar": 258
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "541cc379_8c04cbc4",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "655d3f95_b5978c0c",
+      "range": {
+        "startLine": 175,
+        "startChar": 106,
+        "endLine": 175,
+        "endChar": 203
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "95965adc_8633d9e8",
         "filename": "profiles/comac/install/prerequisites.md",
         "patchSetId": 3
@@ -237,6 +471,30 @@
       "writtenOn": "2019-09-21T01:06:29Z",
       "side": 1,
       "message": "\"where a node with SRIOV supported NIC\" should make more sense? And let\u0027s forget about our demo topology like edge3...",
+      "range": {
+        "startLine": 179,
+        "startChar": 112,
+        "endLine": 179,
+        "endChar": 152
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d36c1381_e01dcf0c",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95965adc_8633d9e8",
       "range": {
         "startLine": 179,
         "startChar": 112,
@@ -272,6 +530,30 @@
     },
     {
       "key": {
+        "uuid": "5ccb9527_f5ed9845",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "improved",
+      "parentUuid": "620c7c50_249ad7f9",
+      "range": {
+        "startLine": 182,
+        "startChar": 0,
+        "endLine": 183,
+        "endChar": 68
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7555d6_3f5dae2d",
         "filename": "profiles/comac/install/prerequisites.md",
         "patchSetId": 3
@@ -283,6 +565,30 @@
       "writtenOn": "2019-09-21T01:06:29Z",
       "side": 1,
       "message": "Let\u0027s add more explanation how to verify with \"ip link show\" result.",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 26
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "52e0e89a_17e07afd",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "add the snapshot for VF",
+      "parentUuid": "da7555d6_3f5dae2d",
       "range": {
         "startLine": 185,
         "startChar": 0,
@@ -318,6 +624,30 @@
     },
     {
       "key": {
+        "uuid": "0d8162ef_eafd2479",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "removed edge2.",
+      "parentUuid": "bd35b3c0_3f41fd8b",
+      "range": {
+        "startLine": 191,
+        "startChar": 80,
+        "endLine": 191,
+        "endChar": 124
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "05acf83b_c9d2bf9a",
         "filename": "profiles/comac/install/prerequisites.md",
         "patchSetId": 3
@@ -329,6 +659,30 @@
       "writtenOn": "2019-09-21T01:06:29Z",
       "side": 1,
       "message": "Same here.",
+      "range": {
+        "startLine": 197,
+        "startChar": 0,
+        "endLine": 200,
+        "endChar": 35
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5e99e60a_581f69c1",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "05acf83b_c9d2bf9a",
       "range": {
         "startLine": 197,
         "startChar": 0,
@@ -364,6 +718,30 @@
     },
     {
       "key": {
+        "uuid": "acfdb1be_abd02211",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "improved",
+      "parentUuid": "f7fe84b8_6a6fde7f",
+      "range": {
+        "startLine": 207,
+        "startChar": 0,
+        "endLine": 218,
+        "endChar": 3
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f3357a8_73197e61",
         "filename": "profiles/comac/install/prerequisites.md",
         "patchSetId": 3
@@ -375,6 +753,30 @@
       "writtenOn": "2019-09-21T01:06:29Z",
       "side": 1,
       "message": "CORD platform and COMAC profile",
+      "range": {
+        "startLine": 221,
+        "startChar": 11,
+        "endLine": 221,
+        "endChar": 25
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0d6fd922_8099d440",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "5f3357a8_73197e61",
       "range": {
         "startLine": 221,
         "startChar": 11,
@@ -410,6 +812,30 @@
     },
     {
       "key": {
+        "uuid": "32fa0aa6_412ddbfb",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "a09a0130_c5dd88b5",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 12
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c6f2aa0e_823ff7d3",
         "filename": "profiles/comac/install/prerequisites.md",
         "patchSetId": 3
@@ -427,6 +853,24 @@
     },
     {
       "key": {
+        "uuid": "850ad5dc_5a3c4cd2",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "will add it next week ：）",
+      "parentUuid": "c6f2aa0e_823ff7d3",
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c80f22b_06143154",
         "filename": "profiles/comac/install/prerequisites.md",
         "patchSetId": 3
@@ -438,6 +882,30 @@
       "writtenOn": "2019-09-21T01:06:29Z",
       "side": 1,
       "message": "Need to add explanation about this IP address.",
+      "range": {
+        "startLine": 246,
+        "startChar": 143,
+        "endLine": 246,
+        "endChar": 157
+      },
+      "revId": "3e0fd5655214c11d64fd2caff7384b55455af7ae",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c742d0e3_410df5af",
+        "filename": "profiles/comac/install/prerequisites.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T04:03:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c80f22b_06143154",
       "range": {
         "startLine": 246,
         "startChar": 143,
