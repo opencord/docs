@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e838535_dbcc5a04",
+        "filename": "profiles/comac/configure/monitoring.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T18:05:22Z",
+      "side": 1,
+      "message": "on this link, it did not say the monitoring and logging.\n\non this link: https://guide.opencord.org/installation/platform.html. it said.",
+      "range": {
+        "startLine": 3,
+        "startChar": 213,
+        "endLine": 3,
+        "endChar": 263
+      },
+      "revId": "04d2011de5f81eab5890ea165132b4d0c5c0efc3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23b77625_2d2f7599",
+        "filename": "profiles/comac/configure/monitoring.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T18:05:22Z",
+      "side": 1,
+      "message": "multi-cluster is a choice, so lets change to : However, if you want to deploy COMAC on multi-cluster.",
+      "range": {
+        "startLine": 9,
+        "startChar": 209,
+        "endLine": 9,
+        "endChar": 253
+      },
+      "revId": "04d2011de5f81eab5890ea165132b4d0c5c0efc3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "80f98301_d4e57505",
+        "filename": "profiles/comac/configure/monitoring.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T18:05:22Z",
+      "side": 1,
+      "message": "maybe also tell people where it is located",
+      "range": {
+        "startLine": 9,
+        "startChar": 23,
+        "endLine": 9,
+        "endChar": 45
+      },
+      "revId": "04d2011de5f81eab5890ea165132b4d0c5c0efc3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7559a72d_b6803cc8",
+        "filename": "profiles/comac/configure/monitoring.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T18:05:22Z",
+      "side": 1,
+      "message": "duplicated",
+      "range": {
+        "startLine": 49,
+        "startChar": 282,
+        "endLine": 49,
+        "endChar": 388
+      },
+      "revId": "04d2011de5f81eab5890ea165132b4d0c5c0efc3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
