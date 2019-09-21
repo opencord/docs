@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84ef4090_3a43fe5b",
+        "filename": "profiles/comac/overview.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T05:08:20Z",
+      "side": 1,
+      "message": "You only have single cloud, right ? have not talk about the multi-cloud yet.",
+      "range": {
+        "startLine": 21,
+        "startChar": 871,
+        "endLine": 21,
+        "endChar": 882
+      },
+      "revId": "2aca10684b8e7b41e7baf6b69ea92813239b8682",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e5ad60c9_869297b6",
+        "filename": "profiles/comac/overview.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000017
+      },
+      "writtenOn": "2019-09-21T05:08:20Z",
+      "side": 1,
+      "message": "4G, not 5G yet",
+      "range": {
+        "startLine": 29,
+        "startChar": 40,
+        "endLine": 29,
+        "endChar": 42
+      },
+      "revId": "2aca10684b8e7b41e7baf6b69ea92813239b8682",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
