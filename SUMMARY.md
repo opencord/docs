@@ -114,6 +114,7 @@
             * [Configure OMEC](profiles/comac/configure/omec.md)
             * [Configure eNodeB](profiles/comac/configure/enodeb.md)
             * [Configure CDN](profiles/comac/configure/cdn.md)
+            * [Configure Monitoring](profiles/comac/configure/monitoring.md)
         * [Known Issues](profiles/comac/known-issues.md)
 * [Service Reference](operating_cord/services.md)
     * [Fabric](fabric/README.md)
