@@ -3,11 +3,12 @@
 CORD uses the Trellis fabric to connect the data plane components together.
 This section describes how to setup the software for these switches.
 
-The latest [Trellis Fabric](https://docs.trellisfabric.org/) documentation can be found on the CORD wiki.
+The latest documentation can be found on the [Trellis documentation
+site](https://docs.trellisfabric.org/).
 
 ## Supported Switches
 
-The list of supported hardware can be found in the [hardware requirements page](../prereqs/hardware.md).
+The list of supported hardware can be found in the [hardware requirements page](../prereqs/hardware.md)
 
 ## Operating System
 

@@ -27,10 +27,10 @@ Based on the description of "Generic Hardware Guidelines" <https://guide.opencor
 
 ![](../images/3nodes-hardware-setup.png)
 
-  3x x86 server (10G NIC)  
-  1x OpenFlow switch (40G NIC)  
-  1x DAC breakout cable  
-  5x Ethernet copper cables  
+  3x x86 server (10G NIC)
+  1x OpenFlow switch (40G NIC)
+  1x DAC breakout cable
+  5x Ethernet copper cables
   2x layer 2 switches, one is for management, another is as converter between 1G and 10G NICs
 
 
@@ -145,7 +145,7 @@ multus_version: stable
 ```
 ## Fabric Configuration
 
-You can refer to [Trellis Underlay Fabric](https://wiki.opencord.org/display/CORD/) for more info on how to config the fabric.
+You can refer to [Trellis Fabric Documentation](https://docs.trellisfabric.org/) for more info on how to config the fabric.
 
   You can modify the exmpale file "mcord-local-cluster-fabric-accelleran.yaml" according to your netowrk, and insert fabric configuration with command:
 
