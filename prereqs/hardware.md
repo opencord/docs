@@ -46,11 +46,13 @@ A CORD POD is built using the following hardware components.
 Following is a list of hardware that people from the ONF community
 have tested over time in lab trials.
 
+
 * **Compute Machines**
     * OCP Inspired&trade; QuantaGrid D51B-1U server. Each
     server is configured with 2x Intel E5-2630 v4 10C 2.2GHz 85W, 64GB of RAM 2133MHz DDR4, 2x 500GB HDD, and a 40 Gig adapter.
 
-* **Fabric Switches**
+* **Fabric Switches** - see also the [Trellis Documentation Supported
+  Hardware](https://docs.trellisfabric.org/supported-hardware.html)
     * **1G/10G** models (with 40G uplinks)
         * OCP Accepted&trade; EdgeCore AS5712-54X
         * OCP Accepted&trade; EdgeCore AS5812-54X
