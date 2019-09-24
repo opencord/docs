@@ -16,6 +16,7 @@ MountPropagation=true
 ```
 
 More information about feature gates can be found [here](https://github.com/kubernetes-incubator/external-storage/tree/local-volume-provisioner-v2.0.0/local-volume#enabling-the-alpha-feature-gates).
+More sophisticated use-cases, for example COMAC, require additional settings (see [COMAC prerequisites](../profiles/comac/install/prerequisites.md)).
 
 Although you are free to set up Kubernetes and Helm in whatever way makes
 sense for your deployment, the following provides guidelines, pointers, and
@@ -43,6 +44,15 @@ You can also permanently export this environment variable, so you don’t have t
 export it every time you open a new window in your terminal. More info on this
 topic at
 <https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/>.
+
+In case you have to manage multiple clusters, for example COMAC,
+extend KUBECONFIG variable to include the configuration file for all clusters.
+
+```shell
+export KUBECONFIG=/path/to/central/kubeconfig/file:/path/to/edge/kubeconfig/file
+```
+
+After updating KUBECONFIG, you can quickly switch between clusters by using the `kubectl config use-context` command.
 
 ## Install Kubectl
 
