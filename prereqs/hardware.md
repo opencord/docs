@@ -99,9 +99,13 @@ have tested over time in lab trials.
                     * SUNSTAR D22799-STCC, EZconn ETP69966-7TB4-I2
 
 * **COMAC Specific Requirements**
-    * **Servers**: COMAC requires at least Intel XEON CPU with Haswell microarchitecture or better.
-    * **eNodeBs**:
-        * For this release, we tested a commercial enodeb: Accelleran E1000.
+    * **Compute Machines**:
+        * Intel Haswell CPUs or newer with VT-d support
+        * SR-IOV capable network card (for a list of Intel NICs with SR-IOV support, see [here](https://www.intel.com/content/www/us/en/support/articles/000005722/network-and-i-o/ethernet-products.html))
+    * **eNodeB**:
+        * Accelleran E1000
+    * **UE**:
+        * Sumsang J5 with Andriod v7.1.1
 
 ## BOM Examples
 
@@ -150,3 +154,32 @@ Refer to hardware listed above for tested and recommended hardware for the BOM
 * 1 or more developers' workstations to develop and deploy
 * A workstation/server to simulate BNG
 * 1x L2 legacy management switch
+
+### COMAC BOM
+
+**Single Cluster**
+
+* 3x x86 server (1G managment and 10G/25G/40G/100G data with SR-IOV enabled)
+* 1x fabric switch (10G/25G/40G/100G)
+* 1x L2 legacy management switch
+* DAC breakout cables as needed
+* Ethernet copper cables as needed
+* 1x eNB
+* 1x or more UEs
+* A workstation/server to develop and deploy
+
+**Multi-Cluster**
+
+* A workstation/server with an access to both clusters to develop and deploy
+* **Central**
+    * 3x x86 server (1G managment)
+    * 1x L2 legacy management switch
+    * Ethernet copper cables as needed
+* **Edge**
+    * 3x x86 server (1G managment and 10G/25G/40G/100G data)
+    * 1x fabric switch (10G/25G/40G/100G)
+    * 1x L2 legacy management switch
+    * DAC breakout cables as needed
+    * Ethernet copper cables as needed
+    * 1x eNB
+    * 1x or more UEs
