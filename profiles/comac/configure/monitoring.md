@@ -6,7 +6,7 @@ This page shows how to configure Grafana-via-Prometheus for COMAC monitoring. Th
 
 ## Grafana-via-Prometheus for COMAC monitoring
 
-In COMAC, we are using `nem-monitoring` chart for monitoring. The chart is part of the `cord-platform` helm-chart, but if you need to install it, please refer to [this guide] (https://guide.opencord.org/charts/logging-monitoring.html#nem-monitoring-charts).
+In COMAC, we are using `nem-monitoring` chart for monitoring. The chart is part of the `cord-platform` helm-chart, but if you need to install it, please refer to [this guide](https://guide.opencord.org/charts/logging-monitoring.html#nem-monitoring-charts).
 
 `nem-monitoring` includes Grafana, Prometheus, and metrics exporters. The chart is capable for monitoring and visualization in single cluster by default. However, if you want to deploy COMAC on multi-cluster, the monitoring system should pull metrics from multi-cluster.
 
@@ -14,9 +14,9 @@ In COMAC, we are using `nem-monitoring` chart for monitoring. The chart is part 
 
 It depends on exporters which metrics are exposed. The exposed metrics are collected and stored in Prometheus then the metrics can be used by Grafana to create dashboards. In COMAC environment, we basically deploy 3 exporters as follows.
 
-- [cAdvisor] (https://github.com/google/cadvisor)
-- [Kube-state-metrics] (https://github.com/kubernetes/kube-state-metrics)
-- [Node-exporter] (https://github.com/prometheus/node_exporter)
+- [cAdvisor](https://github.com/google/cadvisor)
+- [Kube-state-metrics](https://github.com/kubernetes/kube-state-metrics)
+- [Node-exporter](https://github.com/prometheus/node_exporter)
 
 They expose resource usage and performance characteristics of running containers, metrics about Kubernetes objects, and hardware/OS metrics. Basically, the monitoring system including Grafana, Prometheus, and metrics exporters in the edge cluster. Thus, we should deploy exporters in the central cluster and make the monitoring system interacts with them as following figure.
 
