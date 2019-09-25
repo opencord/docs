@@ -73,7 +73,7 @@ Run `node-setup.sh` script with `--vfio` option to create VFIO bounded VFs.
 $ git clone https://gerrit.opencord.org/automation-tools
 $ cd automation-tools/comac/scripts/
 $ sudo ./node-setup.sh -i [iface name] --vfio
-  OK: vmx is enabled
+  OK: Intel VT is enabled
 INFO: IOMMU is disabled
       Added "intel_iommu=on" is to kernel parameters
 INFO: Hugepage is disabled
@@ -97,7 +97,7 @@ reboot to verify the settings.
 
 ```shell
 $ sudo ./node-setup.sh -i [iface name] --vfio
-  OK: vmx is enabled
+  OK: Intel VT is enabled
   OK: IOMMU is enabled
   OK: Hugepage is enabled
   OK: SR-IOV is enabled on [iface name]
