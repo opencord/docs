@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a41c2632_e8d7e8bc",
+        "filename": "prereqs/hardware.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000324
+      },
+      "writtenOn": "2019-09-25T00:03:18Z",
+      "side": 1,
+      "message": "You may want to add Smartphones with Android version. What do you think, Pingping?",
+      "range": {
+        "startLine": 156,
+        "startChar": 5,
+        "endLine": 156,
+        "endChar": 13
+      },
+      "revId": "103955d318801b35374380948d19fca1af5fdc01",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
