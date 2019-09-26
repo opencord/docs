@@ -13,7 +13,7 @@ SDN based RAN in green boxes will not be part of v1.0.0 but subsequent releases.
 ### Highlights
 
 * Support open source EPC, [OMEC](https://github.com/omec-project).
-* Support both centralized and distribued scenario where control plane components of EPC are placed in a central cloud and data plane components are placed in edges.
+* Support both centralized and distributed scenario where control plane components of EPC are placed in a central cloud and data plane components are placed in edges.
 * Support SR-IOV and DPDK for accelerating the data plane.
 * Support an emulated development environment [COMAC-in-a-box](https://guide.opencord.org/profiles/comac/install/ciab.html).
 * Provide mobile subscriber state monitoring.
