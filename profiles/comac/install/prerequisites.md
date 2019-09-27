@@ -103,16 +103,6 @@ $ sudo ./node-setup.sh -i [iface name] --vfio
   OK: SR-IOV is enabled on [iface name]
 ```
 
-#### Load SCTP module
-
-The protocol used in S1-MME interface is SCTP.
-Make sure SCTP kernel module is loaded in all nodes permanently:
-
-```shell
-sudo modprobe nf_conntrack_proto_sctp
-echo "nf_conntrack_proto_sctp" >> /etc/modules
-```
-
 ### Kubernetes
 
 Read [this page](https://guide.opencord.org/prereqs/kubernetes.html) first for a
