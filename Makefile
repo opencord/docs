@@ -46,7 +46,7 @@ lint: | $(OTHER_REPO_DOCS)
 	@echo "---"
 	@cat $(LINT_STYLE)
 	@echo "---"
-	mdl -s $(LINT_STYLE) `find -L . ! -path "./partials/*" ! -path "./_book/*" ! -path "./repos/*"  ! -path "./node_modules/*" ! -path "./cord-tester/modules/*" -name "*.md"`
+	mdl -s $(LINT_STYLE) `find -L . ! -path "./partials/*" ! -path "./_book/*" ! -path "./repos/*"  ! -path "./node_modules/*" ! -path "./cord-tester/modules/*" ! -path "./vendor/*" -name "*.md"`
 
 linkcheck: $(ALL_DOCS) _book
 	linkchecker -a -f linkchecker.ini _book/

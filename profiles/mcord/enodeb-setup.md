@@ -49,7 +49,7 @@ You can give any IP as long as it is not used by eNodeB or SPGWU.
 `u32sgwipaddress`: SPGWU IP address on S1U interface.
 
 Where to get those IP addresses? As described at the end of the [M-CORD quick start
-page](https://guide.opencord.org/profiles/mcord/install.html), the command
+page](https://guide.opencord.org/cord-6.0/profiles/mcord/install.html), the command
 `openstack server list --all-projects` will list the VNFs and their IP
 addresses. For example, the
 `flat_network_s1mme` of MME VM is the `u32mmeipaddress`. The `flat_network_s1u`

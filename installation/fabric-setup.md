@@ -3,7 +3,7 @@
 CORD uses the Trellis fabric to connect the data plane components together.
 This section describes how to setup the software for these switches.
 
-The latest [Trellis Fabric](https://wiki.opencord.org/display/CORD/Trellis%3A+CORD+Network+Infrastructure) documentation can be found on the CORD wiki.
+The latest [Trellis Fabric](https://wiki.opencord.org/display/CORD/Trellis) documentation can be found on the CORD wiki.
 
 ## Supported Switches
 
@@ -34,7 +34,7 @@ After the installation of ONL, if you don't see '/usr/bin' in your PATH variable
 export PATH=$PATH:/usr/bin/ofdpa
 ```
 
-Guidelines on how to install ONL on top of an ONIE compatible device can be found directly on the [ONL website](https://opennetlinux.org/docs/deploy).
+Guidelines on how to install ONL can be found on the [ONL website](https://opennetlinux.org/doc-deploy-amd.html).
 
 This specific version of ONL has been customized to accept an IP address through DHCP on the management interface, *ma0*. If you'd like to use a static IP, first give
 it an IP address through DHCP, then login and change the configuration in
