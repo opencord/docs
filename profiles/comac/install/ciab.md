@@ -35,6 +35,7 @@ Ubuntu 16.04 or later system:
 git clone https://gerrit.opencord.org/automation-tools
 cd automation-tools/comac-in-a-box
 make
+make test
 ```
 
 ## Installation procedure
@@ -281,6 +282,7 @@ config:
       api_key: "465b5ce8b199b49faa5f0a2ee238a6bc"
       opc: "d4416644f6154936193433dd20a0ace0"
       msisdn: "1122334456"
+      sqn: "96"
 EOF
 ```
 
