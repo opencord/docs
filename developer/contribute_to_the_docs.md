@@ -1,8 +1,8 @@
 # Contribute to the documentation
 
-> This tutorial assumes you already have [cloned the code](./getting_the_code.md),
-> [NodeJs](https://nodejs.org/en/) and the [Gitbook Toolchain](https://toolchain.gitbook.com/)
-> are installed.
+> This tutorial assumes you already have [cloned the
+> code](./getting_the_code.md), [NodeJs](https://nodejs.org/en/) and the legacy
+> Gitbook Toolchain (deprecated, docs unavailable) are installed.
 
 From a terminal window navigate to the documentation root:
 

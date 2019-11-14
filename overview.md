@@ -51,7 +51,7 @@ Services, see [Navigating CORD](navigate.md).
 ## Making Changes to this Document
 
 The [http://guide.opencord.org](http://guide.opencord.org) website is built
-using the [GitBook Toolchain](https://toolchain.gitbook.com/), with the
+using the legacy GitBook Toolchain (deprecated, docs unavailable), with the
 documentation root in
 [docs](https://github.com/opencord/docs/blob/{{ book.branch }}) in a
 checked out source tree.  It is build with `make`, and requires that `gitbook`,
