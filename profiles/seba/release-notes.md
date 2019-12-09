@@ -35,7 +35,7 @@ the following major changes:
 
 A new command-line interface was created, `cordctl`, that administrators may use to manage
 the NEM. This tool provides an alternate interface to many of the functions that
-may also be done using the NEM GUI. `corctl` is written in the go programming language
+may also be done using the NEM GUI. `cordctl` is written in the go programming language
 and installs to an administrator's computer as a single binary.
 
 The NEM API was extended to provide additional data about versioning and database
@@ -79,12 +79,12 @@ deployments.
 
 The following improvements were made to the GUI:
 
-* The GUI was improved to hide fields such as backend_status and policy_status for
+* Hidden fields such as backend_status and policy_status for
   models that do not require those fields.
 
-* Performance issues with Chrome browsers were resolved.
+* Resolved performance issues with Chrome browsers.
 
-* Issues with broken navigation between related models were resolved.
+* Resolved broken navigation between related models.
 
 ## SEBA-in-a-Box Improvements
 
