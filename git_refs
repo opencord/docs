@@ -21,7 +21,7 @@ hippie-oss            /docs    bbbdb1ae4491742a78441ec68acb91d06bb90b20
 kubernetes-service    /docs    3ea0a9c663059b3d8d5cb6609254a05f7fe72219
 olt-service           /docs    b9d725d7d46ed63f63d7cc7d32e149c0ed26a1c6
 onos-service          /docs    32b165a35c8a2779827d91269be5dbac8f3e0cea
-openolt               /        27939d8ed643293fd9f3a7ff4db95d9c0a972aed
+openolt               /        a4d6ba4eaa8d88760cfcd367921c91418b098b35
 openstack             /docs    f1897e0b6b0bb32dc6bc71ccbe21d87190359100
 rcord                 /docs    cd109155ec4d3172fb3d951a6e5c8dbc342e8885
 simpleexampleservice  /docs    ea2919f720a36f60aef284944db06725da503951
