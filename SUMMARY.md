@@ -9,6 +9,7 @@
         * [Linux](quickstart/linux.md)
 
 ## Guides
+
 * [Installation Guide](README.md)
     * [Prerequisites](prereqs/README.md)
         * [Hardware Requirements](prereqs/hardware.md)
@@ -60,6 +61,7 @@
     * [System Tests](cord-tester/validate_pods.md)
 
 ## References
+
 * [Profile Reference](profiles/intro.md)
     * [SEBA](profiles/seba/README.md)
         * [Release Notes](profiles/seba/release-notes.md)
