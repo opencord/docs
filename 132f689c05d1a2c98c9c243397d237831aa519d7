@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7b97415b_c2ce986a",
+        "filename": "SUMMARY.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2019-12-25T18:23:30Z",
+      "side": 1,
+      "message": "This blank line seems unnecessary",
+      "revId": "132f689c05d1a2c98c9c243397d237831aa519d7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2cc1822c_4ca24a9f",
+        "filename": "prereqs/hardware.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2019-12-25T18:23:30Z",
+      "side": 1,
+      "message": "I\u0027d suggest add \u0026trade; (see example in line 51)",
+      "range": {
+        "startLine": 54,
+        "startChar": 18,
+        "endLine": 54,
+        "endChar": 19
+      },
+      "revId": "132f689c05d1a2c98c9c243397d237831aa519d7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
