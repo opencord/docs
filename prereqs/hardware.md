@@ -51,6 +51,8 @@ have tested over time in lab trials.
     * OCP Inspired&trade; QuantaGrid D51B-1U server. Each
     server is configured with 2x Intel E5-2630 v4 10C 2.2GHz 85W, 64GB of RAM 2133MHz DDR4, 2x 500GB HDD, and a 40 Gig adapter.
 
+    * OCP Inspired&trade; MiTAC Tioga Pass_E7278 server. Each server is configured with 2x Intel Skylake SP 14 cores 2.2GHz, 64GB of RAM DDR4, 1x 1TB SSD, and OCP Mezzanine v2 25G.
+
 * **Fabric Switches** - see also the [Trellis Documentation Supported
   Hardware](https://docs.trellisfabric.org/supported-hardware.html)
     * **1G/10G** models (with 40G uplinks)
