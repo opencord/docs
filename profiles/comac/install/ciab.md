@@ -2,7 +2,7 @@
 
 If you do not have the [prerequisite hardware](../../../prereqs/hardware.md) to
 install COMAC we have you covered. You can get a complete CORD system together
-with the CORD platform, OMEC, COMAC profile, and an emulated data-plane using
+with the CORD platform, OMEC, and an emulated data-plane using
 COMAC-in-a-Box (CiaB).
 
 CiaB is a functional COMAC pod capable of running E2E tests. It takes about 25
@@ -132,7 +132,6 @@ cd ${HOME}
 mkdir -p cord; cd cord
 git clone https://gerrit.opencord.org/helm-charts
 git clone https://gerrit.opencord.org/cord-platform
-git clone https://gerrit.opencord.org/comac-helm-charts
 ```
 
 ### Install CORD platform and COMAC profile
@@ -143,9 +142,9 @@ Run these commands:
 cd ${HOME}/cord/cord-platform
 helm dep update cord-platform
 helm upgrade --install cord-platform cord-platform --set etcd-operator.enabled=false
-cd ${HOME}/cord/comac-helm-charts
-helm dep update comac-platform
-helm upgrade --install comac-platform comac-platform
+cd ${HOME}/cord/helm-charts
+helm dep update comac
+helm upgrade --install comac comac --set mcord-services.fabric.enabled=false --set mcord-services.progran.enabled=false
 ```
 
 You should see the following pods running about 5 min later.
@@ -153,39 +152,37 @@ Note that the pods may periodically transition into error state. This is expecte
 They will retry and eventually get to the desired state:
 
 ```bash
-$ kubectl get pod
-NAME                                                           READY   STATUS      RESTARTS   AGE
-comac-platform-base-kubernetes-tosca-loader-kbht5              0/1     Completed   0          4m34s
-comac-platform-fabric-57c79f966d-sgm7s                         1/1     Running     0          4m34s
-comac-platform-kubernetes-5b56c97fcc-chjml                     1/1     Running     0          4m34s
-comac-platform-mcord-subscriber-ft6tn                          0/1     Completed   0          4m34s
-comac-platform-mcord-tosca-loader-ghc45                        0/1     Completed   1          4m34s
-comac-platform-onos-service-78855b85bf-bn2ts                   1/1     Running     0          4m34s
-comac-platform-vrouter-7f77b8c68f-pdqml                        1/1     Running     0          4m34s
-cord-platform-elasticsearch-client-75c6846fc6-vm6gp            0/1     Running     0          5m52s
-cord-platform-elasticsearch-data-0                             0/1     Running     0          5m51s
-cord-platform-elasticsearch-master-0                           0/1     Running     0          5m51s
-cord-platform-grafana-846c6df66-j8s9d                          2/2     Running     0          5m52s
-cord-platform-kafka-0                                          1/1     Running     1          5m51s
-cord-platform-kibana-7888878b87-nb25l                          1/1     Running     0          5m52s
-cord-platform-logstash-0                                       1/1     Running     0          5m51s
-cord-platform-onos-d4d6896f7-l8fp9                             2/2     Running     0          5m52s
-cord-platform-prometheus-alertmanager-c84bbf548-j522m          2/2     Running     0          5m52s
-cord-platform-prometheus-kube-state-metrics-5bd49cbb6c-ssqxk   1/1     Running     0          5m52s
-cord-platform-prometheus-node-exporter-zgqld                   1/1     Running     0          5m52s
-cord-platform-prometheus-pushgateway-6795f848dd-thzwv          1/1     Running     0          5m52s
-cord-platform-prometheus-server-86c7b5cc77-jzkzt               1/2     Running     0          5m52s
-cord-platform-zookeeper-0                                      1/1     Running     0          5m52s
-kpi-exporter-66f8698468-jqd2h                                  1/1     Running     1          5m52s
-kpi-exporter-66f8698468-mjf4b                                  1/1     Running     1          5m52s
-router                                                         1/1     Running     0          2m19s
-xos-chameleon-6754f7bcd8-j6vrk                                 1/1     Running     0          5m51s
-xos-core-5d67b6dc49-kxv8d                                      1/1     Running     0          5m51s
-xos-db-66f95c59c7-mzhrs                                        1/1     Running     0          5m51s
-xos-gui-5ffb4b4474-bqmlh                                       1/1     Running     0          5m51s
-xos-tosca-f5468cc74-km7qk                                      1/1     Running     0          5m51s
-xos-ws-7746c588d9-k8d28                                        1/1     Running     0          5m51s
-```
+$ kubectl get po
+NAME                                                           READY   STATUS    RESTARTS   AGE
+comac-base-kubernetes-tosca-loader-n8nzd                       1/1     Running   0          176m
+comac-kubernetes-84f9f89d8f-k8khn                              1/1     Running   0          176m
+comac-mcord-services-tosca-loader-p42pz                        1/1     Running   0          176m
+comac-mcord-subscriber-m7gr2                                   1/1     Running   0          176m
+comac-onos-service-549d79d695-gmd47                            1/1     Running   0          176m
+cord-platform-elasticsearch-client-75c6846fc6-frw9q            1/1     Running   0          176m
+cord-platform-elasticsearch-data-0                             1/1     Running   0          176m
+cord-platform-elasticsearch-master-0                           1/1     Running   0          176m
+cord-platform-elasticsearch-master-1                           1/1     Running   0          175m
+cord-platform-grafana-7587c8fb49-2bx7k                         2/2     Running   0          176m
+cord-platform-kafka-0                                          1/1     Running   0          176m
+cord-platform-kibana-7888878b87-cjvh4                          1/1     Running   0          176m
+cord-platform-logstash-0                                       1/1     Running   0          176m
+cord-platform-nem-kpi-exporter-754697967b-29btr                1/1     Running   2          176m
+cord-platform-nem-kpi-exporter-754697967b-wp29q                1/1     Running   2          176m
+cord-platform-onos-798fb7f94f-cc862                            2/2     Running   0          176m
+cord-platform-prometheus-alertmanager-5f559fbf5b-7pr56         2/2     Running   0          176m
+cord-platform-prometheus-kube-state-metrics-67c78bcd9c-xxc2l   1/1     Running   0          176m
+cord-platform-prometheus-node-exporter-jtw55                   1/1     Running   0          176m
+cord-platform-prometheus-pushgateway-7c694f68b9-nlsqj          1/1     Running   0          176m
+cord-platform-prometheus-server-78dfbc4f8b-fncts               2/2     Running   0          176m
+cord-platform-zookeeper-0                                      1/1     Running   0          176m
+router                                                         1/1     Running   0          5h26m
+xos-chameleon-6754f7bcd8-cj95h                                 1/1     Running   0          176m
+xos-core-5d67b6dc49-2tw7s                                      1/1     Running   0          176m
+xos-db-66f95c59c7-hqqww                                        1/1     Running   0          176m
+xos-gui-5ffb4b4474-q47tk                                       1/1     Running   0          176m
+xos-tosca-f5468cc74-sm266                                      1/1     Running   6          176m
+xos-ws-7746c588d9-74v28                                        1/1     Running   0          176m```
 
 ### Install OMEC
 
@@ -205,7 +202,10 @@ cassandra:
 config:
   sriov:
     enabled: false
+  spgwc:
+    multiUpfs: false
   spgwu:
+    multiUpfs: false
     devices: "--no-pci --vdev eth_af_packet0,iface=s1u-net --vdev eth_af_packet1,iface=sgi-net"
   hss:
     bootstrap:
@@ -233,15 +233,15 @@ helm upgrade --install omec-control-plane omec-control-plane --namespace omec -f
 You should see the following pods running about 3 min later in `omec` namespace:
 
 ```bash
-$ kubectl get pod -n omec
+$ kubectl get po -n omec
 NAME                      READY   STATUS      RESTARTS   AGE
-cassandra-0               1/1     Running     0          113s
-hss-0                     1/1     Running     0          113s
-job-hss-bootstrap-29jgh   0/1     Completed   0          113s
-job-hss-db-sync-fggjp     0/1     Completed   0          113s
-mme-0                     4/4     Running     0          113s
-spgwc-0                   1/1     Running     0          113s
-spgwu-0                   1/1     Running     0          2m4s
+cassandra-0               1/1     Running     0          3h
+hss-0                     1/1     Running     0          3h
+job-hss-bootstrap-22hnt   0/1     Completed   0          3h
+job-hss-db-sync-bgfzj     0/1     Completed   0          3h
+mme-0                     4/4     Running     0          3h
+spgwc-0                   1/1     Running     0          3h
+spgwu-0                   1/1     Running     0          3h
 ```
 
 ### Build OpenAirInterface UE image
@@ -299,17 +299,18 @@ helm upgrade --install --namespace omec oaisim oaisim -f ${HOME}/oai-values.yaml
 You should see `enb-0` and `ue-0` pods running about 3 min later in `omec` namespace:
 
 ```bash
-kubectl get po -n omec
+$ kubectl get po -n omec
 NAME                      READY   STATUS      RESTARTS   AGE
-cassandra-0               1/1     Running     0          19m
-enb-0                     1/1     Running     0          2m26s
-hss-0                     1/1     Running     0          19m
-job-hss-bootstrap-29jgh   0/1     Completed   0          19m
-job-hss-db-sync-fggjp     0/1     Completed   0          19m
-mme-0                     4/4     Running     0          19m
-spgwc-0                   1/1     Running     0          19m
-spgwu-0                   1/1     Running     0          19m
-ue-0                      1/1     Running     0          2m26s
+cassandra-0               1/1     Running     0          3h4m
+enb-0                     1/1     Running     0          96s
+hss-0                     1/1     Running     0          3h4m
+job-hss-bootstrap-22hnt   0/1     Completed   0          3h4m
+job-hss-db-sync-bgfzj     0/1     Completed   0          3h4m
+mme-0                     4/4     Running     0          3h4m
+spgwc-0                   1/1     Running     0          3h4m
+spgwu-0                   1/1     Running     0          3h4m
+ue-0                      1/1     Running     0          96s
+ue-setup-if-8htjr         0/1     Completed   0          107s
 ```
 
 ## Validating the install
@@ -335,15 +336,24 @@ At first, it may take some time to get successful ping response due to the
 delays in `SPGWU` processing ARP packets.
 
 ```bash
-ping -I oip1 13.1.1.254
+$ ping -I oip1 13.1.1.254 -c 3
 PING 13.1.1.254 (13.1.1.254) from 16.255.255.254 oip1: 56(84) bytes of data.
-64 bytes from 13.1.1.254: icmp_seq=1 ttl=64 time=13.0 ms
-64 bytes from 13.1.1.254: icmp_seq=2 ttl=64 time=40.2 ms
-64 bytes from 13.1.1.254: icmp_seq=3 ttl=64 time=21.2 ms
+64 bytes from 13.1.1.254: icmp_seq=1 ttl=64 time=31.6 ms
+64 bytes from 13.1.1.254: icmp_seq=2 ttl=64 time=16.5 ms
+64 bytes from 13.1.1.254: icmp_seq=3 ttl=64 time=44.3 ms
 
 --- 13.1.1.254 ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 2001ms
-rtt min/avg/max/mdev = 13.074/24.877/40.270/11.389 ms
+3 packets transmitted, 3 received, 0% packet loss, time 2002ms
+rtt min/avg/max/mdev = 16.567/30.841/44.333/11.349 ms
+
+$ ping -I oip1 8.8.8.8 -c 3
+PING 8.8.8.8 (8.8.8.8) from 16.255.255.254 oip1: 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=54 time=39.4 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=54 time=66.5 ms
+
+--- 8.8.8.8 ping statistics ---
+3 packets transmitted, 2 received, 33% packet loss, time 2002ms
+rtt min/avg/max/mdev = 39.416/52.962/66.509/13.548 ms
 ```
 
 That’s it. Currently it’s not possible to send traffic to destinations on the Internet.
