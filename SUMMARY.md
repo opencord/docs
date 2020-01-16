@@ -73,6 +73,7 @@
             * [SEBA-in-a-Box Overview](profiles/seba/siab-overview.md)
                 * [SEBA-in-a-Box](profiles/seba/siab.md)
                 * [SEBA-in-a-Box with Fabric Switch](profiles/seba/siab-with-fabric-switch.md)
+                * [SEBA-in-a-Box with SD-BNG (experimental)](profiles/seba/siab-with-sdbng.md)
             * [Scale testing with BBSim](profiles/seba/bbsim.md)
             * Other Setups
                 * [Configuring a lab setup](profiles/seba/lab-setup.md)
