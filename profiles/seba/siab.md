@@ -90,6 +90,33 @@ make run-tests-latest
 Note that the tests currently assume a single OLT/ONU, so some tests will
 likely fail if you have configured multiple OLTs and ONUs.
 
+### Quick start: Build SiaB with Stratum (and ONOS 2.2)
+
+To build a SiaB with a P4 BMv2 Stratum switch and ONOS 2.2:
+
+```bash
+SEBAVALUES=configs/seba-ponsim-stratum.yaml FABRIC_DRIVER=stratum-bmv2 make [NUM_OLTS=n] [NUM_ONUS_PER_OLT=m]
+```
+You can specify the number of OLTs (up to 4) and number of ONUs per OLT (up to 4) that you want to
+create.
+
+After a successful install, you will see the message:
+
+```text
+SEBA-in-a-Box installation finished!
+```
+
+If the install fails for some reason, you can re-run the make command and the install will try to resume where it left off.
+
+To test basic SEBA functionality using the development code, you can run:
+
+```bash
+make run-tests-latest
+```
+
+Note that the tests currently assume a single OLT/ONU, so some tests will
+likely fail if you have configured multiple OLTs and ONUs.
+
 ## Installation procedure
 
 The rest of this page describes a manual method for installing SEBA-in-a-Box.  It also provides an overview of what is installed by each chart.
