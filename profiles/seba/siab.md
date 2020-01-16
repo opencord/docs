@@ -1,7 +1,7 @@
 # SEBA-in-a-Box
 
 This document describes how to set up SEBA-in-a-Box (SiaB).  SiaB is a
-functional SEBA pod capable of running E2E tests.  It takes about 10 minutes
+functional SEBA pod capable of running E2E tests. It takes about 10 minutes
 to install on a physical server or VM.
 
 The default configuration of SiaB incorporates an emulated OLT/ONU
@@ -13,11 +13,24 @@ IP address from the DHCP server in Mininet, and finally ping the BNG.
 This demonstrates end-to-end connectivity between the RG and BNG via the
 ONU, OLT, and agg switch.
 
+The configuration of SiaB with SD-BNG, instead, incorporates an emulated OLT/ONU
+provided by Ponsim as in the default configuration. This configuration incorporates 
+also an emulated Stratum BMv2 ASG switch provided by Mininet. 
+Mininet is also configured with two hosts that act as the upstream
+router and the PPPoE server. The Ponsim setup installs a single OLT, ONU, and RG.
+The RG is able to authenticate itself and retrieve an IP address via PPPoE protocols
+instead of 802.1x and DHCP as in the default configuration. This demonstrates 
+end-to-end connectivity between the RG, the SD-BNG and the upstream router
+via the ONU, OLT, and ASG switch. With this configuration, the ASG do not only 
+forward traffic, but it also implements the data plane BNG functionalities 
+(such as accounting and PPPoE header pop and push).
+The SiaB with SD-BNG configuration is still in an experimentation phase.
+
 [This page](siab-with-fabric-switch.md) describes how to set up SiaB with a physical switch instead of an emulated Mininet topology. An external server running DHCP services connected to the switch acts as the BNG.
 
 ## Quick start
 
-A Makefile can be used to install SEBA-in-a-Box in an automated manner on an Ubuntu 16.04 system:
+A Makefile can be used to install SEBA-in-a-Box in an automated manner on an Ubuntu 16.04 system.
 
 ```bash
 mkdir -p ~/cord
@@ -25,6 +38,21 @@ cd ~/cord
 git clone https://gerrit.opencord.org/automation-tools
 cd automation-tools/seba-in-a-box
 ```
+
+
+The Makefile provides 3 different targets for deploying the different versions of
+SiaB with the released service version (specified in the Helm charts), namely:
+- `stable`: to deploy standard SiaB;
+- `stratum-stable`: to deploy SiaB with Stratum BMv2 switch as aggregation switch (instead of Open vSwitch);
+- `sdbng-stable`: to deploy SiaB with SD-BNG.
+
+The Makefile provides also 3 different targets for deploying the different versions of
+SiaB with the latest development code), namely:
+- `latest`
+- `stratum-latest`
+- `sdbng-latest`
+
+NOTE that `stratum` and `sdbng` target are experimental targets.
 
 ### Quick start: Build SiaB using released charts
 
@@ -89,6 +117,59 @@ make run-tests-latest
 
 Note that the tests currently assume a single OLT/ONU, so some tests will
 likely fail if you have configured multiple OLTs and ONUs.
+
+### Quick start: Build SiaB with Stratum
+
+To build a SiaB with a Stratum BMv2 switch as aggregation switch in the fabric:
+
+```bash
+make stratum-stable [NUM_OLTS=n] [NUM_ONUS_PER_OLT=m]
+```
+You can specify the number of OLTs (up to 4) and number of ONUs per OLT (up to 4) that you want to
+create.
+
+After a successful install, you will see the message:
+
+```text
+SEBA-in-a-Box installation finished!
+```
+
+If the install fails for some reason, you can re-run the make command and the install will try to resume where it left off.
+
+To test basic SEBA functionality using the development code, you can run:
+
+```bash
+make run-tests
+```
+
+Note that the tests currently assume a single OLT/ONU, so some tests will
+likely fail if you have configured multiple OLTs and ONUs.
+
+### Quick start: Build SiaB with SD-BNG
+
+To build a SiaB with a Stratum BMv2 switch as aggregation switch in the fabric:
+
+```bash
+make sdbng-stable [NUM_OLTS=n] [NUM_ONUS_PER_OLT=m]
+```
+You can specify the number of OLTs (up to 4) and number of ONUs per OLT (up to 4) that you want to
+create.
+
+After a successful install, you will see the message:
+
+```text
+SEBA-in-a-Box installation finished!
+```
+
+This target will deploy an emulated SEBA POD with a Stratum BMv2 switch as aggregation switch. 
+The BNG in this case is disaggregated with a separation between control and data plane.
+The control-plane is implemented as an ONOS application with an external PPPoE server 
+while the data-plane is offloaded to the aggregation switch.
+
+[Here](https://docs.google.com/document/d/1v5Dp-a3s183_1SKxMXcnpBPFWiJBHfGK5p7DNy7uPr0) 
+you can find more information about the SD-BNG data plane pipeline design.
+
+If the install fails for some reason, you can re-run the make command and the install will try to resume where it left off.
 
 ## Installation procedure
 
@@ -599,6 +680,119 @@ rtt min/avg/max/mdev = 34.940/37.343/39.615/1.917 ms
 
 That’s it.  Currently it’s not possible to send traffic to destinations on the Internet.
 
+## Validating the install with the SD-BNG
+
+If you deployed SiaB with SD-BNG you can follow this process to validate the install.
+The process of validation is different because in this case the PPPoE protocol is used 
+for authentication and IP address assignment (instead of 802.1x and DHCP as in standard configuration).
+
+### RG authentication and IP address assignment
+
+Enter the RG pod in the voltha namespace:
+
+```bash
+RG_POD=$( kubectl -n voltha get pod | grep rg0-0 | awk '{print $1}' )
+kubectl -n voltha exec -ti $RG_POD bash
+```
+
+If you built SiaB with multiple OLTs and ONUs, you can choose any RG to authenticate.
+Inside the pod, run this command:
+
+```bash
+pon seba
+```
+You won't see any output, but you can verify that the process has been completed successfully.
+Running `ipconfig` you should see an output similar to the following:
+
+```bash
+$ ifconfig
+eth0      Link encap:Ethernet  HWaddr de:c3:66:8d:0c:7d
+          inet addr:10.22.0.193  Bcast:0.0.0.0  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:610 errors:0 dropped:403 overruns:0 frame:0
+          TX packets:211 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:71489 (71.4 KB)  TX bytes:6400 (6.4 KB)
+...
+ppp0      Link encap:Point-to-Point Protocol
+          inet addr:10.255.255.100  P-t-P:10.255.255.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1492  Metric:1
+          RX packets:3 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3
+          RX bytes:30 (30.0 B)  TX bytes:30 (30.0 B)
+```
+
+The `ppp0` interface is the interface that terminates the PPPoE tunnel on the RG.
+The IP address assigned to the `ppp0` interface is the IP assigned by the 
+PPPoE server. You should receive an IP in the subnet 10.255.255.0/24.
+The assignment of IP addresses is managed by the PPPoE server running as host 
+in the Mininet topology.
+
+**Before proceeding**
+
+In the XOS GUI, the DtDriverWorkflow Service Instance should track all the state changes. 
+You can check for this on the command line by running:
+
+```bash
+cordctl model list DtWorkflowDriverServiceInstance -f "authentication_state=APPROVED"
+```
+
+It should return output like this:
+
+```bash
+$ cordctl model list DtWorkflowDriverServiceInstance -f "authentication_state=APPROVED"
+ID    NAME    OF_DPID                OWNER_ID    SERIAL_NUMBER    STATUS_MESSAGE                                  UNI_PORT_ID
+60            of:0000d0d3e158fede    2           PSMO00000000     ONU has been validated - IP address assigned    128
+```
+
+In ONOS, the BNG app should contain the authenticated attachment.
+To check the BNG app state, SSH into ONOS (Password=rocks):
+
+```bash
+ssh-unsecure onos@127.0.0.1 -p 30115
+```
+
+and then check the registered attachment list in the BNG app by running:
+
+```bash
+bng:attachments
+```
+
+It should return an output like the following:
+
+```bash
+onos@root > bng:attachments
+Registered attachments (size: 1):
+{PSMO00000000/111/222/of:0000d0d3e158fede/128/DE:C3:66:8D:0C:7D=PppoeBngAttachment{
+appId=DefaultApplicationId{id=197, name=org.opencord.bng}, sTag=222, cTag=111, 
+macAddress=DE:C3:66:8D:0C:7D, ipAddress=10.255.255.100, lineActivated=true, 
+oltConnectPoint=of:0000d0d3e158fede/128, onuSerial=PSMO00000000, qinqTpid=0, pppoeSessionId=1}}
+```
+The MAC address should correspond to the MAC address of the `eth0` interface of the RG,
+while the IP address should correspond to the one assigned to the `ppp0` interface in the RG pod.
+
+### Ping the emulated upstream router
+
+Ping the address `10.10.10.1` to ping the emulated upstream router that is running in Mininet.
+
+```bash
+$ ping -c 3 10.10.10.1
+PING 10.10.10.1 (10.10.10.1) 56(84) bytes of data.
+64 bytes from 10.10.10.1: icmp_seq=1 ttl=63 time=30.3 ms
+64 bytes from 10.10.10.1: icmp_seq=2 ttl=63 time=27.0 ms
+64 bytes from 10.10.10.1: icmp_seq=3 ttl=63 time=21.5 ms
+
+--- 10.10.10.1 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2001ms
+rtt min/avg/max/mdev = 21.583/26.333/30.320/3.609 ms
+```
+The traffic leaves the RG via the `ppp0` interface as encapsulated in a PPPoE header 
+and reaches the upstream router as standard IP traffic. 
+The PPPoE tunnel termination is performed entirely in the data plane by the aggregation switch.
+
+That’s it.  Currently it’s not possible to send traffic to destinations on the Internet.
+
 ## Restarting SEBA-in-a-Box after a reboot
 
 After a reboot of a server running SiaB, some services (such as etcd) will likely come up in
@@ -613,3 +807,4 @@ the easiest way to remove a SiaB installation is to use the `make reset-kubeadm`
 ## Getting help
 
 Report any problems to `acb` on the CORD Slack channel.
+Report any problems related to SD-BNG to `Daniele` or `carmelo` on the CORD Slack channel.
