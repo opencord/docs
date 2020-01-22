@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0974f8b0_3317f880",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-22T03:27:34Z",
+      "side": 1,
+      "message": "siab is now built with onos 2.2 by default, so this mention can be removed",
+      "range": {
+        "startLine": 93,
+        "startChar": 41,
+        "endLine": 93,
+        "endChar": 55
+      },
+      "revId": "496380843987da98fbab966d786d5ba58f797d1f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69496cd4_09774a97",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-22T03:27:34Z",
+      "side": 1,
+      "message": "Does it work with just make run-tests? i.e. not latest?",
+      "range": {
+        "startLine": 114,
+        "startChar": 0,
+        "endLine": 114,
+        "endChar": 21
+      },
+      "revId": "496380843987da98fbab966d786d5ba58f797d1f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
