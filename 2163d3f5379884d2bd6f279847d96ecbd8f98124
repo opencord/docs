@@ -1,0 +1,372 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85d51fa5_cbf25063",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "user?",
+      "range": {
+        "startLine": 25,
+        "startChar": 44,
+        "endLine": 25,
+        "endChar": 48
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6258bebd_18385b22",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "I would stick with more traditional BNG terminology \", routing, and subscriber tunnel terminations (PPPoE, QinQ)\"",
+      "range": {
+        "startLine": 26,
+        "startChar": 19,
+        "endLine": 26,
+        "endChar": 49
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "37a61612_cd94a26c",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "stage",
+      "range": {
+        "startLine": 27,
+        "startChar": 66,
+        "endLine": 27,
+        "endChar": 71
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f3e8723b_37a9099e",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "as the aggregation",
+      "range": {
+        "startLine": 46,
+        "startChar": 60,
+        "endLine": 46,
+        "endChar": 74
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "271622ee_31d5f4ea",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "This is mostly redundant with the previous section, I don\u0027t think we should repeat it. Instead, you could add a note at the end of the previous section highlighting the differences when building with stratum or sd-bng.",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 146,
+        "endChar": 58
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ff7d5a5_d58e58b8",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "Same here",
+      "range": {
+        "startLine": 148,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 39
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "41855f4c_546334f9",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "This should be in the introduction section when you introduce SD-BNG for the first time. You can also say that we currently implement the \"relay\" option.",
+      "range": {
+        "startLine": 169,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 74
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7d4a9bd5_41f443a0",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "validation process",
+      "range": {
+        "startLine": 686,
+        "startChar": 4,
+        "endLine": 686,
+        "endChar": 25
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2413654f_542ea67e",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "case, as the",
+      "range": {
+        "startLine": 686,
+        "startChar": 55,
+        "endLine": 686,
+        "endChar": 63
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "746f03d8_31430bca",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "in the standard",
+      "range": {
+        "startLine": 687,
+        "startChar": 76,
+        "endLine": 687,
+        "endChar": 87
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a7b4713_d09261de",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "PPPoE RG (so it is more explicit also in the ToC and people can find it more easily)",
+      "range": {
+        "startLine": 689,
+        "startChar": 4,
+        "endLine": 689,
+        "endChar": 6
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "15221d14_c0c3c35b",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "ifconfig",
+      "range": {
+        "startLine": 705,
+        "startChar": 9,
+        "endLine": 705,
+        "endChar": 17
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "15f1c011_1a4dabbc",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "Is this a standard linux command?",
+      "range": {
+        "startLine": 753,
+        "startChar": 0,
+        "endLine": 753,
+        "endChar": 12
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac22535_1ee7b57f",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "ASG",
+      "range": {
+        "startLine": 792,
+        "startChar": 76,
+        "endLine": 792,
+        "endChar": 87
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f978ca82_ae93980b",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 794,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "too many spaces",
+      "range": {
+        "startLine": 794,
+        "startChar": 10,
+        "endLine": 794,
+        "endChar": 12
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8f7470c0_8cb36036",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T20:58:39Z",
+      "side": 1,
+      "message": "Stratum or SD-BNG",
+      "range": {
+        "startLine": 810,
+        "startChar": 31,
+        "endLine": 810,
+        "endChar": 37
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
