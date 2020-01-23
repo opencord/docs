@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a2f65885_2f151467",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "85d51fa5_cbf25063",
+      "range": {
+        "startLine": 25,
+        "startChar": 44,
+        "endLine": 25,
+        "endChar": 48
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6258bebd_18385b22",
         "filename": "profiles/seba/siab.md",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2020-01-23T20:58:39Z",
       "side": 1,
       "message": "I would stick with more traditional BNG terminology \", routing, and subscriber tunnel terminations (PPPoE, QinQ)\"",
+      "range": {
+        "startLine": 26,
+        "startChar": 19,
+        "endLine": 26,
+        "endChar": 49
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa9c4660_eaf839a0",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6258bebd_18385b22",
       "range": {
         "startLine": 26,
         "startChar": 19,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "a263f2af_7d68da18",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37a61612_cd94a26c",
+      "range": {
+        "startLine": 27,
+        "startChar": 66,
+        "endLine": 27,
+        "endChar": 71
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f3e8723b_37a9099e",
         "filename": "profiles/seba/siab.md",
         "patchSetId": 5
@@ -82,6 +154,30 @@
       "writtenOn": "2020-01-23T20:58:39Z",
       "side": 1,
       "message": "as the aggregation",
+      "range": {
+        "startLine": 46,
+        "startChar": 60,
+        "endLine": 46,
+        "endChar": 74
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eec68d89_69ac14eb",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f3e8723b_37a9099e",
       "range": {
         "startLine": 46,
         "startChar": 60,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "d370d4fa_c5bc7df6",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "271622ee_31d5f4ea",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 146,
+        "endChar": 58
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ff7d5a5_d58e58b8",
         "filename": "profiles/seba/siab.md",
         "patchSetId": 5
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "e46972ea_bbf08426",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ff7d5a5_d58e58b8",
+      "range": {
+        "startLine": 148,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 39
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "41855f4c_546334f9",
         "filename": "profiles/seba/siab.md",
         "patchSetId": 5
@@ -151,6 +295,30 @@
       "writtenOn": "2020-01-23T20:58:39Z",
       "side": 1,
       "message": "This should be in the introduction section when you introduce SD-BNG for the first time. You can also say that we currently implement the \"relay\" option.",
+      "range": {
+        "startLine": 169,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 74
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a26cb254_d083932f",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41855f4c_546334f9",
       "range": {
         "startLine": 169,
         "startChar": 0,
@@ -209,6 +377,54 @@
     },
     {
       "key": {
+        "uuid": "34e2ddb4_7f99c0f1",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d4a9bd5_41f443a0",
+      "range": {
+        "startLine": 686,
+        "startChar": 4,
+        "endLine": 686,
+        "endChar": 25
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cb9e6f18_6ab4ffb6",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2413654f_542ea67e",
+      "range": {
+        "startLine": 686,
+        "startChar": 55,
+        "endLine": 686,
+        "endChar": 63
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "746f03d8_31430bca",
         "filename": "profiles/seba/siab.md",
         "patchSetId": 5
@@ -220,6 +436,30 @@
       "writtenOn": "2020-01-23T20:58:39Z",
       "side": 1,
       "message": "in the standard",
+      "range": {
+        "startLine": 687,
+        "startChar": 76,
+        "endLine": 687,
+        "endChar": 87
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3bb48566_8bdb88f7",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "746f03d8_31430bca",
       "range": {
         "startLine": 687,
         "startChar": 76,
@@ -255,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "e5f169b3_f1a23f6f",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a7b4713_d09261de",
+      "range": {
+        "startLine": 689,
+        "startChar": 4,
+        "endLine": 689,
+        "endChar": 6
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "15221d14_c0c3c35b",
         "filename": "profiles/seba/siab.md",
         "patchSetId": 5
@@ -266,6 +530,30 @@
       "writtenOn": "2020-01-23T20:58:39Z",
       "side": 1,
       "message": "ifconfig",
+      "range": {
+        "startLine": 705,
+        "startChar": 9,
+        "endLine": 705,
+        "endChar": 17
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb571853_66f65203",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15221d14_c0c3c35b",
       "range": {
         "startLine": 705,
         "startChar": 9,
@@ -301,6 +589,30 @@
     },
     {
       "key": {
+        "uuid": "7ff41ef4_2b26dd20",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Modified with more standard command",
+      "parentUuid": "15f1c011_1a4dabbc",
+      "range": {
+        "startLine": 753,
+        "startChar": 0,
+        "endLine": 753,
+        "endChar": 12
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac22535_1ee7b57f",
         "filename": "profiles/seba/siab.md",
         "patchSetId": 5
@@ -312,6 +624,30 @@
       "writtenOn": "2020-01-23T20:58:39Z",
       "side": 1,
       "message": "ASG",
+      "range": {
+        "startLine": 792,
+        "startChar": 76,
+        "endLine": 792,
+        "endChar": 87
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "01d627da_c0e73977",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac22535_1ee7b57f",
       "range": {
         "startLine": 792,
         "startChar": 76,
@@ -347,6 +683,30 @@
     },
     {
       "key": {
+        "uuid": "1a0fcc54_75d9561b",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 794,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f978ca82_ae93980b",
+      "range": {
+        "startLine": 794,
+        "startChar": 10,
+        "endLine": 794,
+        "endChar": 12
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8f7470c0_8cb36036",
         "filename": "profiles/seba/siab.md",
         "patchSetId": 5
@@ -358,6 +718,30 @@
       "writtenOn": "2020-01-23T20:58:39Z",
       "side": 1,
       "message": "Stratum or SD-BNG",
+      "range": {
+        "startLine": 810,
+        "startChar": 31,
+        "endLine": 810,
+        "endChar": 37
+      },
+      "revId": "2163d3f5379884d2bd6f279847d96ecbd8f98124",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1434d6bd_70b41379",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 1000461
+      },
+      "writtenOn": "2020-01-23T23:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f7470c0_8cb36036",
       "range": {
         "startLine": 810,
         "startChar": 31,
