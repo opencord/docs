@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bc25efb1_fe8ff6fd",
+        "filename": "SUMMARY.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-01-23T23:18:39Z",
+      "side": 1,
+      "message": "This can be removed",
+      "revId": "0a41be5b49afa505e9eddbc2de46b5753a9ff4ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
