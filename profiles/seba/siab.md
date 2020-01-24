@@ -1,8 +1,10 @@
 # SEBA-in-a-Box
 
 This document describes how to set up SEBA-in-a-Box (SiaB).  SiaB is a
-functional SEBA pod capable of running E2E tests.  It takes about 10 minutes
+functional SEBA pod capable of running E2E tests. It takes about 10 minutes
 to install on a physical server or VM.
+
+Two configuration for deploying SiaB are available: default or SD-BNG.
 
 The default configuration of SiaB incorporates an emulated OLT/ONU
 provided by Ponsim and an emulated AGG switch provided by Mininet.
@@ -13,11 +15,33 @@ IP address from the DHCP server in Mininet, and finally ping the BNG.
 This demonstrates end-to-end connectivity between the RG and BNG via the
 ONU, OLT, and agg switch.
 
-[This page](siab-with-fabric-switch.md) describes how to set up SiaB with a physical switch instead of an emulated Mininet topology. An external server running DHCP services connected to the switch acts as the BNG.
+[This page](siab-with-fabric-switch.md) describes how to set up the default SiaB
+configuration with a physical switch instead of an emulated Mininet topology.
+An external server running DHCP services connected to the switch acts as the BNG.
+
+The configuration of SiaB with SD-BNG, instead, incorporates an emulated OLT/ONU
+provided by Ponsim as in the default configuration. This configuration incorporates
+also an emulated Stratum BMv2 ASG (Aggregation and Service Gateway)
+switch provided by Mininet. Mininet is also configured with two hosts that act as the upstream
+router and the PPPoE server. The Ponsim setup installs a single OLT, ONU, and RG.
+The RG is able to authenticate itself and retrieve an IP address via PPPoE protocols
+instead of 802.1x and DHCP as in the default configuration. This demonstrates
+end-to-end connectivity between the RG, the SD-BNG and the upstream router
+via the ONU, OLT, and ASG switch. With this configuration, the ASG do not only
+forward traffic, but it also implements the user plane BNG functionalities
+(such as accounting, routing, and subscriber tunnel terminations - PPPoE, QinQ -).
+This configuration deploys a disaggregated and embedded BNG. The BNG is separated
+between control and user plane.
+[Here](https://docs.google.com/document/d/1v5Dp-a3s183_1SKxMXcnpBPFWiJBHfGK5p7DNy7uPr0)
+you can find more information about the SD-BNG design.
+The user plane is offloaded to the aggregation switch, while the control plane
+is implemented as an ONOS application with an external PPPoE server
+(as described in the "BNG-c relay" option in the above mentioned document).
+Note that SiaB with SD-BNG configuration is still in an experimentation stage.
 
 ## Quick start
 
-A Makefile can be used to install SEBA-in-a-Box in an automated manner on an Ubuntu 16.04 system:
+A Makefile can be used to install SEBA-in-a-Box in an automated manner on an Ubuntu 16.04 system.
 
 ```bash
 mkdir -p ~/cord
@@ -26,16 +50,38 @@ git clone https://gerrit.opencord.org/automation-tools
 cd automation-tools/seba-in-a-box
 ```
 
+The Makefile provides 3 different targets for deploying the different versions of
+SiaB with the released service version (specified in the Helm charts), namely:
+
+- `stable`: to deploy standard SiaB with the default configuration
+  (Ponsim and Open vSwitch as AGG switch);
+
+- `stratum-stable`: to deploy standard SiaB with Stratum BMv2 switch as the
+  AGG switch (instead of Open vSwitch);
+
+- `sdbng-stable`: to deploy SiaB with SD-BNG; Stratum BMv2 switch is used as the
+  ASG switch and the BNG is disaggregated and embedded in the fabric.
+
+The Makefile provides also 3 different targets for deploying the different versions of
+SiaB with the latest development code), namely:
+
+- `latest`
+- `stratum-latest`
+- `sdbng-latest`
+
+*NOTE that `stratum-*` and `sdbng-*` targets are experimental.*
+
 ### Quick start: Build SiaB using released charts
 
 To build a SiaB that uses the released service versions specified in the Helm charts:
 
 ```bash
-make [stable] [NUM_OLTS=n] [NUM_ONUS_PER_OLT=m]    # `make` and `make stable` are the same
+make [stable|stratum-stable|sdbng-stable] [NUM_OLTS=n] [NUM_ONUS_PER_OLT=m]
 ```
 
-> NOTE that `make` or `make stable` will install SEBA with the container versions that are
-> defined in the helm charts. If you want to install SEBA 2.0 please use: `make siab-2.0-alpha1`
+> NOTE that `make` or `make stable` are the same and will install SEBA with the
+> container versions that are defined in the helm charts.
+> If you want to install SEBA 2.0 please use: `make siab-2.0-alpha1`
 
 You can specify the number of OLTs (up to 4) and number of ONUs per OLT (up to 4) that you want to
 create.
@@ -54,7 +100,8 @@ You can optionally install the logging and nem-monitoring charts during the in
 make INFRA_CHARTS='logging nem-monitoring' stable
 ```
 
-To test basic SEBA functionality, you can run:
+To test basic SEBA functionality with the default configuration of SiaB
+(`stable` and `stratum-stable` targets), you can run:
 
 ```bash
 make run-tests
@@ -62,13 +109,15 @@ make run-tests
 
 Note that the tests currently assume a single OLT/ONU, so some tests will
 likely fail if you have configured multiple OLTs and ONUs.
+Note also that the SD-BNG configuration currently does not support tests,
+thus `run-tests` target does not work with the `sdbng-stable` target.
 
 ### Quick start: Build SiaB using latest development code
 
 To build a SiaB that uses the latest development code:
 
 ```bash
-make latest [NUM_OLTS=n] [NUM_ONUS_PER_OLT=m]
+make [latest|stratum-latest|sdbng-latest] [NUM_OLTS=n] [NUM_ONUS_PER_OLT=m]
 ```
 You can specify the number of OLTs (up to 4) and number of ONUs per OLT (up to 4) that you want to
 create.
@@ -81,7 +130,8 @@ SEBA-in-a-Box installation finished!
 
 If the install fails for some reason, you can re-run the make command and the install will try to resume where it left off.
 
-To test basic SEBA functionality using the development code, you can run:
+To test basic SEBA functionality with the default configuration of SiaB using
+the development code (`latest` and `stratum-latest` targets), you can run:
 
 ```bash
 make run-tests-latest
@@ -89,10 +139,20 @@ make run-tests-latest
 
 Note that the tests currently assume a single OLT/ONU, so some tests will
 likely fail if you have configured multiple OLTs and ONUs.
+Note also that the SD-BNG configuration currently does not support tests,
+thus `run-tests` target does not work with the `sdbng-latest` target.
 
 ## Installation procedure
 
-The rest of this page describes a manual method for installing SEBA-in-a-Box.  It also provides an overview of what is installed by each chart.
+The rest of this page describes a manual method for installing SEBA-in-a-Box.
+It also provides an overview of what is installed by each chart.
+
+Note that this section is equivalent to install SiaB with the `stable` target.
+If you want to install the `stratum-*` or `sdbng-*` targets you should modify
+the helm commands to set the values as described in the values file available in the `helm-charts` repository.
+For reference, take a look at
+[seba-ponsim-stratum.yaml](https://github.com/opencord/helm-charts/blob/master/configs/seba-ponsim-stratum.yaml) and
+[seba-ponsim-sdbng.yaml](https://github.com/opencord/helm-charts/blob/master/configs/seba-ponsim-sdbng.yaml) files.
 
 ### Prerequisites
 
@@ -103,13 +163,12 @@ few other software packages.
 The server or VM on which you are installing SEBA-in-a-Box should have
 at least two CPU cores, 8GB RAM, and 30GB disk space.
 
-### Kubernetes
+#### Kubernetes
 
 You need to have Kubernetes with CNI enabled.  An easy way to set up a
 single-node Kubernetes that meets the requirements is with kubeadm.
 Instructions for installing kubeadm on various platforms can be found
-[here](https://www.google.com/url?q=https://kubernetes.io/docs/setup/inde
-pendent/install-kubeadm/&sa=D&ust=1542238113244000).
+[here](https://www.google.com/url?q=https://kubernetes.io/docs/setup/independent/install-kubeadm/&sa=D&ust=1542238113244000).
 
 *NOTE: the setup has not been made to work with minikube; we recommend
 installing kubeadm instead.*
@@ -151,7 +210,7 @@ If running on a single node, taint the master node so that we can schedule pods 
 kubectl taint nodes --all node-role.kubernetes.io/master-
 ```
 
-### Calico CNI Plugin
+#### Calico CNI Plugin
 
 Install the Calico CNI plugin in Kubernetes:
 
@@ -162,7 +221,7 @@ kubectl apply -f \
   https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml
 ```
 
-### Helm
+#### Helm
 
 An example of installing Helm:
 
@@ -176,7 +235,7 @@ helm init --service-account tiller
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 ```
 
-### Cordctl
+#### Cordctl
 
 Install the `cordctl` command line tool:
 
@@ -194,7 +253,7 @@ printf "server: 127.0.0.1:30011\nusername: admin@opencord.org\npassword: letmein
 
 Install the `http` and `jq` commands.  Run: `sudo apt install -y httpie jq`
 
-## Get the Helm charts
+### Get the Helm charts
 
 Before we can start installing SEBA components, we need to get the charts.
 
@@ -204,7 +263,7 @@ cd cord
 git clone https://gerrit.opencord.org/helm-charts
 ```
 
-## Install Kafka and ONOS
+### Install Kafka and ONOS
 
 Run these commands:
 
@@ -227,7 +286,7 @@ cord-kafka-zookeeper-0   1/1     Running   0          14h
 onos-558445d9bc-c2cd5    2/2     Running   0          14h
 ```
 
-## Install VOLTHA charts
+### Install VOLTHA charts
 
 Run these commands to install VOLTHA:
 
@@ -276,7 +335,7 @@ voltha-6f8d7bf7b-4gkkj                      1/1     Running   1          14h
 ```
 
 
-## Install Ponsim charts
+### Install Ponsim charts
 
 Run these commands to install Ponsim (after installing VOLTHA):
 
@@ -330,7 +389,7 @@ $ http GET http://127.0.0.1:30125/health|jq '.state'
 "HEALTHY"
 ```
 
-## Install Logging and Monitoring charts (optional)
+### Install Logging and Monitoring charts (optional)
 
 This step installs Kibana for log aggregation and querying, and Prometheus/Grafana for graphing SEBA metrics.
 They are not necessary for the correct operation of SEBA so this step can be skipped if desired.
@@ -355,7 +414,7 @@ You should see all the pods in Running state.  To wait until this occurs you ca
 ~/cord/helm-charts/scripts/wait_for_pods.sh
 ```
 
-## Install NEM charts
+### Install NEM charts
 
 Run these commands:
 
@@ -382,7 +441,7 @@ To wait until this occurs you can run:
 ~/cord/helm-charts/scripts/wait_for_pods.sh
 ```
 
-## Load TOSCA into NEM
+### Load TOSCA into NEM
 
 Run these commands:
 
@@ -409,7 +468,7 @@ ID    NAME    OF_DPID                OWNER_ID    SERIAL_NUMBER    STATUS_MESSAGE
 56            of:0000d0d3e158fede    2           PSMO00000000     ONU has been validated - Awaiting Authentication    128
 ```
 
-## Install Mininet
+### Install Mininet
 
 Ensure that the `openvswitch` kernel module is loaded:
 
@@ -452,7 +511,7 @@ nni0            8000.0a580a170001       no              veth3cc6
 
 You will see more bridges if you've configured multiple OLTs and ONUs.  All of the `nniX` Linux bridges connect to the agg switch in Mininet on different ports.
 
-## Enable pon bridges to forward EAPOL packets
+### Enable pon bridges to forward EAPOL packets
 
 This is necessary to enable the RG to authenticate:
 
@@ -464,7 +523,7 @@ do \
 done
 ```
 
-## ONOS customizations
+### ONOS customizations
 
 It’s necessary to install some custom configuration to ONOS directly.  Run this command:
 
@@ -477,7 +536,11 @@ The above command instructs the ONU to exchange untagged packets with the RG, ra
 
 At this point the system should be fully installed and functional.
 
-## Validating the install
+## Validating the install (w/o SD-BNG)
+
+This section explains how to validate the install when installing the standard
+configuration of SiaB (i.e., `stable`, `stratum-stable` targets).
+If you installed the SD-BNG configuration go to the section [Validating the install with the SD-BNG](#Validating-the-install-with-the-SD-BNG).
 
 ### Authenticate the RG
 
@@ -599,6 +662,120 @@ rtt min/avg/max/mdev = 34.940/37.343/39.615/1.917 ms
 
 That’s it.  Currently it’s not possible to send traffic to destinations on the Internet.
 
+## Validating the install with the SD-BNG
+
+If you deployed SiaB with SD-BNG you can follow this process to validate the install.
+This case is different because in this validation process PPPoE protocol is used
+for authentication and IP address assignment (instead of 802.1x and DHCP as in
+the standard configuration).
+
+### PPPoE RG authentication and IP address assignment
+
+Enter the RG pod in the voltha namespace:
+
+```bash
+RG_POD=$( kubectl -n voltha get pod | grep rg0-0 | awk '{print $1}' )
+kubectl -n voltha exec -ti $RG_POD bash
+```
+
+If you built SiaB with multiple OLTs and ONUs, you can choose any RG to authenticate.
+Inside the pod, run this command:
+
+```bash
+pon seba
+```
+You won't see any output, but you can verify that the process has been completed successfully.
+Running `ifconfig` you should see an output similar to the following:
+
+```bash
+$ ifconfig
+eth0      Link encap:Ethernet  HWaddr de:c3:66:8d:0c:7d
+          inet addr:10.22.0.193  Bcast:0.0.0.0  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:610 errors:0 dropped:403 overruns:0 frame:0
+          TX packets:211 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:71489 (71.4 KB)  TX bytes:6400 (6.4 KB)
+...
+ppp0      Link encap:Point-to-Point Protocol
+          inet addr:10.255.255.100  P-t-P:10.255.255.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1492  Metric:1
+          RX packets:3 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3
+          RX bytes:30 (30.0 B)  TX bytes:30 (30.0 B)
+```
+
+The `ppp0` interface is the interface that terminates the PPPoE tunnel on the RG.
+The IP address assigned to the `ppp0` interface is the IP assigned by the
+PPPoE server. You should receive an IP in the subnet 10.255.255.0/24.
+The assignment of IP addresses is managed by the PPPoE server running as host
+in the Mininet topology.
+
+**Before proceeding**
+
+In the XOS GUI, the DtDriverWorkflow Service Instance should track all the state changes.
+You can check for this on the command line by running:
+
+```bash
+cordctl model list DtWorkflowDriverServiceInstance -f "authentication_state=APPROVED"
+```
+
+It should return output like this:
+
+```bash
+$ cordctl model list DtWorkflowDriverServiceInstance -f "authentication_state=APPROVED"
+ID    NAME    OF_DPID                OWNER_ID    SERIAL_NUMBER    STATUS_MESSAGE                                  UNI_PORT_ID
+60            of:0000d0d3e158fede    2           PSMO00000000     ONU has been validated - IP address assigned    128
+```
+
+In ONOS, the BNG app should contain the authenticated attachment.
+To check the BNG app state, SSH into ONOS (Password=rocks):
+
+```bash
+ssh -q -p 30115 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null onos@127.0.0.1
+```
+
+and then check the registered attachment list in the BNG app by running:
+
+```bash
+bng:attachments
+```
+
+It should return an output like the following:
+
+```bash
+onos@root > bng:attachments
+Registered attachments (size: 1):
+{PSMO00000000/111/222/of:0000d0d3e158fede/128/DE:C3:66:8D:0C:7D=PppoeBngAttachment{
+appId=DefaultApplicationId{id=197, name=org.opencord.bng}, sTag=222, cTag=111,
+macAddress=DE:C3:66:8D:0C:7D, ipAddress=10.255.255.100, lineActivated=true,
+oltConnectPoint=of:0000d0d3e158fede/128, onuSerial=PSMO00000000, qinqTpid=0, pppoeSessionId=1}}
+```
+The MAC address should correspond to the MAC address of the `eth0` interface of the RG,
+while the IP address should correspond to the one assigned to the `ppp0` interface in the RG pod.
+
+### Ping the emulated upstream router
+
+Ping the address `10.10.10.1` to ping the emulated upstream router that is running in Mininet.
+
+```bash
+$ ping -c 3 10.10.10.1
+PING 10.10.10.1 (10.10.10.1) 56(84) bytes of data.
+64 bytes from 10.10.10.1: icmp_seq=1 ttl=63 time=30.3 ms
+64 bytes from 10.10.10.1: icmp_seq=2 ttl=63 time=27.0 ms
+64 bytes from 10.10.10.1: icmp_seq=3 ttl=63 time=21.5 ms
+
+--- 10.10.10.1 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2001ms
+rtt min/avg/max/mdev = 21.583/26.333/30.320/3.609 ms
+```
+The traffic leaves the RG via the `ppp0` interface as encapsulated in a PPPoE header
+and reaches the upstream router as standard IP traffic.
+The PPPoE tunnel termination is performed entirely in the data plane by the ASG switch.
+
+That’s it. Currently it’s not possible to send traffic to destinations on the Internet.
+
 ## Restarting SEBA-in-a-Box after a reboot
 
 After a reboot of a server running SiaB, some services (such as etcd) will likely come up in
@@ -613,3 +790,4 @@ the easiest way to remove a SiaB installation is to use the `make reset-kubeadm`
 ## Getting help
 
 Report any problems to `acb` on the CORD Slack channel.
+Report any problems related to Stratum or SD-BNG to `Daniele` or `carmelo` on the CORD Slack channel.
