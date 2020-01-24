@@ -13,7 +13,7 @@ The list of supported hardware can be found in the [hardware requirements page](
 ## Operating System
 
 All CORD-compatible switches use
-[Open Networking Linux (ONL)](https://opennetlinux.org/) as the operating system.
+[Open Networking Linux (ONL)](http://opennetlinux.org/) as the operating system.
 The [latest compatible ONL image](https://github.com/opencord/OpenNetworkLinux/releases/download/2017-10-19.2200-1211610/ONL-2.0.0_ONL-OS_2017-10-19.2200-1211610_AMD64_INSTALLED_INSTALLER) can be downloaded from [here](https://github.com/opencord/OpenNetworkLinux/releases/download/2017-10-19.2200-1211610/ONL-2.0.0_ONL-OS_2017-10-19.2200-1211610_AMD64_INSTALLED_INSTALLER).
 
 **Checksum**: *sha256:2db316ea83f5dc761b9b11cc8542f153f092f3b49d82ffc0a36a2c41290f5421*
@@ -35,7 +35,7 @@ After the installation of ONL, if you don't see '/usr/bin' in your PATH variable
 export PATH=$PATH:/usr/bin/ofdpa
 ```
 
-Guidelines on how to install ONL on top of an ONIE compatible device can be found directly on the [ONL website](https://opennetlinux.org/).
+Guidelines on how to install ONL on top of an ONIE compatible device can be found directly on the [ONL website](http://opennetlinux.org/).
 
 This specific version of ONL has been customized to accept an IP address through DHCP on the management interface, *ma0*. If you'd like to use a static IP, first give
 it an IP address through DHCP, then login and change the configuration in
