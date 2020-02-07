@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aa3e0aa0_f2c49181",
+        "filename": "profiles/seba/lab-setup.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2020-02-07T15:21:37Z",
+      "side": 1,
+      "message": "download",
+      "range": {
+        "startLine": 56,
+        "startChar": 76,
+        "endLine": 56,
+        "endChar": 83
+      },
+      "revId": "46f948411b0df434a1b4e0b613ff186b4d4aa51c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
