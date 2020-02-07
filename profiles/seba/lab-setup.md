@@ -26,7 +26,13 @@ What you'll need to emulate E2E traffic is:
 The first thing you need to do is to install `lxd` on your server. To do that you can follow
 this guide: [http://tutorials.ubuntu.com/tutorial/tutorial-setting-up-lxd-1604](http://tutorials.ubuntu.com/tutorial/tutorial-setting-up-lxd-1604)
 
-Once `lxd` is successfully installed you can create a container using these commands:
+Once `lxd` is successfully installed you need to initialize it with 
+```bash
+lxd init
+```
+we recommend to use all the provided default values.
+
+Once `lxd` is initialized you can create a container using these commands:
 
 ```bash
 lxc launch ubuntu:16.04 <name>
@@ -38,9 +44,20 @@ where:
 - `name` is the desired container name, internally we use the ONU serial number as name
 - `physical-intf` is the name of the interface to which the ONU is physically connected
 
+Once the container is created you canc check it's existance with `lxc list`.
+The output should look something like:
+```bash
++---------------+---------+--------------------+------+------------+-----------+
+|     NAME      |  STATE  |        IPV4        | IPV6 |    TYPE    | SNAPSHOTS |
++---------------+---------+--------------------+------+------------+-----------+
+| voltha-client | RUNNING | 10.63.3.144 (eth0) |      | PERSISTENT | 0         |
++---------------+---------+--------------------+------+------------+-----------+
+```
+Please make sure the container has an assigned IP or we it won't be able to download and install the `wpasupplicant`.
+
 Once the container is running you need to enter it and do some configuration.
 
-To access the container you can use the `lxc exec <name> bash` command.
+To access the container you can use the `lxc exec <name> /bin/bash` command.
 
 Once inside:
 
@@ -103,13 +120,14 @@ Once the `DHCP` server is installed, you need to configure it.
 
 ### Create Q-in-Q interfaces
 
-On the interface that connects to the Agg Switch you are going to receive double tagged traffic,
+On the interface that connects to the Agg Switch (upstream) you are going to receive double tagged traffic,
 so you'll need to create interfaces to received it.
 
-Supposing that your subscriber is using `s_tag=111`, `c_tag=222` and the interface name is `eth2`
+Supposing that your subscriber is using `s_tag=111`, `c_tag=222` and the upstream interface name is `eth2`
 you can use this commands to create it:
 
 ```bash
+ip link set eth2 up
 ip link add link eth2 name eth2.111 type vlan id 111
 ip link set eth2.111 up
 ip link add link eth2.111 name eth2.111.222 type vlan id 222
