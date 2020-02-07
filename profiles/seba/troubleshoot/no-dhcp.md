@@ -36,6 +36,29 @@ server QinQ tagged with the subscribers S and C VLAN tags (both 0x8100 ethertype
 So if the server is not configured to accept double tagged packets, you won't get
 a DHCP reply.
 
+## DHCP server status
+
+Please do check that a DHCP server is running on the upstream interface and is dealing out IPs.
+
+If you followed [the lab setup guide](../lab-setup.md) you can use:
+```bash
+systemctl status isc-dhcp-server
+```
+The output should look something like:
+```bash
+isc-dhcp-server.service - ISC DHCP IPv4 server
+   Loaded: loaded (/lib/systemd/system/isc-dhcp-server.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2020-02-06 06:29:09 EST; 23h ago
+     Docs: man:dhcpd(8)
+ Main PID: 28526 (dhcpd)
+    Tasks: 1
+   Memory: 9.2M
+      CPU: 270ms
+   CGroup: /system.slice/isc-dhcp-server.service
+           └─28526 dhcpd -user dhcpd -group dhcpd -f -4 -pf /run/dhcp-server/dhcpd.pid -cf /etc/dhcp/dhcpd.conf ens3f0
+```
+Please notice the `active (running)`.
+
 ## Relevant Flows
 
 The DHCP packet-in/out from the OLT and the AGG switch depends on a few key flows.
