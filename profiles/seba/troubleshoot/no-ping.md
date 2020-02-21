@@ -195,3 +195,112 @@ point. Stats collection intervals are 5 secs by default.
 These stats are not currently exported to the CORD monitoring stack by ONOS. However portstats
 from the OLT are exported to Kafka by VOLTHA, and can be displayed in Grafana. Portstats
 from the ONU can similarly be exported, but is currently work-in-progress.
+
+## Ensuring double tagged traffic (linux kernel stripping out tag)
+
+You should verify that ONOS receives double tagged traffic from the upstream interface.
+A way to confirm this is the TRACE log for DhcpL2Relay app.
+To enable the trace log please login into the ONOS console and run 
+```shell
+log:set TRACE org.opencord.dhcpl2relay
+```
+The correct log for the packet received from the DHCP server is:
+
+```shell
+TRACE [DhcpL2Relay] DHCP packet received from server at of:0000a82bb56d1a95/1048576
+ip
+dl_qinqVlan: 11
+dl_qinqVlan_pcp: 0
+dl_vlan: 11
+dl_vlan_pcp: 0
+dl_src: 288023e99c20
+dl_dst: ac162d78a9d2
+nw_src: 10.11.2.254
+nw_dst: 10.11.2.3
+nw_tos: 0
+nw_proto: 17
+tp_src: 67
+tp_dst: 68
+```
+Please note the `dl_qinqVlan` set to `11` and the `dl_vlan` set to `11` this means the packet is correctly double tagged.
+
+If you see instead:
+```shell
+TRACE [DhcpL2Relay] DHCP packet received from server at of:0000a82bb56d1a95/1048576
+ip
+dl_vlan: 11
+dl_vlan_pcp: 0
+dl_src: 288023e99c20
+dl_dst: ac162d78a9d2
+nw_src: 10.11.2.254
+nw_dst: 10.11.2.3
+nw_tos: 0
+nw_proto: 17
+tp_src: 67
+tp_dst: 68
+```
+Please note that the `dl_qinqVlan` is missing thus the packet is single tagged.
+
+In this case it's most likely because the linux kernel is stripping the outer tag from the packet before outputting it to the interface of your BNG. 
+
+Run the following command to avoid the packet being stripped of the outer tag:
+```shell
+sudo ethtool -K <base_bng_interface> rxvlan off txvlan off
+```
+For example if the BNG is running on the double tagged `ens3f0.11.11` you need to run the command on `ens3f0`:
+```shell
+sudo ethtool -K ens3f0 rxvlan off txvlan off
+```
+This command disables the `rx-vlan-offload` and `tx-vlan-offload` parameters thus not doing any vlan manipulation. 
+You can check the state of the `ethtool` parameters with:
+```shell
+ethtool -k ens3f0
+```
+The output should look something like
+```shell
+Features for ens3f0:
+rx-checksumming: on
+tx-checksumming: on
+    tx-checksum-ipv4: on
+    tx-checksum-ip-generic: off [fixed]
+    tx-checksum-ipv6: on
+    tx-checksum-fcoe-crc: off [fixed]
+    tx-checksum-sctp: off [fixed]
+scatter-gather: on
+    tx-scatter-gather: on
+    tx-scatter-gather-fraglist: off [fixed]
+tcp-segmentation-offload: on
+    tx-tcp-segmentation: on
+    tx-tcp-ecn-segmentation: off [fixed]
+    tx-tcp6-segmentation: on
+udp-fragmentation-offload: off [fixed]
+generic-segmentation-offload: on
+generic-receive-offload: on
+large-receive-offload: off [requested on]
+rx-vlan-offload: off
+tx-vlan-offload: off
+ntuple-filters: off [fixed]
+receive-hashing: off [fixed]
+highdma: on
+rx-vlan-filter: off [fixed]
+vlan-challenged: off [fixed]
+tx-lockless: off [fixed]
+netns-local: off [fixed]
+tx-gso-robust: off [fixed]
+tx-fcoe-segmentation: off [fixed]
+tx-gre-segmentation: off [fixed]
+tx-ipip-segmentation: off [fixed]
+tx-sit-segmentation: off [fixed]
+tx-udp_tnl-segmentation: on
+fcoe-mtu: off [fixed]
+tx-nocache-copy: off
+loopback: off [fixed]
+rx-fcs: off [fixed]
+rx-all: off [fixed]
+tx-vlan-stag-hw-insert: off [fixed]
+rx-vlan-stag-hw-parse: off [fixed]
+rx-vlan-stag-filter: off [fixed]
+l2-fwd-offload: off [fixed]
+busy-poll: off [fixed]
+hw-tc-offload: off [fixed]
+```
