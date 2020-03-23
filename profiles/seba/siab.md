@@ -774,7 +774,15 @@ The traffic leaves the RG via the `ppp0` interface as encapsulated in a PPPoE he
 and reaches the upstream router as standard IP traffic.
 The PPPoE tunnel termination is performed entirely in the data plane by the ASG switch.
 
-That’s it. Currently it’s not possible to send traffic to destinations on the Internet.
+Currently it’s not possible to send traffic to destinations on the Internet.
+
+### PPPoE RG close PPPoE connection
+
+Finally, run:
+```bash
+poff seba
+```
+This command will close the PPPoE connection sending a termination request to the PPPoE server.
 
 ## Restarting SEBA-in-a-Box after a reboot
 
