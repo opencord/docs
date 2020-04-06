@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "583b9dfc_80eeda90",
+        "filename": "profiles/seba/siab.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 1000381
+      },
+      "writtenOn": "2020-04-06T18:17:59Z",
+      "side": 1,
+      "message": "I might be wrong, but isn\u0027t this the same command to start the authentication? If so, it might be confusing to put the same command here without any context/explanation. It would be useful to add a sentence like \"This command will close the PPPoE connection by (briefly explain what happens internally)...\"",
+      "revId": "3dfe19b190a9c5cc7e98771b025b1d7f4576fd5d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
