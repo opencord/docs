@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ca920fd3_1984818e",
+        "filename": "profiles/comac/install/ciab.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2020-04-22T20:30:05Z",
+      "side": 1,
+      "message": "it would be better not to duplicate informations as it\u0027s hard to keep them in sync. We can either put a link to https://guide.opencord.org/operating_cord/gui.html#how-to-acces-the-gui or move that section in a \"partial\", for example:\nhttps://github.com/opencord/docs/blob/master/partials/repo-download.md is included in https://github.com/opencord/docs/blob/a6b41d2460de00bdb3708185f96581005d266651/developer/getting_the_code.md",
+      "range": {
+        "startLine": 361,
+        "startChar": 0,
+        "endLine": 389,
+        "endChar": 37
+      },
+      "revId": "0d904c63a0ef6f1bf32878e556e94ca2425011d1",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
