@@ -358,6 +358,29 @@ rtt min/avg/max/mdev = 39.416/52.962/66.509/13.548 ms
 
 That’s it. Currently it’s not possible to send traffic to destinations on the Internet.
 
+### Accessing the XOS GUI
+Among the pods that are started in COMAC-in-a-Box is the XOS GUI that you can access via a web browser. First, run the following command to confirm that the pod is running:
+
+```bash
+$ kubectl get pods -l app=xos-gui
+NAME                       READY   STATUS    RESTARTS   AGE
+xos-gui-5ffb4b4474-mkkxc   1/1     Running   0          25h
+```
+
+Now you can use the following command to determine the TCP port that you can use to access the XOS GUI in your setup:
+
+```bash
+$ kubectl get service xos-gui
+NAME      TYPE       CLUSTER-IP        EXTERNAL-IP   PORT(S)          AGE
+xos-gui   NodePort   192.168.135.143   <none>        4000:30001/TCP   25h
+```
+From the above output we can see that TCP port 30001 is mapped to port 4000 in the XOS GUI pod. To access the GUI, open a browser and go to URL http://[your hosts IP address]:30001 to open the login page shown below.
+
+![xos-login](xos-login.png)
+
+If you haven't customized the xos-core chart installation, you will be able to login using the default username / password values which are `admin@opencord.org` / `letmein`.
+
+
 ## Uninstall COMAC-in-a-Box
 
 If you're done with your testing, the easiest way to remove a CiaB installation
