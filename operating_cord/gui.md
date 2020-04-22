@@ -25,6 +25,9 @@ where `cluster-ip` is the ip of any node in your kubernetes cluster.
 The *username* and *password* for the GUI are defined in
 the [`xos-core`](../charts/xos-core.md) helm chart.
 
+If you haven't customized the `xos-core` chart installation, then you'll be able
+to login using the default username/password values: `admin@opencord.org/letmein`.
+
 ## Opening the GUI in minikube
 
 The above works the same way when running on `minikube`, but
