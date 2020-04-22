@@ -15,7 +15,7 @@ helm install -n xos-core cord/xos-core
 
 ## Customizing security information
 
-We strongly recommend you to override the default values of *xosAdminUser* and
+We **strongly recommend** you to override the default values of *xosAdminUser* and
 *xosAdminPassword* with custom values.
 
 You can do it using a [`values.yaml`](https://docs.helm.sh/chart_template_guide/#values-files) file like this one:
