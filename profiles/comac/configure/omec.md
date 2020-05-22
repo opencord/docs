@@ -69,7 +69,7 @@ Cassandra configuration options.
 |`config.mme.s11.nodePort.port`|Port number for s11 `nodePort`. Valid only when `config.mme.s11.nodePort.enabled` is true.|32124|
 |`config.mme.s6a.nodePort.enabled`|Whether to expose `nodePort` for s6a in mme side.|false|
 |`config.mme.s6a.nodePort.port`|Port number for s6a `nodePort`. Valid only when `config.mme.s6a.nodePort.enabled` is true.|33869|
-|`config.mme.cfgFiles`|List of MME configuration files. See [this page](https://github.com/omec-project/openmme/blob/master/README.txt) for MME configuration options.||
+|`config.mme.cfgFiles`|List of MME configuration files. See [this page](https://github.com/omec-project/openmme/blob/master/README.md) for MME configuration options.||
 |`config.spgwc.apn`|APN setting.|apn1|
 |`config.spgwc.ueIpPool`|IP range to be assigned to UE.|ip: 16.0.0.0, mask: 255.0.0.0|
 |`config.spgwc.s1uAddr`|S1U address of SPGWU. It must match to `config.spgwu.s1u.ip` in omec-data-plane chart.|119.0.0.3|
