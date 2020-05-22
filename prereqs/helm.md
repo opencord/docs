@@ -21,7 +21,7 @@ network). Tiller should be installed on the Kubernetes cluster itself.
 
 ## Install Helm Client
 
-Follow the instructions at <https://github.com/kubernetes/helm/blob/master/docs/install.md#installing-the-helm-client>
+Follow the instructions at <https://helm.sh/docs/intro/install/>
 
 ## Install Tiller
 
