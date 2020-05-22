@@ -53,7 +53,7 @@ Services, see [Navigating CORD](navigate.md).
 The [http://guide.opencord.org](http://guide.opencord.org) website is built
 using the legacy GitBook Toolchain (deprecated, docs unavailable), with the
 documentation root in
-[docs](https://github.com/opencord/docs/blob/{{ book.branch }}) in a
+[docs](https://github.com/opencord/docs/) in a
 checked out source tree.  It is build with `make`, and requires that `gitbook`,
 `python`, and a few other tools are installed.
 
