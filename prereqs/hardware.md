@@ -54,7 +54,7 @@ have tested over time in lab trials.
     * OCP Inspired&trade; MiTAC Tioga Pass_E7278 server. Each server is configured with 2x Intel Skylake SP 14 cores 2.2GHz, 64GB of RAM DDR4, 1x 1TB SSD, and OCP Mezzanine v2 25G.
 
 * **Fabric Switches** - see also the [Trellis Documentation Supported
-  Hardware](https://docs.trellisfabric.org/supported-hardware.html)
+  Hardware](https://docs.trellisfabric.org/1.12/supported-hardware.html)
     * **1G/10G** models (with 40G uplinks)
         * OCP Accepted&trade; EdgeCore AS5712-54X
         * OCP Accepted&trade; EdgeCore AS5812-54X

@@ -115,7 +115,7 @@ This is done using a "values file", and is done most frequently during
 development or when customizing a deployment.
 
 Development-specific and deployment example values files can be found in the
-[helm-charts/examples](https://gerrit.opencord.org/gitweb?p=helm-charts.git;a=tree;f=examples)
+[helm-charts/examples](https://gerrit.opencord.org/plugins/gitiles/helm-charts/+/refs/heads/master/examples/)
 directory.
 
 ### Specifying a Docker registry

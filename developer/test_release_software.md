@@ -96,7 +96,7 @@ This job does a naive license validation test, checking for certain
 words related to the software license in each file in the repo.
 
 This job is implemented using the
-[licensecheck.sh](https://gerrit.opencord.org/gitweb?p=ci-management.git;a=blob;f=jjb/shell/licensecheck.sh)
+[licensecheck.sh](https://gerrit.opencord.org/plugins/gitiles/ci-management/+/refs/heads/master/jjb/shell/licensecheck.sh)
 script. It contains a list of file extensions that can't be checked for
 licenses - if your patchset uses a new file extension that is both incompatible
 with a license header (binary file type, or doesn't allow comments), the
@@ -200,7 +200,7 @@ these default values:
 
 An example that complies with these requirements these can be found in the
 [alpine-grpc-base
-  Makefile](https://gerrit.opencord.org/gitweb?p=alpine-grpc-base.git;a=blob;f=Makefile).
+  Makefile](https://gerrit.opencord.org/plugins/gitiles/alpine-grpc-base/+/refs/heads/master/Makefile).
 
 The `docker-build` and `docker-push` may be invoked multiple times during
 the job, setting the `DOCKER_TAG` variable with both the branch name and
@@ -237,7 +237,7 @@ job, ask about similar jobs on the mailing lists, or in the CORD Slack
 QA channel.
 
 Jobs are defined with [Jenkins Job Builder] and stored in the [ci-management
-  project](https://gerrit.opencord.org/gitweb?p=ci-management.git;a=tree;hb=HEAD).
+  project](https://gerrit.opencord.org/plugins/gitiles/ci-management/+/refs/heads/master).
   Pleasesee the `README.md` there for documentation on how to create jobs.
 
 Most tests are implemented using shell scripts or as Jenkinsfiles
