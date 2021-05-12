@@ -10,3 +10,4 @@ repos
 xos/_book
 venv-xosdocs
 .DS_Store
+.idea/
