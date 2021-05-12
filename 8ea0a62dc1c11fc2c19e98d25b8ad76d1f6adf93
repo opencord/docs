@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c5c36f2d_4b23854e",
+        "filename": "profiles/seba/lab-setup.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-05-12T22:09:22Z",
+      "side": 1,
+      "message": "apt install -y wpasupplicant jq mz build-essential",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 14
+      },
+      "revId": "8ea0a62dc1c11fc2c19e98d25b8ad76d1f6adf93",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c6a18b0_4fafa86b",
+        "filename": "profiles/seba/lab-setup.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-05-12T22:09:22Z",
+      "side": 1,
+      "message": "installed previously",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 44
+      },
+      "revId": "8ea0a62dc1c11fc2c19e98d25b8ad76d1f6adf93",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
