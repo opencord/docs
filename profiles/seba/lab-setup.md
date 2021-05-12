@@ -66,10 +66,20 @@ Once inside:
 ip link set eth1 up
 # install the wpasupplicant tool
 apt update
-apt install wpasupplicant
+apt install -y wpasupplicant jq mz build-essential tcpdump
+```
+In the lxc container you also need to install iperf3. Iperf3 needs to be installed from source to have some
+options used in VOLTHA tests.
+```bash
+git clone https://github.com/esnet/iperf.git -b 3.9
+cd iperf
+./configure && make && sudo make install
 ```
 
 > NOTE `wpasupplicant` is a linux tool to perform 802.1X authentication. More informations [here](https://help.ubuntu.com/community/WifiDocs/WPAHowTo)
+> `jq` is a linux tool to perform json parsing. More information [here](https://stedolan.github.io/jq/)
+> `mz` alias for maushezan is a linux tool to perform traffic generations. More informations [here](https://man7.org/linux/man-pages/man8/mausezahn.8.html)
+> `iperf3` is a linux tool to perform speed tests. More information [here](https://iperf.fr/)
 
 Create a configuration file for `wpasupplicant` in `/etc/wpa_supplicant/wpa_supplicant.conf` with the content:
 
@@ -153,4 +163,42 @@ subnet 10.11.2.0 netmask 255.255.255.0 {
   option domain-name-servers 8.8.8.8;
 }
 ```
+
+## Installing the required tools on the emulated BNG server
+
+Some tools are required to perform data plane tests present in voltha-system-tests.
+The following commands install them:
+```bash
+sudo apt update
+sudo apt-get install -y jq mz build-essential tcpdump
+```
+In the BNG you also need to install iperf3. Iperf3 needs to be installed from source to have some
+options used in the tests.
+```bash
+#remove existing installation if any
+sudo apt-get remove --purge iperf3
+#Clone and install from source
+git clone https://github.com/esnet/iperf.git -b 3.9
+cd iperf
+./configure && make && sudo make install
+```
+After installing `iperf3` on the BNG node it needs to be configured.
+Create the `iperf3.service` file:
+```bash
+vi /etc/systemd/system/iperf3.service
+```
+Include this content in the newly created file:
+```bash
+[Unit]
+Description=iperf3
+[Service]
+ExecStart=/usr/local/bin/iperf3 --server
+[Install]
+WantedBy=multi-user.target
+```
+Finally, start the iperf3 service
+```bash
+sudo service iperf3 start
+```
+
 
