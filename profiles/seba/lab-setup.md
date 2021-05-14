@@ -66,7 +66,7 @@ Once inside:
 ip link set eth1 up
 # install the wpasupplicant tool
 apt update
-apt install -y wpasupplicant jq mz build-essential tcpdump
+apt install -y wpasupplicant jq netsniff-ng build-essential tcpdump
 ```
 In the lxc container you also need to install iperf3. Iperf3 needs to be installed from source to have some
 options used in VOLTHA tests.
@@ -170,7 +170,7 @@ Some tools are required to perform data plane tests present in voltha-system-tes
 The following commands install them:
 ```bash
 sudo apt update
-sudo apt-get install -y jq mz build-essential tcpdump
+sudo apt-get install -y jq netsniff-ng build-essential tcpdump
 ```
 In the BNG you also need to install iperf3. Iperf3 needs to be installed from source to have some
 options used in the tests.
