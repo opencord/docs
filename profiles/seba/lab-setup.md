@@ -74,6 +74,7 @@ options used in VOLTHA tests.
 git clone https://github.com/esnet/iperf.git -b 3.9
 cd iperf
 ./configure && make && sudo make install
+ldconfig
 ```
 
 > NOTE `wpasupplicant` is a linux tool to perform 802.1X authentication. More informations [here](https://help.ubuntu.com/community/WifiDocs/WPAHowTo)
@@ -176,16 +177,18 @@ In the BNG you also need to install iperf3. Iperf3 needs to be installed from so
 options used in the tests.
 ```bash
 #remove existing installation if any
+sudo service iperf3 stop
 sudo apt-get remove --purge iperf3
 #Clone and install from source
 git clone https://github.com/esnet/iperf.git -b 3.9
 cd iperf
 ./configure && make && sudo make install
+sudo ldconfig
 ```
 After installing `iperf3` on the BNG node it needs to be configured.
 Create the `iperf3.service` file:
 ```bash
-vi /etc/systemd/system/iperf3.service
+sudo vi /etc/systemd/system/iperf3.service
 ```
 Include this content in the newly created file:
 ```bash
@@ -196,9 +199,13 @@ ExecStart=/usr/local/bin/iperf3 --server
 [Install]
 WantedBy=multi-user.target
 ```
-Finally, start the iperf3 service
+Start the iperf3 service
 ```bash
 sudo service iperf3 start
+```
+Finally, check the iperf3 service
+```bash
+sudo service iperf3 status
 ```
 
 
